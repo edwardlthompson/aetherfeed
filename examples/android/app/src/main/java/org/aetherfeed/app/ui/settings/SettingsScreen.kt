@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import org.aetherfeed.app.R
 import org.aetherfeed.app.ui.insets.bottomInsetPadding
@@ -40,6 +41,7 @@ fun SettingsScreen(
         Text(
             text = stringResource(R.string.settings_title),
             style = MaterialTheme.typography.headlineSmall,
+            modifier = Modifier.testTag("settings-heading"),
         )
         Text(text = stringResource(R.string.settings_theme_label))
         FlowRow(horizontalArrangement = Arrangement.spacedBy(SpacingMd)) {

@@ -121,7 +121,7 @@ write_lf(
     web.joinpath("settings/preferences.ts"),
     """import { getThemeMode, setThemeMode, type ThemeMode } from "../theme";
 
-const INTERVAL_KEY = "gp-app-update-interval";
+const INTERVAL_KEY = "af-app-update-interval";
 
 export function isUpdateCheckEnabled(): boolean {
   return localStorage.getItem(INTERVAL_KEY) !== "off";
@@ -159,7 +159,7 @@ write_lf(
 
 test("renders golden path heading without About slice", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Golden Path PWA" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "AetherFeed" })).toBeVisible();
   await expect(page.getByTestId("status")).toBeVisible();
 });
 """,
