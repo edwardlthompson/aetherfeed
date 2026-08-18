@@ -254,6 +254,8 @@ jobs:
 
   node:
     name: Node - Lint, Test
+    needs: stack-presence
+    if: needs.stack-presence.outputs.node == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:

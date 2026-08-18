@@ -17,7 +17,8 @@ class ReleaseTagFetcherTest {
 
     @Test
     fun loadReleaseRepoReturnsNullWhenEmpty() {
-        assertNull(ReleaseTagFetcher.loadReleaseRepo(context))
+        assertNull(ReleaseTagFetcher.parseReleaseRepo("""{"release_repo":""}"""))
+        assertNull(ReleaseTagFetcher.parseReleaseRepo("""{"release_repo":"OWNER/REPO"}"""))
     }
 
     @Test

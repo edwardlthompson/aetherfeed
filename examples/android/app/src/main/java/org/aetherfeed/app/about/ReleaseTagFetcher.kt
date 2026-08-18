@@ -13,15 +13,18 @@ data class LatestRelease(
 )
 
 object ReleaseTagFetcher {
+    fun parseReleaseRepo(json: String): String? {
+        val repo = JSONObject(json).optString("release_repo", "").trim()
+        return when {
+            repo.isEmpty() -> null
+            repo.equals("OWNER/REPO", ignoreCase = true) -> null
+            else -> repo
+        }
+    }
+
     fun loadReleaseRepo(context: Context): String? {
         return try {
-            val json = context.assets.open("app-update.json").bufferedReader().use { it.readText() }
-            val repo = JSONObject(json).optString("release_repo", "").trim()
-            when {
-                repo.isEmpty() -> null
-                repo.equals("OWNER/REPO", ignoreCase = true) -> null
-                else -> repo
-            }
+            parseReleaseRepo(context.assets.open("app-update.json").bufferedReader().use { it.readText() })
         } catch (_: Exception) {
             null
         }

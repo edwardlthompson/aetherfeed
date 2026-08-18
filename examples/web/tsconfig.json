@@ -16,10 +16,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
     "paths": {
       "@aetherfeed/domain": ["../../shared/typescript/index.ts"]
     }
   },
-  "include": ["src", "../../shared/typescript"]
+  "include": ["src", "../../shared/typescript"],
+  "exclude": ["../../shared/typescript/**/*.test.ts"]
 }
