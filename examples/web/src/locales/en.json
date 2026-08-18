@@ -1,8 +1,8 @@
 {
-  "app.title": "Golden Path PWA",
-  "app.greeting": "Hello, FOSS!",
-  "app.status.online": "Online \u2014 Golden Path PWA stub",
-  "app.status.offline": "Offline \u2014 Golden Path PWA stub",
+  "app.title": "AetherFeed",
+  "app.greeting": "Read locally. Sync only ciphertext.",
+  "app.status.online": "Online \u2014 AetherFeed stub",
+  "app.status.offline": "Offline \u2014 AetherFeed stub",
   "theme.toggle.label": "Switch theme",
   "theme.mode.system": "System theme",
   "theme.mode.light": "Light theme",

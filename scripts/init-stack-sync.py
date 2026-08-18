@@ -16,6 +16,7 @@ MODULE_LINES = {
     "lightroom": "Lightroom Classic",
     "rust": "Rust",
     "go": "Go",
+    "desktop": "Desktop / Tauri",
 }
 
 MODULE_EXAMPLE_DIRS = {
@@ -26,6 +27,7 @@ MODULE_EXAMPLE_DIRS = {
     "lightroom": "examples/lightroom",
     "rust": "examples/rust",
     "go": "examples/go",
+    "desktop": "examples/desktop",
 }
 
 PARALLEL_NOTES = {

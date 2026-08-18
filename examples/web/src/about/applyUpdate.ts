@@ -1,4 +1,4 @@
-export const DEFAULT_RESTART_GUARD_KEY = "gp-update-restart-pending";
+export const DEFAULT_RESTART_GUARD_KEY = "af-update-restart-pending";
 
 export function getRestartGuardKey(configKey?: string): string {
   return configKey ?? DEFAULT_RESTART_GUARD_KEY;

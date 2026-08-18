@@ -7,24 +7,28 @@
 
 | Layer | Technology | Version | Notes |
 |-------|-----------|---------|-------|
-| Platform | Multi-stack template (Web, Python, Android, Node, optional Lightroom/Rust/Go) | 0.21.0 | Template maintainer repo |
-| License | MIT | - | Pure FOSS |
-| Distribution | GitHub Releases + GitHub Pages demo | - | F-Droid/Winget stubs for child repos |
+| Android | Kotlin, Compose, Material 3, MVI | 0.1.0 | `org.aetherfeed.app` |
+| Desktop | Tauri 2.0 + shared web UI | 0.1.0 | Executable `AetherFeed` |
+| Vault | SQLCipher contract; Room/Hilt next | seed | App-private storage |
+| Sync | Argon2id + XChaCha20-Poly1305 | seed | Drive appdata + WebDAV |
+| License | MIT | - | No AGPL vendored |
+| Distribution | GitHub Releases, F-Droid later | - | No telemetry |
 ## Active Modules
 
-- ✅ Web / PWA (`modules/web/MODULE.md`)
-- ✅ Python (`modules/python/MODULE.md`)
+- ✅ Web / PWA (`modules/web/MODULE.md`) — shared desktop UI + domain types
+- ❌ Python (`modules/python/MODULE.md`)
 - ✅ Android / F-Droid (`modules/android/MODULE.md`)
-- ✅ Node API (`modules/node/MODULE.md`)
-- ✅ Lightroom Classic (`modules/lightroom/MODULE.md`)
-- ✅ Rust (`modules/rust/MODULE.md`)
-- ✅ Go (`modules/go/MODULE.md`)
+- ❌ Node API (`modules/node/MODULE.md`)
+- ❌ Lightroom Classic (`modules/lightroom/MODULE.md`)
+- ✅ Rust (`modules/rust/MODULE.md`) — envelope crypto
+- ❌ Go (`modules/go/MODULE.md`)
+- ✅ Desktop / Tauri (`modules/desktop/MODULE.md`)
 
 ## Threat Model Checklist
 
 - ✅ `docs/THREAT_MODEL.md` drafted (STRIDE, trust boundaries, top abuse cases, OWASP LLM Top 10 walk)
 - ✅ No proprietary closed-source SDKs in production path
-- ✅ Opt-in only telemetry (GDPR/CCPA compliant); see `docs/PRIVACY.md`
+- ✅ Zero telemetry / crash-phone-home; see `docs/PRIVACY.md`
 - ✅ Secrets excluded from VCS (Gitleaks pre-commit)
 - ✅ Dependency vulnerability scanning enabled (CodeQL + Trivy + Dependabot)
 - ✅ Input validation at all data boundaries
@@ -34,7 +38,7 @@
 
 ### Project Purpose
 
-FOSS coding-agent bootstrap template: labeled BUILD_PLAN sprints, Golden Path examples, CI guardrails, workspace memory, and design-system cohesion across Web and Android.
+AetherFeed: local-first encrypted news, podcast, and booru client for Android and Windows. Seeded from agent-project-bootstrap 0.21.0. Sync is optional and ciphertext-only.
 
 ### Key Constraints
 
@@ -46,6 +50,7 @@ FOSS coding-agent bootstrap template: labeled BUILD_PLAN sprints, Golden Path ex
 
 | Date | Milestone | What worked | What to improve |
 |------|-----------|-------------|-----------------|
+| 2026-08-18 | AetherFeed seed | Official init + prune + rename; shared models; Tauri shell; validate-bootstrap --quick green | Room/Hilt still open; child GitHub repo not created; Playwright snapshots need a refresh after token change |
 | 2026-08-18 | v0.21.0 /ship | CI + Windows upgrade-sim green on feat and fix; RP #69 admin-merge; fold comments leftover notes | Fold is local-only — commit empty Unreleased before push or RP leaves leftovers under the version heading |
 | 2026-08-17 | M39 /ideas Windows PATH + ship hygiene | Shared PATH resolver; agent-run drops PYTHONPATH; fold Unreleased onto RP; Q&A GraphQL + HUMAN line | Do not attach Environments to required-check workflows; keep Unreleased empty only after fold+comment |
 | 2026-08-17 | M38 /ideas ship-hardening | Branch protection now includes Windows upgrade-sim; Python TEMPLATE_INDEX; RP wait skip; lib files ≤150 | `gh` is not on Git Bash PATH unless Program Files is exported |

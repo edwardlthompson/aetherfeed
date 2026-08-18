@@ -77,88 +77,139 @@ grep '\[AUTO\]' BUILD_PLAN.md
 
 When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the daily driver. `/feature` expects a copied `docs/features/{name}.md` from `_template.md`, a locked public API, then Parallel logic/view slices. Copy `scratchpad.md.example` → `scratchpad.md` (gitignored) and **reset** it on sprint/phase change — do not replace `AGENT_MEMORY.md`.
 
-### Sprint 0 — Template Customization
+### Sprint 0 — AetherFeed seed
 
 #### Sequential
 
-1. 🔲 [AGENT] Run `scripts/init-project.sh` or `scripts/init-project.ps1` (`--stack <name>`; `--non-interactive` with `--project-name` + `--purpose` for scripted init)
-1b. 🔲 [AGENT] Fill `branding/product.json` (set `mode: product`), replace logos if needed, run `sync-design-tokens.py` + `generate-project-readme.py`
-2. 🔲 [AGENT] Run `scripts/setup-github-repo.sh` (requires `gh` auth with admin)
+1. ✅ [AGENT] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)
+1b. ✅ [AGENT] Fill `branding/product.json` (`mode: product`), replace logos, prune unused stacks
+2. ❌ [AGENT] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
 3. 🔲 [AUTO] Sprint 0 sign-off (all green on `main`):
   - `validate-bootstrap.sh --quick`
-  - `feature-gate.sh --stack <active>`
+  - `feature-gate.sh --stack multi`
   - `check-github-ci.sh --wait 300` (required: **CI**, **Security Scan**, **CodeQL**; **CI** must include **Template Upgrade Simulation (Windows)**, **Repo Hygiene**, **Feature Gate**)
-  - `check-license-compliance.sh` (after `npm ci` / `uv sync`)
+  - `check-license-compliance.sh` (after `npm ci`)
 
-#### Parallel (safe after Sequential step 5)
+#### Parallel (safe after Sequential step 1b)
 
-<!-- parallel_exception: Sprint 0 — stack not selected; Parallel rows added after init -->
+<!-- agent_count_target: 3 -->
 
-| Task                                  | Owner | Isolated scope |
-| ------------------------------------- | ----- | -------------- |
-| *None — see parallel_exception above* | —     | —              |
+| Task | Owner | Isolated scope |
+| ---- | ----- | -------------- |
+| Android identity + vault contract | AGENT | `examples/android/**` |
+| Web domain + desktop Tauri shell | AGENT | `examples/web/**`, `examples/desktop/**` |
+| Crypto crate + shared schema | AGENT | `examples/rust/**`, `shared/**` |
+
 #### Human & device (after automation)
 
-> Address after `/build` completes AGENT/AUTO work above. `/build` attempts each row via automation; failures land in `HUMAN_BACKLOG.md`.
+1. ✅ [HUMAN] Create the GitHub repo and point `origin` at it (do not push to the template)
+1a. ✅ [HUMAN] Distribution tier is FOSS (MIT, no proprietary SDKs)
+2. ✅ [HUMAN] Platform/purpose filled: Android + Windows desktop; local-first encrypted reader
+2a. ✅ [HUMAN] Agent mode for approved seed execution
+2b. ✅ [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md`
 
-1. 🔲 [HUMAN] Click **Use this template** on GitHub to create your project repo
-
-1a. 🔲 [HUMAN] Choose **distribution tier** (FOSS default vs Commercial) via `init-project.sh --distribution-tier`
-2. 🔲 [HUMAN] Fill placeholders in `docs/INITIALIZATION_PROMPT.md` (platform, purpose)
-2a. 🔲 [HUMAN] Pick Cursor mode per `[docs/CURSOR_MODES.md](docs/CURSOR_MODES.md)` (Ask to explore, Plan for architecture)
-2b. 🔲 [HUMAN] Bookmark `[docs/help/BATCH_COMMANDS.md](docs/help/BATCH_COMMANDS.md)` — type `/` in Agent chat (`/bootstrap` for Sprint 0)
-
-### Sprint 1 — Golden Path Foundation
+### Sprint 1 — Encrypted vault and shared models
 
 #### Sequential
 
-1. 🔲 [AGENT] Lock shared Golden Path schema/types/API for active stack (About + navigation surface only)
+1. ✅ [AGENT] Lock shared models and `SyncProvider` (`shared/typescript/`, Android `domain/`)
+2. 🔲 [AGENT] Wire Room + SQLCipher + Hilt on Android using the locked types
+3. ✅ [HUMAN] Approve ADR-0001, ADR-0002, and ADR-0003
 
 #### Parallel (safe after Sequential step 1)
 
-| Task                 | Owner | Isolated scope               |
-| -------------------- | ----- | ---------------------------- |
-| About screen verify  | AGENT | `examples/{stack}/**/about/` |
-| Stack public assets  | AGENT | `examples/{stack}/public/`   |
-| Module + design docs | AGENT | `modules/{stack}/`           |
-#### Human & device (after automation)
-
-> Address after `/build` completes AGENT/AUTO and Parallel work above.
-
-1. 🔲 [HUMAN] Fill stack-local config: web `examples/web/public/app-update.json` + `donations.json`; Android `assets/` mirrors; or root `.app-update.json` / `donations.json` (init runs `scripts/sync-stack-config.py`)
-2. 🔲 [HUMAN] Approve ADR-0001 and BUILD_PLAN Sprint 1 for your stack
-
-### Sprint 2+ — Incremental Features
-
-> One vertical slice at a time. See `docs/FEATURE_MODULES.md`. Reference exemplars: `docs/features/settings.md` (Sprint 2), About (Sprint 1).
-
-**Agent rule:** After every `[AGENT]` step → `bash scripts/watch-agent-gates.sh --once --autofix --step <scaffold|tests|wire>`.
-
-#### Per-feature Sequential (steps 1–2: lock API)
-
-1. 🔲 [AGENT] Copy `docs/features/_template.md` → `docs/features/{name}.md`; refine acceptance criteria
-2. 🔲 [AGENT] Scaffold feature container (public API boundary only)
-
-#### Per-feature Parallel (safe after Sequential step 2)
-
-| Task                      | Owner | Isolated scope                                                                    |
-| ------------------------- | ----- | --------------------------------------------------------------------------------- |
-| Logic + unit tests        | AGENT | `examples/{stack}/src/{feature}/` or stack equivalent                             |
-| View + i18n               | AGENT | `examples/{stack}/src/components/` or `ui/{feature}/`, `locales/` / `strings.xml` |
-| Feature spec + acceptance | AGENT | `docs/features/{feature}.md`                                                      |
-| E2e / instrumented smoke  | AGENT | `examples/{stack}/e2e/` or `examples/{stack}/**/androidTest/`                     |
-#### Per-feature Sequential (steps 3–4: after Parallel merge)
-
-1. 🔲 [AGENT] Unit tests for feature pure logic (skip if Parallel agent completed)
-2. 🔲 [AGENT] Wire view/adapter; composition root (`appBootstrap.ts` / `GoldenPathApp.kt`) ≤10 lines
+| Task | Owner | Isolated scope |
+| ---- | ----- | -------------- |
+| Android About + four-destination nav | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/**` |
+| Desktop tray unread command | AGENT | `examples/desktop/src-tauri/**` |
+| Shared unread tests | AGENT | `shared/typescript/**`, `examples/web/src/domain/**` |
 
 #### Human & device (after automation)
 
-> Optional product judgment after gates pass.
+1. ✅ [HUMAN] Fill `release_repo` in `.app-update.json` and donation links
+2. ✅ [HUMAN] Approve Sprint 1 vault/Hilt approach
 
-1. 🔲 [HUMAN] Optional product smoke after `[AUTO]` gate pass
+### Sprint 2 — News / RSS reader
 
-> Gates (`watch-agent-gates.sh`) run Sequential-side after each AGENT step — not in Parallel.
+#### Sequential
+
+1. 🔲 [AGENT] Lock RSS/Atom/JSON Feed + OPML public API (`docs/features/news.md`)
+2. 🔲 [AGENT] Scaffold news repository boundary only
+
+#### Parallel (safe after Sequential step 2)
+
+| Task | Owner | Isolated scope |
+| ---- | ----- | -------------- |
+| Feed parse + unread/star/tag logic | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/news/**` |
+| Reader-mode view + i18n | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/news/**`, `examples/web/src/news/**` |
+| News feature spec | AGENT | `docs/features/news.md` |
+
+### Sprint 3 — Podcasts
+
+#### Sequential
+
+1. 🔲 [AGENT] Lock episode/queue/position API (`docs/features/podcasts.md`)
+
+#### Parallel (safe after Sequential step 1)
+
+| Task | Owner | Isolated scope |
+| ---- | ----- | -------------- |
+| Media3 player + downloads | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/podcasts/**` |
+| Desktop playback commands | AGENT | `examples/desktop/src-tauri/src/**` |
+| Podcast feature spec | AGENT | `docs/features/podcasts.md` |
+
+### Sprint 4 — Booru browser
+
+#### Sequential
+
+1. 🔲 [AGENT] Lock source/search/favorite/blacklist API (`docs/features/booru.md`)
+
+#### Parallel (safe after Sequential step 1)
+
+| Task | Owner | Isolated scope |
+| ---- | ----- | -------------- |
+| Source adapters + tag search | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/booru/**` |
+| Grid/detail view + i18n | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/booru/**` |
+| Booru feature spec | AGENT | `docs/features/booru.md` |
+
+### Sprint 5 — Notifications and unread chrome
+
+#### Sequential
+
+1. 🔲 [AGENT] Lock unread-total API used by widget and tray
+
+#### Parallel (safe after Sequential step 1)
+
+| Task | Owner | Isolated scope |
+| ---- | ----- | -------------- |
+| Android channels + unread widget | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/notify/**` |
+| Desktop tray badge/tooltip | AGENT | `examples/desktop/src-tauri/src/**` |
+
+### Sprint 6 — E2E sync
+
+#### Sequential
+
+1. 🔲 [AGENT] Lock envelope format and provider interface (`docs/features/sync.md`)
+
+#### Parallel (safe after Sequential step 1)
+
+| Task | Owner | Isolated scope |
+| ---- | ----- | -------------- |
+| Drive AppData provider | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/sync/**` |
+| WebDAV provider + desktop pull/push | AGENT | `examples/desktop/src-tauri/src/**`, `examples/web/src/sync/**` |
+
+### Sprint 7 — Import/export and polish
+
+#### Sequential
+
+1. 🔲 [AGENT] Lock OPML + JSON export API
+
+#### Parallel (safe after Sequential step 1)
+
+| Task | Owner | Isolated scope |
+| ---- | ----- | -------------- |
+| Android export + About/Fastlane copy | AGENT | `examples/android/fastlane/**`, `examples/android/metadata/**` |
+| Desktop packaging + Winget stub | AGENT | `packaging/winget/**`, `examples/desktop/**` |
 
 ---
 

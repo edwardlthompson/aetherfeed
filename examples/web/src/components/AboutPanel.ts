@@ -14,19 +14,19 @@ export function createAboutPanel(
   onApplyUpdate?: () => void,
 ): HTMLElement {
   const panel = document.createElement("section");
-  panel.className = "gp-about-panel";
+  panel.className = "af-about-panel";
   panel.setAttribute("aria-label", t("about.title"));
   panel.dataset.testid = "about-panel";
 
   const header = document.createElement("header");
-  header.className = "gp-about-header";
+  header.className = "af-about-header";
 
   const title = document.createElement("h2");
   title.textContent = t("about.title");
 
   const closeBtn = document.createElement("button");
   closeBtn.type = "button";
-  closeBtn.className = "gp-about-close";
+  closeBtn.className = "af-about-close";
   closeBtn.setAttribute("aria-label", t("about.close"));
   closeBtn.textContent = "×";
   closeBtn.addEventListener("click", onClose);
@@ -46,7 +46,7 @@ export function createAboutPanel(
   formatP.append(formatCode);
 
   const statusP = document.createElement("p");
-  statusP.className = "gp-about-status";
+  statusP.className = "af-about-status";
   statusP.dataset.testid = "about-status";
   statusP.setAttribute("aria-live", "polite");
   statusP.textContent = state.updateStatus;
@@ -56,7 +56,7 @@ export function createAboutPanel(
   if (state.canApplyUpdate && onApplyUpdate) {
     const applyBtn = document.createElement("button");
     applyBtn.type = "button";
-    applyBtn.className = "gp-about-apply";
+    applyBtn.className = "af-about-apply";
     applyBtn.dataset.testid = "about-apply";
     applyBtn.textContent = t("about.update.apply");
     applyBtn.addEventListener("click", onApplyUpdate);
@@ -65,11 +65,11 @@ export function createAboutPanel(
 
   if (state.donations.enabled && state.donations.links.length > 0) {
     const donateMsg = document.createElement("p");
-    donateMsg.className = "gp-about-donate-msg";
+    donateMsg.className = "af-about-donate-msg";
     donateMsg.textContent = state.donations.message;
 
     const donateList = document.createElement("ul");
-    donateList.className = "gp-about-donate-links";
+    donateList.className = "af-about-donate-links";
     for (const link of state.donations.links) {
       const item = document.createElement("li");
       const anchor = document.createElement("a");

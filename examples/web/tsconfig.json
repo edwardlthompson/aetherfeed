@@ -15,7 +15,11 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@aetherfeed/domain": ["../../shared/typescript/index.ts"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "../../shared/typescript"]
 }

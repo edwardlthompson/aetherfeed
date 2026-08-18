@@ -14,7 +14,7 @@ export type SettingsPanelCallbacks = {
 
 export function createSettingsPanel(callbacks: SettingsPanelCallbacks): HTMLElement {
   const panel = document.createElement("section");
-  panel.className = "gp-settings-panel";
+  panel.className = "af-settings-panel";
   panel.setAttribute("aria-label", t("settings.title"));
   panel.dataset.testid = "settings-panel";
 
@@ -22,11 +22,11 @@ export function createSettingsPanel(callbacks: SettingsPanelCallbacks): HTMLElem
   const updateEnabled = isUpdateCheckEnabled();
 
   panel.innerHTML = `
-    <header class="gp-settings-header">
+    <header class="af-settings-header">
       <h2>${t("settings.title")}</h2>
-      <button type="button" class="gp-settings-close" aria-label="${t("settings.close")}">×</button>
+      <button type="button" class="af-settings-close" aria-label="${t("settings.close")}">×</button>
     </header>
-    <label class="gp-settings-field">
+    <label class="af-settings-field">
       <span>${t("settings.theme.label")}</span>
       <select data-settings-theme>
         <option value="system">${t("settings.theme.mode.system")}</option>
@@ -34,7 +34,7 @@ export function createSettingsPanel(callbacks: SettingsPanelCallbacks): HTMLElem
         <option value="dark">${t("settings.theme.mode.dark")}</option>
       </select>
     </label>
-    <label class="gp-settings-field gp-settings-toggle">
+    <label class="af-settings-field gp-settings-toggle">
       <input type="checkbox" data-settings-update ${updateEnabled ? "checked" : ""} />
       <span>${t("settings.update_check.label")}</span>
     </label>
@@ -56,6 +56,6 @@ export function createSettingsPanel(callbacks: SettingsPanelCallbacks): HTMLElem
       callbacks.onUpdateCheckChange?.(checked);
     });
 
-  panel.querySelector(".gp-settings-close")?.addEventListener("click", callbacks.onClose);
+  panel.querySelector(".af-settings-close")?.addEventListener("click", callbacks.onClose);
   return panel;
 }

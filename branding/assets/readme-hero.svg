@@ -1,13 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" role="img" aria-label="Golden Path">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1a1a2e"/>
-      <stop offset="100%" stop-color="#12121f"/>
-    </linearGradient>
-  </defs>
-  <rect width="960" height="240" fill="url(#bg)"/>
-  <rect x="48" y="72" width="96" height="96" rx="20" fill="#2a2a42"/>
-  <path d="M72 144 L96 96 L120 144 Z" fill="#e94560"/>
-  <text x="176" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="#E6E6F0">Golden Path</text>
-  <text x="176" y="168" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#C4C4D4">FOSS apps with a clear path from idea to release</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" role="img" aria-label="AetherFeed">
+  <rect width="960" height="240" fill="#F7F6F2"/>
+  <rect x="48" y="56" width="128" height="128" rx="28" fill="#12161A"/>
+  <circle cx="112" cy="120" r="28" fill="none" stroke="#8FB4C7" stroke-width="6"/>
+  <path d="M84 132 C96 112, 128 112, 140 132" fill="none" stroke="#8FB4C7" stroke-width="6" stroke-linecap="round"/>
+  <text x="200" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="600" fill="#1A1F24">AetherFeed</text>
+  <text x="200" y="156" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#454A4F">Local-first encrypted news, podcasts, and media boards</text>
 </svg>

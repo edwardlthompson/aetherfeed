@@ -34,7 +34,7 @@ Strings are separate from styles. See [`docs/DESIGN_GUIDE.md`](../../docs/DESIGN
 | Layer | Path | API |
 |-------|------|-----|
 | Strings | `src/locales/en.json` | `t(key)` from `src/i18n/index.ts` |
-| Styles | `style.css`, `design-tokens.css` | `var(--gp-*)` only — no user copy |
+| Styles | `style.css`, `design-tokens.css` | `var(--af-*)` only — no user copy |
 | Theme | `theme.ts` | Preference only; labels from `t()` |
 | Brand | `branding/` → synced `public/icon.svg`, `favicon.svg` | See `branding/BRANDING.md` |
 Default locale: English only. Add `src/locales/{lang}.json` when shipping translations.
@@ -46,7 +46,7 @@ Default locale: English only. Add `src/locales/{lang}.json` when shipping transl
 - 🔲 Implement offline-first service worker
 - 🔲 Configure Lighthouse CI budgets (`.lighthouserc.json`) with `numberOfRuns: 3` and median assertion; keep `minScore: 0.9` for performance (do not lower budget for CI flake)
 - 🔲 Set up axe-core accessibility tests in Playwright
-- 🔲 Review `examples/web/` Golden Path stub
+- 🔲 Review `examples/web/` AetherFeed stub
 - 🔲 Add visual regression snapshots for key pages
 - 🔲 Enforce bundle size budgets in CI
 - 🔲 Keyboard-only navigation smoke test checklist
@@ -60,7 +60,7 @@ Default locale: English only. Add `src/locales/{lang}.json` when shipping transl
 - 🔲 Structured logging standard per `docs/RUNBOOK.md`
 
 - ✅ In-app About panel with PWA update checker and donation block
-## Golden Path Reference
+## AetherFeed Reference
 
 See `examples/web/` for Vite + TypeScript PWA with Vitest, Playwright, and Lighthouse CI.
 

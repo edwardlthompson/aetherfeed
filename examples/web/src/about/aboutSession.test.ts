@@ -46,7 +46,7 @@ describe("checkForUpdates", () => {
 
     await checkForUpdates();
 
-    expect(localStorage.getItem("gp-app-update-last-checked")).toBeNull();
+    expect(localStorage.getItem("af-app-update-last-checked")).toBeNull();
   });
 
   it("persists lastChecked after successful GitHub fetch", async () => {
@@ -71,7 +71,7 @@ describe("checkForUpdates", () => {
 
     await checkForUpdates();
 
-    expect(localStorage.getItem("gp-app-update-last-checked")).not.toBeNull();
+    expect(localStorage.getItem("af-app-update-last-checked")).not.toBeNull();
   });
 
   it("reports newer version when GitHub tag is ahead", async () => {
@@ -163,10 +163,10 @@ describe("handleRestartGuard", () => {
   });
 
   it("clears pending restart guard and reports handled", () => {
-    localStorage.setItem("gp-update-restart-pending", "true");
+    localStorage.setItem("af-update-restart-pending", "true");
 
     expect(handleRestartGuard()).toBe(true);
-    expect(localStorage.getItem("gp-update-restart-pending")).toBeNull();
+    expect(localStorage.getItem("af-update-restart-pending")).toBeNull();
   });
 
   it("returns false when no restart is pending", () => {

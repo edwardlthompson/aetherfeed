@@ -14,14 +14,13 @@
 ## Project Overview & Architecture
 
 <!-- bootstrap-project-card -->
-**Product:** agent-project-bootstrap
-**Purpose:** GitHub Template for FOSS coding-agent projects
+**Product:** AetherFeed
+**Purpose:** Local-first encrypted news, podcast, and booru client
 **Stack:** multi
 <!-- /bootstrap-project-card -->
+This repository is **AetherFeed**, a FOSS local-first client seeded from agent-project-bootstrap. Shared contract for agents is this file plus `BUILD_PLAN.md`. Edit `AGENTS.md`, then `bash scripts/bootstrap-lifecycle.sh --sync-adapters` if you change the project card.
 
-This repository is a **GitHub Template** for FOSS projects with coding agents (Cursor, Windsurf, Antigravity, Claude Code, Copilot, Gemini CLI, Aider, Cline). Child repos start from **Use this template**, then `scripts/init-project.sh` (or `.ps1`). Edit `AGENTS.md`, then `bash scripts/bootstrap-lifecycle.sh --sync-adapters`.
-
-- **Composition:** stack modules (`modules/{stack}/`) + Golden Path examples (`examples/{stack}/`) + agent routing
+- **Composition:** stack modules (`modules/{stack}/`) + AetherFeed examples (`examples/{stack}/`) + agent routing
 - **Lifecycle:** preflight → init (stack, branding, prune) → post hooks (adapters, checklist, manifest)
 - **Manifest:** `bootstrap.config.json` (schema in `bootstrap.config.json.example`)
 - **Product spec:** `docs/spec.md` · plan stub: `docs/plan.md` · feature slices: `docs/features/`
@@ -66,7 +65,8 @@ Stack tests: web `npm test`; python `uv run pytest`; Android `./gradlew test`. A
 - Max 300 lines per static data file (UI + i18n), 150 lines per pure logic file
 - Strict type safety and runtime validation at all data boundaries
 - Core business logic decoupled from layout framework (MVVM / Clean / Hexagonal)
-- Opt-in only telemetry; GDPR/CCPA compliant
+- No analytics, crash reporters, ads, or tracking libraries
+- Local-first: every feature must work with zero cloud account
 
 ## Code Style & Architectural Invariants
 

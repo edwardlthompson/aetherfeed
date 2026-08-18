@@ -10,12 +10,12 @@
 
 ## Activation Checklist
 
-- 🔲 Copy or keep `examples/rust/` Golden Path stub
+- 🔲 Copy or keep `examples/rust/` AetherFeed stub
 - 🔲 Set edition and MSRV in `Cargo.toml`
 - 🔲 Enable `cargo test` and clippy in CI
 - 🔲 Document MSRV in `AGENT_MEMORY.md`
 
-## Golden Path Reference
+## AetherFeed Reference
 
 See `examples/rust/` for a minimal `hello` binary (MIT).
 

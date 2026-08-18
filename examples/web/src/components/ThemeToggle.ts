@@ -20,7 +20,7 @@ function themeAriaLabel(mode: ThemeMode): string {
 export function createThemeToggle(): HTMLButtonElement {
   const button = document.createElement("button");
   button.type = "button";
-  button.className = "gp-theme-toggle";
+  button.className = "af-theme-toggle";
   button.setAttribute("aria-label", t("theme.toggle.label"));
 
   const sync = (): void => {

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "AetherFeed",
+  "version": "0.1.0",
+  "identifier": "org.aetherfeed.app",
+  "build": {
+    "frontendDist": "../../web/dist",
+    "devUrl": "http://127.0.0.1:5173",
+    "beforeDevCommand": "npm --prefix ../web run dev -- --host 127.0.0.1 --port 5173",
+    "beforeBuildCommand": "npm --prefix ../web run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "AetherFeed",
+        "width": 1100,
+        "height": 760,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' https: http://127.0.0.1:*; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'"
+    },
+    "trayIcon": {
+      "iconPath": "icons/icon.png",
+      "tooltip": "AetherFeed — 0 unread"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "icon": ["icons/icon.png"]
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "",
+      "endpoints": [
+        "https://github.com/edwardlthompson/aetherfeed/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}

@@ -1,4 +1,4 @@
-# Golden Path Rust
+# AetherFeed crypto
 
 Minimal `hello` binary stub for agent-project-bootstrap.
 

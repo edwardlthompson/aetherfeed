@@ -11,8 +11,8 @@ FORBIDDEN_PATHS = [
     "COMPLETED_TASKS.md",
     "examples/web/src/appBootstrap.ts",
     "examples/web/src/main.ts",
-    "examples/android/app/src/main/java/dev/foss/goldenpath/ui/GoldenPathApp.kt",
-    "examples/android/app/src/main/java/dev/foss/goldenpath/MainActivity.kt",
+    "examples/android/app/src/main/java/org/aetherfeed/app/ui/AetherFeedApp.kt",
+    "examples/android/app/src/main/java/org/aetherfeed/app/MainActivity.kt",
 ]
 
 SPRINT_HEADER = re.compile(r"^#{2,3}\s+Sprint\s+", re.I)

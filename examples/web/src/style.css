@@ -1,10 +1,10 @@
 @import "./design-tokens.css";
 
 :root {
-  font-family: var(--gp-font-sans);
-  line-height: var(--gp-text-body-large-line);
-  color: var(--gp-color-on-background);
-  background-color: var(--gp-color-background);
+  font-family: var(--af-font-sans);
+  line-height: var(--af-text-body-large-line);
+  color: var(--af-color-on-background);
+  background-color: var(--af-color-background);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -28,144 +28,144 @@ body {
 
 main {
   text-align: center;
-  padding-block: var(--gp-space-lg);
-  padding-inline: var(--gp-space-md);
+  padding-block: var(--af-space-lg);
+  padding-inline: var(--af-space-md);
   max-width: 32rem;
   width: 100%;
 }
 
-.gp-header {
+.af-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--gp-space-md);
-  margin-block-end: var(--gp-space-lg);
+  gap: var(--af-space-md);
+  margin-block-end: var(--af-space-lg);
   text-align: start;
 }
 
-.gp-title {
-  font-size: var(--gp-text-title-large-size);
-  font-weight: var(--gp-text-title-large-weight);
-  line-height: var(--gp-text-title-large-line);
+.af-title {
+  font-size: var(--af-text-title-large-size);
+  font-weight: var(--af-text-title-large-weight);
+  line-height: var(--af-text-title-large-line);
   margin: 0;
-  color: var(--gp-color-on-surface);
+  color: var(--af-color-on-surface);
 }
 
-.gp-theme-toggle {
+.af-theme-toggle {
   min-width: 2.75rem;
   min-height: 2.75rem;
-  padding: var(--gp-space-sm);
-  border-radius: var(--gp-radius-md);
-  border: 1px solid var(--gp-color-outline);
-  background: var(--gp-color-surface-variant);
-  color: var(--gp-color-on-surface-variant);
+  padding: var(--af-space-sm);
+  border-radius: var(--af-radius-md);
+  border: 1px solid var(--af-color-outline);
+  background: var(--af-color-surface-variant);
+  color: var(--af-color-on-surface-variant);
   cursor: pointer;
   font-size: 1.25rem;
   line-height: 1;
 }
 
-.gp-theme-toggle:hover {
-  background: var(--gp-color-primary-container);
-  color: var(--gp-color-on-primary-container);
+.af-theme-toggle:hover {
+  background: var(--af-color-primary-container);
+  color: var(--af-color-on-primary-container);
 }
 
-.gp-theme-toggle:focus-visible {
-  outline: 2px solid var(--gp-color-primary);
+.af-theme-toggle:focus-visible {
+  outline: 2px solid var(--af-color-primary);
   outline-offset: 2px;
 }
 
-.gp-headline {
-  font-size: var(--gp-text-headline-medium-size);
-  font-weight: var(--gp-text-headline-medium-weight);
-  line-height: var(--gp-text-headline-medium-line);
-  color: var(--gp-color-primary);
+.af-headline {
+  font-size: var(--af-text-headline-medium-size);
+  font-weight: var(--af-text-headline-medium-weight);
+  line-height: var(--af-text-headline-medium-line);
+  color: var(--af-color-primary);
   margin: 0;
 }
 
-.gp-body {
-  font-size: var(--gp-text-body-medium-size);
-  font-weight: var(--gp-text-body-medium-weight);
-  line-height: var(--gp-text-body-medium-line);
-  color: var(--gp-color-on-surface-variant);
-  margin-block-start: var(--gp-space-lg);
+.af-body {
+  font-size: var(--af-text-body-medium-size);
+  font-weight: var(--af-text-body-medium-weight);
+  line-height: var(--af-text-body-medium-line);
+  color: var(--af-color-on-surface-variant);
+  margin-block-start: var(--af-space-lg);
   opacity: 0.9;
 }
 
-.gp-update-banner {
-  font-size: var(--gp-text-body-small-size);
-  font-weight: var(--gp-text-body-small-weight);
-  line-height: var(--gp-text-body-small-line);
-  color: var(--gp-color-tertiary);
-  margin-block-start: var(--gp-space-md);
+.af-update-banner {
+  font-size: var(--af-text-body-small-size);
+  font-weight: var(--af-text-body-small-weight);
+  line-height: var(--af-text-body-small-line);
+  color: var(--af-color-tertiary);
+  margin-block-start: var(--af-space-md);
 }
 
 
-.gp-about-btn {
+.af-about-btn {
   min-width: 2.75rem;
   min-height: 2.75rem;
-  padding: var(--gp-space-sm);
-  border-radius: var(--gp-radius-md);
-  border: 1px solid var(--gp-color-outline);
-  background: var(--gp-color-surface-variant);
-  color: var(--gp-color-on-surface-variant);
+  padding: var(--af-space-sm);
+  border-radius: var(--af-radius-md);
+  border: 1px solid var(--af-color-outline);
+  background: var(--af-color-surface-variant);
+  color: var(--af-color-on-surface-variant);
   cursor: pointer;
 }
 
-.gp-about-panel {
-  margin-block-start: var(--gp-space-lg);
-  padding: var(--gp-space-md);
-  border: 1px solid var(--gp-color-outline);
-  border-radius: var(--gp-radius-md);
+.af-about-panel {
+  margin-block-start: var(--af-space-lg);
+  padding: var(--af-space-md);
+  border: 1px solid var(--af-color-outline);
+  border-radius: var(--af-radius-md);
   text-align: start;
 }
 
-.gp-about-header {
+.af-about-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.gp-about-interval select {
-  margin-inline-start: var(--gp-space-sm);
+.af-about-interval select {
+  margin-inline-start: var(--af-space-sm);
 }
 
-.gp-about-donate-links {
-  padding-inline-start: var(--gp-space-lg);
+.af-about-donate-links {
+  padding-inline-start: var(--af-space-lg);
 }
 
-.gp-settings-btn {
+.af-settings-btn {
   min-width: 2.75rem;
   min-height: 2.75rem;
-  padding: var(--gp-space-sm);
-  border-radius: var(--gp-radius-md);
-  border: 1px solid var(--gp-color-outline);
-  background: var(--gp-color-surface-variant);
-  color: var(--gp-color-on-surface-variant);
+  padding: var(--af-space-sm);
+  border-radius: var(--af-radius-md);
+  border: 1px solid var(--af-color-outline);
+  background: var(--af-color-surface-variant);
+  color: var(--af-color-on-surface-variant);
   cursor: pointer;
 }
 
-.gp-settings-panel {
-  margin-block-start: var(--gp-space-lg);
-  padding: var(--gp-space-md);
-  border: 1px solid var(--gp-color-outline);
-  border-radius: var(--gp-radius-md);
+.af-settings-panel {
+  margin-block-start: var(--af-space-lg);
+  padding: var(--af-space-md);
+  border: 1px solid var(--af-color-outline);
+  border-radius: var(--af-radius-md);
   text-align: start;
 }
 
-.gp-settings-header {
+.af-settings-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.gp-settings-field select {
-  margin-inline-start: var(--gp-space-sm);
+.af-settings-field select {
+  margin-inline-start: var(--af-space-sm);
 }
 
-.gp-settings-toggle {
+.af-settings-toggle {
   display: flex;
   align-items: center;
-  gap: var(--gp-space-sm);
+  gap: var(--af-space-sm);
 }
 
-.gp-header-actions { display: flex; align-items: center; gap: var(--gp-space-sm); }
+.af-header-actions { display: flex; align-items: center; gap: var(--af-space-sm); }

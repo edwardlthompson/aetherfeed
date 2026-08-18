@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "project_name": "agent-project-bootstrap",
-  "purpose": "GitHub Template for FOSS coding-agent projects",
+  "project_name": "AetherFeed",
+  "purpose": "Local-first encrypted news, podcast, and booru client",
   "stack": "multi",
   "license": "MIT",
   "distribution_tier": "foss",

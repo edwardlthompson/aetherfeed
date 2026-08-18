@@ -9,7 +9,7 @@ cd "$ROOT"
 ADB="${ADB:-adb}"
 ANDROID="$ROOT/examples/android"
 SCREENCAP=false
-TEST_CLASS="dev.foss.goldenpath.NavBarInsetUiTest"
+TEST_CLASS="org.aetherfeed.app.NavBarInsetUiTest"
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -54,7 +54,7 @@ run_insets_test() {
   (cd "$ANDROID" && chmod +x gradlew && ./gradlew connectedDebugAndroidTest \
     -Pandroid.testInstrumentationRunnerArguments.class="$TEST_CLASS" --no-daemon)
   if [ "$SCREENCAP" = true ]; then
-    local out="/tmp/goldenpath-insets-${label}.png"
+    local out="/tmp/aetherfeed-insets-${label}.png"
     "$ADB" exec-out screencap -p > "$out"
     echo "OK   screencap: $out"
   fi

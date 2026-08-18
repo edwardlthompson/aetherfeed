@@ -22,6 +22,11 @@ export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
   },
+  resolve: {
+    alias: {
+      "@aetherfeed/domain": path.resolve(__dirname, "../../shared/typescript"),
+    },
+  },
   plugins: [stampServiceWorkerCache(pkg.version)],
   base: process.env.VITE_BASE_PATH || "/",
   build: {

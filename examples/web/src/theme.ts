@@ -2,7 +2,7 @@ import themeMeta from "./theme-meta.json";
 
 export type ThemeMode = "system" | "light" | "dark";
 
-const STORAGE_KEY = "gp-theme";
+const STORAGE_KEY = "af-theme";
 
 let currentMode: ThemeMode = "system";
 let mediaQuery: MediaQueryList | null = null;

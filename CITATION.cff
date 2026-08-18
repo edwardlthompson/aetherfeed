@@ -1,20 +1,22 @@
 cff-version: 1.2.0
-title: agent-project-bootstrap
-message: If you use this template, please cite it using these metadata.
+title: AetherFeed
+message: If you use this software, please cite it using these metadata.
 type: software
 authors:
   - name: Edward L. Thompson
-repository-code: https://github.com/edwardlthompson/agent-project-bootstrap
-url: https://github.com/edwardlthompson/agent-project-bootstrap
+repository-code: https://github.com/edwardlthompson/aetherfeed
+url: https://aetherfeed.org
 abstract: >-
-  GitHub Template for FOSS projects with coding-agent scaffolding, CI
-  guardrails, and Golden Path examples.
+  Local-first encrypted news, podcast, and booru client for Android
+  and Windows. Optional zero-knowledge sync uploads only opaque blobs.
 keywords:
   - foss
-  - github-template
-  - agents
-  - cursor
-  - bootstrap
+  - rss
+  - podcasts
+  - privacy
+  - local-first
+  - android
+  - tauri
 license: MIT
 version: 0.21.0
-date-released: 2026-08-17T00:00:00.000Z
+date-released: 2026-08-18T00:00:00.000Z

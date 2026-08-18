@@ -116,7 +116,7 @@ Override gate worker count with `BOOTSTRAP_CHECK_JOBS` (see `scripts/lib/run_che
 | Agent | Scope |
 |-------|-------|
 | A — Web settings | `examples/web/src/components/SettingsPanel.ts`, `examples/web/src/locales/**`, `examples/web/src/style.css`, `examples/web/e2e/**` |
-| B — Android settings/About | `examples/android/app/src/main/java/dev/foss/goldenpath/ui/**`, `examples/android/app/src/main/res/**`, `examples/android/app/src/main/assets/**` |
+| B — Android settings/About | `examples/android/app/src/main/java/org/aetherfeed/app/ui/**`, `examples/android/app/src/main/res/**`, `examples/android/app/src/main/assets/**` |
 | C — Init + gates | `scripts/init-project.sh`, `scripts/init-project.ps1`, `scripts/init-stack-sync.py`, `scripts/setup-github-repo.sh`, `scripts/check-security-triage.sh`, `scripts/pre-release-gate.sh`, `scripts/run-maintainer-gates.sh` |
 | D — Docs | `docs/**`, `modules/**`, `SECURITY.md` |
 **Sequential-only (no Parallel):** `BUILD_PLAN.md`, `examples/web/src/AppShell.ts`, `examples/web/src/main.ts`, `MainActivity.kt`, `.github/workflows/release.yml`

@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="../../branding/assets/logo-mark.svg" alt="Golden Path" width="64" />
+  <img src="../../branding/assets/logo-mark.svg" alt="AetherFeed" width="64" />
 </p>
 
-# Golden Path Web (PWA)
+# AetherFeed web / desktop UI
 
 FOSS apps with a clear path from idea to release — Vite + TypeScript PWA stub (offline service worker, Vitest, Playwright, Lighthouse CI). Brand kit: [`branding/BRANDING.md`](../../branding/BRANDING.md).
 

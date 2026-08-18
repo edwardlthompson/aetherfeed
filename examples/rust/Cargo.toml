@@ -1,13 +1,22 @@
 [package]
-name = "hello"
+name = "aetherfeed-crypto"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "Golden Path Rust hello stub for agent-project-bootstrap"
+description = "AetherFeed Argon2id + authenticated-encryption helpers"
+
+[lib]
+name = "aetherfeed_crypto"
+path = "src/lib.rs"
 
 [[bin]]
-name = "hello"
+name = "aetherfeed-crypto"
 path = "src/main.rs"
+
+[dependencies]
+argon2 = "0.5"
+chacha20poly1305 = "0.10"
+rand = "0.8"
 
 [profile.release]
 lto = true

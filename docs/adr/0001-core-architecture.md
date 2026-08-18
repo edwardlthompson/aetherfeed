@@ -1,53 +1,37 @@
-# ADR-0001: Core Application Architecture (Child Repo)
+# ADR-0001: Core Application Architecture
 
-- **Status:** Proposed (fill during Sprint 1)
-- **Date:** YYYY-MM-DD
-- **Deciders:** Project team
-
-> Template for child repositories. Template-repo baseline ADR is `docs/adr/0000-template-baseline.md`.
+- **Status:** Accepted
+- **Date:** 2026-08-18
+- **Deciders:** AetherFeed seed; HUMAN approved 2026-08-18 (requested automation)
 
 ## Context
 
-Choose a primary architecture pattern for the application layer. Document the choice before Golden Path implementation.
+AetherFeed ships on Android (Kotlin/Compose) and Windows (Tauri 2 + web UI).
+Unread, stars, tags, and playback position must stay consistent across those
+surfaces and across optional E2E sync.
 
 ## Decision
 
-**Selected pattern:** 🔲 MVVM  🔲 Clean Architecture  🔲 Hexagonal (Ports & Adapters)
+**Selected pattern:** Clean Architecture with MVI on Android.
 
-### MVVM
+- **Entities:** `Feed`, `Article`, `PodcastShow`, `Episode`, `BooruPost`, `Tag`, `Star`, `Like`, `ReadState`, `PlaybackPosition`, `NotificationChannelPref`, `SyncEnvelope`
+- **Use cases / repositories:** shared unread/star/tag/sync primitives
+- **Adapters:** RSS, podcast enclosure, booru source, SQLCipher vault, `SyncProvider`
+- **Frameworks:** Compose, Tauri, Room/SQLCipher, Ktor/Media3
 
-- **View:** UI components (web components, Android Jetpack Compose, CLI output)
-- **ViewModel:** Presentation state, user actions, no platform SDK calls
-- **Model:** Domain + data services
-
-**When:** UI-heavy apps with clear screen-level state.
-
-### Clean Architecture
-
-- **Entities:** Enterprise business rules
-- **Use cases:** Application-specific rules
-- **Interface adapters:** Controllers, presenters, gateways
-- **Frameworks:** DB, web framework, device APIs
-
-**When:** Long-lived products with multiple delivery surfaces.
-
-### Hexagonal
-
-- **Ports:** Interfaces the app exposes or requires
-- **Adapters:** HTTP, DB, CLI, Android Activities wired to ports
-- **Domain core:** No inward dependencies
-
-**When:** Strong testability and swappable infrastructure matter most.
+TypeScript models in `shared/typescript/` are the cross-language contract.
+Android mirrors them in Kotlin. Desktop consumes the TypeScript module.
 
 ## Consequences
 
-- Golden Path feature must respect layer boundaries chosen above
-- CI coverage and lint gates apply per `examples/{stack}/` conventions
-- Changing this ADR later requires a new ADR and BUILD_PLAN `[HUMAN]` approval
+- Schema changes are Sequential-only
+- Local-first: every feature must work with the `local-only` provider
+- Hilt and Room production wiring follow the locked types
 
 ## Alternatives Considered
 
 | Pattern | Rejected because |
 |---------|------------------|
-| Monolith MVC | TBD |
-| No structure | TBD |
+| MVVM only | Cross-platform sync needs a domain core, not screen state |
+| Hexagonal-only naming | Clean + MVI matches the Android stack already chosen |
+| Kotlin Multiplatform shared runtime | Conflicts with the Tauri desktop choice |

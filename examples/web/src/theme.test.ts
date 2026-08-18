@@ -21,7 +21,7 @@ describe("theme", () => {
   });
 
   it("initializes from storage", () => {
-    localStorage.setItem("gp-theme", "light");
+    localStorage.setItem("af-theme", "light");
     initTheme();
     expect(getThemeMode()).toBe("light");
     expect(document.documentElement.dataset.theme).toBe("light");

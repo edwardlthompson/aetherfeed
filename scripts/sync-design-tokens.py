@@ -66,18 +66,18 @@ def generate_css(tokens: dict, digest: str) -> str:
         lines = []
         for key, value in colors.items():
             css_key = key.replace("on", "on-").replace("Variant", "-variant")
-            css_key = "--gp-color-" + _kebab(key)
+            css_key = "--af-color-" + _kebab(key)
             lines.append(f"  {css_key}: {value[mode]};")
         for key, value in spacing.items():
-            lines.append(f"  --gp-space-{key}: {value}px;")
+            lines.append(f"  --af-space-{key}: {value}px;")
         for key, value in radius.items():
-            lines.append(f"  --gp-radius-{key}: {value}px;")
-        lines.append(f"  --gp-font-sans: {typo['fontFamily']['sans']};")
+            lines.append(f"  --af-radius-{key}: {value}px;")
+        lines.append(f"  --af-font-sans: {typo['fontFamily']['sans']};")
         for scale_key, scale in typo["scale"].items():
             kebab = _kebab(scale_key)
-            lines.append(f"  --gp-text-{kebab}-size: {scale['sizeRem']}rem;")
-            lines.append(f"  --gp-text-{kebab}-line: {scale['lineHeight']};")
-            lines.append(f"  --gp-text-{kebab}-weight: {scale['weight']};")
+            lines.append(f"  --af-text-{kebab}-size: {scale['sizeRem']}rem;")
+            lines.append(f"  --af-text-{kebab}-line: {scale['lineHeight']};")
+            lines.append(f"  --af-text-{kebab}-weight: {scale['weight']};")
         return lines
 
     light_lines = vars_block("light")
@@ -145,7 +145,7 @@ def generate_color_kt(tokens: dict, digest: str) -> str:
     lines = [
         f"// {HEADER}",
         f"// source-hash: {digest}",
-        "package dev.foss.goldenpath.ui.theme",
+        "package org.aetherfeed.app.ui.theme",
         "",
         "import androidx.compose.material3.darkColorScheme",
         "import androidx.compose.material3.lightColorScheme",
@@ -156,16 +156,16 @@ def generate_color_kt(tokens: dict, digest: str) -> str:
     for key in colors:
         role = color_role_name(key)
         cap = role[0].upper() + role[1:]
-        lines.append(hex_to_compose(f"GpLight{cap}", colors[key]["light"], private=True))
-        lines.append(hex_to_compose(f"GpDark{cap}", colors[key]["dark"], private=True))
+        lines.append(hex_to_compose(f"AfLight{cap}", colors[key]["light"], private=True))
+        lines.append(hex_to_compose(f"AfDark{cap}", colors[key]["dark"], private=True))
     lines.extend([
         "",
-        "val LightGoldenPathColors = lightColorScheme(",
-        *[f"    {color_role_name(k)} = GpLight{color_role_name(k)[0].upper()}{color_role_name(k)[1:]}," for k in colors],
+        "val LightAetherFeedColors = lightColorScheme(",
+        *[f"    {color_role_name(k)} = AfLight{color_role_name(k)[0].upper()}{color_role_name(k)[1:]}," for k in colors],
         ")",
         "",
-        "val DarkGoldenPathColors = darkColorScheme(",
-        *[f"    {color_role_name(k)} = GpDark{color_role_name(k)[0].upper()}{color_role_name(k)[1:]}," for k in colors],
+        "val DarkAetherFeedColors = darkColorScheme(",
+        *[f"    {color_role_name(k)} = AfDark{color_role_name(k)[0].upper()}{color_role_name(k)[1:]}," for k in colors],
         ")",
         "",
     ])
@@ -186,14 +186,14 @@ def generate_type_kt(tokens: dict, digest: str) -> str:
     return "\n".join([
         f"// {HEADER}",
         f"// source-hash: {digest}",
-        "package dev.foss.goldenpath.ui.theme",
+        "package org.aetherfeed.app.ui.theme",
         "",
         "import androidx.compose.material3.Typography",
         "import androidx.compose.ui.text.TextStyle",
         "import androidx.compose.ui.text.font.FontWeight",
         "import androidx.compose.ui.unit.sp",
         "",
-        "val GoldenPathTypography = Typography(",
+        "val AetherFeedTypography = Typography(",
         *entries,
         ")",
         "",
@@ -207,7 +207,7 @@ def generate_dimens_kt(tokens: dict, digest: str) -> str:
     lines = [
         f"// {HEADER}",
         f"// source-hash: {digest}",
-        "package dev.foss.goldenpath.ui.theme",
+        "package org.aetherfeed.app.ui.theme",
         "",
         "import androidx.compose.ui.unit.dp",
         "",
@@ -249,7 +249,7 @@ def generate_official_colors_css(tokens: dict, digest: str) -> str:
     lines = [
         f"/* {HEADER} */",
         f"/* source-hash: {digest} */",
-        "/* Official brand colors — prefer --gp-* in app UI; use --brand-* in docs/marketing */",
+        "/* Official brand colors — prefer --af-* in app UI; use --brand-* in docs/marketing */",
         "",
         ":root {",
         f"  --brand-name: \"{meta['name']}\";",
@@ -461,9 +461,9 @@ def write_outputs(root: Path) -> None:
             / "src"
             / "main"
             / "java"
-            / "dev"
-            / "foss"
-            / "goldenpath"
+            / "org"
+            / "aetherfeed"
+            / "app"
             / "ui"
             / "theme"
         )

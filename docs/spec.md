@@ -1,43 +1,47 @@
 # Product Specification
 
-> Spec-driven development stub. Fill after `init-project`. Feature slices still use `docs/features/{name}.md`.
 > Status markers: 🔲 open · ✅ done · ❌ blocked.
 
 ## Overview
 
-**Product:** agent-project-bootstrap  
-**Purpose:** GitHub Template Repository that bootstraps FOSS projects with Cursor-ready agent routing, CI, and Golden Path examples.  
-**Users:** Humans and AI agents initializing or maintaining a child repo.
+**Product:** AetherFeed  
+**Purpose:** Local-first encrypted client for news (RSS/Atom/JSON), podcasts, and public media boards.  
+**Users:** People who want a Google Reader-style workflow without giving a host plaintext state.
 
 ## Functional Requirements & User Stories
 
 | ID | Story | Acceptance |
 |----|-------|------------|
-| FR-1 | As a maintainer I run `scripts/init-project.sh` so the child repo is customized | Manifest, adapters, and checklist exist; unused stacks prune when asked |
-| FR-2 | As an agent I read `AGENTS.md` first so I follow architecture and test-first rules | Adapters for Cursor, Claude Code, and Copilot stay in sync |
-| FR-3 | As a reviewer I get CI + security on every PR without opting in | `ci.yml`, `security.yml`, Dependabot, issue/PR templates present |
+| FR-1 | As a reader I subscribe to feeds and read them offline | Articles and images live in the vault |
+| FR-2 | As a listener I play podcasts with a queue and position | Position survives process death |
+| FR-3 | As a browser I search public boards by tag | Favorites and blacklists stay local |
+| FR-4 | As a multi-device user I optionally sync ciphertext | Provider never sees plaintext |
+| FR-5 | As a privacy-first user I never create an account | First-run vault works immediately |
 
 ## Non-Functional Constraints
 
-- MIT default (Apache-2.0 selectable at init for child repos)
-- No proprietary SDKs on the FOSS production path
-- Opt-in telemetry only; never enabled by default
+- MIT license; no AGPL vendored without a HUMAN decision
+- No analytics, crash reporters, ads, or tracking
 - File budgets: 300 lines static data, 150 lines pure logic
-- Preflight fails clearly when `git` or Python is missing
+- FOSS Android: no Play Services / Firebase
+- Drive scope limited to `drive.appdata`
 
 ## Architecture & Data Flow
 
 ```mermaid
 flowchart LR
-  Template[GitHub Template] --> Clone[Child clone]
-  Clone --> Pre[Preflight hooks]
-  Pre --> Init[init-project]
-  Init --> Post[Post hooks]
-  Post --> Agents[AGENTS.md adapters]
-  Post --> Check[PROJECT_CHECKLIST.md]
-  Post --> Manifest[bootstrap.config.json]
+  User --> Android[Android Compose]
+  User --> Desktop[Windows Tauri]
+  Android --> Domain[Shared models]
+  Desktop --> Domain
+  Domain --> Vault[SQLCipher vault]
+  Domain --> Sync[SyncProvider]
+  Sync --> Drive[Drive AppData]
+  Sync --> Dav[WebDAV]
+  Sync --> Local[Local only]
 ```
 
 ## Test-first rule
 
-Every feature in `docs/plan.md` / BUILD_PLAN must list tests, or state why automation is not feasible and name the fallback command.
+Every feature in `docs/plan.md` / BUILD_PLAN must list tests, or state why
+automation is not feasible and name the fallback command.

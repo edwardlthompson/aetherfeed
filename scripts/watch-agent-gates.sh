@@ -63,8 +63,8 @@ if stack in ("python", "multi"):
     paths += [f"examples/python/src/{feature}"]
 if stack in ("android", "multi"):
     paths += [
-        f"examples/android/app/src/main/java/dev/foss/goldenpath/{feature}",
-        f"examples/android/app/src/main/java/dev/foss/goldenpath/ui/{feature}",
+        f"examples/android/app/src/main/java/org/aetherfeed/app/{feature}",
+        f"examples/android/app/src/main/java/org/aetherfeed/app/ui/{feature}",
     ]
 if stack in ("node", "multi"):
     paths += [f"examples/node/src/{feature}"]

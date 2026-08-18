@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="../../branding/assets/logo-mark.svg" alt="Golden Path" width="64" />
+  <img src="../../branding/assets/logo-mark.svg" alt="AetherFeed" width="64" />
 </p>
 
-# Golden Path Android (FOSS)
+# AetherFeed (FOSS)
 
 FOSS apps with a clear path from idea to release — FOSS-only Gradle/Kotlin skeleton (no Google Play Services or Firebase). Brand kit: [`branding/BRANDING.md`](../../branding/BRANDING.md).
 
@@ -14,9 +14,9 @@ examples/android/
     res/values/strings.xml       # user-visible strings (English default)
     res/values-{lang}/           # add when shipping translations
     java/.../ui/
-      theme/                     # GoldenPathTheme, generated Color.kt / Type.kt / Dimens.kt
+      theme/                     # AetherFeedTheme, generated Color.kt / Type.kt / Dimens.kt
       components/                # ThemeToggle, etc. — labels via stringResource()
-      screens/                   # GoldenPathScreen, etc.
+      screens/                   # AetherFeedScreen, etc.
 
 ```
 
@@ -28,7 +28,7 @@ Optional task runner (not required for CI): install [just](https://github.com/ca
 
 ## Why these tools?
 
-Gradle + Kotlin + Compose is the FOSS-friendly Android stack. We pin the wrapper hash and `SOURCE_DATE_EPOCH` so F-Droid-style reproducible builds are possible, and we ban Play Services so the Golden Path stays redistributable.
+Gradle + Kotlin + Compose is the FOSS-friendly Android stack. We pin the wrapper hash and `SOURCE_DATE_EPOCH` so F-Droid-style reproducible builds are possible, and we ban Play Services so the AetherFeed stays redistributable.
 
 ## Structure validation (CI)
 

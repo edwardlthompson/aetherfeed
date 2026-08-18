@@ -1,7 +1,7 @@
 # Project Checklist
 
 > Generated after `scripts/init-project`. Status: 🔲 open · ✅ done · ❌ blocked.
-> Project: **agent-project-bootstrap** · Stack: `multi` · License: `MIT`
+> Project: **AetherFeed** · Stack: `multi` · License: `MIT`
 
 ## Setup
 

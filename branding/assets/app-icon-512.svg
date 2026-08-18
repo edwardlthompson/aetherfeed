@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Golden Path app icon">
-  <rect width="512" height="512" rx="96" fill="#1a1a2e"/>
-  <path d="M128 320 L256 128 L384 320 Z" fill="#e94560"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AetherFeed app icon">
+  <rect width="512" height="512" rx="112" fill="#12161A"/>
+  <circle cx="256" cy="256" r="112" fill="none" stroke="#8FB4C7" stroke-width="24"/>
+  <path d="M144 288 C192 224, 320 224, 368 288" fill="none" stroke="#8FB4C7" stroke-width="24" stroke-linecap="round"/>
 </svg>

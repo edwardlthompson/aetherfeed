@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Golden Path">
-  <rect width="32" height="32" rx="6" fill="#1a1a2e"/>
-  <path d="M8 20 L16 8 L24 20 Z" fill="#e94560"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="AetherFeed">
+  <rect width="32" height="32" rx="8" fill="#12161A"/>
+  <circle cx="16" cy="16" r="7" fill="none" stroke="#8FB4C7" stroke-width="2"/>
+  <path d="M9 18 C12 14, 20 14, 23 18" fill="none" stroke="#8FB4C7" stroke-width="2" stroke-linecap="round"/>
 </svg>

@@ -6,7 +6,7 @@ export function bindPanelDialog(panel: HTMLElement, onClose: () => void): () => 
 
   const title = panel.querySelector("h2");
   if (title && !title.id) {
-    title.id = `gp-panel-title-${Math.random().toString(36).slice(2, 9)}`;
+    title.id = `af-panel-title-${Math.random().toString(36).slice(2, 9)}`;
     panel.setAttribute("aria-labelledby", title.id);
   }
 

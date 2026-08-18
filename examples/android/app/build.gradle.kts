@@ -10,11 +10,11 @@ kotlin {
 }
 
 android {
-    namespace = "dev.foss.goldenpath"
+    namespace = "org.aetherfeed.app"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "dev.foss.goldenpath"
+        applicationId = "org.aetherfeed.app"
         minSdk = 26
         targetSdk = 37
         versionCode = 1

@@ -10,8 +10,8 @@ import {
 } from "./updateChecker";
 
 export const APP_VERSION = __APP_VERSION__;
-const INTERVAL_KEY = "gp-app-update-interval";
-const LAST_CHECKED_KEY = "gp-app-update-last-checked";
+const INTERVAL_KEY = "af-app-update-interval";
+const LAST_CHECKED_KEY = "af-app-update-last-checked";
 
 export function getInterval(): CheckInterval {
   const stored = localStorage.getItem(INTERVAL_KEY) as CheckInterval | null;

@@ -35,25 +35,25 @@ export function createAppShell(
 
   root.innerHTML = `
     <main>
-      <div class="gp-header">
-        <h1 class="gp-title">${t("app.title")}</h1>
-        <div class="gp-header-actions">
-          <button type="button" class="gp-settings-btn" data-settings-open aria-label="${t("settings.open")}">⚙</button>
-          <button type="button" class="gp-about-btn" data-about-open aria-label="${t("about.open")}">i</button>
+      <div class="af-header">
+        <h1 class="af-title">${t("app.title")}</h1>
+        <div class="af-header-actions">
+          <button type="button" class="af-settings-btn" data-settings-open aria-label="${t("settings.open")}">⚙</button>
+          <button type="button" class="af-about-btn" data-about-open aria-label="${t("about.open")}">i</button>
         </div>
       </div>
-      <p class="gp-headline">${t("app.greeting")}</p>
-      <p class="gp-body" data-testid="status">${t(statusKey)}</p>
+      <p class="af-headline">${t("app.greeting")}</p>
+      <p class="af-body" data-testid="status">${t(statusKey)}</p>
       ${
         showHomeUpdate
-          ? `<p class="gp-update-banner" data-testid="home-update-status" aria-live="polite">${state.updateStatus}</p>`
+          ? `<p class="af-update-banner" data-testid="home-update-status" aria-live="polite">${state.updateStatus}</p>`
           : ""
       }
       <div data-panel-mount></div>
     </main>
   `;
 
-  const actions = root.querySelector<HTMLDivElement>(".gp-header-actions");
+  const actions = root.querySelector<HTMLDivElement>(".af-header-actions");
   if (actions) {
     actions.insertBefore(createThemeToggle(), actions.firstChild);
   }

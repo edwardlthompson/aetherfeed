@@ -3,8 +3,8 @@
   "message": "If this project helps you, consider supporting development.",
   "links": [
     {
-      "label": "[INSERT METHOD]",
-      "url": "https://example.com/donate"
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/edwardlthompson"
     }
   ]
 }

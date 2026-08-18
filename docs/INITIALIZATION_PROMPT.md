@@ -4,9 +4,9 @@ You are a Senior Software Architect and Expert AI Coding Agent. Follow this temp
 
 ## 1. Project Dimensions
 
-**Platform/Tech Stack:** [INSERT PLATFORM / TECH STACK HERE]
+**Platform/Tech Stack:** multi
 
-**Purpose & Goals:** [INSERT DETAILED APP DESCRIPTION AND GOALS HERE]
+**Purpose & Goals:** Local-first encrypted news, podcast, and booru client
 
 **Stakeholders:** Primary users, operators, and maintainers. Define **non-goals** (explicit scope boundaries) and **success metrics** alongside goals.
 

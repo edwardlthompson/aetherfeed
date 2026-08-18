@@ -1,11 +1,11 @@
 {
-  "name": "Golden Path PWA",
-  "short_name": "GoldenPath",
-  "description": "FOSS PWA stub for agent-project-bootstrap",
+  "name": "AetherFeed",
+  "short_name": "AetherFeed",
+  "description": "Local-first encrypted news, podcast, and booru client",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1a1a2e",
-  "theme_color": "#1a1a2e",
+  "background_color": "#1A1F24",
+  "theme_color": "#12161A",
   "icons": [
     {
       "src": "/icon.svg",

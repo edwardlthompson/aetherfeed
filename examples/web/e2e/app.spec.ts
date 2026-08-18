@@ -3,9 +3,9 @@ import { expect, test } from "@playwright/test";
 
 test("renders golden path heading", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Golden Path PWA" })).toBeVisible();
-  await expect(page.getByText("Hello, FOSS!")).toBeVisible();
-  await expect(page.getByTestId("status")).toContainText("Golden Path PWA");
+  await expect(page.getByRole("heading", { name: "AetherFeed" })).toBeVisible();
+  await expect(page.getByText("Read locally. Sync only ciphertext.")).toBeVisible();
+  await expect(page.getByTestId("status")).toContainText("AetherFeed");
 });
 
 test("passes accessibility audit", async ({ page }) => {
@@ -153,10 +153,10 @@ test.describe("PWA apply update", () => {
 
   test("clears restart guard on load", async ({ page }) => {
     await page.addInitScript(() => {
-      localStorage.setItem("gp-update-restart-pending", "true");
+      localStorage.setItem("af-update-restart-pending", "true");
     });
     await page.goto("/");
-    const pending = await page.evaluate(() => localStorage.getItem("gp-update-restart-pending"));
+    const pending = await page.evaluate(() => localStorage.getItem("af-update-restart-pending"));
     expect(pending).toBeNull();
   });
 });
@@ -206,12 +206,12 @@ test("serves cached shell offline via service worker", async ({ page, context })
   });
   await page.reload();
   await page.waitForLoadState("networkidle");
-  await expect(page.getByRole("heading", { name: "Golden Path PWA" })).toBeVisible();
-  await expect(page.getByText("Hello, FOSS!")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "AetherFeed" })).toBeVisible();
+  await expect(page.getByText("Read locally. Sync only ciphertext.")).toBeVisible();
 
   await context.setOffline(true);
   await page.reload();
-  await expect(page.getByRole("heading", { name: "Golden Path PWA" })).toBeVisible();
-  await expect(page.getByText("Hello, FOSS!")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "AetherFeed" })).toBeVisible();
+  await expect(page.getByText("Read locally. Sync only ciphertext.")).toBeVisible();
   await expect(page.getByTestId("status")).toBeVisible();
 });

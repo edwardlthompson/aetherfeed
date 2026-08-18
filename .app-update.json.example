@@ -1,9 +1,9 @@
 {
-  "release_repo": "OWNER/REPO",
+  "release_repo": "edwardlthompson/aetherfeed",
   "manifest_url": null,
   "check_interval": "weekly",
   "last_checked": null,
   "installed_artifact_format": null,
   "notify_method": "about_screen",
-  "restart_guard_key": "gp-update-restart-pending"
+  "restart_guard_key": "af-update-restart-pending"
 }

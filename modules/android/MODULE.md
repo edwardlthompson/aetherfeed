@@ -12,7 +12,7 @@
 - 🔲 Confirm no proprietary SDKs in `build.gradle.kts` / `build.gradle` dependencies
 - 🔲 Set SOURCE_DATE_EPOCH in build scripts and CI
 - 🔲 Pin Gradle wrapper (`gradlew`, `gradle-wrapper.jar`, `gradle-wrapper.properties`) and dependency versions
-- 🔲 Review `examples/android/` Golden Path stub
+- 🔲 Review `examples/android/` AetherFeed stub
 - 🔲 Add [ADB] tasks to BUILD_PLAN for device/emulator verification
 - 🔲 Document F-Droid metadata path (Fastlane or manual) — validate with `bash scripts/verify-fdroid-metadata.sh`
 
@@ -28,11 +28,11 @@
 ## Design system
 
 - 🔲 Read docs/DESIGN_GUIDE.md before UI work
-- 🔲 Use Jetpack Compose Material 3 via GoldenPathTheme (see examples/android/)
+- 🔲 Use Jetpack Compose Material 3 via AetherFeedTheme (see examples/android/)
 - 🔲 Edit tokens in design-tokens/design-tokens.json; run scripts/sync-design-tokens.py
 - 🔲 Branding: `branding/assets/` + generated `res/drawable/ic_brand_mark.xml` (store PNGs still `[ADB]`/`[HUMAN]`)
 - 🔲 Theme toggle: system / light / dark (DataStore persistence)
-- 🔲 Edge-to-edge: `GoldenPathScaffold`, `bottomInsetPadding()`, inset-aware `SnackbarHost`
+- 🔲 Edge-to-edge: `AetherFeedScaffold`, `bottomInsetPadding()`, inset-aware `SnackbarHost`
 - 🔲 FOSS only: androidx.compose.* and androidx.datastore (no Play Services / Firebase)
 
 ## Localization
@@ -49,7 +49,7 @@ Default locale: English only (`res/values/strings.xml`). Add `res/values-{lang}/
 Shared key naming with web: `app.title`, `theme.toggle.label`, `theme.mode.*` — see [`docs/DESIGN_GUIDE.md`](../../docs/DESIGN_GUIDE.md). For website folder conventions in multi-stack repos, see [`docs/WEB_PROJECT_LAYOUT.md`](../../docs/WEB_PROJECT_LAYOUT.md).
 
 - ✅ In-app AboutScreen with format-locked APK update stub and donations
-## Golden Path Reference
+## AetherFeed Reference
 
 See `examples/android/` for FOSS Gradle/Kotlin skeleton. CI runs `./gradlew assembleDebug` on every push to `main`.
 

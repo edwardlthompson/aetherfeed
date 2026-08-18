@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Golden Path</string>
-    <string name="app_title">Golden Path</string>
-    <string name="app_greeting">Hello, FOSS!</string>
-    <string name="app_status_online">Online — Golden Path PWA stub</string>
-    <string name="app_status_offline">Offline — Golden Path PWA stub</string>
+    <string name="app_name">AetherFeed</string>
+    <string name="app_title">AetherFeed</string>
+    <string name="app_greeting">Read locally. Sync only ciphertext.</string>
+    <string name="app_status_online">Online — AetherFeed stub</string>
+    <string name="app_status_offline">Offline — AetherFeed stub</string>
     <string name="theme_toggle_label">Switch theme</string>
     <string name="theme_mode_system">System theme</string>
     <string name="theme_mode_light">Light theme</string>
@@ -34,4 +34,17 @@
     <string name="nav_mode_gesture">Gesture</string>
     <string name="nav_mode_unknown">Unknown</string>
     <string name="snackbar_update_available">Update available — open About to apply</string>
+    <string name="nav_news">News</string>
+    <string name="nav_podcasts">Podcasts</string>
+    <string name="nav_booru">Booru</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_news_cd">News tab</string>
+    <string name="nav_podcasts_cd">Podcasts tab</string>
+    <string name="nav_booru_cd">Booru tab</string>
+    <string name="nav_settings_cd">Settings tab</string>
+    <string name="pane_news_body">Subscribe to RSS, Atom, and JSON feeds. Offline reader mode lands in Sprint 2.</string>
+    <string name="pane_podcasts_body">Subscribe to audio enclosures. Queue, downloads, and lockscreen controls land in Sprint 3.</string>
+    <string name="pane_booru_body">Add public media-board sources. Tag search and local lists land in Sprint 4.</string>
+    <string name="unread_total">Unread: %1$d</string>
+    <string name="local_only_hint">The vault works without an account. Sync is optional.</string>
 </resources>

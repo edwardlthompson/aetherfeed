@@ -14,13 +14,13 @@ Run license audits for active stacks:
 # Web (npm)
 cd examples/web && npx license-checker --production --summary
 
-# Python (pip)
-cd examples/python && uv run pip-licenses --format=markdown
-
-# Rust / Go (optional stacks — MIT stubs; expand when deps are added)
-grep 'license' examples/rust/Cargo.toml
-head -1 examples/go/go.mod
+# Rust crypto + desktop
+cd examples/rust && cargo license
+cd examples/desktop/src-tauri && cargo license
 ```
+
+Seed crates include `argon2` and `chacha20poly1305` (Apache-2.0 / MIT).
+Tauri 2 and its plugins are Apache-2.0 / MIT. No AGPL code is vendored.
 
 `[AUTO]` CI runs `scripts/check-license-compliance.sh` on each push.
 

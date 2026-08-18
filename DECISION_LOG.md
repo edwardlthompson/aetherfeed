@@ -17,6 +17,20 @@
 
 ## Entries
 
+### 2026-08-18 — Automate remaining HUMAN seed steps
+- **Status:** Accepted
+- **Context:** Seed left GitHub repo creation, security defaults, ADR sign-off, and release/donation config as HUMAN rows.
+- **Decision:** On request, treat those rows as automatable: fill `edwardlthompson/aetherfeed` + GitHub Sponsors, mark ADR-0001/0002/0003 and the vault/Hilt approach approved, create the public GitHub repo, and run `setup-github-repo`.
+- **Alternatives considered:** Leave settings for a later UI pass (rejected: the user asked to automate them). Extra donation providers (rejected: ask first).
+- **Consequences:** Child repo is `edwardlthompson/aetherfeed`. Sprint 1 implementation of Room/Hilt is still an AGENT row.
+
+### 2026-08-18 — Seed AetherFeed from agent-project-bootstrap
+- **Status:** Accepted
+- **Context:** Empty workspace needed a FOSS local-first reader for Android and Windows without telemetry or third-party client branding.
+- **Decision:** Bootstrap with `--stack multi`, prune Python/Node/Go/Lightroom, keep Android + web + Rust, add a Tauri 2 desktop wrapper. Shared TypeScript models are the schema lock; Android mirrors them in Kotlin. SQLCipher contract and `SyncProvider` (Drive appdata, WebDAV, local-only) are defined before feature work. MIT license; no AGPL vendored.
+- **Alternatives considered:** Electron (rejected: larger binary; log in this file if Tauri blocks a required feature). Kotlin Multiplatform desktop (rejected: product brief prefers Tauri). Extra cloud providers or accounts (rejected: ask first).
+- **Consequences:** Sprint 0 identity is in place. Room/Hilt production wiring, feed parsers, and real provider OAuth remain open BUILD_PLAN rows. Child GitHub repo + CI on `main` are HUMAN.
+
 ### 2026-08-18 — Ship v0.21.0 (/ship)
 - **Status:** Accepted
 - **Context:** `/ship` after M38+M39. Pre-release green on `f54927e`; feat `8eab392` then `df322af` after `rp_merge_status` import failed once `PYTHONPATH` was stripped.

@@ -1,6 +1,15 @@
 {
-  "distribution_tier": "foss",
   "stack": "multi",
+  "pruned": false,
+  "active_modules": [
+    "android",
+    "web",
+    "rust",
+    "desktop"
+  ],
+  "parallel_scope_note": "Sprint 1 Parallel: one agent per active stack; no overlapping paths",
+  "selected_at": "2026-08-18T14:14:55+00:00",
+  "distribution_tier": "foss",
   "cursor_features_enabled": [
     "rules",
     "commands",
@@ -26,5 +35,5 @@
     "mcp_commercial_example",
     "android_commercial_patterns"
   ],
-  "cursor_features_synced_at": "2026-08-17T02:59:53+00:00"
+  "cursor_features_synced_at": "2026-08-18T14:19:25+00:00"
 }

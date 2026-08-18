@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" role="img" aria-label="Golden Path">
-  <rect x="0" y="4" width="64" height="64" rx="12" fill="#1a1a2e"/>
-  <path d="M16 44 L32 20 L48 44 Z" fill="#e94560"/>
-  <text x="80" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#1a1a2e">Golden Path</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" role="img" aria-label="AetherFeed lockup">
+  <rect x="4" y="8" width="56" height="56" rx="12" fill="#12161A"/>
+  <circle cx="32" cy="36" r="12" fill="none" stroke="#8FB4C7" stroke-width="2.5"/>
+  <path d="M20 40 C25 33, 39 33, 44 40" fill="none" stroke="#8FB4C7" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="76" y="46" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#1A1F24">AetherFeed</text>
 </svg>
