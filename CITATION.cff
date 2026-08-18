@@ -7,8 +7,8 @@ authors:
 repository-code: https://github.com/edwardlthompson/aetherfeed
 url: https://aetherfeed.org
 abstract: >-
-  Local-first encrypted news, podcast, and booru client for Android
-  and Windows. Optional zero-knowledge sync uploads only opaque blobs.
+  Local-first encrypted news, podcast, and booru client for Android and Windows.
+  Optional zero-knowledge sync uploads only opaque blobs.
 keywords:
   - foss
   - rss
@@ -18,5 +18,5 @@ keywords:
   - android
   - tauri
 license: MIT
-version: 0.21.0
+version: 0.22.0
 date-released: 2026-08-18T00:00:00.000Z
