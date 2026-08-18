@@ -83,7 +83,7 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 1. ✅ [AGENT] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)
 1b. ✅ [AGENT] Fill `branding/product.json` (`mode: product`), replace logos, prune unused stacks
-2. ❌ [AGENT] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
+2. ✅ [AGENT] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
 3. 🔲 [AUTO] Sprint 0 sign-off (all green on `main`):
   - `validate-bootstrap.sh --quick`
   - `feature-gate.sh --stack multi`
