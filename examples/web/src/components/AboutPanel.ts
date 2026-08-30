@@ -1,3 +1,4 @@
+import { VENMO_DONATE_URL } from "../about/donate";
 import type { DonationConfig } from "../about/types";
 import { t } from "../i18n";
 
@@ -33,6 +34,10 @@ export function createAboutPanel(
 
   header.append(title, closeBtn);
 
+  const greeting = document.createElement("p");
+  greeting.className = "af-headline";
+  greeting.textContent = t("app.greeting");
+
   const versionP = document.createElement("p");
   versionP.append(`${t("about.version")}: `);
   const versionStrong = document.createElement("strong");
@@ -51,7 +56,7 @@ export function createAboutPanel(
   statusP.setAttribute("aria-live", "polite");
   statusP.textContent = state.updateStatus;
 
-  panel.append(header, versionP, formatP, statusP);
+  panel.append(header, greeting, versionP, formatP, statusP);
 
   if (state.canApplyUpdate && onApplyUpdate) {
     const applyBtn = document.createElement("button");
@@ -63,25 +68,26 @@ export function createAboutPanel(
     panel.append(applyBtn);
   }
 
-  if (state.donations.enabled && state.donations.links.length > 0) {
-    const donateMsg = document.createElement("p");
-    donateMsg.className = "af-about-donate-msg";
-    donateMsg.textContent = state.donations.message;
-
-    const donateList = document.createElement("ul");
-    donateList.className = "af-about-donate-links";
-    for (const link of state.donations.links) {
-      const item = document.createElement("li");
-      const anchor = document.createElement("a");
-      anchor.href = link.url;
-      anchor.target = "_blank";
-      anchor.rel = "noopener noreferrer";
-      anchor.textContent = link.label;
-      item.append(anchor);
-      donateList.append(item);
-    }
-    panel.append(donateMsg, donateList);
+  const donateLinks = [...state.donations.links];
+  if (!donateLinks.some((link) => link.url === VENMO_DONATE_URL)) {
+    donateLinks.unshift({ label: t("about.donate.venmo"), url: VENMO_DONATE_URL });
   }
+  const donateMsg = document.createElement("p");
+  donateMsg.className = "af-about-donate-msg";
+  donateMsg.textContent = state.donations.message || t("about.donations.heading");
+  const donateList = document.createElement("ul");
+  donateList.className = "af-about-donate-links";
+  for (const link of donateLinks) {
+    const item = document.createElement("li");
+    const anchor = document.createElement("a");
+    anchor.href = link.url;
+    anchor.target = "_blank";
+    anchor.rel = "noopener noreferrer";
+    anchor.textContent = link.label;
+    item.append(anchor);
+    donateList.append(item);
+  }
+  panel.append(donateMsg, donateList);
 
   return panel;
 }

@@ -15,9 +15,7 @@ import org.aetherfeed.app.ui.theme.SpacingMd
 
 @Composable
 fun ModulePane(
-    title: String,
     body: String,
-    unread: Int,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -26,13 +24,6 @@ fun ModulePane(
             .padding(SpacingMd),
         verticalArrangement = Arrangement.Top,
     ) {
-        Text(text = title, style = MaterialTheme.typography.headlineMedium)
-        Text(
-            text = stringResource(R.string.unread_total, unread),
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.primary,
-            modifier = Modifier.padding(top = SpacingMd),
-        )
         Text(
             text = body,
             style = MaterialTheme.typography.bodyLarge,

@@ -79,137 +79,285 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 ### Sprint 0 — AetherFeed seed
 
-#### Sequential
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
 
-1. ✅ [AGENT] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)
-1b. ✅ [AGENT] Fill `branding/product.json` (`mode: product`), replace logos, prune unused stacks
-2. ✅ [AGENT] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
-3. 🔲 [AUTO] Sprint 0 sign-off (all green on `main`):
-  - `validate-bootstrap.sh --quick`
-  - `feature-gate.sh --stack multi`
-  - `check-github-ci.sh --wait 300` (required: **CI**, **Security Scan**, **CodeQL**; **CI** must include **Template Upgrade Simulation (Windows)**, **Repo Hygiene**, **Feature Gate**)
-  - `check-license-compliance.sh` (after `npm ci`)
-
-#### Parallel (safe after Sequential step 1b)
-
-<!-- agent_count_target: 3 -->
-
-| Task | Owner | Isolated scope |
-| ---- | ----- | -------------- |
-| Android identity + vault contract | AGENT | `examples/android/**` |
-| Web domain + desktop Tauri shell | AGENT | `examples/web/**`, `examples/desktop/**` |
-| Crypto crate + shared schema | AGENT | `examples/rust/**`, `shared/**` |
-
-#### Human & device (after automation)
-
-1. ✅ [HUMAN] Create the GitHub repo and point `origin` at it (do not push to the template)
-1a. ✅ [HUMAN] Distribution tier is FOSS (MIT, no proprietary SDKs)
-2. ✅ [HUMAN] Platform/purpose filled: Android + Windows desktop; local-first encrypted reader
-2a. ✅ [HUMAN] Agent mode for approved seed execution
-2b. ✅ [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md`
+> **Sprint 0** archived in `COMPLETED_TASKS.md` @ `031b156`.
 
 ### Sprint 1 — Encrypted vault and shared models
 
-#### Sequential
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
 
-1. ✅ [AGENT] Lock shared models and `SyncProvider` (`shared/typescript/`, Android `domain/`)
-2. 🔲 [AGENT] Wire Room + SQLCipher + Hilt on Android using the locked types
-3. ✅ [HUMAN] Approve ADR-0001, ADR-0002, and ADR-0003
-
-#### Parallel (safe after Sequential step 1)
-
-| Task | Owner | Isolated scope |
-| ---- | ----- | -------------- |
-| Android About + four-destination nav | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/**` |
-| Desktop tray unread command | AGENT | `examples/desktop/src-tauri/**` |
-| Shared unread tests | AGENT | `shared/typescript/**`, `examples/web/src/domain/**` |
-
-#### Human & device (after automation)
-
-1. ✅ [HUMAN] Fill `release_repo` in `.app-update.json` and donation links
-2. ✅ [HUMAN] Approve Sprint 1 vault/Hilt approach
+> **Sprint 1** archived in `COMPLETED_TASKS.md`.
 
 ### Sprint 2 — News / RSS reader
 
-#### Sequential
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
 
-1. 🔲 [AGENT] Lock RSS/Atom/JSON Feed + OPML public API (`docs/features/news.md`)
-2. 🔲 [AGENT] Scaffold news repository boundary only
-
-#### Parallel (safe after Sequential step 2)
-
-| Task | Owner | Isolated scope |
-| ---- | ----- | -------------- |
-| Feed parse + unread/star/tag logic | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/news/**` |
-| Reader-mode view + i18n | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/news/**`, `examples/web/src/news/**` |
-| News feature spec | AGENT | `docs/features/news.md` |
+> **Sprint 2** archived in `COMPLETED_TASKS.md`.
 
 ### Sprint 3 — Podcasts
 
-#### Sequential
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
 
-1. 🔲 [AGENT] Lock episode/queue/position API (`docs/features/podcasts.md`)
-
-#### Parallel (safe after Sequential step 1)
-
-| Task | Owner | Isolated scope |
-| ---- | ----- | -------------- |
-| Media3 player + downloads | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/podcasts/**` |
-| Desktop playback commands | AGENT | `examples/desktop/src-tauri/src/**` |
-| Podcast feature spec | AGENT | `docs/features/podcasts.md` |
+> **Sprint 3** archived in `COMPLETED_TASKS.md`.
 
 ### Sprint 4 — Booru browser
 
-#### Sequential
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
 
-1. 🔲 [AGENT] Lock source/search/favorite/blacklist API (`docs/features/booru.md`)
-
-#### Parallel (safe after Sequential step 1)
-
-| Task | Owner | Isolated scope |
-| ---- | ----- | -------------- |
-| Source adapters + tag search | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/booru/**` |
-| Grid/detail view + i18n | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/booru/**` |
-| Booru feature spec | AGENT | `docs/features/booru.md` |
+> **Sprint 4** archived in `COMPLETED_TASKS.md`.
 
 ### Sprint 5 — Notifications and unread chrome
 
-#### Sequential
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
 
-1. 🔲 [AGENT] Lock unread-total API used by widget and tray
-
-#### Parallel (safe after Sequential step 1)
-
-| Task | Owner | Isolated scope |
-| ---- | ----- | -------------- |
-| Android channels + unread widget | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/notify/**` |
-| Desktop tray badge/tooltip | AGENT | `examples/desktop/src-tauri/src/**` |
+> **Sprint 5** archived in `COMPLETED_TASKS.md`.
 
 ### Sprint 6 — E2E sync
 
-#### Sequential
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
 
-1. 🔲 [AGENT] Lock envelope format and provider interface (`docs/features/sync.md`)
-
-#### Parallel (safe after Sequential step 1)
-
-| Task | Owner | Isolated scope |
-| ---- | ----- | -------------- |
-| Drive AppData provider | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/sync/**` |
-| WebDAV provider + desktop pull/push | AGENT | `examples/desktop/src-tauri/src/**`, `examples/web/src/sync/**` |
+> **Sprint 6** archived in `COMPLETED_TASKS.md`.
 
 ### Sprint 7 — Import/export and polish
 
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
+
+> **Sprint 7** archived in `COMPLETED_TASKS.md`.
+
+### Sprint 8 — Reader source import
+
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
+
+> **Sprint 8** archived in `COMPLETED_TASKS.md`.
+
+### Sprint 9 — Dedupe and news/podcast sort
+
+<!-- parallel_exception: AGENT work archived in COMPLETED_TASKS.md; HUMAN export remains -->
+
+> AGENT work archived in `COMPLETED_TASKS.md`. Confirm your local gReader/Inoreader files in **Human & device** (also `HUMAN_BACKLOG.md`).
+
+#### Human & device (after automation)
+
+1. 🔲 [HUMAN] Export OPML from gReader (phone) and Inoreader (PC) and confirm a local import
+
+### Sprint 10 — Drive feed-source sync
+
+<!-- parallel_exception: feed-source Drive appdata; one sequential slice -->
+
+1. ✅ [AGENT] Shared feed-source merge + AES-GCM envelope + Drive appdata pull/push
+2. ✅ [AGENT] Settings Connect/Sync on web/desktop and Android; loopback OAuth
+3. 🔲 [HUMAN] Authorize Google Drive on phone and PC with the same passphrase, then Sync now
+
+### Sprint 11 — Sequential lock (chrome + specs)
+
+<!-- agent_count_target: 0 sequential -->
+<!-- parallel_exception: Sequential schema/IA lock; Parallel starts Sprint 12 -->
+
+1. ✅ [AGENT] Combined gap-board canvas + `docs/features/app-shell.md` + spec-hole edits (sleep, safe-mode, API keys, hash, rules, OPML export)
+2. ✅ [AGENT] Thin composition mount for 3-mode chrome (web `AppShell` / Android overlay-only Settings); i18n `nav.*` / `nav_*`; relabel Booru → Boards
+
+### Sprint 12 — Parallel P0 (chrome + modes)
+
+<!-- agent_count_target: 0 sequential -->
+<!-- parallel_exception: Sprint 12 P0 merged 2026-08-18 -->
+
+> **Sprint 12** P0 merged. News / Podcasts / Boards panes wired in `AppShell`. Archive: `COMPLETED_TASKS.md`.
+
+### Sprint 12b — Parallel P0 remainder + P1
+
+<!-- agent_count_target: 0 sequential -->
+<!-- parallel_exception: Sprint 12b merged 2026-08-19 -->
+
+> **Sprint 12b** merged. Archive: `COMPLETED_TASKS.md`.
+
+### Sprint 13 — Parallel leftover P1 + P2
+
+<!-- agent_count_target: 0 sequential -->
+<!-- parallel_exception: Sprint 13 merged 2026-08-19 -->
+
+> **Sprint 13** P1/P2 slices merged. Archive: `COMPLETED_TASKS.md`.
+
+#### Human & device (after automation)
+
+1. 🔲 [HUMAN] Sprint 9 OPML confirm (gReader + Inoreader local import)
+2. 🔲 [HUMAN] Sprint 10 Drive authorize + Sync now
+3. 🔲 [ADB] Smoke News/Podcasts/Boards on the OPPO after merge
+
+### Sprint 14 — App lock + bind leftovers
+
+<!-- agent_count_target: 8 -->
+
 #### Sequential
 
-1. 🔲 [AGENT] Lock OPML + JSON export API
+1. ✅ [AGENT] Lock `Article.contentHtml`, `AppLock` types, news full-text/paywall note, ADR-0002 wrap-by-PIN addendum
+2. ✅ [AGENT] Unlock gate in `appBootstrap` / `AetherFeedApp`; Parallel lock, full-text, podcasts, and boards binds merged
 
-#### Parallel (safe after Sequential step 1)
+#### Parallel
 
-| Task | Owner | Isolated scope |
-| ---- | ----- | -------------- |
-| Android export + About/Fastlane copy | AGENT | `examples/android/fastlane/**`, `examples/android/metadata/**` |
-| Desktop packaging + Winget stub | AGENT | `packaging/winget/**`, `examples/desktop/**` |
+| Task | Owner | Scope |
+|------|-------|-------|
+| First-run PIN/passphrase, wrap/open blobs, replace plaintext reader vault | AGENT | `examples/web/src/lock/**` |
+| PIN wrap for SQLCipher + encrypted article/image files | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/applock/**` |
+| Parse content:encoded, fetch+extract, hook reader/rules/search | AGENT | `examples/web/src/news/**` |
+| Same full-text preference order into encrypted files | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/news/**` |
+| Parse real enclosures; bind downloads, sleep, directory, playlists | AGENT | `examples/web/src/podcasts/**` |
+| Parse enclosures + queue + Media3 port | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/podcasts/**` |
+| Add public board source + grid when sources exist | AGENT | `examples/web/src/boards/**` |
+| Add-source + safe-mode + API keys in pane | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/booru/**` |
+### Sprint 15 — Silence skip + boards merge
+
+<!-- agent_count_target: 2 -->
+
+#### Parallel
+
+| Task | Owner | Scope |
+|------|-------|-------|
+| On-device silence skip + voice gain; synthetic PCM tests | AGENT | `examples/web/src/silence/**` ✅ |
+| Multi-source merge + pools when two sources exist | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/boardmerge/**` ✅ |
+#### Human & device (after automation)
+
+1. 🔲 [HUMAN] Sprint 9 OPML confirm (gReader + Inoreader local import)
+2. 🔲 [HUMAN] Sprint 10 Drive authorize + Sync now
+3. 🔲 [ADB] Smoke News/Podcasts/Boards on the OPPO after merge
+
+### Sprint 16 — Android library seed + refresh/history
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Seed desktop library onto Android; hourly+ refresh; history count/days (default last 10)
+
+### Sprint 17 — See articles + UI parity
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Auto-refresh + pull-to-refresh; Tauri feed fetch; smoke/seed import so both apps show articles
+
+### Sprint 18 — Reader chrome parity
+
+<!-- agent_count_target: 3 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Lock UI_PARITY contract, shared chrome IDs, `ui-parity.mdc`, `check-ui-parity.py`
+
+#### Parallel
+
+| Task | Isolated scope | Why safe |
+|------|----------------|----------|
+| ✅ [AGENT] Web/desktop shell + lock remount + full-window 3-pane | `examples/web/src/AppShell*.ts`, `lock/`, `news/news.css`, `style.css`, `desktop/src-tauri` | No Android sources |
+| ✅ [AGENT] Android BackHandler + saveable news IDs + HTML reader | `examples/android/.../ui/news/`, `AetherFeedScreen.kt`, `AetherFeedApp.kt` | No web shell |
+| ✅ [AGENT] Encrypted image cache (web persist + Android EncryptedCache) | `examples/web/src/news/openArticle.ts`, `reader/`, `android/.../news/ArticleImages.kt` | No AppShell |
+Do not mark a Parallel row ✅ until `check-ui-parity.py` and `watch-agent-gates --once --autofix` pass.
+
+### Sprint 19 — Reader density follow-up
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. 🔲 [AGENT] List thumbnails, swipe mark-read, desktop `j`/`k` (after Sprint 18 reader + Back + images)
+
+### Sprint 20 — Cached articles, network policy, source tree
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Persist article index; Wi-Fi vs cellular; left-column category tree on both apps
+
+### Sprint 21 — Reader mode + lock remount
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Themed reading-mode only (no live webpage); remount desktop PIN without F5
+
+### Sprint 22 — Collapsed folders, hide sources, resizable panes
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Folders collapsed by default (remembered); desktop mode bar at bottom; hide sources; drag-resize panes persist on both apps
+
+### Sprint 23 — Reading-mode images, unread cache, thumbnails
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Extract reading mode first; drop social icons; cache unread articles with determinate progress; use remaining images as thumbnails
+
+### Sprint 24 — Swipe, sort, nav unread, instant cache
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Swipe/j-k between articles; oldest-first sort; unread badges on the three mode icons; slim pane chrome; refresh in the top bar; instant cache paint; priority load of the opened article then the next in series
+
+### Sprint 25 — PIN keyboard, filter, folders swipe, cache dot
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] PIN numeric keyboard vs passphrase; filter icon for sort; left-edge folders drawer; green cache dot; strip article/comment URLs from reader
+
+### Sprint 26 — Seed library parity + cache all unread
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Apply desktop seed-library on Android unlock; prefetch unread from every news source under history/network rules
+
+### Sprint 27 — Skip already-fetched article bodies
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Persist a fetched marker for each unread prefetch attempt; skip those ids on the next load; do not RSS-refresh empty indexes during prefetch
+
+### Sprint 28 — Dead feed notice
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Refresh the open feed on select; tell the user when a source returns 404/410
+
+### Sprint 29 — Recents privacy cover
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Black Android recents (`FLAG_SECURE` + API 33 `setRecentsScreenshotEnabled`) and web hide/blur cover; document Windows Alt-Tab limit
+
+### Sprint 30 — Library tree, unified timelines, share, cache retain
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Library tree roots (Unified / News / Podcasts / Boards), all/folder/source + unified timelines, remove bottom mode bar, action-share (Android + web)
+2. ✅ [AGENT] Settings cache retain: 30 days or next sync; starred blobs never deleted; unstar + past expiry deletes
+
+### Sprint 31 — Donations and updates (Continuum method)
+
+<!-- agent_count_target: 1 -->
+
+#### Sequential
+
+1. ✅ [AGENT] Quiet Venmo donate + once-per-version note + daily installer-asset GitHub check (web + Android)
 
 ---
 
@@ -248,6 +396,19 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 | Sprint                                                            | Status   | Archive                          |
 | ----------------------------------------------------------------- | -------- | -------------------------------- |
+| Sprint 13 — leftover P1 + P2                                      | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 12b — Parallel P0 remainder + P1                           | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 12 — Parallel P0 chrome + modes                            | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 9 — Dedupe and news/podcast sort (AGENT)                   | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 8 — Reader source import                                   | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 7 — Import/export and polish                               | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 6 — E2E sync                                               | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 5 — Notifications and unread chrome                        | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 4 — Booru browser                                          | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 3 — Podcasts                                               | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 2 — News / RSS reader                                      | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 1 — Encrypted vault and shared models                      | Complete | `COMPLETED_TASKS.md`             |
+| Sprint 0 — AetherFeed seed                                        | Complete | `COMPLETED_TASKS.md` @ `031b156` |
 | M39 /ideas Windows PATH + ship hygiene                            | Complete | `COMPLETED_TASKS.md`             |
 | v0.21.0 Windows PATH + Unreleased fold                            | Complete | `COMPLETED_TASKS.md` @ `1525cd6` |
 | M38 /ideas ship-hardening                                         | Complete | `COMPLETED_TASKS.md`             |

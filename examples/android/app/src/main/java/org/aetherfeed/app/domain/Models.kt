@@ -11,6 +11,7 @@ data class Feed(
     val kind: ModuleKind,
     val siteUrl: String? = null,
     val updatedAt: Long,
+    val folder: String? = null,
 )
 
 data class Article(
@@ -20,6 +21,7 @@ data class Article(
     val url: String,
     val publishedAt: Long? = null,
     val summary: String? = null,
+    val contentHtml: String? = null,
     val localPath: String? = null,
 )
 

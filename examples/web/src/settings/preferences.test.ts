@@ -17,10 +17,10 @@ describe("settings preferences", () => {
     expect(isUpdateCheckEnabled()).toBe(false);
   });
 
-  it("enabling update check restores weekly default", () => {
+  it("enabling update check restores daily default", () => {
     localStorage.setItem("af-app-update-interval", "off");
     setUpdateCheckEnabled(true);
-    expect(localStorage.getItem("af-app-update-interval")).toBe("weekly");
+    expect(localStorage.getItem("af-app-update-interval")).toBe("daily");
     expect(isUpdateCheckEnabled()).toBe(true);
   });
 

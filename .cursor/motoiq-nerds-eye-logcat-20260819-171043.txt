@@ -1,0 +1,440 @@
+--------- beginning of main
+08-19 17:19:21.799 30416 30416 D AetherFeed: navMode=ThreeButton navInsetBottom=0px
+08-19 17:19:21.956 30416 30416 D AetherFeed: navMode=ThreeButton navInsetBottom=168px
+08-19 17:20:08.940 30697 30697 D AetherFeed: navMode=ThreeButton navInsetBottom=0px
+08-19 17:20:09.072 30697 30697 D AetherFeed: navMode=ThreeButton navInsetBottom=168px
+08-19 17:21:17.311 31047 31047 D AetherFeed: navMode=ThreeButton navInsetBottom=0px
+08-19 17:21:17.468 31047 31047 D AetherFeed: navMode=ThreeButton navInsetBottom=168px
+08-19 17:22:28.538 31047 31047 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 17:22:28.576 31461 31491 W chromium: [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 17:22:28.599 31461 31491 W chromium: [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 17:22:28.599 31461 31491 W chromium: [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 17:22:28.599 31461 31491 W chromium: [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 17:22:28.599 31461 31491 W chromium: [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 17:22:28.615 31461 31500 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 17:22:28.615 31461 31500 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1
+08-19 17:37:50.563  1448  1448 D AetherFeed: navMode=ThreeButton navInsetBottom=0px
+08-19 17:37:50.706  1448  1448 D AetherFeed: navMode=ThreeButton navInsetBottom=168px
+08-19 18:16:01.010  1448  1448 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 18:16:01.162  7282  7346 W chromium: [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 18:16:01.172  7282  7346 W chromium: [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 18:16:01.172  7282  7346 W chromium: [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 18:16:01.173  7282  7346 W chromium: [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 18:16:01.173  7282  7346 W chromium: [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 18:16:01.182  7282  7360 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 18:16:01.182  7282  7360 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1
+08-19 18:25:08.397  9761  9761 D AetherFeed: navMode=ThreeButton navInsetBottom=0px
+08-19 18:25:08.539  9761  9761 D AetherFeed: navMode=ThreeButton navInsetBottom=168px
+08-19 18:26:04.386  9761  9761 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 18:26:04.440 10077 10116 W chromium: [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 18:26:04.457 10077 10116 W chromium: [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 18:26:04.457 10077 10116 W chromium: [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 18:26:04.457 10077 10116 W chromium: [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 18:26:04.457 10077 10116 W chromium: [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 18:26:04.470 10077 10132 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 18:26:04.470 10077 10132 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1
+08-19 18:43:28.329 12248 12248 D AetherFeed: navMode=ThreeButton navInsetBottom=0px
+08-19 18:43:28.475 12248 12248 D AetherFeed: navMode=ThreeButton navInsetBottom=168px
+08-19 18:49:40.187 12248 12248 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 18:49:40.221 13262 13284 W chromium: [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 18:49:40.232 13262 13284 W chromium: [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 18:49:40.232 13262 13284 W chromium: [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 18:49:40.232 13262 13284 W chromium: [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 18:49:40.232 13262 13284 W chromium: [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 18:49:40.245 13262 13292 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 18:49:40.245 13262 13292 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1
+08-19 19:06:28.899 15749 15749 D AetherFeed: navMode=ThreeButton navInsetBottom=0px
+08-19 19:06:29.042 15749 15749 D AetherFeed: navMode=ThreeButton navInsetBottom=168px
+08-19 19:07:21.478 15749 15749 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 19:07:21.634 16038 16081 W chromium: [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 19:07:21.654 16038 16081 W chromium: [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 19:07:21.654 16038 16081 W chromium: [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 19:07:21.654 16038 16081 W chromium: [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 19:07:21.654 16038 16081 W chromium: [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 19:07:21.672 16038 16089 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 19:07:21.672 16038 16089 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1
+08-19 19:14:20.737 17520 17520 D AetherFeed: navMode=ThreeButton navInsetBottom=0px
+08-19 19:14:20.885 17520 17520 D AetherFeed: navMode=ThreeButton navInsetBottom=168px
+08-19 19:14:28.324 17520 17520 I AetherFeed: cache.read article-index/feed_https___motoiq.com_feed_ 840ms v=1 n=30631
+08-19 19:14:28.372 17520 17613 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_InformationIsBeautiful 889ms v=1 n=39486
+08-19 19:14:28.380 17520 17613 I AetherFeed: cache.read article-index/feed_https___motoiq.com_feed_ 0ms v=2 n=30591
+08-19 19:14:28.394 17520 17593 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_InformationIsBeautiful 0ms v=2 n=39459
+08-19 19:14:28.397 17520 17593 I AetherFeed: cache.read article-index/feed_https___motoiq.com_feed_ 0ms v=2 n=30591
+08-19 19:14:28.398 17520 17614 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_InformationIsBeautiful 0ms v=2 n=39459
+08-19 19:14:28.476 17520 17610 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_InformationIsBeautiful 993ms v=1 n=39486
+08-19 19:14:29.322 17520 17609 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_InformationIsBeautiful 2ms v=2 n=39394
+08-19 19:14:29.326 17520 17609 I AetherFeed: cache.read article-index/feed_https___motoiq.com_feed_ 1ms v=2 n=30605
+08-19 19:14:29.573 17520 17593 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_Speedhunters 1173ms v=1 n=21514
+08-19 19:14:29.591 17520 17613 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_Speedhunters 1208ms v=1 n=21514
+08-19 19:14:29.649 17520 17614 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_Speedhunters 1247ms v=1 n=21514
+08-19 19:14:29.655 17520 17610 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_Speedhunters 1174ms v=1 n=21514
+08-19 19:14:31.172 17520 17609 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_Speedhunters 1842ms v=1 n=21514
+08-19 19:14:31.342 17520 17595 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_Speedhunters 2022ms v=1 n=21514
+08-19 19:14:31.362 17520 17613 I AetherFeed: cache.read article-index/feed_https___www.youtube.com_feeds_videos.xml_channel_id_UCjOl2AUblVmg2rA_cRgZkFg 1769ms v=1 n=5353
+08-19 19:14:31.453 17520 17593 I AetherFeed: cache.read article-index/feed_https___www.youtube.com_feeds_videos.xml_channel_id_UCjOl2AUblVmg2rA_cRgZkFg 1874ms v=1 n=5353
+08-19 19:14:31.528 17520 17610 I AetherFeed: cache.read article-index/feed_https___www.youtube.com_feeds_videos.xml_channel_id_UCjOl2AUblVmg2rA_cRgZkFg 1870ms v=1 n=5353
+08-19 19:14:31.679 17520 17614 I AetherFeed: cache.read article-index/feed_https___www.youtube.com_feeds_videos.xml_channel_id_UCjOl2AUblVmg2rA_cRgZkFg 2027ms v=1 n=5353
+08-19 19:14:33.144 17520 17613 I AetherFeed: cache.read article-index/feed_https___expeditionportal.com_feed_ 1768ms v=1 n=520949
+08-19 19:14:33.160 17520 17609 I AetherFeed: cache.read article-index/feed_https___www.youtube.com_feeds_videos.xml_channel_id_UCjOl2AUblVmg2rA_cRgZkFg 1985ms v=1 n=5353
+08-19 19:14:33.192 17520 17595 I AetherFeed: cache.read article-index/feed_https___www.youtube.com_feeds_videos.xml_channel_id_UCjOl2AUblVmg2rA_cRgZkFg 1847ms v=1 n=5353
+08-19 19:14:33.215 17520 17595 I AetherFeed: cache.read article-index/feed_https___expeditionportal.com_feed_ 11ms v=2 n=520823
+08-19 19:14:33.234 17520 17593 I AetherFeed: cache.read article-index/feed_https___expeditionportal.com_feed_ 1767ms v=1 n=520949
+08-19 19:14:33.272 17520 17610 I AetherFeed: cache.read article-index/feed_https___expeditionportal.com_feed_ 1733ms v=1 n=520949
+08-19 19:14:33.725 17520 17614 I AetherFeed: cache.read article-index/feed_https___expeditionportal.com_feed_ 2031ms v=1 n=520949
+08-19 19:14:34.769 17520 17613 I AetherFeed: cache.read article-index/feed_https___bitcoinmagazine.com_feed 1582ms v=1 n=108003
+08-19 19:14:34.818 17520 17595 I AetherFeed: cache.read article-index/feed_https___bitcoinmagazine.com_feed 1580ms v=1 n=108003
+08-19 19:14:35.109 17520 17609 I AetherFeed: cache.read article-index/feed_https___expeditionportal.com_feed_ 1930ms v=1 n=520949
+08-19 19:14:35.156 17520 17609 I AetherFeed: cache.read article-index/feed_https___bitcoinmagazine.com_feed 2ms v=2 n=108045
+08-19 19:14:35.209 17520 17593 I AetherFeed: cache.read article-index/feed_https___bitcoinmagazine.com_feed 1934ms v=1 n=108003
+08-19 19:14:35.314 17520 17610 I AetherFeed: cache.read article-index/feed_https___bitcoinmagazine.com_feed 1999ms v=1 n=108003
+08-19 19:14:35.708 17520 17614 I AetherFeed: cache.read article-index/feed_https___bitcoinmagazine.com_feed 1939ms v=1 n=108003
+08-19 19:14:36.147 17520 17613 I AetherFeed: cache.read article-index/feed_https___bhworld.wordpress.com_feed_ 1332ms v=1 n=1419164
+08-19 19:14:36.842 17520 17595 I AetherFeed: cache.read article-index/feed_https___bhworld.wordpress.com_feed_ 1979ms v=1 n=1419164
+08-19 19:14:36.978 17520 17609 I AetherFeed: cache.read article-index/feed_https___bhworld.wordpress.com_feed_ 1788ms v=1 n=1419164
+08-19 19:14:37.091 17520 17610 I AetherFeed: cache.read article-index/feed_https___bhworld.wordpress.com_feed_ 1728ms v=1 n=1419164
+08-19 19:14:37.195 17520 17593 I AetherFeed: cache.read article-index/feed_https___bhworld.wordpress.com_feed_ 1941ms v=1 n=1419164
+08-19 19:14:37.727 17520 17614 I AetherFeed: cache.read article-index/feed_https___bhworld.wordpress.com_feed_ 1980ms v=1 n=1419164
+08-19 19:14:38.030 17520 17613 I AetherFeed: cache.read article-index/feed_https___heartofthehealerblog.wordpress.com_feed_ 1774ms v=1 n=113324
+08-19 19:14:38.552 17520 17595 I AetherFeed: cache.read article-index/feed_https___heartofthehealerblog.wordpress.com_feed_ 1602ms v=1 n=113324
+08-19 19:14:38.946 17520 17609 I AetherFeed: cache.read article-index/feed_https___heartofthehealerblog.wordpress.com_feed_ 1869ms v=1 n=113324
+08-19 19:14:39.160 17520 17610 I AetherFeed: cache.read article-index/feed_https___heartofthehealerblog.wordpress.com_feed_ 1983ms v=1 n=113324
+08-19 19:14:39.288 17520 17593 I AetherFeed: cache.read article-index/feed_https___heartofthehealerblog.wordpress.com_feed_ 1986ms v=1 n=113324
+08-19 19:14:39.879 17520 17614 I AetherFeed: cache.read article-index/feed_https___heartofthehealerblog.wordpress.com_feed_ 2059ms v=1 n=113324
+08-19 19:14:40.011 17520 17613 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml 1969ms v=1 n=35671
+08-19 19:14:40.070 17520 17595 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml 1509ms v=1 n=35671
+08-19 19:14:40.696 17520 17609 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml 1738ms v=1 n=35671
+08-19 19:14:40.988 17520 17610 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml 1818ms v=1 n=35671
+08-19 19:14:41.381 17520 17593 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml 2082ms v=1 n=35671
+08-19 19:14:41.412 17520 17614 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml 1521ms v=1 n=35671
+08-19 19:14:42.075 17520 17613 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_news.xml 2060ms v=1 n=9652
+08-19 19:14:42.102 17520 17595 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_news.xml 2027ms v=1 n=9652
+08-19 19:14:42.785 17520 17609 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_news.xml 2084ms v=1 n=9652
+08-19 19:14:43.116 17520 17610 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_news.xml 2124ms v=1 n=9652
+08-19 19:14:43.201 17520 17614 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_news.xml 1785ms v=1 n=9652
+08-19 19:14:43.472 17520 17593 I AetherFeed: cache.read article-index/feed_https___www.elitedangerous.com_en-GB_rss_news.xml 2086ms v=1 n=9652
+08-19 19:14:43.503 17520 17595 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_sudobits 1399ms v=1 n=20787
+08-19 19:14:44.200 17520 17613 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_sudobits 2122ms v=1 n=20787
+08-19 19:14:44.709 17520 17609 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_sudobits 1921ms v=1 n=20787
+08-19 19:14:44.790 17520 17610 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_sudobits 1671ms v=1 n=20787
+08-19 19:14:45.094 17520 17593 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_sudobits 1619ms v=1 n=20787
+08-19 19:14:45.282 17520 17614 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_sudobits 2078ms v=1 n=20787
+08-19 19:14:45.644 17520 17595 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_techdrivein 2126ms v=1 n=267514
+08-19 19:14:46.252 17520 17613 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_techdrivein 2042ms v=1 n=267514
+08-19 19:14:46.469 17520 17609 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_techdrivein 1752ms v=1 n=267514
+08-19 19:14:46.479 17520 17610 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_techdrivein 1680ms v=1 n=267514
+08-19 19:14:46.845 17520 17593 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_techdrivein 1743ms v=1 n=267514
+08-19 19:14:47.041 17520 17614 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_techdrivein 1750ms v=1 n=267514
+08-19 19:14:47.799 17520 17595 I AetherFeed: cache.read article-index/feed_https___blog.linuxmint.com__feed_rss2 2101ms v=1 n=1403575
+08-19 19:14:48.337 17520 17613 I AetherFeed: cache.read article-index/feed_https___blog.linuxmint.com__feed_rss2 2028ms v=1 n=1403575
+08-19 19:14:48.447 17520 17614 I AetherFeed: cache.read article-index/feed_https___blog.linuxmint.com__feed_rss2 1345ms v=1 n=1403575
+08-19 19:14:48.561 17520 17610 I AetherFeed: cache.read article-index/feed_https___blog.linuxmint.com__feed_rss2 2016ms v=1 n=1403575
+08-19 19:14:48.561 17520 17609 I AetherFeed: cache.read article-index/feed_https___blog.linuxmint.com__feed_rss2 2028ms v=1 n=1403575
+08-19 19:14:48.760 17520 17593 I AetherFeed: cache.read article-index/feed_https___blog.linuxmint.com__feed_rss2 1855ms v=1 n=1403575
+08-19 19:14:49.815 17520 17595 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_blogspot_hsDu 1890ms v=1 n=385026
+08-19 19:14:49.838 17520 17613 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_blogspot_hsDu 1381ms v=1 n=385026
+08-19 19:14:50.543 17520 17614 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_blogspot_hsDu 1969ms v=1 n=385026
+08-19 19:14:50.730 17520 17609 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_blogspot_hsDu 2045ms v=1 n=385026
+08-19 19:14:50.751 17520 17610 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_blogspot_hsDu 2063ms v=1 n=385026
+08-19 19:14:50.768 17520 17593 I AetherFeed: cache.read article-index/feed_https___feeds.feedburner.com_blogspot_hsDu 1891ms v=1 n=385026
+08-19 19:14:51.562 17520 17613 I AetherFeed: cache.read article-index/feed_https___www.tmonews.com_feed_ 1698ms v=1 n=45165
+08-19 19:14:51.801 17520 17595 I AetherFeed: cache.read article-index/feed_https___www.tmonews.com_feed_ 1949ms v=1 n=45165
+08-19 19:14:52.635 17520 17610 I AetherFeed: cache.read article-index/feed_https___www.tmonews.com_feed_ 1847ms v=1 n=45165
+08-19 19:14:52.652 17520 17614 I AetherFeed: cache.read article-index/feed_https___www.tmonews.com_feed_ 2078ms v=1 n=45165
+08-19 19:14:52.727 17520 17593 I AetherFeed: cache.read article-index/feed_https___www.tmonews.com_feed_ 1932ms v=1 n=45165
+08-19 19:14:52.779 17520 17609 I AetherFeed: cache.read article-index/feed_https___www.tmonews.com_feed_ 2017ms v=1 n=45165
+08-19 19:14:53.392 17520 17595 I AetherFeed: cache.read article-index/feed_https___www.technologyreview.com_topnews.rss 1580ms v=1 n=222322
+08-19 19:14:53.664 17520 17613 I AetherFeed: cache.read article-index/feed_https___www.technologyreview.com_topnews.rss 2089ms v=1 n=222322
+08-19 19:14:54.162 17520 17593 I AetherFeed: cache.read article-index/feed_https___www.technologyreview.com_topnews.rss 1425ms v=1 n=222322
+08-19 19:14:54.755 17520 17614 I AetherFeed: cache.read article-index/feed_https___www.technologyreview.com_topnews.rss 2092ms v=1 n=222322
+08-19 19:14:54.765 17520 17609 I AetherFeed: cache.read article-index/feed_https___www.technologyreview.com_topnews.rss 1976ms v=1 n=222322
+08-19 19:14:54.783 17520 17610 I AetherFeed: cache.read article-index/feed_https___www.technologyreview.com_topnews.rss 2136ms v=1 n=222322
+08-19 19:14:55.524 17520 17595 I AetherFeed: cache.read article-index/feed_https___arjunsreedharan.org_rss 2107ms v=1 n=182489
+08-19 19:14:55.823 17520 17613 I AetherFeed: cache.read article-index/feed_https___arjunsreedharan.org_rss 2135ms v=1 n=182489
+08-19 19:14:55.882 17520 17593 I AetherFeed: cache.read article-index/feed_https___arjunsreedharan.org_rss 1701ms v=1 n=182489
+08-19 19:14:56.281 17520 17610 I AetherFeed: cache.read article-index/feed_https___arjunsreedharan.org_rss 1474ms v=1 n=182489
+08-19 19:14:56.722 17520 17609 I AetherFeed: cache.read article-index/feed_https___arjunsreedharan.org_rss 1932ms v=1 n=182489
+08-19 19:14:56.897 17520 17614 I AetherFeed: cache.read article-index/feed_https___arjunsreedharan.org_rss 2118ms v=1 n=182489
+08-19 19:14:57.664 17520 17595 I AetherFeed: cache.read article-index/feed_https___feeds2.feedburner.com_spbnews 2120ms v=1 n=58286
+08-19 19:14:57.798 17520 17610 I AetherFeed: cache.read article-index/feed_https___feeds2.feedburner.com_spbnews 1502ms v=1 n=58286
+08-19 19:14:57.887 17520 17613 I AetherFeed: cache.read article-index/feed_https___feeds2.feedburner.com_spbnews 2048ms v=1 n=58286
+08-19 19:14:57.894 17520 17593 I AetherFeed: cache.read article-index/feed_https___feeds2.feedburner.com_spbnews 1994ms v=1 n=58286
+08-19 19:14:58.656 17520 17609 I AetherFeed: cache.read article-index/feed_https___feeds2.feedburner.com_spbnews 1916ms v=1 n=58286
+08-19 19:14:59.080 17520 17614 I AetherFeed: cache.read article-index/feed_https___feeds2.feedburner.com_spbnews 2166ms v=1 n=58286
+08-19 19:14:59.461 17520 17593 I AetherFeed: cache.read article-index/feed_https___jeffreystedfast.blogspot.com_feeds_posts_default 1559ms v=1 n=96854
+08-19 19:14:59.506 17520 17595 I AetherFeed: cache.read article-index/feed_https___jeffreystedfast.blogspot.com_feeds_posts_default 1833ms v=1 n=96854
+08-19 19:14:59.874 17520 17613 I AetherFeed: cache.read article-index/feed_https___jeffreystedfast.blogspot.com_feeds_posts_default 1979ms v=1 n=96854
+08-19 19:14:59.880 17520 17610 I AetherFeed: cache.read article-index/feed_https___jeffreystedfast.blogspot.com_feeds_posts_default 2074ms v=1 n=96854
+08-19 19:15:00.689 17520 17609 I AetherFeed: cache.read article-index/feed_https___jeffreystedfast.blogspot.com_feeds_posts_default 2024ms v=1 n=96854
+08-19 19:15:01.191 17520 17614 I AetherFeed: cache.read article-index/feed_https___jeffreystedfast.blogspot.com_feeds_posts_default 2102ms v=1 n=96854
+08-19 19:15:01.334 17520 17593 I AetherFeed: cache.read article-index/feed_https___www.premiumbeat.com_blog_feed_ 1861ms v=1 n=8886
+08-19 19:15:01.528 17520 17613 I AetherFeed: cache.read article-index/feed_https___www.premiumbeat.com_blog_feed_ 1646ms v=1 n=8886
+08-19 19:15:01.540 17520 17595 I AetherFeed: cache.read article-index/feed_https___www.premiumbeat.com_blog_feed_ 2026ms v=1 n=8886
+08-19 19:15:01.825 17520 17610 I AetherFeed: cache.read article-index/feed_https___www.premiumbeat.com_blog_feed_ 1934ms v=1 n=8886
+08-19 19:15:02.322 17520 17609 I AetherFeed: cache.read article-index/feed_https___www.premiumbeat.com_blog_feed_ 1623ms v=1 n=8886
+08-19 19:15:02.532 17520 17614 I AetherFeed: cache.read article-index/feed_https___www.premiumbeat.com_blog_feed_ 1331ms v=1 n=8886
+08-19 19:15:02.601 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16651 1266ms v=1 n=6462
+08-19 19:15:02.635 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16651 1104ms v=1 n=6462
+08-19 19:15:03.208 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16651 884ms v=1 n=6462
+08-19 19:15:03.613 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16738 1007ms v=1 n=5871
+08-19 19:15:03.628 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16738 991ms v=1 n=5871
+08-19 19:15:04.014 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16738 805ms v=1 n=5871
+08-19 19:15:04.615 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16745 998ms v=1 n=3391
+08-19 19:15:04.627 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16745 997ms v=1 n=3391
+08-19 19:15:04.838 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16745 822ms v=1 n=3391
+08-19 19:15:05.609 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16759 981ms v=1 n=3731
+08-19 19:15:05.611 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16759 991ms v=1 n=3731
+08-19 19:15:05.645 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16759 806ms v=1 n=3731
+08-19 19:15:06.456 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16796 810ms v=1 n=6180
+08-19 19:15:06.576 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16796 964ms v=1 n=6180
+08-19 19:15:06.592 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16796 982ms v=1 n=6180
+08-19 19:15:07.445 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16824 985ms v=1 n=3409
+08-19 19:15:07.462 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16824 869ms v=1 n=3409
+08-19 19:15:07.482 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16824 905ms v=1 n=3409
+08-19 19:15:08.299 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16832 835ms v=1 n=3397
+08-19 19:15:08.422 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16832 938ms v=1 n=3397
+08-19 19:15:08.428 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16832 979ms v=1 n=3397
+08-19 19:15:09.233 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16841 809ms v=1 n=3403
+08-19 19:15:09.270 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16841 967ms v=1 n=3403
+08-19 19:15:09.412 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16841 983ms v=1 n=3403
+08-19 19:15:10.080 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16846 809ms v=1 n=5524
+08-19 19:15:10.217 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16846 981ms v=1 n=5524
+08-19 19:15:10.336 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16846 922ms v=1 n=5524
+08-19 19:15:11.048 17520 17613 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16871 964ms v=1 n=3413
+08-19 19:15:11.153 17520 17609 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16871 815ms v=1 n=3413
+08-19 19:15:11.193 17520 17593 I AetherFeed: cache.read thumbs/feed_https___motoiq.com_feed__https___motoiq.com__p_16871 975ms v=1 n=3413
+08-19 19:15:11.978 17520 17613 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5708 924ms v=1 n=9748
+08-19 19:15:12.018 17520 17609 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5708 862ms v=1 n=9748
+08-19 19:15:12.180 17520 17593 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5708 984ms v=1 n=9748
+08-19 19:15:12.829 17520 17609 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5793 810ms v=1 n=4537
+08-19 19:15:12.948 17520 17613 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5793 965ms v=1 n=4537
+08-19 19:15:13.160 17520 17593 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5793 977ms v=1 n=4537
+08-19 19:15:13.654 17520 17609 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5811 820ms v=1 n=5295
+08-19 19:15:13.858 17520 17613 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5811 908ms v=1 n=5295
+08-19 19:15:14.136 17520 17593 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5811 975ms v=1 n=5295
+08-19 19:15:14.643 17520 17609 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5846 985ms v=1 n=6731
+08-19 19:15:14.670 17520 17613 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5846 811ms v=1 n=6731
+08-19 19:15:15.121 17520 17593 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5846 983ms v=1 n=6731
+08-19 19:15:15.481 17520 17613 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5873 810ms v=1 n=8908
+08-19 19:15:15.633 17520 17609 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5873 986ms v=1 n=8908
+08-19 19:15:15.994 17520 17593 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5873 871ms v=1 n=8908
+08-19 19:15:16.470 17520 17613 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5974 984ms v=1 n=4226
+08-19 19:15:16.635 17520 17609 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5974 1000ms v=1 n=4226
+08-19 19:15:16.814 17520 17593 I AetherFeed: cache.read thumbs/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5974 818ms v=1 n=4226
+08-19 19:15:17.442 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_0ea64106-6dde-4a9a-9e87-ff8f0a2be02f 968ms v=1 n=4805
+08-19 19:15:17.615 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_0ea64106-6dde-4a9a-9e87-ff8f0a2be02f 977ms v=1 n=4805
+08-19 19:15:17.631 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_0ea64106-6dde-4a9a-9e87-ff8f0a2be02f 815ms v=1 n=4805
+08-19 19:15:18.427 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_155a2ed9-3076-402b-98f2-9fbec19fecb4 981ms v=1 n=5114
+08-19 19:15:18.447 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_155a2ed9-3076-402b-98f2-9fbec19fecb4 815ms v=1 n=5114
+08-19 19:15:18.604 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_155a2ed9-3076-402b-98f2-9fbec19fecb4 988ms v=1 n=5114
+08-19 19:15:19.346 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_212c636b-1f27-4d86-891e-0db0f414c35f 917ms v=1 n=4551
+08-19 19:15:19.355 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_212c636b-1f27-4d86-891e-0db0f414c35f 907ms v=1 n=4551
+08-19 19:15:19.504 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_212c636b-1f27-4d86-891e-0db0f414c35f 898ms v=1 n=4551
+08-19 19:15:20.270 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_2321dbd5-eea9-406d-a96a-5bf9ea294b2a 920ms v=1 n=4360
+08-19 19:15:20.334 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_2321dbd5-eea9-406d-a96a-5bf9ea294b2a 978ms v=1 n=4360
+08-19 19:15:20.387 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_2321dbd5-eea9-406d-a96a-5bf9ea294b2a 882ms v=1 n=4360
+08-19 19:15:21.151 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_248afba5-35a5-4450-9bcf-9668c6bd676e 815ms v=1 n=4326
+08-19 19:15:21.214 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_248afba5-35a5-4450-9bcf-9668c6bd676e 940ms v=1 n=4326
+08-19 19:15:21.354 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_248afba5-35a5-4450-9bcf-9668c6bd676e 965ms v=1 n=4326
+08-19 19:15:22.030 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_2a000f17-7d9d-4ad0-bd12-732c44b071e2 815ms v=1 n=4866
+08-19 19:15:22.100 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_2a000f17-7d9d-4ad0-bd12-732c44b071e2 945ms v=1 n=4866
+08-19 19:15:22.316 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_2a000f17-7d9d-4ad0-bd12-732c44b071e2 961ms v=1 n=4866
+08-19 19:15:22.902 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_4cb6d313-0867-4141-b869-361b172a6e9b 866ms v=1 n=4640
+08-19 19:15:23.015 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_4cb6d313-0867-4141-b869-361b172a6e9b 914ms v=1 n=4640
+08-19 19:15:23.282 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_4cb6d313-0867-4141-b869-361b172a6e9b 964ms v=1 n=4640
+08-19 19:15:23.755 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_7019e629-6ecc-4f51-b31e-64f1bcbd7249 852ms v=1 n=4978
+08-19 19:15:23.976 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_7019e629-6ecc-4f51-b31e-64f1bcbd7249 960ms v=1 n=4978
+08-19 19:15:24.140 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_7019e629-6ecc-4f51-b31e-64f1bcbd7249 856ms v=1 n=4978
+08-19 19:15:24.714 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_79319804-c136-46b7-a413-d9b1fde9620c 957ms v=1 n=5129
+08-19 19:15:24.938 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_79319804-c136-46b7-a413-d9b1fde9620c 960ms v=1 n=5129
+08-19 19:15:24.962 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_79319804-c136-46b7-a413-d9b1fde9620c 821ms v=1 n=5129
+08-19 19:15:25.578 17520 17613 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_7c52bca7-e518-4222-8959-f29268efdf4f 861ms v=1 n=4683
+08-19 19:15:25.903 17520 17593 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_7c52bca7-e518-4222-8959-f29268efdf4f 964ms v=1 n=4683
+08-19 19:15:25.915 17520 17609 I AetherFeed: cache.read thumbs/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_7c52bca7-e518-4222-8959-f29268efdf4f 952ms v=1 n=4683
+08-19 19:15:26.459 17520 17613 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4976 879ms v=1 n=5248
+08-19 19:15:26.815 17520 17609 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4976 898ms v=1 n=5248
+08-19 19:15:26.860 17520 17593 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4976 955ms v=1 n=5248
+08-19 19:15:27.320 17520 17613 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4981 860ms v=1 n=3684
+08-19 19:15:27.708 17520 17593 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4981 846ms v=1 n=3684
+08-19 19:15:27.797 17520 17609 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4981 981ms v=1 n=3684
+08-19 19:15:28.312 17520 17613 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4991 991ms v=1 n=4188
+08-19 19:15:28.581 17520 17593 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4991 872ms v=1 n=4188
+08-19 19:15:28.693 17520 17609 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4991 895ms v=1 n=4188
+08-19 19:15:29.297 17520 17613 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_5010 983ms v=1 n=3997
+08-19 19:15:29.508 17520 17609 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_5010 814ms v=1 n=3997
+08-19 19:15:29.579 17520 17593 I AetherFeed: cache.read thumbs/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_5010 997ms v=1 n=3997
+08-19 19:15:30.291 17520 17613 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_45904009462 991ms v=1 n=6794
+08-19 19:15:30.316 17520 17609 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_45904009462 806ms v=1 n=6794
+08-19 19:15:30.571 17520 17593 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_45904009462 989ms v=1 n=6794
+08-19 19:15:31.186 17520 17609 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_57275116042 869ms v=1 n=4608
+08-19 19:15:31.225 17520 17613 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_57275116042 929ms v=1 n=4608
+08-19 19:15:31.575 17520 17593 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_57275116042 1003ms v=1 n=4608
+08-19 19:15:32.086 17520 17613 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_67148385214 860ms v=1 n=5426
+08-19 19:15:32.182 17520 17609 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_67148385214 991ms v=1 n=5426
+08-19 19:15:32.435 17520 17593 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_67148385214 858ms v=1 n=5426
+08-19 19:15:33.077 17520 17613 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_69303442896 986ms v=1 n=3241
+08-19 19:15:33.163 17520 17609 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_69303442896 979ms v=1 n=3241
+08-19 19:15:33.235 17520 17593 I AetherFeed: cache.read thumbs/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_69303442896 799ms v=1 n=3241
+08-19 19:15:33.794 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_105266490272 623ms v=1 n=6627
+08-19 19:15:34.397 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_146070390717 592ms v=1 n=16335
+08-19 19:15:34.992 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_148675821737 584ms v=1 n=25320
+08-19 19:15:35.584 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_45904009462 587ms v=1 n=82396
+08-19 19:15:36.179 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_57275116042 581ms v=1 n=148784
+08-19 19:15:36.769 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_65979958297 572ms v=1 n=3692
+08-19 19:15:37.379 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_67148385214 595ms v=1 n=557774
+08-19 19:15:38.014 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_67970413047 575ms v=1 n=5800
+08-19 19:15:38.590 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_69303442896 569ms v=1 n=25497
+08-19 19:15:38.881 17520 17520 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 19:15:38.921 17709 17760 W chromium: [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 19:15:38.944 17709 17760 W chromium: [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 19:15:38.944 17709 17760 W chromium: [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 19:15:38.944 17709 17760 W chromium: [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 19:15:38.944 17709 17760 W chromium: [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 19:15:38.969 17709 17769 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 19:15:38.969 17709 17769 W chromium: [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1
+08-19 19:15:39.396 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_73426997938 800ms v=1 n=4357
+08-19 19:15:40.003 17520 17593 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16651 1073ms v=1 n=9990374
+08-19 19:15:40.226 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5708 798ms v=1 n=1225815
+08-19 19:15:41.083 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5782 691ms v=1 n=16954
+08-19 19:15:41.947 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5793 851ms v=1 n=432269
+08-19 19:15:42.541 17520 17593 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16738 1244ms v=1 n=10162858
+08-19 19:15:42.768 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5811 749ms v=1 n=341822
+08-19 19:15:43.574 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5846 749ms v=1 n=488021
+08-19 19:15:44.359 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5873 707ms v=1 n=486886
+08-19 19:15:45.138 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5974 704ms v=1 n=217329
+08-19 19:15:45.814 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6053 639ms v=1 n=309916
+08-19 19:15:46.475 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6223 615ms v=1 n=363064
+08-19 19:15:47.115 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6434 602ms v=1 n=2019
+08-19 19:15:47.707 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54196 586ms v=1 n=29952
+08-19 19:15:48.292 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54207 578ms v=1 n=4816
+08-19 19:15:48.873 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54210 574ms v=1 n=6515
+08-19 19:15:49.468 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54214 589ms v=1 n=10497
+08-19 19:15:50.046 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54219 574ms v=1 n=6066
+08-19 19:15:50.623 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54223 571ms v=1 n=6056
+08-19 19:15:51.199 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54226 571ms v=1 n=6464
+08-19 19:15:51.771 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54230 569ms v=1 n=6769
+08-19 19:15:52.358 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54234 583ms v=1 n=4444
+08-19 19:15:52.933 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54237 569ms v=1 n=4892
+08-19 19:15:53.507 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4980 568ms v=1 n=5649
+08-19 19:15:54.093 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4981 576ms v=1 n=264627
+08-19 19:15:54.799 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4991 644ms v=1 n=2009801
+08-19 19:15:55.833 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_5010 813ms v=1 n=1193369
+08-19 19:15:56.547 17520 17609 I AetherFeed: cache.read articles/feed_https___feeds.feedburner.com_InformationIsBeautiful_https___informationisbeautiful.net__p_11019 590ms v=1 n=978
+08-19 19:15:57.223 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16745 659ms v=1 n=315733
+08-19 19:15:58.398 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16759 968ms v=1 n=9671973
+08-19 19:16:00.065 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16796 625ms v=1 n=1469719
+08-19 19:16:00.948 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16824 679ms v=1 n=409712
+08-19 19:16:01.390 17520 17593 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16745 7ms v=2 n=315630
+08-19 19:16:01.609 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16832 610ms v=1 n=352899
+08-19 19:16:02.266 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16841 614ms v=1 n=273169
+08-19 19:16:03.114 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16846 767ms v=1 n=2194933
+08-19 19:16:04.086 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16871 687ms v=1 n=349482
+08-19 19:16:04.730 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a04820477b3d8810201b3c7 603ms v=1 n=1344
+08-19 19:16:05.322 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a0c1995e8fe23fe55052fbf 584ms v=1 n=1864
+08-19 19:16:05.904 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a0f0e99becce4c6fb0abd07 578ms v=1 n=2217
+08-19 19:16:06.482 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a1015358319d27d330ecff3 572ms v=1 n=1806
+08-19 19:16:07.064 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a204fbcb24393ec000f7266 578ms v=1 n=2225
+08-19 19:16:07.640 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a2050e5499ec82b6d0f6d85 570ms v=1 n=1346
+08-19 19:16:08.212 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a291b86f96cb4428d0448a3 567ms v=1 n=1795
+08-19 19:16:08.784 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a3bf6108ae8c275520fc5e8 571ms v=1 n=918
+08-19 19:16:09.355 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a3e983ccf9240818a050d97 565ms v=1 n=1730
+08-19 19:16:09.933 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a4292538b6bdffc98029838 571ms v=1 n=1304
+08-19 19:16:10.756 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_0ea64106-6dde-4a9a-9e87-ff8f0a2be02f 735ms v=1 n=4801138
+08-19 19:16:11.901 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_155a2ed9-3076-402b-98f2-9fbec19fecb4 632ms v=1 n=1756061
+08-19 19:16:12.686 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_212c636b-1f27-4d86-891e-0db0f414c35f 595ms v=1 n=701233
+08-19 19:16:13.338 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_2321dbd5-eea9-406d-a96a-5bf9ea294b2a 575ms v=1 n=250406
+08-19 19:16:14.414 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_248afba5-35a5-4450-9bcf-9668c6bd676e 895ms v=1 n=9132248
+08-19 19:16:15.974 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_2a000f17-7d9d-4ad0-bd12-732c44b071e2 607ms v=1 n=1313245
+08-19 19:16:16.767 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_4cb6d313-0867-4141-b869-361b172a6e9b 629ms v=1 n=1680798
+08-19 19:16:18.143 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_7019e629-6ecc-4f51-b31e-64f1bcbd7249 996ms v=1 n=11298951
+08-19 19:16:19.943 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_79319804-c136-46b7-a413-d9b1fde9620c 591ms v=1 n=759723
+08-19 19:16:21.007 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_7c52bca7-e518-4222-8959-f29268efdf4f 850ms v=1 n=7790175
+08-19 19:16:22.443 17520 17609 I AetherFeed: cache.read articles/feed_https___www.premiumbeat.com_blog_feed__https___www.premiumbeat.com_blog__p_172245 630ms v=1 n=1644555
+08-19 19:16:23.235 17520 17609 I AetherFeed: cache.read articles/feed_https___www.premiumbeat.com_blog_feed__https___www.premiumbeat.com_blog__p_178734 608ms v=1 n=1339756
+08-19 19:16:23.377 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_105266490272 0ms v=2 n=6591
+08-19 19:16:23.378 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_105266490272 0ms v=2 n=6591
+08-19 19:16:23.379 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_146070390717 0ms v=2 n=16319
+08-19 19:16:23.381 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_146070390717 0ms v=2 n=16319
+08-19 19:16:23.383 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_148675821737 0ms v=2 n=25253
+08-19 19:16:23.385 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_148675821737 0ms v=2 n=25253
+08-19 19:16:23.389 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_45904009462 1ms v=2 n=82343
+08-19 19:16:23.401 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_57275116042 2ms v=2 n=148898
+08-19 19:16:23.412 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_65979958297 0ms v=2 n=3649
+08-19 19:16:23.413 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_65979958297 0ms v=2 n=3649
+08-19 19:16:23.432 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_67148385214 10ms v=2 n=557635
+08-19 19:16:23.476 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_67970413047 0ms v=2 n=5761
+08-19 19:16:23.477 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_67970413047 0ms v=2 n=5761
+08-19 19:16:23.478 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_69303442896 0ms v=2 n=25460
+08-19 19:16:23.480 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_73426997938 0ms v=2 n=4319
+08-19 19:16:23.481 17520 17609 I AetherFeed: cache.read articles/feed_https___arjunsreedharan.org_rss_https___arjunsreedharan.org_post_73426997938 0ms v=2 n=4319
+08-19 19:16:23.525 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5708 22ms v=2 n=1225859
+08-19 19:16:23.621 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5782 0ms v=2 n=16905
+08-19 19:16:23.623 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5782 0ms v=2 n=16905
+08-19 19:16:23.639 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5793 8ms v=2 n=432012
+08-19 19:16:23.685 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5811 6ms v=2 n=341804
+08-19 19:16:23.734 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5846 14ms v=2 n=487915
+08-19 19:16:23.789 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5873 8ms v=2 n=487018
+08-19 19:16:23.835 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_5974 4ms v=2 n=217216
+08-19 19:16:23.862 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6053 5ms v=2 n=309885
+08-19 19:16:23.896 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6053 5ms v=2 n=309885
+08-19 19:16:23.915 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6223 6ms v=2 n=362979
+08-19 19:16:23.956 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6223 7ms v=2 n=362979
+08-19 19:16:23.964 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6434 0ms v=2 n=1965
+08-19 19:16:23.965 17520 17609 I AetherFeed: cache.read articles/feed_https___bhworld.wordpress.com_feed__http___bhworld.wordpress.com__p_6434 0ms v=2 n=1965
+08-19 19:16:23.966 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54196 0ms v=2 n=29929
+08-19 19:16:23.969 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54196 0ms v=2 n=29929
+08-19 19:16:23.970 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54207 0ms v=2 n=4796
+08-19 19:16:23.971 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54207 0ms v=2 n=4796
+08-19 19:16:23.971 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54210 0ms v=2 n=6486
+08-19 19:16:23.972 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54210 0ms v=2 n=6486
+08-19 19:16:23.973 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54214 0ms v=2 n=10449
+08-19 19:16:23.974 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54214 0ms v=2 n=10449
+08-19 19:16:23.974 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54219 0ms v=2 n=6004
+08-19 19:16:23.975 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54219 0ms v=2 n=6004
+08-19 19:16:23.976 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54223 0ms v=2 n=6030
+08-19 19:16:23.976 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54223 0ms v=2 n=6030
+08-19 19:16:23.977 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54226 0ms v=2 n=6444
+08-19 19:16:23.978 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54226 0ms v=2 n=6444
+08-19 19:16:23.978 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54230 0ms v=2 n=6743
+08-19 19:16:23.979 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54230 0ms v=2 n=6743
+08-19 19:16:23.979 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54234 0ms v=2 n=4386
+08-19 19:16:23.980 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54234 0ms v=2 n=4386
+08-19 19:16:23.981 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54237 0ms v=2 n=4860
+08-19 19:16:23.981 17520 17609 I AetherFeed: cache.read articles/feed_https___bitcoinmagazine.com_feed_https___bitcoinmagazine.com__p_54237 0ms v=2 n=4860
+08-19 19:16:23.982 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4980 0ms v=2 n=5606
+08-19 19:16:23.983 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4980 0ms v=2 n=5606
+08-19 19:16:23.992 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4981 4ms v=2 n=264574
+08-19 19:16:24.083 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_4991 36ms v=2 n=2009439
+08-19 19:16:24.289 17520 17609 I AetherFeed: cache.read articles/feed_https___blog.linuxmint.com__feed_rss2_https___blog.linuxmint.com__p_5010 21ms v=2 n=1193334
+08-19 19:16:24.384 17520 17609 I AetherFeed: cache.read articles/feed_https___feeds.feedburner.com_InformationIsBeautiful_https___informationisbeautiful.net__p_11019 0ms v=2 n=939
+08-19 19:16:24.384 17520 17609 I AetherFeed: cache.read articles/feed_https___feeds.feedburner.com_InformationIsBeautiful_https___informationisbeautiful.net__p_11019 0ms v=2 n=939
+08-19 19:16:24.399 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16745 5ms v=2 n=315630
+08-19 19:16:24.764 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16759 175ms v=2 n=9671462
+08-19 19:16:25.589 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16796 27ms v=2 n=1469956
+08-19 19:16:25.721 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16824 9ms v=2 n=409616
+08-19 19:16:25.765 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16832 7ms v=2 n=352947
+08-19 19:16:25.803 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16841 5ms v=2 n=273145
+08-19 19:16:25.903 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16846 41ms v=2 n=2195142
+08-19 19:16:26.088 17520 17609 I AetherFeed: cache.read articles/feed_https___motoiq.com_feed__https___motoiq.com__p_16871 6ms v=2 n=349441
+08-19 19:16:26.115 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a04820477b3d8810201b3c7 0ms v=2 n=1310
+08-19 19:16:26.116 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a04820477b3d8810201b3c7 0ms v=2 n=1310
+08-19 19:16:26.116 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a0c1995e8fe23fe55052fbf 0ms v=2 n=1831
+08-19 19:16:26.117 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a0c1995e8fe23fe55052fbf 0ms v=2 n=1831
+08-19 19:16:26.117 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a0f0e99becce4c6fb0abd07 0ms v=2 n=2179
+08-19 19:16:26.118 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a0f0e99becce4c6fb0abd07 0ms v=2 n=2179
+08-19 19:16:26.118 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a1015358319d27d330ecff3 0ms v=2 n=1763
+08-19 19:16:26.118 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a1015358319d27d330ecff3 0ms v=2 n=1763
+08-19 19:16:26.119 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a204fbcb24393ec000f7266 0ms v=2 n=2185
+08-19 19:16:26.119 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a204fbcb24393ec000f7266 0ms v=2 n=2185
+08-19 19:16:26.119 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a2050e5499ec82b6d0f6d85 0ms v=2 n=1306
+08-19 19:16:26.120 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a2050e5499ec82b6d0f6d85 0ms v=2 n=1306
+08-19 19:16:26.120 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a291b86f96cb4428d0448a3 0ms v=2 n=1750
+08-19 19:16:26.121 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a291b86f96cb4428d0448a3 0ms v=2 n=1750
+08-19 19:16:26.121 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a3bf6108ae8c275520fc5e8 0ms v=2 n=878
+08-19 19:16:26.121 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a3bf6108ae8c275520fc5e8 0ms v=2 n=878
+08-19 19:16:26.121 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a3e983ccf9240818a050d97 0ms v=2 n=1702
+08-19 19:16:26.122 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a3e983ccf9240818a050d97 0ms v=2 n=1702
+08-19 19:16:26.122 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a4292538b6bdffc98029838 0ms v=2 n=1273
+08-19 19:16:26.122 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_galnet.xml_6a4292538b6bdffc98029838 0ms v=2 n=1273
+08-19 19:16:26.293 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_0ea64106-6dde-4a9a-9e87-ff8f0a2be02f 89ms v=2 n=4801544
+08-19 19:16:26.740 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_155a2ed9-3076-402b-98f2-9fbec19fecb4 35ms v=2 n=1756341
+08-19 19:16:26.904 17520 17609 I AetherFeed: cache.read articles/feed_https___www.elitedangerous.com_en-GB_rss_news.xml_212c636b-1f27-4d86-891e-0db0f414c35f 13ms v=2 n=701239

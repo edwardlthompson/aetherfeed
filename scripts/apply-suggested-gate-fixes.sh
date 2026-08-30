@@ -63,7 +63,7 @@ case "$STAGE" in
   encoding)
     echo "encoding: no mechanical rewrite — agent must fix UTF-16/BOM"
     ;;
-  hygiene|file-limits|*-test|*-type*|*-clippy|*-vet|*-build|design-cohesion|about-feature-gate|android-test)
+  hygiene|file-limits|ui-parity|*-test|*-type*|*-clippy|*-vet|*-build|design-cohesion|about-feature-gate|android-test)
     echo "stage=$STAGE is semantic — skipping allowlisted shell (agent must fix)"
     ;;
   *)

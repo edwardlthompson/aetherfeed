@@ -17,6 +17,104 @@
 
 ## Entries
 
+### 2026-08-20 — Donations and updates (Continuum method)
+- **Status:** Accepted
+- **Context:** AetherFeed already had an opt-in tag check and a GitHub Sponsors block. Continuum Calendar already shipped a quieter policy: always-available Venmo, one note after a version change, and a daily installer-filename check.
+- **Decision:** Reuse that method on web and Android. Compare `AetherFeed-X.Y.Z-*.exe` / `aetherfeed-X.Y.Z-foss.apk`. Keep donate prefs and last-check timestamps device-local. Settings remains an opt-out of the daily fetch. Never mix donate with the update dialog.
+- **Alternatives considered:** Keep tag-based About status as the only prompt (rejected — template tags are not product installers). Put donate on the install dialog (rejected — dark pattern).
+- **Consequences:** First run is silent. A later version shows one optional Venmo note. Failed GitHub fetches stay silent.
+
+### 2026-08-19 — Library tree, Unified pick, share, cache retain
+- **Status:** Accepted
+- **Context:** News / Podcasts / Boards lived on a bottom mode bar. Folder taps only highlighted. Cache trim only touched headline indexes.
+- **Decision:** Keep three `AppDestination` values. Unified is `LibraryPick.Unified` in the left tree. Chevron expands; the label selects All / Folder / Source / Unified timelines. Share lives on the action bar. Settings cache retain drops unstarred offline blobs after 30 days or the next successful sync (Refresh-all if Drive is off). Starred ids are never deleted.
+- **Alternatives considered:** Fourth `AppDestination` for Unified (rejected — spec is three modes). Episode browser in this row (deferred — podcast All is still shows).
+- **Consequences:** Prev/next stay in the current pick list. Action-bar kind follows the focused Unified row. Headline history policy is unchanged.
+
+### 2026-08-19 — Recents privacy cover
+- **Status:** Accepted
+- **Context:** The Android app switcher can snapshot article text, lock UI, and the library. Windows has no equivalent recents card.
+- **Decision:** Always set `FLAG_SECURE` on `MainActivity` (lock included) and `setRecentsScreenshotEnabled(false)` on API 33+. Web/desktop paints a black cover on `visibilitychange` / `blur`. Document that Alt-Tab can still capture a pre-cover frame.
+- **Alternatives considered:** Blur-only recents (rejected — needs proprietary or OEM APIs). Settings toggle (out of scope). Windows `WDA_EXCLUDEFROMCAPTURE` (not in parity scope).
+- **Consequences:** Users cannot screenshot the Android app. Recents itself is not UI-testable; `FLAG_SECURE` on the window is the gate.
+
+### 2026-08-19 — Skip already-fetched article bodies
+- **Status:** Accepted
+- **Context:** Prefetch treated any body under 400 characters as a miss, and empty extracts were not persisted, so every launch re-downloaded unread full text. Prefetch also RSS-refreshed feeds whose in-memory index looked empty.
+- **Decision:** Persist a `fetched` marker (Android) or any `af-lock-articles` row (web) after each attempt, including failures. The next prefetch skips those ids. Green dots still require a usable reader body. `headlinesFromAll` loads stored indexes only; empty feeds refresh on Refresh, opening that feed, or the background worker.
+- **Alternatives considered:** Retry failed extracts on every launch (rejected — that is the bug). Refresh empty indexes during prefetch (rejected — repeats 50+ RSS pulls when the index is missing).
+- **Consequences:** Opening a story can still retry a short body. New headlines after Refresh are fetched once.
+
+### 2026-08-19 — Desktop seed on Android + cache every unread
+- **Status:** Accepted
+- **Context:** Phone only had the Smoke seed. PC had 66 feeds in 24 folders. Prefetch only cached the open feed.
+- **Decision:** After unlock, Android applies plaintext `files/seed-library.json` (merge, skip duplicate URLs, drop smoke-only HN/NPR if they are not in the seed). Unread full-text prefetch walks every news source under Wi-Fi and history rules. Refresh in the top bar / pull-to-refresh refreshes all news feeds.
+- **Alternatives considered:** Keep auto-smoke when seed is missing (rejected). Drive-only library copy (not needed; seed file is the documented adb path).
+- **Consequences:** Unlock once after a seed push. Encrypted desktop vault files are still skipped.
+
+### 2026-08-19 — PIN keyboard, folder drawer, cache dot
+- **Status:** Accepted
+- **Context:** Unlock used a generic password field so PIN did not open the numeric keyboard. Narrow Android hid folders above a long list or behind the reader. HN RSS stubs painted article/comment URLs. Sort was a text button.
+- **Decision:** Persist lock `kind` on the wrap envelope. PIN uses `NumberPassword` / `inputmode=numeric`; passphrase uses the password keyboard. Narrow News is a left-edge drawer (plus a folders button). Sort lives behind a filter icon. Reader rejects stub bodies; headlines show a green cached dot.
+- **Alternatives considered:** Default unknown wraps to passphrase (rejected: this vault is PIN). Stack the tree above the list on phones (rejected: users could not find folders). Keep comment URLs as metadata (rejected).
+- **Consequences:** Existing wraps without `kind` show PIN/passphrase chips. Article swipe starts past the left edge so the drawer can open.
+
+### 2026-08-19 — Swipe, oldest-first, nav unread, instant cache
+- **Status:** Accepted
+- **Context:** Users wanted article-to-article swipe, oldest-first sort, unread on the three mode icons, no pane titles/import/hide/smoke on News, refresh in the top bar, and no URL/link placeholder while cache loads.
+- **Decision:** Sort and swipe walk the same list. Opening an uncached article cancels prefetch, hydrates that id, then continues with the next row. Cached HTML paints immediately; uncached shows title only. Import lives in Settings. Unread badges sit on News / Podcasts / Boards.
+- **Alternatives considered:** Keep hide-sources (rejected). Auto smoke feeds when empty (rejected). Use RSS HTML with links as a loading placeholder (rejected).
+- **Consequences:** Sprint 19 swipe-to-mark-read remains open. `j`/`k` on desktop move between articles.
+
+### 2026-08-19 — Reading-mode image cache + unread prefetch
+- **Status:** Accepted
+- **Context:** Images could include share icons; opening an article re-fetched; there was no unread prefetch or thumbnail.
+- **Decision:** Extract reading mode first, drop social/tracker/tiny icons, then fetch remaining images in document order into the encrypted article cache. Prefetch unread rows with a determinate progress bar (width %, no animation). First remaining image is the timeline thumbnail.
+- **Alternatives considered:** Fetch all page images then extract (rejected: pulls share sprites). Indeterminate spinner (rejected: fails when animations are off).
+- **Consequences:** Cached stories open from ciphertext. Sprint 19 swipe/`j`/`k` stay open.
+
+### 2026-08-19 — Collapsed folders, hide sources, resizable panes
+- **Status:** Accepted
+- **Context:** The left column opened every category at once, desktop mode types plus the tagline ate the top of the News rail, and pane widths were fixed.
+- **Decision:** Folders start collapsed and persist expand/collapse. Desktop mode nav is a bottom bar like Android; the greeting lives in About. Hide sources and drag-resize pane weights persist (`af-news-chrome` / DataStore `news_chrome`). Drag updates CSS/weights live and writes storage on pointer up.
+- **Alternatives considered:** Horizontal mode chips in the header (rejected: Android already uses a bottom bar). Shared Compose/DOM widgets (rejected: UI_PARITY IDs only).
+- **Consequences:** Opening a folder no longer clears the current feed. Sprint 19 density work stays open.
+
+### 2026-08-19 — Reading-mode only + desktop lock remount
+- **Status:** Accepted
+- **Context:** Opening a story still felt like a webpage (site CSS/links; Android WebView could fetch). Desktop idle lock expired the vault key without remounting the PIN form, so users had to press F5.
+- **Decision:** Reader shows extracted text + cached images only, themed with app tokens; links/CSS/iframes stripped; Android WebView blocks network and uses `about:blank`. Session idle expiry notifies the shell immediately; pointer/key and Tauri window focus remount the lock form.
+- **Alternatives considered:** Compose-only Android reader (rejected this slice: themed WebView with a network block keeps HTML lists/images). Drop extract-from-URL (rejected: short RSS still needs a one-shot HTML fetch that is never displayed).
+- **Consequences:** No in-app browser. PIN appears without refresh when the 2-minute idle timer fires.
+
+### 2026-08-19 — Cached headlines, Wi-Fi policy, source tree
+- **Status:** Accepted
+- **Context:** Headlines vanished after process death; refresh ignored metered links; folders were a horizontal chip row so categories scrolled off the left column.
+- **Decision:** Persist trimmed article lists in the encrypted cache (`article-index` / `af-lock-article-index`). Settings default to Wi-Fi only (cellular is an explicit choice) and that flag gates refresh, full-text GET, and image fetch. The left column is a vertical folder+feed tree on both apps.
+- **Alternatives considered:** Room article table this slice (rejected: keep history trim + encrypted files). One shared flag with podcast downloads (rejected: podcast web still defaults to allow cellular).
+- **Consequences:** Cached headlines survive restart after unlock. Sprint 19 density (thumbnails, swipe, `j`/`k`) stays open.
+
+### 2026-08-19 — Android library seed, hourly refresh, history caps
+- **Status:** Accepted
+- **Context:** The desktop vault already held 66 feeds; the phone needed the same library plus user-set refresh and history limits without committing that file.
+- **Decision:** One-shot `files/seed-library.json` import after unlock; WorkManager periodic refresh with a 1-hour minimum (3/6/12/24 h options); history by last N articles (default 10) or last 1–30 days. Persist optional `Feed.folder` via Room v2.
+- **Alternatives considered:** Commit OPML into git (rejected: hygiene / personal library). Sub-hour refresh (rejected: user asked hourly as shortest). Persist every article in Room this slice (rejected: in-memory cache + trim is enough).
+- **Consequences:** Settings owns interval and history chips. Background refresh no-ops while the vault is locked. HUMAN OPML/Drive and ADB smoke rows stay open.
+
+### 2026-08-18 — Combined gap board and 3-mode IA lock
+- **Status:** Accepted
+- **Context:** Feature matrix and unusable desktop stub needed one prioritized board and a BUILD_PLAN that can dispatch every missing P0/P1 row.
+- **Decision:** One canvas (`aetherfeed-gap-board.canvas.tsx`), three modes (News / Podcasts / Boards), Settings/About overlays only. Spec holes locked into existing feature docs plus `docs/features/app-shell.md`. Parallel tables split into Sprint 12 + 12b because `check-build-plan-parallel` caps `agent_count_target` at 8.
+- **Alternatives considered:** Separate UI matrix canvas (rejected: one board). `agent_count_target: 16` on a single sprint (rejected: gate max 8). Fourth Settings mode (rejected: overlay).
+- **Consequences:** Sequential 11 is done. Sprint 12/12b dispatch 16 P0+P1 AGENT scopes. HUMAN Drive/OPML and ADB smoke stay open.
+
+### 2026-08-18 — Drive appdata feed-source sync for test builds
+- **Status:** Accepted
+- **Context:** Phone and PC need a shared subscription list without writing My Drive or uploading the passphrase.
+- **Decision:** Sync only `aetherfeed-feeds.enc` in Drive Application Data (`drive.appdata`). Seal with AES-256-GCM + PBKDF2 (allowed AEAD alternate). Merge by normalized feed URL. Desktop and Android use loopback PKCE on `http://127.0.0.1:17890`. Composio confirmed the Google account is live; a Desktop OAuth client still has to be authorized in the apps (Cloud Console sign-in is HUMAN).
+- **Alternatives considered:** Visible My Drive folder via Composio (rejected: ADR-0003). Play Services Sign-In (rejected: FOSS). Device-code flow only (rejected: Drive appdata is unreliable on TV clients).
+- **Consequences:** Settings has Connect / Sync now / Disconnect. Debug builds share a local passphrase via gitignored `local.properties` and `examples/web/.env.local`.
+
 ### 2026-08-18 — Automate remaining HUMAN seed steps
 - **Status:** Accepted
 - **Context:** Seed left GitHub repo creation, security defaults, ADR sign-off, and release/donation config as HUMAN rows.
@@ -284,3 +382,6 @@ _Seed template ADR: `docs/adr/0000-template-baseline.md`. Child repos use `docs/
 - **Decision:** Ship all three with Golden Path stubs, MODULE.md guides, and path-gated CI jobs (`lightroom`, `rust`, `go`) that skip when child repos remove the directories
 - **Alternatives considered:** Lightroom-only (rejected: Rust/Go stubs are low-cost and popular); defer all optional modules (rejected: COMPLETED_TASKS M3 work already landed)
 - **Consequences:** Template CI runs more jobs on `main`; child repos can delete unused `examples/` folders to skip jobs via `hashFiles` guards
+## Autonomous /build approval (2026-08-18T15:40:25+00:00)
+
+- Confirmed file-only reader import for v0.1: OPML/JSON/Takeout zip only; no Google or Inoreader OAuth.

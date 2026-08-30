@@ -2,6 +2,7 @@ package org.aetherfeed.app
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import org.aetherfeed.app.applock.isWindowSecure
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -15,6 +16,13 @@ class MainActivitySmokeTest {
     fun launchesMainActivity() {
         activityRule.scenario.onActivity { activity ->
             check(!activity.isFinishing)
+        }
+    }
+
+    @Test
+    fun windowIsFlagSecure() {
+        activityRule.scenario.onActivity { activity ->
+            check(isWindowSecure(activity))
         }
     }
 }

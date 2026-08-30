@@ -1,0 +1,25 @@
+--------- beginning of main
+08-19 18:49:40.187 W/chromium(12248): [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 18:49:40.221 W/chromium(13262): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 18:49:40.232 W/chromium(13262): [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 18:49:40.232 W/chromium(13262): [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 18:49:40.232 W/chromium(13262): [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 18:49:40.232 W/chromium(13262): [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 18:49:40.245 W/chromium(13262): [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 18:49:40.245 W/chromium(13262): [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1
+08-19 19:07:21.478 W/chromium(15749): [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 19:07:21.634 W/chromium(16038): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 19:07:21.654 W/chromium(16038): [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 19:07:21.654 W/chromium(16038): [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 19:07:21.654 W/chromium(16038): [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 19:07:21.654 W/chromium(16038): [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 19:07:21.672 W/chromium(16038): [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 19:07:21.672 W/chromium(16038): [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1
+08-19 19:15:38.881 W/chromium(17520): [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 48492156
+08-19 19:15:38.921 W/chromium(17709): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+08-19 19:15:38.944 W/chromium(17709): [WARNING:content/child/runtime_features.cc:563] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+08-19 19:15:38.944 W/chromium(17709): [WARNING:content/child/runtime_features.cc:588] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+08-19 19:15:38.944 W/chromium(17709): [WARNING:content/child/runtime_features.cc:609] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+08-19 19:15:38.944 W/chromium(17709): [WARNING:content/child/runtime_features.cc:619] AttributionReporting cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement in addition.
+08-19 19:15:38.969 W/chromium(17709): [WARNING:base/android/library_loader/library_prefetcher.cc:194] Incorrect code ordering
+08-19 19:15:38.969 W/chromium(17709): [WARNING:base/android/library_loader/library_prefetcher.cc:260] Cannot prefetch the library. status = 1

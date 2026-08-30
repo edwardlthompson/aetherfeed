@@ -55,3 +55,8 @@ data class SyncEnvelope(
 
 fun totalUnread(states: Collection<ReadState>): Int =
     states.count { it.status != ReadStatus.Read }
+
+fun unreadByModule(states: Collection<ReadState>): Map<ModuleKind, Int> =
+    ModuleKind.entries.associateWith { kind ->
+        states.count { it.module == kind && it.status != ReadStatus.Read }
+    }

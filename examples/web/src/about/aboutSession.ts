@@ -15,7 +15,7 @@ const LAST_CHECKED_KEY = "af-app-update-last-checked";
 
 export function getInterval(): CheckInterval {
   const stored = localStorage.getItem(INTERVAL_KEY) as CheckInterval | null;
-  return stored ?? "off";
+  return stored ?? "daily";
 }
 
 export function setIntervalPref(interval: CheckInterval): void {

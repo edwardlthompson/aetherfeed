@@ -1,0 +1,27 @@
+.af-playerfx {
+  margin-block-start: var(--af-space-md);
+  text-align: start;
+}
+
+.af-playerfx-sleep,
+.af-playerfx-chapter-block {
+  padding: var(--af-space-md);
+  border: 1px solid var(--af-color-outline);
+  border-radius: var(--af-radius-md);
+  margin-block-end: var(--af-space-sm);
+}
+
+.af-playerfx-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--af-space-sm);
+}
+
+.af-playerfx-empty {
+  color: var(--af-color-on-surface-variant);
+}
+
+.af-playerfx-chapters {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+}

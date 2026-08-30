@@ -12,9 +12,7 @@
 | ✅ Tauri desktop shell | AGENT | `examples/desktop` compile after icons |
 | 🔲 Room + SQLCipher + Hilt | AGENT | Instrumented vault open |
 | 🔲 GitHub repo + CI on main | HUMAN | `check-github-ci.sh --wait 300` |
-
 ## Next feature
 
-1. News (`docs/features/news.md`) after the vault is wired
-2. Podcasts, booru, notifications, then sync
-3. After each AGENT step: `python scripts/agent-run.py watch-agent-gates --once --autofix`
+1. Sprint 8 — Reader source import (`docs/features/reader-import.md`)
+2. After each AGENT step: `python scripts/agent-run.py watch-agent-gates --once --autofix`

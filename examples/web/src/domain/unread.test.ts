@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { totalUnread } from "./unread";
+import { totalUnread, unreadByModule } from "./unread";
 
 describe("totalUnread", () => {
   it("matches the widget and tray contract", () => {
@@ -9,5 +9,12 @@ describe("totalUnread", () => {
       { targetId: "c", module: "booru", status: "read", updatedAt: 3 },
     ]);
     expect(count).toBe(2);
+    expect(
+      unreadByModule([
+        { targetId: "a", module: "news", status: "unread", updatedAt: 1 },
+        { targetId: "b", module: "podcast", status: "in_progress", updatedAt: 2 },
+        { targetId: "c", module: "booru", status: "read", updatedAt: 3 },
+      ]),
+    ).toEqual({ news: 1, podcast: 1, booru: 0 });
   });
 });

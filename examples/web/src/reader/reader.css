@@ -1,0 +1,56 @@
+.af-reader {
+  margin-block-start: var(--af-space-lg);
+  text-align: start;
+  color: var(--af-color-on-surface);
+  font-family: var(--af-font-sans);
+}
+
+.af-reader-article {
+  max-width: 40rem;
+  margin-inline: auto;
+  padding: var(--af-space-md);
+  line-height: 1.6;
+  color: inherit;
+  font-family: inherit;
+  background: transparent;
+}
+
+.af-reader-article,
+.af-reader-article * {
+  font-family: inherit !important;
+  color: inherit;
+}
+
+.af-reader-article a {
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.af-progress {
+  display: block;
+  width: 100%;
+  height: 0.5rem;
+  background: var(--af-color-outline);
+}
+
+.af-progress-fill {
+  display: block;
+  height: 100%;
+  background: var(--af-color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .af-progress-fill {
+    transition: none;
+    animation: none;
+  }
+}
+
+.af-reader-article img {
+  max-width: 100%;
+  height: auto;
+}
+
+.af-reader-article[data-reader-empty] {
+  color: var(--af-color-on-surface-variant);
+}

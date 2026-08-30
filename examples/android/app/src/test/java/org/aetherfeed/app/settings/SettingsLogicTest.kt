@@ -12,8 +12,8 @@ class SettingsLogicTest {
     }
 
     @Test
-    fun enablingRestoresWeeklyDefault() {
-        assertEquals("weekly", SettingsLogic.intervalForToggle(true, "off"))
+    fun enablingRestoresDailyDefault() {
+        assertEquals("daily", SettingsLogic.intervalForToggle(true, "off"))
     }
 
     @Test

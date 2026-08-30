@@ -6,8 +6,8 @@ describe("aboutSession interval prefs", () => {
     localStorage.clear();
   });
 
-  it("defaults to off (opt-in update checks)", () => {
-    expect(getInterval()).toBe("off");
+  it("defaults to daily installer checks", () => {
+    expect(getInterval()).toBe("daily");
   });
 
   it("persists interval preference", () => {
@@ -112,6 +112,7 @@ describe("checkForUpdates", () => {
   });
 
   it("skips GitHub fetch when interval is off", async () => {
+    setIntervalPref("off");
     const fetchMock = vi.fn(async (url: string) => {
       if (url.endsWith("/app-update.json")) {
         return new Response(

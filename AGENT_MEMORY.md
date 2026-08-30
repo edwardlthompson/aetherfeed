@@ -50,6 +50,14 @@ AetherFeed: local-first encrypted news, podcast, and booru client for Android an
 
 | Date | Milestone | What worked | What to improve |
 |------|-----------|-------------|-----------------|
+| 2026-08-19 | Sprint 27 skip fetched | Marker after each prefetch attempt; skip on next load; headlines from index only | Do not treat usableBody as the only skip signal; newsPane.ts must stay extracted so Biome wrap cannot push it over 150 |
+| 2026-08-19 | Sprint 25 PIN/filter/drawer | Persist lock kind; numeric PIN keyboard; filter menu; left-edge folder drawer; reject HN URL stubs; green cache dot | newsPane.ts is at 150 — extract more before the next chrome pass |
+| 2026-08-19 | Sprint 23 unread cache | Reading mode first, then remaining images; social icons dropped; determinate prefetch bar; story thumbs | Do not grow NewsPane.kt past 300; keep prefetch progress patches off the full News remount on web |
+| 2026-08-19 | Sprint 22 chrome density | Folders collapsed + remembered; desktop bottom mode bar; hide sources; drag pane weights persist | Do not remount the News pane on every pointermove; commit chrome prefs on pointerup |
+| 2026-08-19 | Sprint 16 Android seed + refresh | Device copy of desktop `imported-feeds.json`; hourly WorkManager min; history default last 10 / max 30 days | Unlock before seed apply and background refresh; do not commit the library file |
+| 2026-08-18 | Sprint 11 IA lock | Combined gap board; 3-mode chrome; Boards label; spec holes; BUILD_PLAN 12/12b split at 8 | Parallel must fill one mode per stack; HUMAN Drive/OPML still open |
+| 2026-08-18 | Sprint 9 dedupe + sort | Normalized URL skip; folder/host podcast classify; Android gReader picker; desktop persist | User still must export OPML from gReader and Inoreader (`HUMAN_BACKLOG.md`) |
+| 2026-08-18 | Sprint 8 reader import | File-only OPML/JSON/Takeout parse + vault apply; web picker; no OAuth | Live vendor APIs stay out until a human asks; zip inflate is stored/deflate only |
 | 2026-08-18 | AetherFeed seed | Official init + prune + rename; shared models; Tauri shell; validate-bootstrap --quick green | Room/Hilt still open; child GitHub repo not created; Playwright snapshots need a refresh after token change |
 | 2026-08-18 | v0.21.0 /ship | CI + Windows upgrade-sim green on feat and fix; RP #69 admin-merge; fold comments leftover notes | Fold is local-only — commit empty Unreleased before push or RP leaves leftovers under the version heading |
 | 2026-08-17 | M39 /ideas Windows PATH + ship hygiene | Shared PATH resolver; agent-run drops PYTHONPATH; fold Unreleased onto RP; Q&A GraphQL + HUMAN line | Do not attach Environments to required-check workflows; keep Unreleased empty only after fold+comment |

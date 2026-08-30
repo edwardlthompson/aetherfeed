@@ -25,9 +25,9 @@ class AppUpdatePreferencesTest {
     }
 
     @Test
-    fun defaultsCheckIntervalToOff() = runBlocking {
+    fun defaultsCheckIntervalToDaily() = runBlocking {
         val prefs = AppUpdatePreferences(context)
-        assertEquals("off", prefs.checkInterval.first())
+        assertEquals("daily", prefs.checkInterval.first())
     }
 
     @Test

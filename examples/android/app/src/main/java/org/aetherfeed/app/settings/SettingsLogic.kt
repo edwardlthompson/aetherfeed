@@ -6,7 +6,7 @@ object SettingsLogic {
     fun intervalForToggle(enabled: Boolean, current: String): String =
         when {
             !enabled -> "off"
-            current == "off" -> "weekly"
+            current == "off" -> "daily"
             else -> current
         }
 }

@@ -1,0 +1,14 @@
+---
+description: Chrome and layout changes must ship on web and Android together
+alwaysApply: true
+---
+
+# UI parity (Android + Windows)
+
+Read `docs/UI_PARITY.md` before changing News, lock, or app-shell chrome.
+
+- A chrome or layout change is **incomplete** until both `examples/web` and `examples/android` implement it in the **same** BUILD_PLAN row.
+- Keep the shared test IDs: folders, feeds, timeline, reader, article, lock form, refresh, sort, nav unread, cache, sources.
+- Wide: three panes. Narrow: list **or** reader; left-edge swipe opens folders. System Back pops a level; it must not finish the activity while an article or feed is open.
+- Do not mark the row ✅ until `python scripts/check-ui-parity.py` (via feature-gate) is green.
+- Do not invent a fourth navigation mode. Do not leave greeting/status essays in the News surface.

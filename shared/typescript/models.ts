@@ -8,6 +8,7 @@ export type Feed = {
   url: string;
   kind: ModuleKind;
   siteUrl?: string;
+  folder?: string;
   updatedAt: number;
 };
 
@@ -18,6 +19,7 @@ export type Article = {
   url: string;
   publishedAt?: number;
   summary?: string;
+  contentHtml?: string;
   localPath?: string;
 };
 

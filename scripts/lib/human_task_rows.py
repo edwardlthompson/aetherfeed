@@ -39,6 +39,14 @@ def automate_informational(_root: Path, _cfg: dict, method: str) -> AttemptResul
     return AttemptResult(0, method, "Informational step satisfied for autonomous /build", False)
 
 
+def automate_file_only_import(root: Path, _cfg: dict) -> AttemptResult:
+    append_decision_log(
+        root,
+        "Confirmed file-only reader import for v0.1: OPML/JSON/Takeout zip only; no Google or Inoreader OAuth.",
+    )
+    return AttemptResult(0, "file-only-import", "v0.1 stays file-only; no vendor OAuth", False)
+
+
 def automate_stack_config(root: Path, cfg: dict) -> AttemptResult:
     sync = root / "scripts/sync-stack-config.py"
     if not sync.is_file():

@@ -1,0 +1,4 @@
+[
+  {"title":"Hacker News","url":"https://hnrss.org/frontpage","kind":"news","folder":"Smoke"},
+  {"title":"NPR News","url":"https://feeds.npr.org/1001/rss.xml","kind":"news","folder":"Smoke"}
+]

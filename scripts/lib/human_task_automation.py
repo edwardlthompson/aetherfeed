@@ -18,6 +18,7 @@ from human_task_github import (
 )
 from human_task_rows import (
     automate_approve_adr,
+    automate_file_only_import,
     automate_informational,
     automate_init_placeholders,
     automate_product_smoke,
@@ -38,6 +39,7 @@ HUMAN_RULES: list[tuple[re.Pattern[str], str, object]] = [
     (re.compile(r"required status checks|branch protection|setup-github-repo", re.I), "human", automate_branch_protection),
     (re.compile(r"Dependabot PR|Review/merge Dependabot|TypeScript \d+ major", re.I), "human", automate_dependabot_major_merge),
     (re.compile(r"AUTOMERGE_TOKEN", re.I), "human", automate_automerge_token),
+    (re.compile(r"file-only import|no Inoreader/Google OAuth", re.I), "human", automate_file_only_import),
 ]
 
 ADB_RULES: list[tuple[re.Pattern[str], str, object]] = [

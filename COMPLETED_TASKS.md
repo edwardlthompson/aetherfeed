@@ -2,6 +2,150 @@
 
 > Archive of finished BUILD_PLAN items.
 
+## Sprint 30 — Library tree, unified timelines, share, cache retain (2026-08-19)
+
+- ✅ [AGENT] Library tree roots (Unified / News / Podcasts / Boards), all/folder/source + unified timelines, remove bottom mode bar, action-share (Android + web)
+- ✅ [AGENT] Settings cache retain: 30 days or next sync; starred blobs never deleted; unstar + past expiry deletes
+
+## Sprint 29 — Recents privacy cover (2026-08-19)
+
+- ✅ [AGENT] Black Android recents (`FLAG_SECURE` + API 33 `setRecentsScreenshotEnabled`) and web hide/blur cover; document Windows Alt-Tab limit
+
+## Sprint 28 — Dead feed notice (2026-08-19)
+
+- ✅ [AGENT] Refresh the open feed on select; tell the user when a source returns 404/410
+
+## Sprint 27 — Skip already-fetched article bodies (2026-08-19)
+
+- ✅ [AGENT] Persist a fetched marker for each unread prefetch attempt; skip those ids on the next load; do not RSS-refresh empty indexes during prefetch
+
+## Sprint 26 — Seed library parity + cache all unread (2026-08-19)
+
+- ✅ [AGENT] Apply desktop seed-library on Android unlock; prefetch unread from every news source under history/network rules
+
+## Sprint 25 — PIN keyboard, filter, folders swipe, cache dot (2026-08-19)
+
+- ✅ [AGENT] PIN numeric keyboard vs passphrase; filter icon for sort; left-edge folders drawer; green cache dot; strip article/comment URLs from reader
+
+## Sprint 24 — Swipe, sort, nav unread, instant cache (2026-08-19)
+
+- ✅ [AGENT] Swipe/j-k between articles; oldest-first sort; unread badges on the three mode icons; slim pane chrome; refresh in the top bar; instant cache paint; priority load of the opened article then the next in series
+
+## Sprint 13 — leftover P1 + P2 (2026-08-19)
+
+- ✅ [AGENT] Rating/safe-mode + blacklist UI
+- ✅ [AGENT] Per-source API keys + second Gelbooru-family engine
+- ✅ [AGENT] Newsletter-as-RSS (local catcher or skip if no mail)
+- ✅ [AGENT] Podcast Index / Apple directory search + private RSS
+- ✅ [AGENT] Smart playlists / filters
+- ✅ [AGENT] On-device transcripts only if FOSS path exists; else document fallback command
+- ✅ [AGENT] Multi-source merge + pools + notes
+
+## Sprint 12b — Parallel P0 remainder + P1 (2026-08-19)
+
+- ✅ [AGENT] Episode download queue + Wi-Fi/auto-download settings UI
+- ✅ [AGENT] Same in app-private storage
+- ✅ [AGENT] Reader mode + offline article/images into vault
+- ✅ [AGENT] OPML export + folder edit
+- ✅ [AGENT] Local full-text search chrome + index
+- ✅ [AGENT] Keyword include/exclude + auto-tag (Inoreader analog)
+- ✅ [AGENT] Sleep timer + chapter list on player
+- ✅ [AGENT] Hash/MD5 dedup + filename tokens (logic only; UI in boards-*)
+
+## Sprint 12 — Parallel P0 chrome + modes (2026-08-18)
+
+- ✅ [AGENT] News 3-pane (folders, feed list, reader) + refresh/unread/star using imported feeds then NewsRepository.refresh
+- ✅ [AGENT] Same News chrome + vault-backed list/reader
+- ✅ [AGENT] Full-viewport AppChrome, mode nav, wide/narrow breakpoints; no greeting stub
+- ✅ [AGENT] 3-tab bar, drop Settings tab, Boards label, designed empty Boards
+- ✅ [AGENT] Show list + working play/seek/speed/position + mini-player
+- ✅ [AGENT] Same + Media3 lockscreen/BT; replace NoopPodcastPlayer
+- ✅ [AGENT] One engine + tag search + grid + favorite + designed empty
+- ✅ [AGENT] Same against BooruClient
+
+## Sprint 9 — Dedupe and news/podcast sort (2026-08-18)
+
+- ✅ [AGENT] Lock `normalizeFeedUrl` + `classifyFeedKind` and optional OPML `folder`/`type` (`docs/features/reader-import.md`)
+- ✅ [AGENT] Apply uses normalized keys and sets `Feed.kind`; result reports `newsAdded` / `podcastsAdded`
+- ✅ [AGENT] Android gReader picker + Room apply + kind lists
+- ✅ [AGENT] Desktop Inoreader persist + result counts
+- ✅ [AGENT] Spec + normalize/classify fixtures
+
+## Sprint 8 — Reader source import (2026-08-18)
+
+- ✅ [AGENT] Lock `ReaderImport` types and detect/parse API in `shared/typescript/readerImport.ts` plus Android `readerimport/` mirrors (`docs/features/reader-import.md`)
+- ✅ [AGENT] Scaffold `ReaderImportRepository` that upserts `Feed` (and optional `Star` / `ReadState`) through the existing vault ports
+- ✅ [AGENT] Takeout, Inoreader, and generic OPML parsers + tests
+- ✅ [AGENT] Import picker UI + i18n
+- ✅ [AGENT] Spec + synthetic fixtures
+- ✅ [HUMAN] Confirm file-only import is enough for v0.1 (no Inoreader/Google OAuth)
+
+## Sprint 7 — Import/export and polish (2026-08-18)
+
+- ✅ [AGENT] Lock OPML + JSON export API
+- ✅ [AGENT] Android export + About/Fastlane copy
+- ✅ [AGENT] Desktop packaging + Winget stub
+
+## Sprint 6 — E2E sync (2026-08-18)
+
+- ✅ [AGENT] Lock envelope format and provider interface (`docs/features/sync.md`)
+- ✅ [AGENT] Drive AppData provider
+- ✅ [AGENT] WebDAV provider + desktop pull/push
+
+## Sprint 5 — Notifications and unread chrome (2026-08-18)
+
+- ✅ [AGENT] Lock unread-total API used by widget and tray
+- ✅ [AGENT] Android channels + unread widget
+- ✅ [AGENT] Desktop tray badge/tooltip
+
+## Sprint 4 — Booru browser (2026-08-18)
+
+- ✅ [AGENT] Lock source/search/favorite/blacklist API (`docs/features/booru.md`)
+- ✅ [AGENT] Source adapters + tag search
+- ✅ [AGENT] Grid/detail view + i18n
+- ✅ [AGENT] Booru feature spec
+
+## Sprint 3 — Podcasts (2026-08-18)
+
+- ✅ [AGENT] Lock episode/queue/position API (`docs/features/podcasts.md`)
+- ✅ [AGENT] Media3 player + downloads
+- ✅ [AGENT] Desktop playback commands
+- ✅ [AGENT] Podcast feature spec
+
+## Sprint 2 — News / RSS reader (2026-08-18)
+
+- ✅ [AGENT] Lock RSS/Atom/JSON Feed + OPML public API (`docs/features/news.md`)
+- ✅ [AGENT] Scaffold news repository boundary only
+- ✅ [AGENT] Feed parse + unread/star/tag logic
+- ✅ [AGENT] Reader-mode view + i18n
+- ✅ [AGENT] News feature spec
+
+## Sprint 1 — Encrypted vault and shared models (2026-08-18)
+
+- ✅ [AGENT] Lock shared models and `SyncProvider` (`shared/typescript/`, Android `domain/`)
+- ✅ [AGENT] Wire Room + SQLCipher + Hilt on Android using the locked types
+- ✅ [HUMAN] Approve ADR-0001, ADR-0002, and ADR-0003
+- ✅ [AGENT] Android About + four-destination nav
+- ✅ [AGENT] Desktop tray unread command
+- ✅ [AGENT] Shared unread tests
+- ✅ [HUMAN] Fill `release_repo` in `.app-update.json` and donation links
+- ✅ [HUMAN] Approve Sprint 1 vault/Hilt approach
+
+## Sprint 0 — AetherFeed seed (2026-08-18)
+
+- ✅ [AGENT] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)
+- ✅ [AGENT] Fill `branding/product.json` (`mode: product`), replace logos, prune unused stacks
+- ✅ [AGENT] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
+- ✅ [AUTO] Sprint 0 sign-off (all green on `main`) @ `031b156`
+- ✅ [AGENT] Android identity + vault contract
+- ✅ [AGENT] Web domain + desktop Tauri shell
+- ✅ [AGENT] Crypto crate + shared schema
+- ✅ [HUMAN] Create the GitHub repo and point `origin` at it (do not push to the template)
+- ✅ [HUMAN] Distribution tier is FOSS (MIT, no proprietary SDKs)
+- ✅ [HUMAN] Platform/purpose filled: Android + Windows desktop; local-first encrypted reader
+- ✅ [HUMAN] Agent mode for approved seed execution
+- ✅ [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md`
+
 ## Sprint M39 — /ideas Windows PATH + ship hygiene (2026-08-18)
 
 - ✅ [AGENT] Shared resolver prepends `gh` / Git to Git Bash PATH

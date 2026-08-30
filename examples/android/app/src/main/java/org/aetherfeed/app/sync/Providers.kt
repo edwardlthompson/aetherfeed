@@ -3,13 +3,20 @@ package org.aetherfeed.app.sync
 import org.aetherfeed.app.domain.SyncProvider
 
 /** Google Drive restricted to drive.appdata. No My Drive root writes. */
-class DriveAppDataProvider : SyncProvider {
+class DriveAppDataProvider(
+    private val accessToken: () -> String? = { null },
+) : SyncProvider {
     override val id: String = "drive-appdata"
 
-    override suspend fun pull(): ByteArray? = null
+    override suspend fun pull(): ByteArray? {
+        val token = accessToken() ?: return null
+        return pullFeedsBlob(token)
+    }
 
     override suspend fun push(blob: ByteArray) {
         require(blob.isNotEmpty())
+        val token = accessToken() ?: return
+        pushFeedsBlob(token, blob)
     }
 }
 

@@ -22,7 +22,7 @@ private val PENDING_RESTART = booleanPreferencesKey("pending_restart")
 
 class AppUpdatePreferences(private val context: Context) {
     val checkInterval: Flow<String> = context.appUpdateDataStore.data.map { prefs ->
-        prefs[CHECK_INTERVAL] ?: "off"
+        prefs[CHECK_INTERVAL] ?: "daily"
     }
 
     val lastChecked: Flow<Long?> = context.appUpdateDataStore.data.map { prefs ->

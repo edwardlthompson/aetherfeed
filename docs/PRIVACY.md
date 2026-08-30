@@ -11,7 +11,6 @@ crash reporting, advertising, or other phone-home telemetry.
 | Stars, likes, tags, read state, playback positions | Library state | Until the user deletes them |
 | API keys / OAuth tokens | Source access | Until the user removes the source |
 | Sync passphrase-derived keys | Optional E2E sync | Until the user disables sync |
-
 Downloaded files stay in app-private storage. The vault is encrypted with
 SQLCipher. Credentials use the platform keystore when available.
 
@@ -24,10 +23,11 @@ recovered. The host must not receive plaintext feeds, tags, stars, or settings.
 
 ## App update checks
 
-- Release endpoint: GitHub Releases API or configured manifest URL
-- Stored locally: `last_checked`, `installed_artifact_format`, `check_interval`
-- No PII transmitted
-- Interval can be set to `off`
+- Release endpoint: GitHub Releases API (`/repos/edwardlthompson/aetherfeed/releases/latest`)
+- Compared value: installer filename version (`.exe` / `.apk`), not a git tag
+- Stored locally on this device only: last check time, last seen version, dismissed installer version
+- No PII transmitted (`User-Agent` is `AetherFeed/<version>`)
+- Settings can turn the daily check `off`; donate prefs never peer-sync
 
 ## Data we do not collect
 

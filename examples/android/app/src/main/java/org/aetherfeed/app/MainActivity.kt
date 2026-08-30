@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.lifecycle.lifecycleScope
 import org.aetherfeed.app.about.AppUpdatePreferences
+import org.aetherfeed.app.applock.applySecureRecents
 import org.aetherfeed.app.network.NetworkStatusMonitor
 import org.aetherfeed.app.ui.AetherFeedApp
 import org.aetherfeed.app.ui.theme.ThemePreferences
@@ -16,6 +17,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        applySecureRecents(this)
         enableEdgeToEdge()
         val themePreferences = ThemePreferences(applicationContext)
         val appUpdatePreferences = AppUpdatePreferences(applicationContext)

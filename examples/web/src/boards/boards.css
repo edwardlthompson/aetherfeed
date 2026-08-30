@@ -1,0 +1,70 @@
+.af-boards {
+  margin-block-start: var(--af-space-lg);
+  text-align: start;
+}
+
+.af-boards-pane {
+  padding: var(--af-space-md);
+  border: 1px solid var(--af-color-outline);
+  border-radius: var(--af-radius-md);
+}
+
+.af-boards-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--af-space-sm);
+}
+
+.af-boards-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--af-space-xs);
+  flex: 1 1 12rem;
+}
+
+.af-boards-empty,
+.af-boards-error {
+  margin-block-start: var(--af-space-lg);
+  color: var(--af-color-on-surface-variant);
+}
+
+.af-boards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: var(--af-space-sm);
+  margin-block-start: var(--af-space-md);
+}
+
+.af-boards-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--af-space-xs);
+  background: var(--af-color-surface);
+  border-radius: var(--af-radius-sm);
+  overflow: hidden;
+}
+
+.af-boards-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.af-boards-fav,
+.af-boards-retry,
+.af-boards-form button {
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding-inline: var(--af-space-md);
+  border-radius: var(--af-radius-md);
+  border: 1px solid var(--af-color-outline);
+  background: var(--af-color-surface-variant);
+  color: var(--af-color-on-surface-variant);
+  cursor: pointer;
+}
+
+.af-boards-fav[aria-pressed="true"] {
+  background: var(--af-color-primary-container);
+  color: var(--af-color-on-primary-container);
+}

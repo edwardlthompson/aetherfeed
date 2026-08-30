@@ -26,6 +26,8 @@ class InMemoryLibrary : LibraryRepository {
 
     override suspend fun readState(targetId: String): ReadState? = reads[targetId]
 
+    override suspend fun readStates(): List<ReadState> = reads.values.toList()
+
     override suspend fun upsertReadState(state: ReadState) {
         reads[state.targetId] = state
     }

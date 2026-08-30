@@ -2,6 +2,7 @@ package org.aetherfeed.app.ui
 
 import android.content.Context
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -12,13 +13,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.aetherfeed.app.BuildConfig
 import org.aetherfeed.app.R
 import org.aetherfeed.app.about.AppUpdatePreferences
-import org.aetherfeed.app.about.CheckSchedule
 import org.aetherfeed.app.about.DonationsLoader
 import org.aetherfeed.app.about.ReleaseAsset
-import org.aetherfeed.app.about.ReleaseAssetSelector
-import org.aetherfeed.app.about.ReleaseTagFetcher
 import org.aetherfeed.app.about.UpdateApplyCoordinator
-import org.aetherfeed.app.about.UpdateStatusEvaluator
+import org.aetherfeed.app.ui.about.AppLaunchGate
 import org.aetherfeed.app.network.NetworkStatusMonitor
 import org.aetherfeed.app.settings.SettingsLogic
 import androidx.compose.material3.SnackbarHostState
@@ -41,9 +39,10 @@ fun AetherFeedApp(
     val themeMode by themePreferences.themeMode.collectAsStateWithLifecycle(initialValue = ThemeMode.System)
     val isOnline by networkStatusMonitor.isOnline.collectAsStateWithLifecycle(initialValue = true)
     val installedFormat by appUpdatePreferences.installedFormat.collectAsStateWithLifecycle(initialValue = "apk")
-    val checkInterval by appUpdatePreferences.checkInterval.collectAsStateWithLifecycle(initialValue = "off")
-    val lastChecked by appUpdatePreferences.lastChecked.collectAsStateWithLifecycle(initialValue = null)
+    val checkInterval by appUpdatePreferences.checkInterval.collectAsStateWithLifecycle(initialValue = "daily")
     val pendingRestart by appUpdatePreferences.pendingRestart.collectAsStateWithLifecycle(initialValue = false)
+    val appLock = org.aetherfeed.app.applock.rememberAppLockSession(context)
+    var unlocked by remember { mutableStateOf(false) }
     var showAbout by remember { mutableStateOf(false) }
     var showSettings by remember { mutableStateOf(false) }
     var updateStatus by remember { mutableStateOf(context.getString(R.string.about_update_current)) }
@@ -58,42 +57,30 @@ fun AetherFeedApp(
         }
     }
 
-    LaunchedEffect(checkInterval, lastChecked, isOnline, installedFormat, pendingRestart) {
-        if (pendingRestart) return@LaunchedEffect
-        if (!isOnline) return@LaunchedEffect
-        if (!CheckSchedule.shouldCheck(checkInterval, lastChecked, System.currentTimeMillis())) return@LaunchedEffect
-        val repo = ReleaseTagFetcher.loadReleaseRepo(context) ?: return@LaunchedEffect
-        val release = ReleaseTagFetcher.fetchLatestRelease(repo) ?: return@LaunchedEffect
-        val format = installedFormat ?: "apk"
-        if (release.assets.isNotEmpty() && ReleaseAssetSelector.select(release.assets, format) == null) {
-            updateStatus = context.getString(R.string.about_update_no_compatible)
-            return@LaunchedEffect
-        }
-        appUpdatePreferences.setLastChecked(System.currentTimeMillis())
-        val selected = ReleaseAssetSelector.select(release.assets, format)
-        applyAsset = when (val result = UpdateStatusEvaluator.evaluate(appVersion, release.tag)) {
-            is UpdateStatusEvaluator.Result.Current -> {
-                updateStatus = context.getString(R.string.about_update_current)
-                null
-            }
-            is UpdateStatusEvaluator.Result.Available -> {
-                updateStatus = context.getString(R.string.about_update_available, result.version)
-                selected
-            }
-        }
-    }
-
     val canApplyUpdate = applyAsset != null
     val snackbarHostState = remember { SnackbarHostState() }
 
-    LaunchedEffect(canApplyUpdate) {
-        if (canApplyUpdate) {
-            snackbarHostState.showSnackbar(context.getString(R.string.snackbar_update_available))
-        }
-    }
-
     AetherFeedTheme(themeMode = themeMode) {
         NavigationModeProvider {
+            org.aetherfeed.app.applock.WatchAppLockTimeout(
+                session = appLock,
+                unlocked = unlocked,
+                onLock = { unlocked = false },
+            )
+            if (!unlocked) {
+                org.aetherfeed.app.applock.LockScreen(
+                    session = appLock,
+                    onUnlocked = { unlocked = true },
+                )
+                return@NavigationModeProvider
+            }
+            if (showSettings) BackHandler { showSettings = false }
+            else if (showAbout) BackHandler { showAbout = false }
+            AppLaunchGate(
+                context = context,
+                appVersion = appVersion,
+                checksEnabled = SettingsLogic.isUpdateCheckEnabled(checkInterval),
+            )
             AetherFeedScreen(
                 snackbarHostState = snackbarHostState,
                 themeMode = themeMode,

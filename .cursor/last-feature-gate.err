@@ -1,0 +1,10 @@
+Feature gate (stack=multi step=gate strict=false)...
+What failed: web-lint
+What that means: TypeScript or ESLint found problems in the web Golden Path.
+What to run: npm run lint in examples/web (then npm run format if that script exists)
+Why: Catching type and style errors on the laptop is cheaper than waiting for CI.
+Log: WSL 1 is not supported. Please upgrade to WSL 2 or above.
+Could not determine Node.js install directory
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+ModuleNotFoundError: No module named 'gate_hints'

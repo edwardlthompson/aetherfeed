@@ -2,7 +2,7 @@ import { getInterval, setIntervalPref } from "../about/aboutSession";
 import type { CheckInterval } from "../about/types";
 import { getThemeMode, setThemeMode, type ThemeMode } from "../theme";
 
-const DEFAULT_INTERVAL: CheckInterval = "weekly";
+const DEFAULT_INTERVAL: CheckInterval = "daily";
 
 export function isUpdateCheckEnabled(): boolean {
   return getInterval() !== "off";

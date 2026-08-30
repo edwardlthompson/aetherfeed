@@ -1,0 +1,22 @@
+/** In-scope copy. Do not add keys to locales/en.json. */
+export const downloadsCopy = {
+  title: "Downloads",
+  empty: "No episodes in the download queue.",
+  wifiOnly: "Download on Wi-Fi only",
+  autoDownload: "Auto-download new episodes",
+  enqueue: "Queue episode",
+  episodeId: "Episode id",
+  url: "Enclosure URL",
+  pause: "Pause",
+  resume: "Resume",
+  cancel: "Cancel",
+  statusQueued: "Queued",
+  statusRunning: "Downloading",
+  statusDone: "Done",
+  statusFailed: "Failed",
+  statusPaused: "Paused",
+  errorTimeout: "Download timed out.",
+  errorAborted: "Download was cancelled.",
+  errorNetwork: "Could not download this episode.",
+  wifiBlocked: "Waiting for Wi-Fi.",
+} as const;

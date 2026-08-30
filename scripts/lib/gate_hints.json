@@ -110,6 +110,15 @@
         "run ./gradlew test in examples/android"
       ]
     },
+    "ui-parity": {
+      "means": "A required News or lock chrome ID is missing on web or Android.",
+      "run": "python scripts/check-ui-parity.py",
+      "why": "Both apps must keep the same folders, feeds, timeline, reader, and unlock slots.",
+      "suggested": [
+        "run python scripts/check-ui-parity.py",
+        "add matching chrome IDs on web and Android per docs/UI_PARITY.md"
+      ]
+    },
     "design-cohesion": {
       "means": "Design tokens or i18n keys are out of sync.",
       "run": "bash scripts/check-design-cohesion.sh",

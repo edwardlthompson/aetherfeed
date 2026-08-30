@@ -22,6 +22,7 @@ usable without any cloud account.
 - Android seed exposes `SqlCipherVault` as the private-file contract
 - Desktop uses the Tauri app-data directory
 - Forgot-passphrase recovery is impossible for E2E backups; UI must say so
+- **2026-08-19 addendum:** A user PIN (6+) or passphrase (8+) wraps the SQLCipher / AES-GCM vault key. Cold start and a 2-minute background timeout require unlock. Article HTML, images, desktop `imported-feeds`, and episode files are ciphertext at rest. Forgot secret wipes the local vault. The secret is never stored in Settings plaintext.
 
 ## Alternatives Considered
 

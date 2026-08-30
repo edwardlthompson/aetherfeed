@@ -36,6 +36,7 @@ object ReleaseTagFetcher {
             val conn = url.openConnection() as HttpURLConnection
             conn.requestMethod = "GET"
             conn.setRequestProperty("Accept", "application/vnd.github+json")
+            conn.setRequestProperty("User-Agent", "AetherFeed/release-check")
             conn.connectTimeout = 10_000
             conn.readTimeout = 10_000
             if (conn.responseCode != HttpURLConnection.HTTP_OK) return@withContext null

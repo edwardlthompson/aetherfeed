@@ -100,6 +100,7 @@ fail_gate() {
     file-limits) SUGGESTED=("split oversized static-data/logic files per AGENTS.md limits") ;;
     android-test) SUGGESTED=("fix JUnit failures" "run ./gradlew test in examples/android") ;;
     design-cohesion) SUGGESTED=("run scripts/check-design-cohesion.sh" "use design tokens and i18n keys") ;;
+    ui-parity) SUGGESTED=("run python scripts/check-ui-parity.py" "add matching chrome IDs on web and Android per docs/UI_PARITY.md") ;;
     about-feature-gate) SUGGESTED=("run scripts/verify-about-feature-gate.sh" "fix About slice regressions") ;;
     rust-fmt) SUGGESTED=("run cargo fmt in examples/rust") ;;
     rust-clippy) SUGGESTED=("fix clippy warnings in examples/rust") ;;
@@ -206,6 +207,11 @@ if ! bash scripts/check-file-limits.sh >/dev/null 2>&1; then
   fail_gate "file-limits" "$(bash scripts/check-file-limits.sh 2>&1 | tail -n 20)"
 fi
 GATES_PASSED+=("file-limits")
+
+if ! "$PY" scripts/check-ui-parity.py >/dev/null 2>&1; then
+  fail_gate "ui-parity" "$("$PY" scripts/check-ui-parity.py 2>&1 | tail -n 20)"
+fi
+GATES_PASSED+=("ui-parity")
 
 if should_run web && [ -f examples/web/package.json ]; then
   if ! command -v npm >/dev/null 2>&1; then

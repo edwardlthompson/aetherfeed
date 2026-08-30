@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import org.aetherfeed.app.R
+import org.aetherfeed.app.about.DonateLinks
 import org.aetherfeed.app.about.DonationsConfig
 import org.aetherfeed.app.ui.insets.LocalNavigationMode
 import org.aetherfeed.app.ui.insets.bottomInsetPadding
@@ -62,15 +63,18 @@ fun AboutScreen(
                 Text(stringResource(R.string.about_update_apply))
             }
         }
-        if (donations.enabled && donations.links.isNotEmpty()) {
-            Text(text = donations.message)
-            donations.links.forEach { link ->
-                Text(
-                    text = link.label,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.clickable { uriHandler.openUri(link.url) },
-                )
-            }
+        Text(text = donations.message.ifBlank { stringResource(R.string.about_donations_message) })
+        Text(
+            text = stringResource(R.string.about_donate_venmo),
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.clickable { uriHandler.openUri(DonateLinks.VENMO_URL) },
+        )
+        donations.links.filter { it.url != DonateLinks.VENMO_URL }.forEach { link ->
+            Text(
+                text = link.label,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.clickable { uriHandler.openUri(link.url) },
+            )
         }
         Button(
             onClick = onBack,

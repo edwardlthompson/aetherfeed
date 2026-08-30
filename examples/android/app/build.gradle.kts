@@ -1,6 +1,10 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 kotlin {
@@ -20,6 +24,18 @@ android {
         versionCode = 1
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        val localProps = Properties()
+        val localFile = rootProject.file("local.properties")
+        if (localFile.exists()) {
+            localFile.inputStream().use { localProps.load(it) }
+        }
+        fun quote(key: String): String {
+            val raw = localProps.getProperty(key).orEmpty().replace("\\", "\\\\").replace("\"", "\\\"")
+            return "\"$raw\""
+        }
+        buildConfigField("String", "DRIVE_CLIENT_ID", quote("drive.clientId"))
+        buildConfigField("String", "DRIVE_CLIENT_SECRET", quote("drive.clientSecret"))
+        buildConfigField("String", "DRIVE_PASSPHRASE", quote("drive.passphrase"))
     }
 
     buildTypes {
@@ -56,6 +72,16 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.2.1")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.11.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
+    implementation("androidx.room:room-runtime:2.8.4")
+    implementation("androidx.room:room-ktx:2.8.4")
+    ksp("androidx.room:room-compiler:2.8.4")
+    implementation("net.zetetic:sqlcipher-android:4.17.0")
+    implementation("androidx.sqlite:sqlite:2.6.2")
+    implementation("androidx.work:work-runtime-ktx:2.10.5")
+    implementation("androidx.media3:media3-exoplayer:1.8.0")
+    implementation("androidx.media3:media3-session:1.8.0")
+    implementation("com.google.dagger:hilt-android:2.59.2")
+    ksp("com.google.dagger:hilt-compiler:2.59.2")
 
     testImplementation("androidx.test:core:1.7.0")
     testImplementation("junit:junit:4.13.2")

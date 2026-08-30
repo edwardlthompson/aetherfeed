@@ -18,5 +18,9 @@ class UnreadCountTest {
             ReadState("c", ModuleKind.Booru, ReadStatus.Read, 3),
         )
         assertEquals(2, library.unreadCount())
+        val byModule = unreadByModule(library.readStates())
+        assertEquals(1, byModule[ModuleKind.News])
+        assertEquals(1, byModule[ModuleKind.Podcast])
+        assertEquals(0, byModule[ModuleKind.Booru])
     }
 }

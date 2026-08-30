@@ -1,10 +1,10 @@
 {
   "enabled": true,
-  "message": "If this project helps you, consider supporting development.",
+  "message": "If this app helps you, you can support ongoing work on Venmo.",
   "links": [
     {
-      "label": "GitHub Sponsors",
-      "url": "https://github.com/sponsors/edwardlthompson"
+      "label": "Donate via Venmo",
+      "url": "https://venmo.com/code?user_id=1857304970395648420"
     }
   ]
 }
