@@ -1352,6 +1352,34 @@
       "owner": "maintainer"
     },
     {
+      "path": "templates/linguist/child.gitattributes",
+      "purpose": "Child Linguist attribution block copied onto .gitattributes at init",
+      "read_when": "bootstrap_session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-linguist-attribution.sh",
+      "purpose": "Gate child Linguist attribution patterns and dominant language",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/check_linguist_attribution.py",
+      "purpose": "Linguist attribution gate implementation",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/linguist_attrs.py",
+      "purpose": "Apply child Linguist .gitattributes during init",
+      "read_when": "bootstrap_session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
       "path": ".editorconfig",
       "purpose": "Cross-editor charset, indent, and whitespace rules",
       "read_when": "contributing",
