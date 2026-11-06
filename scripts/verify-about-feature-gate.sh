@@ -22,6 +22,7 @@ ABOUT_TRACKED=(
   examples/web/src/components/AboutPanel.ts
   examples/web/src/settings/preferences.ts
   examples/web/e2e/app.spec.ts
+  examples/web/vitest.config.ts
 )
 
 restore() {
@@ -41,6 +42,9 @@ restore() {
     fi
     if [ -f "$BACKUP/app.spec.ts" ]; then
       cp -a "$BACKUP/app.spec.ts" "$WEB_E2E/app.spec.ts"
+    fi
+    if [ -f "$BACKUP/vitest.config.ts" ]; then
+      cp -a "$BACKUP/vitest.config.ts" "$ROOT/examples/web/vitest.config.ts"
     fi
   else
     echo "WARN: About backup missing; restoring tracked slice from HEAD"
@@ -68,9 +72,11 @@ cp -a "$WEB_SRC/AppShell.ts" "$BACKUP/AppShell.ts"
 cp -a "$WEB_SRC/components/AboutPanel.ts" "$BACKUP/components/AboutPanel.ts"
 cp -a "$WEB_SRC/settings/preferences.ts" "$BACKUP/settings/preferences.ts"
 cp -a "$WEB_E2E/app.spec.ts" "$BACKUP/app.spec.ts"
+cp -a "$ROOT/examples/web/vitest.config.ts" "$BACKUP/vitest.config.ts"
 
 $PY << 'PY'
 from pathlib import Path
+import re
 import shutil
 
 web = Path("examples/web/src")
@@ -152,6 +158,20 @@ for path in (
         shutil.rmtree(path, ignore_errors=True)
     elif path.exists():
         path.unlink()
+
+vitest = Path("examples/web/vitest.config.ts")
+if vitest.is_file():
+    text = vitest.read_text(encoding="utf-8").replace("\r\n", "\n")
+    patched, n = re.subn(
+        r"include:\s*\[.*?\]",
+        'include: [\n        "src/settings/preferences.ts",\n        "src/greet.ts",\n      ]',
+        text,
+        count=1,
+        flags=re.S,
+    )
+    if n != 1:
+        raise SystemExit("could not rewrite vitest coverage include for about-without")
+    write_lf(vitest, patched)
 
 write_lf(
     e2e.joinpath("app.spec.ts"),
