@@ -2,7 +2,7 @@
 
 > Synonym: users may say “why” in chat; this file is the registered `/coach` command.
 
-Read @AGENT_MEMORY.md (Persistent Context + latest retrospective only), @BUILD_PLAN.md Sequential lane, @docs/BEST_PRACTICES.md, and @docs/FIRST_30_DAYS.md.
+Read @.agent/AGENT_MEMORY.md (Persistent Context + latest retrospective only), @BUILD_PLAN.md Sequential lane, @docs/BEST_PRACTICES.md, and @docs/FIRST_30_DAYS.md.
 
 1. Run `python3 scripts/agent-run.py project-health` (or `bash scripts/project-health.sh`). Summarize: active stack, next BUILD_PLAN row, CI line if present.
 2. Name the **next recommended action** in one sentence, then the **industry reason** (link the matching BEST_PRACTICES subsection).

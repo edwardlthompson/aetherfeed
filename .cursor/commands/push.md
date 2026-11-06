@@ -25,7 +25,7 @@ Create/update RELEASE_NOTES.md from CHANGELOG, BUILD_PLAN rows, recent commits (
 ## Step 4 — Release
 
 - Merge Release Please PR: `python3 scripts/agent-run.py merge-release-please-pr --wait 300` (auto-merge queue, then `--admin` fallback; requires admin `gh auth`)
-- Update @AGENT_MEMORY.md and @DECISION_LOG.md at milestone boundary
+- Update @.agent/AGENT_MEMORY.md and @.agent/DECISION_LOG.md at milestone boundary
 
 ## Step 5 — Cleanup
 
