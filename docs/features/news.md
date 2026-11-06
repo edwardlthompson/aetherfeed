@@ -6,9 +6,9 @@
 
 - 🔲 Add, edit, delete, and organize RSS, Atom, and JSON Feed subscriptions
 - 🔲 OPML import/export
-- 🔲 Download full articles plus inline images for offline reading
+- ✅ Download full articles for offline reading (local body cache; images still open)
 - 🔲 Reader mode strips chrome/ads/nav
-- 🔲 Unread / read / starred / tagged states
+- ✅ Unread / read / starred states (tagged still open)
 - 🔲 Per-feed and global full-text search
 - 🔲 Per-feed notification channel
 - 🔲 Works with zero cloud account
