@@ -8,8 +8,8 @@
 
 ## Which repo mode are you in?
 
-- **Bootstrap:** New project from **Use this template** → read `docs/CURSOR_MODES.md`, then `docs/INITIALIZATION_PROMPT.md`
-- **Reference:** Existing project using this repo as rules reference → read `docs/CURSOR_MODES.md`, then `docs/FOR_AGENTS.md`
+- [**Bootstrap**](help/GLOSSARY.md#bootstrap): New project from **Use this template** → read `docs/CURSOR_MODES.md`, then `docs/INITIALIZATION_PROMPT.md`
+- [**Reference**](help/GLOSSARY.md#reference): Existing project using this repo as rules reference → read `docs/CURSOR_MODES.md`, then `docs/FOR_AGENTS.md`
 
 ## Cursor modes (Plan / Agent / Debug / Ask)
 
@@ -82,6 +82,8 @@ Enable Dependabot alerts on GitHub (Settings → Code security and analysis). We
 
 ## Agent Prompts
 
-**Bootstrap:** Read @docs/START_HERE.md, @docs/CURSOR_MODES.md, and @docs/INITIALIZATION_PROMPT.md. Pick Cursor mode per CURSOR_MODES. Follow Section 8. Use BUILD_PLAN Sequential lane.
+[**Bootstrap**](help/GLOSSARY.md#bootstrap): Read @docs/START_HERE.md, @docs/CURSOR_MODES.md, and @docs/INITIALIZATION_PROMPT.md. Pick Cursor mode per CURSOR_MODES. Follow Section 8. Use BUILD_PLAN Sequential lane.
 
-**Reference:** Read @docs/CURSOR_MODES.md, @docs/FOR_AGENTS.md, and @TEMPLATE_INDEX.json. Pick Cursor mode per CURSOR_MODES. Apply matching rules. Do not copy examples/ wholesale.
+[**Reference**](help/GLOSSARY.md#reference): Read @docs/CURSOR_MODES.md, @docs/FOR_AGENTS.md, and @TEMPLATE_INDEX.json. Pick Cursor mode per CURSOR_MODES. Apply matching rules. Do not copy examples/ wholesale.
+
+Glossary: [**Sacred**](help/GLOSSARY.md#sacred), [**Canon**](help/GLOSSARY.md#canon), [**Bootstrap**](help/GLOSSARY.md#bootstrap), [**Reference**](help/GLOSSARY.md#reference), [**AGENT**](help/GLOSSARY.md#agent), [**HUMAN**](help/GLOSSARY.md#human), [**ADB**](help/GLOSSARY.md#adb), [**AUTO**](help/GLOSSARY.md#auto).

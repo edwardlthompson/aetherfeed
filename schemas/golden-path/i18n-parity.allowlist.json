@@ -1,0 +1,31 @@
+{
+  "aliases": {
+    "about.update.install": "about_install",
+    "about.update.later": "about_later",
+    "about.update.message": "about_update_prompt_body"
+  },
+  "web_only": [],
+  "android_only": [
+    "about_debug_navigation_mode",
+    "about_donations_message",
+    "app_name",
+    "local_only_hint",
+    "nav_booru",
+    "nav_booru_cd",
+    "nav_mode_gesture",
+    "nav_mode_three_button",
+    "nav_mode_two_button",
+    "nav_mode_unknown",
+    "nav_news",
+    "nav_news_cd",
+    "nav_podcasts",
+    "nav_podcasts_cd",
+    "nav_settings",
+    "nav_settings_cd",
+    "pane_booru_body",
+    "pane_news_body",
+    "pane_podcasts_body",
+    "snackbar_update_available",
+    "unread_total"
+  ]
+}

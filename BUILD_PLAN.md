@@ -1,5 +1,47 @@
 # Build Plan
 
+<!-- remaining-tally -->
+**Remaining:** AGENT 0 · LOCAL 0 · CLOUD 0 · AUTO 1 · HUMAN 0 · ADB 0 · **1 open**
+<!-- /remaining-tally -->
+
+### Product (do not drift)
+
+> Auto-managed from `AGENT.md`. Do not hand-edit inside markers. Read `AGENT.md` before any sprint row.
+
+<!-- product-brief-sync:begin -->
+> Read `AGENT.md` before any sprint row.
+
+**One-liner:** One local-first client for feeds, podcasts, and image boards with offline stars and playback.
+**Do not drift:** rss, podcasts, booru, local-first, privacy, offline, vault
+
+**Rules:**
+- Keep the vault local-first; no account required.
+- Stars and playback position must survive radio-off.
+- Optional sync is ciphertext-only; never upload plaintext library state.
+- No analytics, crash reporters, ads, or tracking libraries.
+- Do not overwrite Sacred product paths (`docs/spec.md`, `AGENTS.md` project card) with template stubs.
+
+**First milestone:** Offline read path end-to-end with cached items, stars, and playback persisted locally.
+<!-- product-brief-sync:end -->
+
+### UX & UI inventory
+
+<!-- ux-inventory:begin -->
+_No UX inventory items._
+<!-- ux-inventory:end -->
+
+### Local agent (This Computer)
+
+<!-- local-agent-lane:begin -->
+_No local agent items._
+<!-- local-agent-lane:end -->
+
+### Cloud agent (Cursor Cloud)
+
+<!-- cloud-agent-lane:begin -->
+_No cloud agent items._
+<!-- cloud-agent-lane:end -->
+
 > Prioritized task board with owner labels. **Completed sprints:** `COMPLETED_TASKS.md`.
 
 ## Owner Label Legend
@@ -29,13 +71,13 @@ grep '\[AUTO\]' BUILD_PLAN.md
 
 ```
 
-**Agent rule:** Execute all `[AGENT]` **Sequential** items first, then dispatch **Parallel** agents with isolated file scopes (`docs/PARALLEL_AGENT_SCOPES.md`). Shared schema/types are Sequential-only.
+**Agent rule:** Execute all `[LOCAL] [AGENT]` **Sequential** items first, then dispatch **Parallel** agents with isolated file scopes (`docs/PARALLEL_AGENT_SCOPES.md`). Shared schema/types are Sequential-only.
 
 ### Parallel dispatch protocol (orchestrator)
 
 | Step | Action                                                                                                                                                                     |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | Finish all `[AGENT]` **Sequential** items for the active sprint/feature (shared schema/types locked)                                                                       |
+| 1    | Finish all `[LOCAL] [AGENT]` **Sequential** items for the active sprint/feature (shared schema/types locked)                                                                       |
 | 2    | **Discover** parallelizable work using the decomposition checklist below; add Parallel table rows with non-overlapping ``path/**`` scopes                                  |
 | 3    | Run `bash scripts/plan-parallel-dispatch.sh` → read **agent_count**                                                                                                        |
 | 4    | If `agent_count >= 2`, run `/scope` (auto Task dispatch); if `1`, execute inline; if `0`, run `--suggest` and expand the Parallel table (or document `parallel_exception`) |
@@ -49,11 +91,11 @@ grep '\[AUTO\]' BUILD_PLAN.md
 | Tests vs production code      | Separate `**/*.test.*`, `e2e/**`, `androidTest/**` when paths do not overlap implementation |
 | Docs vs code                  | Agent A: `examples/**`; Agent B: `docs/**`, `modules/**`, `.cursor/rules/**`                |
 | CI/gates vs app code          | Agent A: `scripts/**`, `.github/workflows/**`; Agent B: stack example tree                  |
-**Default rule:** If a Sequential `[AGENT]` item touches two or more non-overlapping directory prefixes, **split it** — leave only schema-lock work Sequential.
+**Default rule:** If a Sequential `[LOCAL] [AGENT]` item touches two or more non-overlapping directory prefixes, **split it** — leave only schema-lock work Sequential.
 
 **Planning (Plan Mode):** Every BUILD_PLAN proposal must include `### Parallelization` with `agent_count_target`, decomposition table, and dry-run from `plan-parallel-dispatch.sh`. Run `check-build-plan-parallel.sh` before human approval.
 
-**Autonomous `/build`:** Runs all `[AGENT]`/`[AUTO]` and Parallel work first, then attempts the grouped **Human & device (after automation)** section via `scripts/attempt-build-plan-row.sh`. Success marks ✅; failure appends `HUMAN_BACKLOG.md` and continues — never halts on human labels. Humans review the grouped section (and backlog) after automation finishes. Status: `bash scripts/build-sprint-status.sh --json`.
+**Autonomous `/build`:** Runs all `[LOCAL] [AGENT]`/`[AUTO]` and Parallel work first, then attempts the grouped **Human & device (after automation)** section via `scripts/attempt-build-plan-row.sh`. Success marks ✅; failure appends `HUMAN_BACKLOG.md` and continues — never halts on human labels. Humans review the grouped section (and backlog) after automation finishes. Status: `bash scripts/build-sprint-status.sh --json`.
 
 > **Template maintainer:** no active AGENT sprint — **v0.21.0** shipped. **Child repos:** copy the playbook.
 
@@ -81,9 +123,9 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 #### Sequential
 
-1. ✅ [AGENT] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)
-1b. ✅ [AGENT] Fill `branding/product.json` (`mode: product`), replace logos, prune unused stacks
-2. ✅ [AGENT] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
+1. ✅ [LOCAL] [AGENT] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)
+1b. ✅ [LOCAL] [AGENT] Fill `branding/product.json` (`mode: product`), replace logos, prune unused stacks
+2. ✅ [LOCAL] [AGENT] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
 3. 🔲 [AUTO] Sprint 0 sign-off (all green on `main`):
   - `validate-bootstrap.sh --quick`
   - `feature-gate.sh --stack multi`
@@ -96,9 +138,9 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 | Task | Owner | Isolated scope |
 | ---- | ----- | -------------- |
-| Android identity + vault contract | AGENT | `examples/android/**` |
-| Web domain + desktop Tauri shell | AGENT | `examples/web/**`, `examples/desktop/**` |
-| Crypto crate + shared schema | AGENT | `examples/rust/**`, `shared/**` |
+| Android identity + vault contract | AGENT [LOCAL] | `examples/android/**` |
+| Web domain + desktop Tauri shell | AGENT [LOCAL] | `examples/web/**`, `examples/desktop/**` |
+| Crypto crate + shared schema | AGENT [LOCAL] | `examples/rust/**`, `shared/**` |
 
 #### Human & device (after automation)
 
@@ -112,17 +154,17 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 #### Sequential
 
-1. ✅ [AGENT] Lock shared models and `SyncProvider` (`shared/typescript/`, Android `domain/`)
-2. 🔲 [AGENT] Wire Room + SQLCipher + Hilt on Android using the locked types
+1. ✅ [LOCAL] [AGENT] Lock shared models and `SyncProvider` (`shared/typescript/`, Android `domain/`)
+2. 🔲 [LOCAL] [AGENT] Wire Room + SQLCipher + Hilt on Android using the locked types
 3. ✅ [HUMAN] Approve ADR-0001, ADR-0002, and ADR-0003
 
 #### Parallel (safe after Sequential step 1)
 
 | Task | Owner | Isolated scope |
 | ---- | ----- | -------------- |
-| Android About + four-destination nav | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/**` |
-| Desktop tray unread command | AGENT | `examples/desktop/src-tauri/**` |
-| Shared unread tests | AGENT | `shared/typescript/**`, `examples/web/src/domain/**` |
+| Android About + four-destination nav | AGENT [LOCAL] | `examples/android/app/src/main/java/org/aetherfeed/app/ui/**` |
+| Desktop tray unread command | AGENT [LOCAL] | `examples/desktop/src-tauri/**` |
+| Shared unread tests | AGENT [LOCAL] | `shared/typescript/**`, `examples/web/src/domain/**` |
 
 #### Human & device (after automation)
 
@@ -131,116 +173,104 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 ### Sprint 2 — News / RSS reader
 
+<!-- parallel_exception: android news logic and ui share examples/android; web owns reader chrome -->
+
 #### Sequential
 
-1. 🔲 [AGENT] Lock RSS/Atom/JSON Feed + OPML public API (`docs/features/news.md`)
-2. 🔲 [AGENT] Scaffold news repository boundary only
+1. 🔲 [LOCAL] [AGENT] Lock RSS/Atom/JSON Feed + OPML public API (`docs/features/news.md`)
+2. 🔲 [LOCAL] [AGENT] Scaffold news repository boundary only
 
 #### Parallel (safe after Sequential step 2)
 
 | Task | Owner | Isolated scope |
 | ---- | ----- | -------------- |
-| Feed parse + unread/star/tag logic | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/news/**` |
-| Reader-mode view + i18n | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/news/**`, `examples/web/src/news/**` |
-| News feature spec | AGENT | `docs/features/news.md` |
+| Feed parse + unread/star/tag logic | AGENT [LOCAL] | `examples/android/app/src/main/java/org/aetherfeed/app/news/**` |
+| Reader-mode view + i18n | AGENT [LOCAL] | `examples/web/src/news/**` |
+| News feature spec | AGENT [LOCAL] | `docs/features/news.md` |
 
 ### Sprint 3 — Podcasts
 
 #### Sequential
 
-1. 🔲 [AGENT] Lock episode/queue/position API (`docs/features/podcasts.md`)
+1. 🔲 [LOCAL] [AGENT] Lock episode/queue/position API (`docs/features/podcasts.md`)
 
 #### Parallel (safe after Sequential step 1)
 
 | Task | Owner | Isolated scope |
 | ---- | ----- | -------------- |
-| Media3 player + downloads | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/podcasts/**` |
-| Desktop playback commands | AGENT | `examples/desktop/src-tauri/src/**` |
-| Podcast feature spec | AGENT | `docs/features/podcasts.md` |
+| Media3 player + downloads | AGENT [LOCAL] | `examples/android/app/src/main/java/org/aetherfeed/app/podcasts/**` |
+| Desktop playback commands | AGENT [LOCAL] | `examples/desktop/src-tauri/src/**` |
+| Podcast feature spec | AGENT [LOCAL] | `docs/features/podcasts.md` |
 
 ### Sprint 4 — Booru browser
 
+<!-- parallel_exception: android booru logic and ui share examples/android; scopes nested intentionally -->
+
 #### Sequential
 
-1. 🔲 [AGENT] Lock source/search/favorite/blacklist API (`docs/features/booru.md`)
+1. 🔲 [LOCAL] [AGENT] Lock source/search/favorite/blacklist API (`docs/features/booru.md`)
 
 #### Parallel (safe after Sequential step 1)
 
 | Task | Owner | Isolated scope |
 | ---- | ----- | -------------- |
-| Source adapters + tag search | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/booru/**` |
-| Grid/detail view + i18n | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/booru/**` |
-| Booru feature spec | AGENT | `docs/features/booru.md` |
+| Source adapters + tag search | AGENT [LOCAL] | `examples/android/app/src/main/java/org/aetherfeed/app/booru/**` |
+| Grid/detail view + i18n | AGENT [LOCAL] | `examples/web/src/booru/**` |
+| Booru feature spec | AGENT [LOCAL] | `docs/features/booru.md` |
 
 ### Sprint 5 — Notifications and unread chrome
 
 #### Sequential
 
-1. 🔲 [AGENT] Lock unread-total API used by widget and tray
+1. 🔲 [LOCAL] [AGENT] Lock unread-total API used by widget and tray
 
 #### Parallel (safe after Sequential step 1)
 
 | Task | Owner | Isolated scope |
 | ---- | ----- | -------------- |
-| Android channels + unread widget | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/notify/**` |
-| Desktop tray badge/tooltip | AGENT | `examples/desktop/src-tauri/src/**` |
+| Android channels + unread widget | AGENT [LOCAL] | `examples/android/app/src/main/java/org/aetherfeed/app/notify/**` |
+| Desktop tray badge/tooltip | AGENT [LOCAL] | `examples/desktop/src-tauri/src/**` |
 
 ### Sprint 6 — E2E sync
 
 #### Sequential
 
-1. 🔲 [AGENT] Lock envelope format and provider interface (`docs/features/sync.md`)
+1. 🔲 [LOCAL] [AGENT] Lock envelope format and provider interface (`docs/features/sync.md`)
 
 #### Parallel (safe after Sequential step 1)
 
 | Task | Owner | Isolated scope |
 | ---- | ----- | -------------- |
-| Drive AppData provider | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/sync/**` |
-| WebDAV provider + desktop pull/push | AGENT | `examples/desktop/src-tauri/src/**`, `examples/web/src/sync/**` |
+| Drive AppData provider | AGENT [LOCAL] | `examples/android/app/src/main/java/org/aetherfeed/app/sync/**` |
+| WebDAV provider + desktop pull/push | AGENT [LOCAL] | `examples/desktop/src-tauri/src/**`, `examples/web/src/sync/**` |
 
 ### Sprint 7 — Import/export and polish
 
 #### Sequential
 
-1. 🔲 [AGENT] Lock OPML + JSON export API
+1. 🔲 [LOCAL] [AGENT] Lock OPML + JSON export API
 
 #### Parallel (safe after Sequential step 1)
 
 | Task | Owner | Isolated scope |
 | ---- | ----- | -------------- |
-| Android export + About/Fastlane copy | AGENT | `examples/android/fastlane/**`, `examples/android/metadata/**` |
-| Desktop packaging + Winget stub | AGENT | `packaging/winget/**`, `examples/desktop/**` |
+| Android export + About/Fastlane copy | AGENT [LOCAL] | `examples/android/fastlane/**`, `examples/android/metadata/**` |
+| Desktop packaging + Winget stub | AGENT [LOCAL] | `packaging/winget/**`, `examples/desktop/**` |
 
 ---
 
-## Ongoing Maintenance (recurring)
+## Ongoing Maintenance
 
-> **Template maintainer:** `bash scripts/run-maintainer-gates.sh` weekly (omit `--quick` for full CI wait).
+Not a checklist. GitHub Monday cron (`.github/workflows/weekly-health-check.yml`) already runs CI wait, security triage, parent template-gap sync, radar, Dependabot leftover list, and latest-release SBOM. `/ship` owns pre-release and the release tag.
 
-### Weekly
-
-- 🔲 [AUTO] `cursor-feature-radar.sh` (non-blocking; artifact in weekly-health-check)
-- 🔲 [AUTO] `check-security-triage.sh --wait-ci 300` (Dependabot + CI + Scorecard)
-- 🔲 [AGENT] Apply Dependabot bumps; triage Scorecard SARIF findings
-- 🔲 [AUTO] CI matrix + Repo Hygiene + Feature Gate green on `main`
-
-### Monthly
-
-- 🔲 [AUTO] `simulate-template-upgrade.sh` (also in `weekly-health-check.yml`)
-- 🔲 [AUTO] `check-license-compliance.sh` + SBOM on latest release
-- 🔲 [AGENT] Review Dependabot auto-merge PRs (KB-007)
-
-### Pre-release (every version)
-
-- 🔲 [AUTO] `pre-release-gate.sh` + `run-maintainer-gates.sh` (includes `verify-branch-protection.sh`)
-- 🔲 [AUTO] Release Please PR merged; CHANGELOG + manifest bumped
+Do not put standing weekly/Monday chores back on this board as open checklist rows. See [`docs/GROK_BOTS.md`](docs/GROK_BOTS.md) and [`docs/CURSOR_AUTOMATIONS.commercial.md`](docs/CURSOR_AUTOMATIONS.commercial.md).
 
 ### Human (after automation)
 
-> Product approvals after automated pre-release gates pass.
+> Product approvals after automated pre-release gates pass. Tracked outside standing chore emoji rows.
 
-- 🔲 [HUMAN] Approve release tag when product-ready
-- 🔲 [HUMAN] Quarterly Cursor feature radar backlog review (next due 2026-11-15; last pass 2026-08-15)
+- [HUMAN] Approve release tag when product-ready
+- [HUMAN] Quarterly Cursor feature radar backlog review
 
 ---
 

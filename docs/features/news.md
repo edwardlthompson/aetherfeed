@@ -18,3 +18,22 @@
 1. _Given_ a local vault
 2. _When_ the user adds a feed URL
 3. _Then_ articles appear unread and can be starred offline
+
+
+## Container map
+
+- Feature container: stack paths under `examples/*/` for `news`
+- Spec: `docs/features/news.md`
+
+
+## Tests
+
+- Automated: yes — unit tests beside the feature container.
+- Run via `feature-gate.sh --stack multi`.
+
+
+## Fallback validation
+
+```bash
+python3 scripts/agent-run.py feature-gate --stack multi
+```

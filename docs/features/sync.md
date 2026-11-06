@@ -17,3 +17,21 @@
 1. _Given_ two devices sharing a passphrase
 2. _When_ one stars an article offline and later syncs
 3. _Then_ the other device sees the star and the host never sees plaintext
+
+## Container map
+
+- Feature container: `examples/*/sync/` (stack-specific)
+- Spec: `docs/features/sync.md`
+
+## Tests
+
+- Automated: yes — unit tests beside the feature container.
+
+- Unit/domain tests live beside the feature container.
+- Run stack tests via `feature-gate.sh --stack multi`.
+
+## Fallback validation
+
+```bash
+python3 scripts/agent-run.py feature-gate --stack multi
+```

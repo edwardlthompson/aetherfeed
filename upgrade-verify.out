@@ -1,0 +1,233 @@
+MISSING: BUILD_PLAN_TEMPLATE.md
+MISSING: AGENT.md.example
+MISSING: docs/help/batch-commands-print.html
+MISSING: schemas/features/feature-spec.schema.json
+MISSING: schemas/features/feature-spec.contract.json
+MISSING: docs/first-30-days.json
+MISSING: docs/WINGET.md
+MISSING: docs/GROK_BOTS.md
+MISSING: docs/CURSOR_MARKETPLACE.md
+MISSING: docs/help/ALLIDEAS.md
+MISSING: docs/help/DEBUG.md
+MISSING: docs/help/ADR.md
+Python pytest workflow check skipped (no examples/python/pyproject.toml)
+Parallel checks: 72 scripts, jobs=32
+FAIL: check-auto-review.sh (exit 127)
+FAIL: check-nix-flake.sh (exit 127)
+FAIL: check-pages-analytics.sh (exit 127)
+FAIL: check-fdroid-metadata-links.sh (exit 127)
+FAIL: check-merge-queue-docs.sh (exit 127)
+FAIL: check-i18n-parity.sh (exit 127)
+FAIL: check-github-settings-yml.sh (exit 127)
+FAIL: check-token-contrast.sh (exit 127)
+FAIL: check-package-attestation-docs.sh (exit 127)
+FAIL: check-feature-specs.sh (exit 127)
+FAIL: check-openvex.sh (exit 127)
+FAIL: check-crash-inbox.sh (exit 127)
+FAIL: check-reuse.sh (exit 127)
+FAIL: check-md-yaml-lint.sh (exit 127)
+FAIL: check-android-sdk-licenses.sh (exit 127)
+FAIL: check-android-cmdline-tools.sh (exit 127)
+FAIL: check-hadolint.sh (exit 127)
+FAIL: check-playwright-cache.sh (exit 127)
+FAIL: check-readme-badges.sh (exit 127)
+FAIL: check-psscriptanalyzer.sh (exit 127)
+FAIL: check-semgrep.sh (exit 127)
+FAIL: check-shellcheck.sh (exit 127)
+FAIL: check-web-import-hygiene.sh (exit 127)
+FAIL: check-action-workflows.sh (exit 127)
+FAIL: check-pages-demo-link.sh (exit 127)
+FAIL: check-gitleaks-baseline.sh (exit 127)
+FAIL: check-glossary-links.sh (exit 127)
+FAIL: check-sanitize-fixtures.sh (exit 127)
+FAIL: check-android-sdk-secrets.sh (exit 127)
+FAIL: check-crash-payload-allowlist.sh (exit 127)
+FAIL: check-mcp-allowlist.sh (exit 127)
+FAIL: check-adr-architecture.sh (exit 127)
+FAIL: check-readme-mermaid.sh (exit 127)
+FAIL: check-first-30-days.sh (exit 127)
+FAIL: check-ideas-discussion.sh (exit 127)
+FAIL: check-cursor-marketplace.sh (exit 127)
+FAIL: check-social-preview.sh (exit 127)
+FAIL: check-fdroid-screenshots.sh (exit 127)
+FAIL: check-winget-runbook.sh (exit 127)
+FAIL: check-ci-gaps.sh (exit 127)
+FAIL: check-adr-command.sh (exit 127)
+FAIL: check-ci-refs.sh (exit 127)
+FAIL: check-cursor-canvas.sh (exit 127)
+FAIL: check-contributing-agent.sh (exit 127)
+FAIL: check-cursor-cli.sh (exit 127)
+FAIL: check-tour-coach-chrome.sh (exit 127)
+FAIL: check-cursor-automations.sh (exit 127)
+FAIL: check-cursor-cloud-hooks.sh (exit 127)
+FAIL: check-build-plan-tally.sh (exit 127)
+missing script: C:\Users\edwar\AetherFeed\scripts\check-auto-review.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-nix-flake.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-pages-analytics.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-fdroid-metadata-links.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-merge-queue-docs.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-i18n-parity.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-github-settings-yml.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-token-contrast.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-package-attestation-docs.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-feature-specs.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-openvex.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-crash-inbox.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-reuse.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-md-yaml-lint.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-android-sdk-licenses.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-android-cmdline-tools.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-hadolint.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-playwright-cache.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-readme-badges.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-psscriptanalyzer.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-semgrep.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-shellcheck.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-web-import-hygiene.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-action-workflows.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-pages-demo-link.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-gitleaks-baseline.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-glossary-links.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-sanitize-fixtures.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-android-sdk-secrets.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-crash-payload-allowlist.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-mcp-allowlist.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-adr-architecture.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-readme-mermaid.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-first-30-days.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-ideas-discussion.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-cursor-marketplace.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-social-preview.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-fdroid-screenshots.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-winget-runbook.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-ci-gaps.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-adr-command.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-ci-refs.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-cursor-canvas.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-contributing-agent.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-cursor-cli.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-tour-coach-chrome.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-cursor-automations.sh
+missing script: C:\Users\edwar\AetherFeed\scripts\check-cursor-cloud-hooks.sh
+bash: C:/Users/edwar/AetherFeed/scripts/refresh-build-plan-tally.sh: No such file or directory
+Markdown table check passed
+OK: check-markdown-tables.sh
+Workflow action ref format check passed
+OK: check-workflow-action-ref-format.sh
+FAIL: check-pre-commit-hooks.sh (exit 1)
+FAIL: commit-msg hook missing. Install with:
+  pip install pre-commit && pre-commit install --hook-type commit-msg
+Cursor hooks check passed
+OK: check-cursor-hooks.sh
+BUILD_PLAN parallel structure check passed
+OK: check-build-plan-parallel.sh
+File encoding check passed
+OK: check-file-encoding.sh
+CHANGELOG Unreleased check passed
+OK: check-changelog-unreleased.sh
+FAIL: check-project-card-index.sh (exit 1)
+TEMPLATE_INDEX / AGENTS project card drift:
+  TEMPLATE_INDEX.json missing project {name,purpose,stack}
+Env schema check passed
+OK: check-env.sh
+Agent adapters OK
+OK: check-agent-adapters.sh
+OK: profile=full
+OK: check-profile.sh
+TEMPLATE_INDEX.json validation passed
+OK: validate-template-index.sh
+Template-upgrade issue form check passed
+OK: check-template-upgrade-form.sh
+FAIL: check-ux-inventory.sh (exit 1)
+FAIL: check-agent-venue.sh (exit 1)
+FAIL: check-agent-brief.sh (exit 1)
+FAIL: check-doc-links.sh (exit 1)
+BUILD_PLAN.md: missing ux-inventory markers
+BUILD_PLAN.md: missing local-agent-lane markers
+BUILD_PLAN.md: missing cloud-agent-lane markers
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: 2. ðŸ”² [AGENT] Wire Room + SQLCipher + Hilt on Android using the locked types
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: 1. ðŸ”² [AGENT] Lock RSS/Atom/JSON Feed + OPML public API (`docs/features/news.md`)
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: 2. ðŸ”² [AGENT] Scaffold news repository boundary only
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: 1. ðŸ”² [AGENT] Lock episode/queue/position API (`docs/features/podcasts.md`)
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: 1. ðŸ”² [AGENT] Lock source/search/favorite/blacklist API (`docs/features/booru.md`)
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: 1. ðŸ”² [AGENT] Lock unread-total API used by widget and tray
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: 1. ðŸ”² [AGENT] Lock envelope format and provider interface (`docs/features/sync.md`)
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: 1. ðŸ”² [AGENT] Lock OPML + JSON export API
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: - ðŸ”² [AGENT] Apply Dependabot bumps; triage Scorecard SARIF findings
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: - ðŸ”² [AGENT] Review Dependabot auto-merge PRs (KB-007)
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Android identity + vault contract | AGENT | `examples/android/**` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Web domain + desktop Tauri shell | AGENT | `examples/web/**`, `examples/desktop/**` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Crypto crate + shared schema | AGENT | `examples/rust/**`, `shared/**` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Android About + four-destination nav | AGENT | `examples/android/app/src/main/java/org/aetherfeed/
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Desktop tray unread command | AGENT | `examples/desktop/src-tauri/**` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Shared unread tests | AGENT | `shared/typescript/**`, `examples/web/src/domain/**` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Feed parse + unread/star/tag logic | AGENT | `examples/android/app/src/main/java/org/aetherfeed/ap
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Reader-mode view + i18n | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/news/*
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | News feature spec | AGENT | `docs/features/news.md` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Media3 player + downloads | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/podcast
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Desktop playback commands | AGENT | `examples/desktop/src-tauri/src/**` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Podcast feature spec | AGENT | `docs/features/podcasts.md` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Source adapters + tag search | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/boor
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Grid/detail view + i18n | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/ui/booru/
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Booru feature spec | AGENT | `docs/features/booru.md` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Android channels + unread widget | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Desktop tray badge/tooltip | AGENT | `examples/desktop/src-tauri/src/**` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Drive AppData provider | AGENT | `examples/android/app/src/main/java/org/aetherfeed/app/sync/**` |
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | WebDAV provider + desktop pull/push | AGENT | `examples/desktop/src-tauri/src/**`, `examples/web/s
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Android export + About/Fastlane copy | AGENT | `examples/android/fastlane/**`, `examples/android/m
+BUILD_PLAN.md: open AGENT missing [LOCAL]/[CLOUD]: | Desktop packaging + Winget stub | AGENT | `packaging/winget/**`, `examples/desktop/**` |
+FAIL: MISSING: AGENT.md.example
+FAIL: MISSING: AGENT.md (copy AGENT.md.example before init)
+FAIL: C:/Users/edwar/AetherFeed/docs/adr/0008-agent-venue.md: broken link 0010-agent-mode-speed-balanced-lean.md
+FAIL: C:/Users/edwar/AetherFeed/docs/BATCH_COMMANDS.md: broken link help/batch-commands-print.html
+FAIL: C:/Users/edwar/AetherFeed/docs/help/BATCH_COMMANDS.md: broken link batch-commands-print.html
+FAIL: C:/Users/edwar/AetherFeed/docs/help/BATCH_COMMANDS.md: broken link VSCODE_COMMANDS.md
+FAIL: C:/Users/edwar/AetherFeed/docs/help/BATCH_COMMANDS.md: broken link LOCAL_AGENT.md
+FAIL: C:/Users/edwar/AetherFeed/docs/help/BATCH_COMMANDS.md: broken link ../adr/0010-agent-mode-speed-balanced-lean.md
+FAIL: C:/Users/edwar/AetherFeed/docs/help/BATCH_COMMANDS.md: broken link LOCAL_AGENT.md
+FAIL: C:/Users/edwar/AetherFeed/docs/help/BATCH_COMMANDS.md: broken link CLINE.md
+FAIL: C:/Users/edwar/AetherFeed/docs/help/BATCH_COMMANDS.md: broken link VSCODE_COMMANDS.md
+FAIL: C:/Users/edwar/AetherFeed/docs/help/BATCH_COMMANDS.md: broken link CLINE.md
+Template version sync OK (1.12.0)
+OK: check-template-version-sync.sh
+Stamped C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\AGENTS.md
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\bootstrap.config.json
+opened welcome issue
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\.cursor\rules\main.mdc
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\CLAUDE.md
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\.github\copilot-instructions.md
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\GEMINI.md
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\.windsurf\rules\agents-pointer.md
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\.clinerules
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\CONVENTIONS.md
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\.continue\rules\agents.md
+Wrote C:\Users\edwar\AppData\Local\Temp\tmpkq68x3g9\PROJECT_CHECKLIST.md
+----------------------------------------------------------------------
+Ran 61 tests in 0.692s
+
+OK
+OK: check-bootstrap-engine.sh
+Design cohesion check passed
+OK: check-design-cohesion.sh
+FAIL: check-batch-commands.sh (exit 1)
+MISSING: docs/help/batch-commands-print.html
+MISSING: schemas/batch-commands-print.json
+MISSING: docs/help/ALLIDEAS.md (portable twin of .cursor/commands/allideas.md)
+MISSING: docs/help/DEBUG.md (portable twin of .cursor/commands/debug.md)
+MISSING: docs/help/ADR.md (portable twin of .cursor/commands/adr.md)
+MISSING: docs/help/UX-REVIEW.md (portable twin of .cursor/commands/ux-review.md)
+MISSING: docs/help/UX-APPLY.md (portable twin of .cursor/commands/ux-apply.md)
+MISSING: docs/help/BRAND.md (portable twin of .cursor/commands/brand.md)
+MISSING: docs/help/SHAPE.md (portable twin of .cursor/commands/shape.md)
+10 batch command check(s) failed
+C:\Users\edwar\AppData\Local\Python\pythoncore-3.14-64\python.exe: can't open file 'C:\\Users\\edwar\\AetherFeed\\scripts\\lib\\batch_commands_print.py': [Errno 2] No such file or directory
+OK: linguist attribution patterns present (dominant=Kotlin)
+OK: check-linguist-attribution.sh
+Tracked artifact check passed
+Large tracked file check passed
+Repo hygiene checks passed
+OK: check-repo-hygiene.sh
+56 parallel check(s) failed
+Synced Cursor features (tier=foss)
+Cursor integrations check passed (tier=foss)
+13 bootstrap check(s) failed

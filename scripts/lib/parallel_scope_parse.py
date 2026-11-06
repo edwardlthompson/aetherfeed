@@ -92,7 +92,13 @@ def parse_sprint_blocks(text: str) -> list[SprintBlock]:
 
 
 def agent_rows(rows: list[ParallelRow]) -> list[ParallelRow]:
-    return [r for r in rows if r.owner == "AGENT"]
+    return [
+        r
+        for r in rows
+        if r.owner == "AGENT"
+        or r.owner.startswith("AGENT ")
+        or r.owner.startswith("AGENT[")
+    ]
 
 
 def sequential_agent_open(text: str, before_parallel: bool = True) -> list[str]:

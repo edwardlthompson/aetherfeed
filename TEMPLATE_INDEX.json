@@ -1,5 +1,5 @@
 {
-  "template_version": "0.22.0",
+  "template_version": "1.12.0",
   "entry_points": {
     "bootstrap": "docs/START_HERE.md",
     "reference": "docs/FOR_AGENTS.md",
@@ -870,7 +870,7 @@
     },
     {
       "path": ".github/workflows/dependency-review.yml",
-      "purpose": "PR dependency review — fail on new High/Critical vulnerabilities",
+      "purpose": "PR dependency review \u2014 fail on new High/Critical vulnerabilities",
       "read_when": "contributing",
       "update_when": "milestone_boundary",
       "owner": "maintainer"
@@ -1493,7 +1493,7 @@
     },
     {
       "path": "scripts/run-codex-review.sh",
-      "purpose": "Local Codex CLI review → CODE_REVIEW.md",
+      "purpose": "Local Codex CLI review \u2192 CODE_REVIEW.md",
       "read_when": "audit",
       "update_when": "milestone_boundary",
       "owner": "maintainer"
@@ -1903,6 +1903,2690 @@
       "read_when": "feature_work",
       "update_when": "milestone_boundary",
       "owner": "human+agent"
+    },
+    {
+      "path": "scripts/check-agent-brief.sh",
+      "purpose": "Anti-amnesia: AGENT.md one-liner and keywords must stay on BUILD_PLAN",
+      "read_when": "session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-agent-venue.sh",
+      "purpose": "Validate BUILD_PLAN LOCAL/CLOUD venue tags, scopes, and overlap",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-build-plan-tally.sh",
+      "purpose": "Fail when BUILD_PLAN remaining tallies are stale",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-pre-commit-hooks.sh",
+      "purpose": "Require a local commit-msg hook; skip in CI",
+      "read_when": "bootstrap_session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-profile.sh",
+      "purpose": "Validate bootstrap.config.json profile core|full",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-project-card-index.sh",
+      "purpose": "Gate: TEMPLATE_INDEX project card matches AGENTS.md bootstrap card",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-template-gaps.sh",
+      "purpose": "Classify template vs child gaps (Plan-only JSON; Sacred never apply)",
+      "read_when": "template_upgrade",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-template-upgrade-form.sh",
+      "purpose": "Gate: template-upgrade issue form lists Sacred/Canon/Mixed",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-ux-inventory.sh",
+      "purpose": "Validate BUILD_PLAN UX inventory markers, ids, and statuses",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/sync-template-gaps-build-plan.sh",
+      "purpose": "Mirror parent template gaps into BUILD_PLAN managed block (plan-only)",
+      "read_when": "session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/workflows/feedback-notify.yml",
+      "purpose": "Assign CODEOWNERS and label crash/bug as fix-now, enhancement as needs-approval",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/workflows/issue-pii-nudge.yml",
+      "purpose": "Comment-only PII nudge on new issues; never echo matched text",
+      "read_when": "security_triage",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/workflows/sbom-diff-dependabot.yml",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": ".github/workflows/sync-open-prs-build-plan.yml",
+      "purpose": "On Dependabot/Release Please PR events, sync BUILD_PLAN open-prs block",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "schemas/golden-path/upgrade-policy.json",
+      "purpose": "Canon/Mixed/Sacred path globs for child /upgrade gap reports",
+      "read_when": "template_upgrade",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "schemas/golden-path/feature-catalog.json",
+      "purpose": "Stack-filtered Golden Path feature detect globs for /upgrade",
+      "read_when": "template_upgrade",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/UPGRADE.md",
+      "purpose": "Child-repo template catch-up recipe (Plan only; other IDEs)",
+      "read_when": "template_upgrade",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/ux-ui-guidelines.md",
+      "purpose": "UX/UI construction law for any view, copy, nav, or form",
+      "read_when": "ui_work",
+      "update_when": "design_change",
+      "owner": "agent+human"
+    },
+    {
+      "path": "docs/adr/0007-ux-inventory.md",
+      "purpose": "ADR: construction law vs /ux-review vs UX inventory vs sprint rows",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/adr/0008-agent-venue.md",
+      "purpose": "ADR: LOCAL vs CLOUD BUILD_PLAN venues and isolation",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/agent-mode.json",
+      "purpose": "Repo-wide Agent Mode (speed|balanced|lean)",
+      "read_when": "session_start",
+      "update_when": "milestone_boundary",
+      "owner": "agent+human"
+    },
+    {
+      "path": ".cursor/skills/upgrade/SKILL.md",
+      "purpose": "Imported from parent template for .cursor/skills/upgrade/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/template_gap.py",
+      "purpose": "Imported from parent template for scripts/lib/template_gap.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/agent_mode.py",
+      "purpose": "Agent Mode library",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/init_profile.py",
+      "purpose": "Init profile core|full apply and check",
+      "read_when": "bootstrap_session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/a11y-check.md",
+      "purpose": "Imported from parent template for .cursor/commands/a11y-check.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/adr.md",
+      "purpose": "Slash command to write the next docs/adr record",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/allideas.md",
+      "purpose": "Cursor /allideas slash command (uncapped dump, do not implement until asked)",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/balanced.md",
+      "purpose": "Imported from parent template for .cursor/commands/balanced.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/best-of-n.md",
+      "purpose": "Imported from parent template for .cursor/commands/best-of-n.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/brand.md",
+      "purpose": "Imported from parent template for .cursor/commands/brand.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/compare-ui.md",
+      "purpose": "Imported from parent template for .cursor/commands/compare-ui.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/emulator.md",
+      "purpose": "Imported from parent template for .cursor/commands/emulator.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/lean.md",
+      "purpose": "Imported from parent template for .cursor/commands/lean.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/mode.md",
+      "purpose": "Imported from parent template for .cursor/commands/mode.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/redesign.md",
+      "purpose": "Imported from parent template for .cursor/commands/redesign.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/resume.md",
+      "purpose": "Slash command: pick up after Cloud Agent on This Computer",
+      "read_when": "session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/shape.md",
+      "purpose": "Imported from parent template for .cursor/commands/shape.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/speed.md",
+      "purpose": "Imported from parent template for .cursor/commands/speed.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/status.md",
+      "purpose": "Imported from parent template for .cursor/commands/status.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/ui-audit.md",
+      "purpose": "Imported from parent template for .cursor/commands/ui-audit.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/ui-review.md",
+      "purpose": "Imported from parent template for .cursor/commands/ui-review.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/update-deps.md",
+      "purpose": "Imported from parent template for .cursor/commands/update-deps.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/update-guidelines.md",
+      "purpose": "Imported from parent template for .cursor/commands/update-guidelines.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/upgrade.md",
+      "purpose": "Imported from parent template for .cursor/commands/upgrade.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/ux-apply.md",
+      "purpose": "Slash command: implement one UX-NNN inventory item",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/ux-audit.md",
+      "purpose": "Imported from parent template for .cursor/commands/ux-audit.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/ux-review.md",
+      "purpose": "Slash command: score shipped UI against construction law",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/agent-mode.mdc",
+      "purpose": "Imported from parent template for .cursor/rules/agent-mode.mdc",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/brief-replies.mdc",
+      "purpose": "Always-on ADHD short-reply law (1\u00e2\u20ac\u201c3 sentences)",
+      "read_when": "session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/local-deps.mdc",
+      "purpose": "Imported from parent template for .cursor/rules/local-deps.mdc",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/product-brief.mdc",
+      "purpose": "Always-on rule: read AGENT.md before Golden Path About/donate",
+      "read_when": "session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/ux-ui.mdc",
+      "purpose": "UX/UI construction checklist (globs on UI paths)",
+      "read_when": "ui_work",
+      "update_when": "design_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/adr/SKILL.md",
+      "purpose": "Imported from parent template for .cursor/skills/adr/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/best-of-n/SKILL.md",
+      "purpose": "Imported from parent template for .cursor/skills/best-of-n/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/emulator/SKILL.md",
+      "purpose": "Imported from parent template for .cursor/skills/emulator/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/shape-idea/SKILL.md",
+      "purpose": "Imported from parent template for .cursor/skills/shape-idea/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/update-deps/SKILL.md",
+      "purpose": "Imported from parent template for .cursor/skills/update-deps/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/ux-review/SKILL.md",
+      "purpose": "Companion skill for /ux-review and /ux-apply",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/agent_brief.py",
+      "purpose": "Imported from parent template for scripts/lib/agent_brief.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/agent_venue.py",
+      "purpose": "Parse LOCAL/CLOUD agent venues; scope exclusivity for Cloud vs Local",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/build_plan_tally.py",
+      "purpose": "Imported from parent template for scripts/lib/build_plan_tally.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/check_agent_brief.py",
+      "purpose": "Imported from parent template for scripts/lib/check_agent_brief.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/check_file_limits.py",
+      "purpose": "Imported from parent template for scripts/lib/check_file_limits.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/project_card_index.py",
+      "purpose": "Imported from parent template for scripts/lib/project_card_index.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sync_template_gaps_build_plan.py",
+      "purpose": "Rewrite template-gaps-sync BUILD_PLAN markers from gap report",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sync_template_gaps_render.py",
+      "purpose": "Render Canon/Mixed/Sacred/feature rows for template-gaps-sync",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/template_upgrade_form.py",
+      "purpose": "Imported from parent template for scripts/lib/template_upgrade_form.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/ux_inventory.py",
+      "purpose": "Parse UX-NNN inventory blocks; reject forbidden Status words",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/agent-progress.json",
+      "purpose": "Parent catch-up import: .cursor/agent-progress.json",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/last-feature-gate.json",
+      "purpose": "Parent catch-up import: .cursor/last-feature-gate.json",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/mcp-audit.log",
+      "purpose": "Parent catch-up import: .cursor/mcp-audit.log",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/parallel-scope-lock.json",
+      "purpose": "Parent catch-up import: .cursor/parallel-scope-lock.json",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".bestpractices.json",
+      "purpose": "Proposed OpenSSF Best Practices answers for project 14564",
+      "read_when": "validation",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/BUGBOT.md.commercial.example",
+      "purpose": "Parent catch-up import: .cursor/BUGBOT.md.commercial.example",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/agents/explorer.md",
+      "purpose": "Parent catch-up import: .cursor/agents/explorer.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/agents/gate-fixer.md",
+      "purpose": "Parent catch-up import: .cursor/agents/gate-fixer.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/agents/verifier.md",
+      "purpose": "Parent catch-up import: .cursor/agents/verifier.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/audit.md",
+      "purpose": "Parent catch-up import: .cursor/commands/audit.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/bootstrap.md",
+      "purpose": "Parent catch-up import: .cursor/commands/bootstrap.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/build.md",
+      "purpose": "Parent catch-up import: .cursor/commands/build.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/ci.md",
+      "purpose": "Parent catch-up import: .cursor/commands/ci.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/cleanup.md",
+      "purpose": "Parent catch-up import: .cursor/commands/cleanup.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/codex-review.md",
+      "purpose": "Parent catch-up import: .cursor/commands/codex-review.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/compact.md",
+      "purpose": "Parent catch-up import: .cursor/commands/compact.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/debug.md",
+      "purpose": "Parent catch-up import: .cursor/commands/debug.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/dependabot.md",
+      "purpose": "Parent catch-up import: .cursor/commands/dependabot.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/docs.md",
+      "purpose": "Parent catch-up import: .cursor/commands/docs.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/feature.md",
+      "purpose": "Parent catch-up import: .cursor/commands/feature.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/fix.md",
+      "purpose": "Parent catch-up import: .cursor/commands/fix.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/gates.md",
+      "purpose": "Parent catch-up import: .cursor/commands/gates.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/init.md",
+      "purpose": "Parent catch-up import: .cursor/commands/init.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/maintain.md",
+      "purpose": "Parent catch-up import: .cursor/commands/maintain.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/plan.md",
+      "purpose": "Parent catch-up import: .cursor/commands/plan.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/prerelease.md",
+      "purpose": "Parent catch-up import: .cursor/commands/prerelease.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/prune.md",
+      "purpose": "Parent catch-up import: .cursor/commands/prune.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/push.md",
+      "purpose": "Parent catch-up import: .cursor/commands/push.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/regress.md",
+      "purpose": "Parent catch-up import: .cursor/commands/regress.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/restore.md",
+      "purpose": "Parent catch-up import: .cursor/commands/restore.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/scope.md",
+      "purpose": "Parent catch-up import: .cursor/commands/scope.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/setup.md",
+      "purpose": "Parent catch-up import: .cursor/commands/setup.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/ship.md",
+      "purpose": "Parent catch-up import: .cursor/commands/ship.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/triage.md",
+      "purpose": "Parent catch-up import: .cursor/commands/triage.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/commands/verify.md",
+      "purpose": "Parent catch-up import: .cursor/commands/verify.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/cursor-features.json",
+      "purpose": "Parent catch-up import: .cursor/cursor-features.json",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/environment.json.commercial.example",
+      "purpose": "Parent catch-up import: .cursor/environment.json.commercial.example",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/hooks/after_edit_encoding.py",
+      "purpose": "Parent catch-up import: .cursor/hooks/after_edit_encoding.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/hooks/before_shell_guard.py",
+      "purpose": "Parent catch-up import: .cursor/hooks/before_shell_guard.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/hooks/mcp_audit.py",
+      "purpose": "Parent catch-up import: .cursor/hooks/mcp_audit.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/hooks/session_start_context.py",
+      "purpose": "Parent catch-up import: .cursor/hooks/session_start_context.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/hooks/shell-denylist.txt",
+      "purpose": "Parent catch-up import: .cursor/hooks/shell-denylist.txt",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/hooks/subagent_scope_inject.py",
+      "purpose": "Parent catch-up import: .cursor/hooks/subagent_scope_inject.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/mcp-allowlist.json",
+      "purpose": "FOSS + built-in Cursor MCP server allowlist",
+      "read_when": "bootstrap_session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/mcp.commercial.example",
+      "purpose": "Parent catch-up import: .cursor/mcp.commercial.example",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/mcp.foss.example",
+      "purpose": "Parent catch-up import: .cursor/mcp.foss.example",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/commercial-compliance.mdc",
+      "purpose": "Parent catch-up import: .cursor/rules/commercial-compliance.mdc",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/core-directives.mdc",
+      "purpose": "Parent catch-up import: .cursor/rules/core-directives.mdc",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/foss-compliance.mdc",
+      "purpose": "Parent catch-up import: .cursor/rules/foss-compliance.mdc",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/read-before-write.mdc",
+      "purpose": "Parent catch-up import: .cursor/rules/read-before-write.mdc",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/rules/security-triage.mdc",
+      "purpose": "Parent catch-up import: .cursor/rules/security-triage.mdc",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/setup-worktree-unix.sh",
+      "purpose": "Parent catch-up import: .cursor/setup-worktree-unix.sh",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/setup-worktree-windows.ps1",
+      "purpose": "Parent catch-up import: .cursor/setup-worktree-windows.ps1",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/canvas-bootstrap-status/SKILL.md",
+      "purpose": "Parent catch-up import: .cursor/skills/canvas-bootstrap-status/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/check-repo-hygiene/SKILL.md",
+      "purpose": "Parent catch-up import: .cursor/skills/check-repo-hygiene/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/codex-review/SKILL.md",
+      "purpose": "Parent catch-up import: .cursor/skills/codex-review/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/feature-vertical-slice/SKILL.md",
+      "purpose": "Parent catch-up import: .cursor/skills/feature-vertical-slice/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/parallel-scope/SKILL.md",
+      "purpose": "Parent catch-up import: .cursor/skills/parallel-scope/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/sprint0-signoff/SKILL.md",
+      "purpose": "Parent catch-up import: .cursor/skills/sprint0-signoff/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/validate-bootstrap/SKILL.md",
+      "purpose": "Parent catch-up import: .cursor/skills/validate-bootstrap/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/skills/watch-gates-autofix/SKILL.md",
+      "purpose": "Parent catch-up import: .cursor/skills/watch-gates-autofix/SKILL.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".cursor/stack-selection.json",
+      "purpose": "Parent catch-up import: .cursor/stack-selection.json",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/DISCUSSION_TEMPLATE/ideas.yml",
+      "purpose": "GitHub Discussion form that points at /ideas and docs/help/IDEAS.md",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "purpose": "Parent catch-up import: .github/FUNDING.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "purpose": "Parent catch-up import: .github/ISSUE_TEMPLATE/bug_report.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "purpose": "Parent catch-up import: .github/ISSUE_TEMPLATE/feature_request.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/good_first_issue.yml",
+      "purpose": "Parent catch-up import: .github/ISSUE_TEMPLATE/good_first_issue.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/template_improvement.yml",
+      "purpose": "Parent catch-up import: .github/ISSUE_TEMPLATE/template_improvement.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/template_upgrade.yml",
+      "purpose": "Issue form to classify template-upgrade paths as Sacred/Canon/Mixed",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "purpose": "Parent catch-up import: .github/PULL_REQUEST_TEMPLATE.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "purpose": "Parent catch-up import: .github/dependabot.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/release_template.md",
+      "purpose": "Parent catch-up import: .github/release_template.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/required-checks.json",
+      "purpose": "Named required GitHub checks (not a workflow content-hash cache)",
+      "read_when": "security_triage",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/settings.yml",
+      "purpose": "Parent catch-up import: .github/settings.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".github/zizmor.yml",
+      "purpose": "Parent catch-up import: .github/zizmor.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".gitleaks.toml",
+      "purpose": "Gitleaks config + fixture-secret allowlist baseline",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".semgrep.yml",
+      "purpose": "FOSS Semgrep rules; never upload findings",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": ".semgrep/prompt-injection.yml",
+      "purpose": "Parent catch-up import: .semgrep/prompt-injection.yml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "AGENT.md.example",
+      "purpose": "Sacred product brief template copied to AGENT.md before init",
+      "read_when": "session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "BUILD_PLAN_TEMPLATE.md",
+      "purpose": "Child product BUILD_PLAN model; copied onto BUILD_PLAN.md at init",
+      "read_when": "session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/CURSOR_AUTOMATIONS.commercial.md",
+      "purpose": "Parent catch-up import: docs/CURSOR_AUTOMATIONS.commercial.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/CURSOR_COMMERCIAL_ACTIVATION.md",
+      "purpose": "Parent catch-up import: docs/CURSOR_COMMERCIAL_ACTIVATION.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/CURSOR_MARKETPLACE.md",
+      "purpose": "Cursor plugin marketplace runbook (local pack default)",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/FILE_SIZE_GUIDE.md",
+      "purpose": "Parent catch-up import: docs/FILE_SIZE_GUIDE.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/GITHUB_ABOUT.md",
+      "purpose": "Parent catch-up import: docs/GITHUB_ABOUT.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/GROK_BOTS.md",
+      "purpose": "Optional commercial Grok Bot prompts for Android/R8/memory ops",
+      "read_when": "cursor_setup",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/WINGET.md",
+      "purpose": "Winget publish runbook for child desktop installers",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/adr/0010-agent-mode-speed-balanced-lean.md",
+      "purpose": "ADR for Agent Mode",
+      "read_when": "architectural_decision",
+      "update_when": "never",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/first-30-days.json",
+      "purpose": "Machine-readable week needles for the first-30-days playbook",
+      "read_when": "bootstrap_session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/ADR.md",
+      "purpose": "Tool-agnostic /adr recipe for other IDEs",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/ALLIDEAS.md",
+      "purpose": "Tool-agnostic uncapped in-scope backlog dump",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/BRAND.md",
+      "purpose": "Parent catch-up import: docs/help/BRAND.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/CLINE.md",
+      "purpose": "Parent catch-up import: docs/help/CLINE.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/CURSOR_FEATURES.md",
+      "purpose": "Parent catch-up import: docs/help/CURSOR_FEATURES.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/DEBUG.md",
+      "purpose": "Parent catch-up import: docs/help/DEBUG.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/LOCAL_AGENT.md",
+      "purpose": "Parent catch-up import: docs/help/LOCAL_AGENT.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/SHAPE.md",
+      "purpose": "Parent catch-up import: docs/help/SHAPE.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/UX-APPLY.md",
+      "purpose": "Tool-agnostic /ux-apply recipe for other IDEs",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/UX-REVIEW.md",
+      "purpose": "Tool-agnostic /ux-review recipe for other IDEs",
+      "read_when": "prompt_needed",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/VSCODE_COMMANDS.md",
+      "purpose": "Parent catch-up import: docs/help/VSCODE_COMMANDS.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "docs/help/batch-commands-print.html",
+      "purpose": "Novice printer-friendly list of every super and one-step command",
+      "read_when": "bootstrap_session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "schemas/batch-commands-print.json",
+      "purpose": "Novice captions for the print cheat sheet renderer",
+      "read_when": "validation",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "schemas/features/feature-spec.contract.json",
+      "purpose": "Required Tests and Fallback validation headings for docs/features",
+      "read_when": "feature_work",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "schemas/features/feature-spec.schema.json",
+      "purpose": "JSON Schema for the feature spec heading contract",
+      "read_when": "feature_work",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/agent-run.py",
+      "purpose": "Parent catch-up import: scripts/agent-run.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/apply-suggested-gate-fixes.ps1",
+      "purpose": "Parent catch-up import: scripts/apply-suggested-gate-fixes.ps1",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-action-workflows.sh",
+      "purpose": "Gate: offline actionlint + zizmor on GitHub workflows",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-adr-architecture.sh",
+      "purpose": "Gate: ADR-0001 stays an open MVVM/Clean/Hexagonal pick",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-adr-command.sh",
+      "purpose": "Gate: /adr command and help twin stay registered",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-android-cmdline-tools.sh",
+      "purpose": "Gate: devcontainer Android cmdline-tools never auto-accept licenses",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-android-r8.sh",
+      "purpose": "Gate: Golden Path release R8 minify flags and narrow keep rules",
+      "read_when": "android_quality_gate",
+      "update_when": "android_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-android-sdk-licenses.sh",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": "scripts/check-android-sdk-secrets.sh",
+      "purpose": "Gate: local.properties / sdk.dir must not be tracked; Gitleaks rules for SDK paths",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-android-signing-runbook.sh",
+      "purpose": "Gate: Android upload-key runbook and env-only Gradle signing",
+      "read_when": "android_quality_gate",
+      "update_when": "android_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-auto-review.sh",
+      "purpose": "Gate: Auto-review permissions.json matches allow/block fixtures",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-ci-gaps.sh",
+      "purpose": "Gate: living ci-gap registry stays aligned with the issue form",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-ci-refs.sh",
+      "purpose": "Gate: sanitize CI branch names and release tags",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-compose-a11y-lint.sh",
+      "purpose": "Gate: Android accessibility lint IDs stay errors",
+      "read_when": "android_quality_gate",
+      "update_when": "android_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-contributing-agent.sh",
+      "purpose": "Gate: CONTRIBUTING.md includes the coding-agent edition",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-crash-inbox.sh",
+      "purpose": "Gate: GlitchTip/Bugsink crash-inbox stub stays disabled with no live DSN",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-crash-payload-allowlist.sh",
+      "purpose": "Gate: crash payload allowlist tests exist on every sanitizing stack",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-cursor-automations.sh",
+      "purpose": "Gate: commercial Automations YAML example stays disabled",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-cursor-canvas.sh",
+      "purpose": "Gate: Canvas / Design Mode walkthrough stays complete",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-cursor-cli.sh",
+      "purpose": "Gate: Cursor CLI local-loop recipe stays complete",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-cursor-cloud-hooks.sh",
+      "purpose": "Gate: commercial Cloud hook merge keeps FOSS shell/encoding hooks",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-cursor-marketplace.sh",
+      "purpose": "Gate: Cursor marketplace runbook stays FOSS-default local pack",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-espresso-android16.sh",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": "scripts/check-fdroid-metadata-links.sh",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": "scripts/check-fdroid-screenshots.sh",
+      "purpose": "Gate: fail dummy/placeholder F-Droid screenshots",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-feature-specs.sh",
+      "purpose": "Gate: feature specs name tests or a fallback validation command",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-first-30-days.sh",
+      "purpose": "Gate: FIRST_30_DAYS.md matches docs/first-30-days.json",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-github-settings-yml.sh",
+      "purpose": "Gate: .github/settings.yml matches setup-github-repo.sh required checks",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-gitleaks-baseline.sh",
+      "purpose": "Gate: Gitleaks baseline allowlists documented fixture secrets",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-glossary-links.sh",
+      "purpose": "Gate: bold glossary jargon in START_HERE/TOUR links to GLOSSARY.md",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-golden-path-app-version.sh",
+      "purpose": "Gate: Golden Path About/package versions match app-version.json",
+      "read_when": "ci",
+      "update_when": "release",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-hadolint.sh",
+      "purpose": "Gate: hadolint on .devcontainer/Dockerfile",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-i18n-parity.sh",
+      "purpose": "Gate: web locale keys map to Android strings.xml names",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-ideas-discussion.sh",
+      "purpose": "Gate: /ideas Discussion template keeps required pointers",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-lighthouse-floors.sh",
+      "purpose": "Gate: Lighthouse a11y and best-practices minScore floors",
+      "read_when": "web_quality_gate",
+      "update_when": "web_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-lightroom-lua.sh",
+      "purpose": "Gate: Lightroom Lua Lr* lint and optional luacheck",
+      "read_when": "lightroom_quality_gate",
+      "update_when": "lightroom_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-lightroom-sdk-playbook.sh",
+      "purpose": "Gate: Lightroom SDK bump playbook and Info.lua/README versions",
+      "read_when": "lightroom_quality_gate",
+      "update_when": "lightroom_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-lightroom-tagset-fuzz.sh",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": "scripts/check-local-compute.sh",
+      "purpose": "INFO probe for CPU RAM Ollama emulator; fail only on misconfig",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-locale-pack-budget.sh",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": "scripts/check-mcp-allowlist.sh",
+      "purpose": "Gate: beforeMCPExecution allowlists FOSS MCP servers",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-md-yaml-lint.sh",
+      "purpose": "Gate: markdownlint + yamllint (non-blocking unless MDLINT_HARD)",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-merge-queue-docs.sh",
+      "purpose": "Gate: merge queue stays optional and lists required checks",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-nix-flake.sh",
+      "purpose": "Gate: optional Nix flake only wraps existing scripts/",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-openvex.sh",
+      "purpose": "Gate: OpenVEX example next to the release SBOM",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-package-attestation-docs.sh",
+      "purpose": "Gate: npm/uv attestation docs stay next to release provenance",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-pages-analytics.sh",
+      "purpose": "Gate: /regress fails if GitHub Pages web tree has analytics",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-pages-demo-link.sh",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": "scripts/check-playwright-cache.sh",
+      "purpose": "Gate: CI skips Playwright --with-deps when lockfile cache hits",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-psscriptanalyzer.sh",
+      "purpose": "Gate: PSScriptAnalyzer -Severity Error on scripts/*.ps1",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-readme-badges.sh",
+      "purpose": "Gate: README hero, stack, and owner badges match repo truth",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-readme-mermaid.sh",
+      "purpose": "Gate: generated README preview includes a mermaid flowchart",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-reproducible-apk.sh",
+      "purpose": "Gate: SOURCE_DATE_EPOCH release APK verifier and CI hash compare",
+      "read_when": "android_quality_gate",
+      "update_when": "android_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-reuse.sh",
+      "purpose": "Gate: REUSE/SPDX lint (skip if reuse CLI missing locally)",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-sanitize-fixtures.sh",
+      "purpose": "Gate: sanitizer fixtures stay identical across Golden Path stacks",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-scorecard-sarif-classifier.sh",
+      "purpose": "Gate: Scorecard SARIF classifier stays aligned with SECURITY_TRIAGE.md",
+      "read_when": "security_triage",
+      "update_when": "security_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-semgrep.sh",
+      "purpose": "Gate: FOSS Semgrep config (no SaaS token); scan if installed",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-shellcheck.sh",
+      "purpose": "Gate: shellcheck -S error on scripts/*.sh",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-social-preview.sh",
+      "purpose": "Gate: OG social preview SVG uses design-token colors",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-sw-cache-budget.sh",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": "scripts/check-template-updates.ps1",
+      "purpose": "Parent catch-up import: scripts/check-template-updates.ps1",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-token-contrast.sh",
+      "purpose": "Gate: WCAG 2.2 contrast for design-token color pairs",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-tour-coach-chrome.sh",
+      "purpose": "Gate: /tour and COACH teach Settings-only home chrome",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/check-web-import-hygiene.sh",
+      "role": "gate",
+      "notes": "Indexed for TEMPLATE_INDEX completeness"
+    },
+    {
+      "path": "scripts/check-winget-runbook.sh",
+      "purpose": "Gate: docs/WINGET.md keeps generate/validate/submit steps",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/install-commit-msg-hook.sh",
+      "purpose": "Best-effort local commit-msg hook install",
+      "read_when": "bootstrap_session_start",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/about_lego_cli.py",
+      "purpose": "Backup/strip/restore rust/go/node/python About slices for verify-about-feature-gate",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/action_workflows.py",
+      "purpose": "Parent catch-up import: scripts/lib/action_workflows.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/adr_architecture.py",
+      "purpose": "Parent catch-up import: scripts/lib/adr_architecture.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/adr_command.py",
+      "purpose": "Parent catch-up import: scripts/lib/adr_command.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/agent_run_env.py",
+      "purpose": "Parent catch-up import: scripts/lib/agent_run_env.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/android_cmdline_tools.py",
+      "purpose": "Parent catch-up import: scripts/lib/android_cmdline_tools.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/android_sdk_licenses.py",
+      "purpose": "Parent catch-up import: scripts/lib/android_sdk_licenses.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/android_sdk_secrets.py",
+      "purpose": "Parent catch-up import: scripts/lib/android_sdk_secrets.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/android_signing_runbook.py",
+      "purpose": "Assert ANDROID_SIGNING.md, Gradle env vars, and ignored keystores",
+      "read_when": "android_quality_gate",
+      "update_when": "android_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/auto_review.py",
+      "purpose": "Parent catch-up import: scripts/lib/auto_review.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/batch_commands_print.py",
+      "purpose": "Parent catch-up import: scripts/lib/batch_commands_print.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/batch_commands_print_audit.py",
+      "purpose": "Parent catch-up import: scripts/lib/batch_commands_print_audit.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/bestpractices_apply.py",
+      "purpose": "Parent catch-up import: scripts/lib/bestpractices_apply.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/bootstrap_defaults.py",
+      "purpose": "Parent catch-up import: scripts/lib/bootstrap_defaults.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/build_sprint_child.py",
+      "purpose": "Parent catch-up import: scripts/lib/build_sprint_child.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/build_sprint_model.py",
+      "purpose": "Parent catch-up import: scripts/lib/build_sprint_model.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/build_sprint_parse.py",
+      "purpose": "Parent catch-up import: scripts/lib/build_sprint_parse.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/build_sprint_resolve.py",
+      "purpose": "Parent catch-up import: scripts/lib/build_sprint_resolve.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/changelog_unreleased.py",
+      "purpose": "Parent catch-up import: scripts/lib/changelog_unreleased.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/check_cursor_hooks.py",
+      "purpose": "Parent catch-up import: scripts/lib/check_cursor_hooks.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/check_cursor_hooks_smoke.py",
+      "purpose": "Parent catch-up import: scripts/lib/check_cursor_hooks_smoke.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/check_cursor_integrations.py",
+      "purpose": "Parent catch-up import: scripts/lib/check_cursor_integrations.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/check_cursor_integrations_tier.py",
+      "purpose": "Parent catch-up import: scripts/lib/check_cursor_integrations_tier.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/child_build_plan.py",
+      "purpose": "Parent catch-up import: scripts/lib/child_build_plan.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/ci_gaps.py",
+      "purpose": "Parent catch-up import: scripts/lib/ci_gaps.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/ci_refs.py",
+      "purpose": "Parent catch-up import: scripts/lib/ci_refs.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/citation_sync.py",
+      "purpose": "Parent catch-up import: scripts/lib/citation_sync.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/compose_a11y_lint.py",
+      "purpose": "Require ContentDescription and related lint IDs on the Android app",
+      "read_when": "android_quality_gate",
+      "update_when": "android_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/contributing_agent.py",
+      "purpose": "Parent catch-up import: scripts/lib/contributing_agent.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/crash_inbox.py",
+      "purpose": "Parent catch-up import: scripts/lib/crash_inbox.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/crash_payload_allowlist.py",
+      "purpose": "Parent catch-up import: scripts/lib/crash_payload_allowlist.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/cursor_automations.py",
+      "purpose": "Parent catch-up import: scripts/lib/cursor_automations.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/cursor_canvas.py",
+      "purpose": "Parent catch-up import: scripts/lib/cursor_canvas.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/cursor_cli.py",
+      "purpose": "Parent catch-up import: scripts/lib/cursor_cli.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/cursor_cloud_hooks.py",
+      "purpose": "Parent catch-up import: scripts/lib/cursor_cloud_hooks.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/cursor_feature_radar.py",
+      "purpose": "Parent catch-up import: scripts/lib/cursor_feature_radar.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/cursor_feature_radar_io.py",
+      "purpose": "Parent catch-up import: scripts/lib/cursor_feature_radar_io.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/cursor_marketplace.py",
+      "purpose": "Parent catch-up import: scripts/lib/cursor_marketplace.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/cursor_rule_audit.py",
+      "purpose": "Parent catch-up import: scripts/lib/cursor_rule_audit.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/design_chrome_gate.py",
+      "purpose": "Parent catch-up import: scripts/lib/design_chrome_gate.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/discussions_ideas.py",
+      "purpose": "Parent catch-up import: scripts/lib/discussions_ideas.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/discussions_qa.py",
+      "purpose": "Parent catch-up import: scripts/lib/discussions_qa.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/fdroid_metadata_links.py",
+      "purpose": "Parent catch-up import: scripts/lib/fdroid_metadata_links.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/fdroid_screenshots.py",
+      "purpose": "Parent catch-up import: scripts/lib/fdroid_screenshots.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/feature_gate_timeout.py",
+      "purpose": "Parent catch-up import: scripts/lib/feature_gate_timeout.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/feature_spec.py",
+      "purpose": "Parse docs/features/*.md against the feature-spec contract",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/feedback_inbox.py",
+      "purpose": "Parent catch-up import: scripts/lib/feedback_inbox.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/feedback_inbox_cli.py",
+      "purpose": "Parent catch-up import: scripts/lib/feedback_inbox_cli.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/first_30_days.py",
+      "purpose": "Parent catch-up import: scripts/lib/first_30_days.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/gate_scope.py",
+      "purpose": "Parent catch-up import: scripts/lib/gate_scope.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/gates_canvas.py",
+      "purpose": "Parent catch-up import: scripts/lib/gates_canvas.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/gates_canvas_health.py",
+      "purpose": "Parent catch-up import: scripts/lib/gates_canvas_health.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/gen_feature_spec.py",
+      "purpose": "Parent catch-up import: scripts/lib/gen_feature_spec.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/github_settings_yml.py",
+      "purpose": "Parent catch-up import: scripts/lib/github_settings_yml.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/gitleaks_baseline.py",
+      "purpose": "Parent catch-up import: scripts/lib/gitleaks_baseline.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/glossary_links.py",
+      "purpose": "Parent catch-up import: scripts/lib/glossary_links.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/golden_path_app_version.py",
+      "purpose": "Parent catch-up import: scripts/lib/golden_path_app_version.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/gradle_apply.py",
+      "purpose": "Parent catch-up import: scripts/lib/gradle_apply.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/gradle_offline.py",
+      "purpose": "Parent catch-up import: scripts/lib/gradle_offline.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/hadolint_check.py",
+      "purpose": "Parent catch-up import: scripts/lib/hadolint_check.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/health_ci.py",
+      "purpose": "Parent catch-up import: scripts/lib/health_ci.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/health_notes.py",
+      "purpose": "Parent catch-up import: scripts/lib/health_notes.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_adb_device.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_adb_device.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_android.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_android.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_core.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_core.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_github.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_github.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_leftovers.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_leftovers.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_release_please.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_release_please.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_rows.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_rows.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_waiting_docs.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_waiting_docs.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/human_task_waiting_gh.py",
+      "purpose": "Parent catch-up import: scripts/lib/human_task_waiting_gh.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/i18n_parity.py",
+      "purpose": "Compare examples/web locales to Android strings.xml",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/ideas_discussion.py",
+      "purpose": "Parent catch-up import: scripts/lib/ideas_discussion.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/lighthouse_floors.py",
+      "purpose": "Assert examples/web/.lighthouserc.json a11y and best-practices floors",
+      "read_when": "web_quality_gate",
+      "update_when": "web_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/lightroom_lua_lint.py",
+      "purpose": "Forbid generic require/OS calls in examples/lightroom",
+      "read_when": "lightroom_quality_gate",
+      "update_when": "lightroom_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/lightroom_sdk_playbook.py",
+      "purpose": "Assert LIGHTROOM_SDK_BUMP.md and version table lockstep",
+      "read_when": "lightroom_quality_gate",
+      "update_when": "lightroom_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/lightroom_tagset_fuzz.py",
+      "purpose": "Parent catch-up import: scripts/lib/lightroom_tagset_fuzz.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/local_model_probe.py",
+      "purpose": "Parent catch-up import: scripts/lib/local_model_probe.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/local_resources.py",
+      "purpose": "Parent catch-up import: scripts/lib/local_resources.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/locale_pack_budget.py",
+      "purpose": "Parent catch-up import: scripts/lib/locale_pack_budget.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/mcp_allowlist.py",
+      "purpose": "Parent catch-up import: scripts/lib/mcp_allowlist.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/md_yaml_lint.py",
+      "purpose": "Parent catch-up import: scripts/lib/md_yaml_lint.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/merge_queue_docs.py",
+      "purpose": "Parent catch-up import: scripts/lib/merge_queue_docs.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/nix_flake.py",
+      "purpose": "Parent catch-up import: scripts/lib/nix_flake.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/openvex_check.py",
+      "purpose": "Parent catch-up import: scripts/lib/openvex_check.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/package_attestation_docs.py",
+      "purpose": "Parent catch-up import: scripts/lib/package_attestation_docs.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/pages_analytics.py",
+      "purpose": "Parent catch-up import: scripts/lib/pages_analytics.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/pages_demo_health.py",
+      "purpose": "Parent catch-up import: scripts/lib/pages_demo_health.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/parallel_lock_gc.py",
+      "purpose": "Parent catch-up import: scripts/lib/parallel_lock_gc.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/parallel_scope_build.py",
+      "purpose": "Parent catch-up import: scripts/lib/parallel_scope_build.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/parallel_scope_cli.py",
+      "purpose": "Parent catch-up import: scripts/lib/parallel_scope_cli.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/parallel_scope_ctx.py",
+      "purpose": "Parent catch-up import: scripts/lib/parallel_scope_ctx.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/parallel_scope_model.py",
+      "purpose": "Parent catch-up import: scripts/lib/parallel_scope_model.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/parallel_scope_parse.py",
+      "purpose": "Parent catch-up import: scripts/lib/parallel_scope_parse.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/playwright_cache.py",
+      "purpose": "Parent catch-up import: scripts/lib/playwright_cache.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/privacy_report_fingerprint.py",
+      "purpose": "Parent catch-up import: scripts/lib/privacy_report_fingerprint.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/privacy_report_markdown.py",
+      "purpose": "Parent catch-up import: scripts/lib/privacy_report_markdown.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/privacy_report_sanitize.py",
+      "purpose": "Parent catch-up import: scripts/lib/privacy_report_sanitize.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/psscriptanalyzer_check.py",
+      "purpose": "Parent catch-up import: scripts/lib/psscriptanalyzer_check.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/readme_badges.py",
+      "purpose": "Parent catch-up import: scripts/lib/readme_badges.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/readme_mermaid.py",
+      "purpose": "Parent catch-up import: scripts/lib/readme_mermaid.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/recommend_local_model.py",
+      "purpose": "Parent catch-up import: scripts/lib/recommend_local_model.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/repo_mode.py",
+      "purpose": "Print template|child for weekly-health workflow branching",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/repo_status.py",
+      "purpose": "Status report library",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/report_issue.py",
+      "purpose": "Parent catch-up import: scripts/lib/report_issue.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/reproducible_apk_gate.py",
+      "purpose": "Assert verify-reproducible-apk.sh and CI android-release epoch wiring",
+      "read_when": "android_quality_gate",
+      "update_when": "android_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/required_checks.py",
+      "purpose": "Parent catch-up import: scripts/lib/required_checks.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/resume_digest.py",
+      "purpose": "Parent catch-up import: scripts/lib/resume_digest.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/resume_handoff.py",
+      "purpose": "Implement /resume digests and cursor/* PR listing",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/reuse_check.py",
+      "purpose": "Parent catch-up import: scripts/lib/reuse_check.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/rp_merge_status.py",
+      "purpose": "Parent catch-up import: scripts/lib/rp_merge_status.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/run_feature_stacks.py",
+      "purpose": "Parent catch-up import: scripts/lib/run_feature_stacks.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sanitize_fixtures.py",
+      "purpose": "Parent catch-up import: scripts/lib/sanitize_fixtures.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/scorecard_sarif.py",
+      "purpose": "Classify Scorecard SARIF checks into fix/dismiss/defer",
+      "read_when": "security_triage",
+      "update_when": "security_tooling_change",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/semgrep_foss.py",
+      "purpose": "Parent catch-up import: scripts/lib/semgrep_foss.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/session_compact.py",
+      "purpose": "Parent catch-up import: scripts/lib/session_compact.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/shellcheck_scripts.py",
+      "purpose": "Parent catch-up import: scripts/lib/shellcheck_scripts.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/social_preview.py",
+      "purpose": "Parent catch-up import: scripts/lib/social_preview.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sprint_smoke.py",
+      "purpose": "Parent catch-up import: scripts/lib/sprint_smoke.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sprint_smoke_map.py",
+      "purpose": "Parent catch-up import: scripts/lib/sprint_smoke_map.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sprint_smoke_parse.py",
+      "purpose": "Parent catch-up import: scripts/lib/sprint_smoke_parse.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sprint_smoke_probes.py",
+      "purpose": "Parent catch-up import: scripts/lib/sprint_smoke_probes.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sprint_smoke_web.py",
+      "purpose": "Parent catch-up import: scripts/lib/sprint_smoke_web.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/stamp_product_brief.py",
+      "purpose": "Parent catch-up import: scripts/lib/stamp_product_brief.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/summarize_coverage.py",
+      "purpose": "Python implementation for summarize-coverage.sh",
+      "read_when": "contributing",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sw_cache_budget.py",
+      "purpose": "Parent catch-up import: scripts/lib/sw_cache_budget.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sync_open_prs_build_plan.py",
+      "purpose": "Classify and rewrite open-prs-sync BUILD_PLAN markers",
+      "read_when": "reference",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sync_open_prs_fetch.py",
+      "purpose": "Parent catch-up import: scripts/lib/sync_open_prs_fetch.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/sync_open_prs_render.py",
+      "purpose": "Parent catch-up import: scripts/lib/sync_open_prs_render.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/token_contrast.py",
+      "purpose": "Relative-luminance contrast ratios for design-tokens.json",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/tour_coach_chrome.py",
+      "purpose": "Parent catch-up import: scripts/lib/tour_coach_chrome.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/upd_canvas.py",
+      "purpose": "Parent catch-up import: scripts/lib/upd_canvas.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/update_deps.py",
+      "purpose": "Parent catch-up import: scripts/lib/update_deps.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/update_deps_cli.py",
+      "purpose": "Parent catch-up import: scripts/lib/update_deps_cli.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/validate_template_index.py",
+      "purpose": "Parent catch-up import: scripts/lib/validate_template_index.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/verify_first_failure.py",
+      "purpose": "Parent catch-up import: scripts/lib/verify_first_failure.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/web_import_hygiene.py",
+      "purpose": "Parent catch-up import: scripts/lib/web_import_hygiene.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/weekly_health.py",
+      "purpose": "Parent catch-up import: scripts/lib/weekly_health.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/winget_publish_loop.py",
+      "purpose": "Parent catch-up import: scripts/lib/winget_publish_loop.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/winget_runbook.py",
+      "purpose": "Parent catch-up import: scripts/lib/winget_runbook.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/lib/worktree_gc.py",
+      "purpose": "Parent catch-up import: scripts/lib/worktree_gc.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/normalize-markdown-whitespace.py",
+      "purpose": "Parent catch-up import: scripts/normalize-markdown-whitespace.py",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/pack-cursor-plugin.ps1",
+      "purpose": "Parent catch-up import: scripts/pack-cursor-plugin.ps1",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/prerelease-autofix.ps1",
+      "purpose": "Parent catch-up import: scripts/prerelease-autofix.ps1",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/refresh-build-plan-tally.sh",
+      "purpose": "Rewrite remaining AGENT/AUTO/HUMAN/ADB counts on build plan files",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "path": "scripts/run-codex-review.ps1",
+      "purpose": "Parent catch-up import: scripts/run-codex-review.ps1",
+      "read_when": "milestone_boundary",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer"
+    },
+    {
+      "read_when": "validation",
+      "update_when": "milestone_boundary",
+      "owner": "maintainer",
+      "path": "scripts/install-android-cmdline-tools.sh",
+      "purpose": "Pin Android cmdline-tools zip; never auto-accept SDK licenses"
     }
   ],
   "modules": {
@@ -1927,7 +4611,7 @@
     }
   },
   "roadmap": {
-    "active": "BUILD_PLAN.md — maintenance + human open items",
+    "active": "BUILD_PLAN.md \u2014 maintenance + human open items",
     "completed_archive": "COMPLETED_TASKS.md",
     "batch_commands": [
       ".cursor/commands/audit.md",
@@ -1961,5 +4645,10 @@
       "examples/web/src/appBootstrap.ts",
       "examples/web/public/sw.js"
     ]
+  },
+  "project": {
+    "name": "AetherFeed",
+    "purpose": "Local-first encrypted news, podcast, and booru client",
+    "stack": "multi"
   }
 }

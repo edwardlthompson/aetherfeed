@@ -208,7 +208,18 @@ jobs:
       - name: Bundle size budget
         working-directory: ${{ github.workspace }}
         run: bash scripts/check-bundle-size.sh
-      - run: npx playwright install --with-deps chromium
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Playwright (with OS deps)
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+      - name: Install Playwright (browsers only)
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install chromium
       - run: npx playwright test
       - run: npm run lighthouse
       - name: Upload web coverage
@@ -567,3 +578,22 @@ jobs:
       - run: test -z "$(gofmt -l .)"
       - run: go test ./...
 
+  nix:
+    name: Nix flake (optional)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v30
+      - name: flake show
+        run: nix flake show
+      - name: check-nix-flake
+        run: bash scripts/check-nix-flake.sh
+
+  sanitize-fixtures:
+    name: Sanitizer fixture parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Cross-stack sanitizer fixtures
+        run: bash scripts/check-sanitize-fixtures.sh

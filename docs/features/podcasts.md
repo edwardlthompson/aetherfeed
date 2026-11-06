@@ -17,3 +17,21 @@
 1. _Given_ a subscribed show
 2. _When_ a new episode is fetched
 3. _Then_ it is unplayed and can download to app-private storage
+
+## Container map
+
+- Feature container: `examples/*/podcasts/` (stack-specific)
+- Spec: `docs/features/podcasts.md`
+
+## Tests
+
+- Automated: yes — unit tests beside the feature container.
+
+- Unit/domain tests live beside the feature container.
+- Run stack tests via `feature-gate.sh --stack multi`.
+
+## Fallback validation
+
+```bash
+python3 scripts/agent-run.py feature-gate --stack multi
+```

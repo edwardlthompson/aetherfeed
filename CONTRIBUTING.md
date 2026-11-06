@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for contributing to **agent-project-bootstrap** — a FOSS project template for coding agents (Cursor, Windsurf, Antigravity, and others).
+Thank you for contributing to **AetherFeed** — a FOSS project template for coding agents (Cursor, Windsurf, Antigravity, and others).
 
 ## Who contributes what
 
@@ -10,6 +10,14 @@ Thank you for contributing to **agent-project-bootstrap** — a FOSS project tem
 | `HUMAN` | Human developer | Approvals, credentials, product decisions |
 | `ADB` | Human (Android) | Device testing, F-Droid submission |
 | `AUTO` | CI/scripts | GitHub Actions, Dependabot, pre-commit |
+
+## For coding agents
+
+Read [`AGENTS.md`](AGENTS.md) and [`docs/START_HERE.md`](docs/START_HERE.md) before editing.
+Use `/build` for sprint execution and `scripts/watch-agent-gates.sh --once --autofix` after AGENT steps.
+Do not run `git push` unless the human invoked `/push` or `/ship` (destructive-ops `[HUMAN]`).
+Prefer Conventional Commits. Never commit secrets or `.env`.
+
 ## First contribution
 
 Thank you for helping. Read [`docs/BEST_PRACTICES.md`](docs/BEST_PRACTICES.md) if you want the industry *why* behind these files. Questions vs bugs vs vulns: [`SUPPORT.md`](SUPPORT.md). Labeled starter tasks: **Good first issue**.

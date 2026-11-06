@@ -5,7 +5,15 @@ import json
 import sys
 from pathlib import Path
 
-from adapter_templates import ADAPTERS, GENERATED, POINTER_KEYS, POINTER_MAX_LINES
+from adapter_templates import ADAPTERS, ADAPTER_MAX_BYTES, GENERATED, POINTER_KEYS, POINTER_MAX_LINES
+
+
+def _ensure_clinerules_dir(root: Path) -> None:
+    """Migrate legacy file `.clinerules` to a directory; never wipe workflows/."""
+    legacy = root / ".clinerules"
+    if legacy.is_file():
+        legacy.unlink()
+    # parent mkdir for `.clinerules/AGENTS.md` creates the directory safely
 
 
 def write_adapters(root: Path, enabled: dict[str, bool] | None = None) -> list[Path]:
@@ -14,6 +22,8 @@ def write_adapters(root: Path, enabled: dict[str, bool] | None = None) -> list[P
     for key, rel, body in ADAPTERS:
         if flags.get(key, True) is False:
             continue
+        if key == "cline":
+            _ensure_clinerules_dir(root)
         path = root / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(body.lstrip() + "\n", encoding="utf-8")
@@ -53,6 +63,11 @@ def check_adapters(root: Path, enabled: dict[str, bool] | None = None) -> list[s
             errors.append(
                 f"POINTER_TOO_LONG: {rel.as_posix()} "
                 f"({line_count(text)} lines, max {POINTER_MAX_LINES})"
+            )
+        max_b = ADAPTER_MAX_BYTES.get(key)
+        if max_b is not None and len(want.encode("utf-8")) > max_b:
+            errors.append(
+                f"BYTE_BUDGET: {rel.as_posix()} ({len(want.encode('utf-8'))} bytes, max {max_b})"
             )
     return errors
 

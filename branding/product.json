@@ -10,7 +10,8 @@
     "Booru tag search with local favorites, saved queries, and blacklists",
     "SQLCipher vault plus OS keystore for credentials and sync key material",
     "Optional E2E sync over Google Drive AppData or WebDAV — passphrase never leaves the device",
-    "No analytics, crash reporters, ads, or tracking libraries"
+    "No analytics, crash reporters, ads, or tracking libraries",
+    "Privacy-first: no analytics, crash reporters, ads, or tracking"
   ],
   "quick_start": [
     "Clone the repo and install Android SDK (JDK 17+) plus Rust/Node for the Windows desktop app.",
