@@ -312,20 +312,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * restore DECISION_LOG seed line order after v0.14.1 archive ([22cada9](https://github.com/edwardlthompson/aetherfeed/commit/22cada93c8105712e2f9286c05424e642268f044))
 * rewrite template README as a first-run pitch ([01e21fc](https://github.com/edwardlthompson/aetherfeed/commit/01e21fc0f559a56e09b69172e0d06b763ed11d75))
 
-## [Unreleased]
-
-### Added
-
-- Offline read path: cached article bodies readable with the radio off; stars and podcast playback position persist locally (web + Android).
-- Linguist attribution block and `check-linguist-attribution.sh` so scaffolding does not dominate language stats.
-- README "What this is not" — no account, no required cloud sync, no recommendation engine.
-
-### Changed
-
-- Product pitch B: one local-first client for feeds, podcasts, and image boards with radio-off stars and playback.
-- GitHub About description (≤120 chars) and topics (`rss`, `podcasts`, `booru`, `local-first`, `privacy`); licence confirmed MIT in metadata.
-- Relocate `DECISION_LOG.md` under `.agent/` and retarget gates, commands, and docs (alongside existing `.agent/AGENT_MEMORY.md`).
-
 ## [0.21.0](https://github.com/edwardlthompson/agent-project-bootstrap/compare/v0.20.0...v0.21.0) (2026-08-18)
 
 
