@@ -1,9 +1,4 @@
-import type {
-  Article,
-  ModuleKind,
-  PlaybackPosition,
-  Star,
-} from "@aetherfeed/domain";
+import type { Article, ModuleKind, PlaybackPosition, Star } from "@aetherfeed/domain";
 
 const STORAGE_KEY = "af-offline-library";
 
