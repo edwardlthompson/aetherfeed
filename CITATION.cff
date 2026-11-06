@@ -7,8 +7,8 @@ authors:
 repository-code: https://github.com/edwardlthompson/aetherfeed
 url: https://aetherfeed.org
 abstract: >-
-  Local-first RSS, podcasts, and image boards with offline stars and
-  playback for Android and Windows.
+  Local-first RSS, podcasts, and image boards with offline stars and playback
+  for Android and Windows.
 keywords:
   - rss
   - podcasts
@@ -16,5 +16,5 @@ keywords:
   - local-first
   - privacy
 license: MIT
-version: 0.21.0
+version: 0.22.0
 date-released: 2026-08-18T00:00:00.000Z
