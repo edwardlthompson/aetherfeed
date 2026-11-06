@@ -6,7 +6,7 @@
 
 - 🔲 Subscribe to podcast RSS feeds with audio enclosures
 - 🔲 Play, pause, skip, seek, speed, queue, chapters when present
-- 🔲 Persist playback position
+- ✅ Persist playback position (local vault / offline library)
 - 🔲 Auto-download, download queue, delete downloaded episodes
 - 🔲 Car/lockscreen controls
 - 🔲 Unread = unplayed or in-progress per user settings

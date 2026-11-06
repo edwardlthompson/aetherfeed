@@ -2,7 +2,7 @@
 
 Propose the next in-scope features. This is not `/coach` (next action now) and not `/plan` (implement a chosen feature).
 
-Read @AGENT_MEMORY.md (Persistent Context + latest retrospective only), @BUILD_PLAN.md Sequential lane, @CHANGELOG.md `[Unreleased]`, the latest entries in @DECISION_LOG.md, @docs/FIRST_30_DAYS.md, and @docs/help/BATCH_COMMANDS.md.
+Read @.agent/AGENT_MEMORY.md (Persistent Context + latest retrospective only), @BUILD_PLAN.md Sequential lane, @CHANGELOG.md `[Unreleased]`, the latest entries in @.agent/DECISION_LOG.md, @docs/FIRST_30_DAYS.md, and @docs/help/BATCH_COMMANDS.md.
 
 1. Run `python3 scripts/agent-run.py project-health` (or `bash scripts/project-health.sh`). Summarize stack and the next BUILD_PLAN row in one line.
 2. Pick **mode**:

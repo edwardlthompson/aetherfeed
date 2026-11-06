@@ -46,7 +46,9 @@ text = re.sub(
 )
 readme.write_text(text, encoding="utf-8")
 
-mem = Path("AGENT_MEMORY.md")
+mem = Path(".agent/AGENT_MEMORY.md")
+if not mem.is_file():
+    mem = Path("AGENT_MEMORY.md")
 mt = mem.read_text(encoding="utf-8")
 mt = re.sub(
     r"(\| Multi-stack template[^\|]+\| )[\d.]+( \| Template maintainer)",
@@ -80,4 +82,4 @@ if citation.is_file():
     citation.write_text(ct, encoding="utf-8")
 PY
 
-echo "Synced template version to ${VERSION} (.template-version, TEMPLATE_INDEX.json, README.md, AGENT_MEMORY.md, CITATION.cff)"
+echo "Synced template version to ${VERSION} (.template-version, TEMPLATE_INDEX.json, README.md, .agent/AGENT_MEMORY.md, CITATION.cff)"

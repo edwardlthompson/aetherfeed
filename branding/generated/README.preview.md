@@ -6,7 +6,7 @@
 
 <h1 align="center">AetherFeed</h1>
 
-<p align="center"><strong>Local-first encrypted news, podcast, and booru client</strong></p>
+<p align="center"><strong>Local-first feeds, podcasts, and image boards</strong></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-2ea043?style=flat-square" alt="MIT" />
@@ -23,7 +23,7 @@
 
 ## Pitch
 
-AetherFeed is a quiet, local-first reader. Subscribe to RSS, Atom, and JSON feeds, listen to podcasts, and browse public media boards. Everything stays on your device in an encrypted vault. Optional zero-knowledge sync uploads only opaque blobs — never plaintext stars, tags, or settings.
+One local-first client for feeds, podcasts, and image boards: subscribe, listen, and browse with stars and playback position that survive radio-off.
 
 ## Demo
 
@@ -83,3 +83,9 @@ See [`../../SECURITY.md`](../../SECURITY.md). Enable Dependabot alerts and follo
 ## Acknowledgments
 
 Scaffolded with [agent-project-bootstrap](https://github.com/edwardlthompson/agent-project-bootstrap). Brand assets: [`../BRANDING.md`](../BRANDING.md). Design system: [`../../docs/DESIGN_GUIDE.md`](../../docs/DESIGN_GUIDE.md).
+
+## What this is not
+
+- No account — you never sign up or log in to use the reader
+- No cloud sync required — the vault works fully offline; any sync is optional ciphertext-only
+- No recommendation engine — feeds and boards you choose, not an opaque ranking feed

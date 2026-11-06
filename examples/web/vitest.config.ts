@@ -17,6 +17,7 @@ export default defineConfig({
         "src/appBootstrap.ts",
         "src/greet.ts",
         "src/domain/unread.ts",
+        "src/domain/library.ts",
       ],
       thresholds: {
         lines: 90,

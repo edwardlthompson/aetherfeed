@@ -61,7 +61,7 @@ flowchart TD
 ## CRITICAL NOTES (phase transitions)
 
 - After **Sprint 0** sign-off: stop treating `docs/INITIALIZATION_PROMPT.md` as the daily read. Follow BUILD_PLAN Sequential, then `/feature` for Sprint 2+ (`docs/features/{name}.md` from `_template.md`, locked API, then Parallel slices).
-- Working notes go in gitignored `scratchpad.md` (copy `scratchpad.md.example`). **Reset** on sprint/phase change. Persistent memory stays in `AGENT_MEMORY.md`.
+- Working notes go in gitignored `scratchpad.md` (copy `scratchpad.md.example`). **Reset** on sprint/phase change. Persistent memory stays in `.agent/AGENT_MEMORY.md`.
 - Child playbook: [`BUILD_PLAN.md`](../BUILD_PLAN.md) — same phase notes under Child Repo Playbook.
 
 ## Do Not Read Yet

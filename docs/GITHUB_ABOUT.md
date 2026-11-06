@@ -1,9 +1,15 @@
 # GitHub About Block
 
-## Draft Description (edit to <=350 chars)
+## Draft Description (edit to <=120 chars)
 
-Local-first encrypted news, podcast, and booru client. Read offline, keep stars and playback private, and optionally sync opaque backups. No account, no telemetry.
+Local-first RSS, podcasts, and image boards with offline stars and playback.
 
 ## Topics
 
-rss, atom, podcasts, privacy, foss, android, windows, local-first, e2e, tauri
+rss, podcasts, booru, local-first, privacy
+
+Suggested for GitHub discoverability (Settings → About). Prefer 3–5 short topics that match how people search. Avoid generic licence tags (`foss`, `mit`).
+
+## Licence
+
+MIT — confirmed in root `LICENSE`, `CITATION.cff` (`license: MIT`), and stack `package.json` files (`"license": "MIT"`).
