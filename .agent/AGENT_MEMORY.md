@@ -82,5 +82,5 @@ AetherFeed: local-first encrypted news, podcast, and booru client for Android an
 ## Template Provenance
 
 - **Source template:** `edwardlthompson/agent-project-bootstrap` (self-maintained)
-- **Template version:** `0.21.0` (see `.template-version`)
+- **Template version:** `0.22.0` (see `.template-version`)
 - **Last update check:** See `.template-update.json`
