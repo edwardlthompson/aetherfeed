@@ -83,3 +83,9 @@ See [`SECURITY.md`](SECURITY.md). Enable Dependabot alerts and follow [`docs/SEC
 ## Acknowledgments
 
 Scaffolded with [agent-project-bootstrap](https://github.com/edwardlthompson/agent-project-bootstrap). Brand assets: [`branding/BRANDING.md`](branding/BRANDING.md). Design system: [`docs/DESIGN_GUIDE.md`](docs/DESIGN_GUIDE.md).
+
+## What this is not
+
+- No account — you never sign up or log in to use the reader
+- No cloud sync required — the vault works fully offline; any sync is optional ciphertext-only
+- No recommendation engine — feeds and boards you choose, not an opaque ranking feed

@@ -123,6 +123,14 @@ def render_readme(root: Path, product: dict, *, for_preview: bool = False) -> st
         "{{tagline}}": product["tagline"],
         "{{pitch}}": product["pitch"],
         "{{features}}": render_list(product["features"]),
+        "{{what_this_is_not}}": render_list(
+            product.get("what_this_is_not")
+            or [
+                "A finished commercial product promise",
+                "A place for secrets or production credentials",
+                "An unbounded scope — see README goals above",
+            ]
+        ),
         "{{quick_start}}": render_list(product["quick_start"], ordered=True),
         "{{install}}": product["install"],
         "{{usage}}": product["usage"],

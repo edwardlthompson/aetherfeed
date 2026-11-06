@@ -19,6 +19,11 @@
   ],
   "install": "Android: build a debug APK from `examples/android` or install a GitHub Release. Windows: download the Tauri installer from GitHub Releases, or run the desktop example locally. No account is required.",
   "usage": "Add feeds on first launch. The local vault works immediately. Sync is optional and lives under Settings. If you forget the sync passphrase, the encrypted backup cannot be recovered.",
+  "what_this_is_not": [
+    "No account — you never sign up or log in to use the reader",
+    "No cloud sync required — the vault works fully offline; any sync is optional ciphertext-only",
+    "No recommendation engine — feeds and boards you choose, not an opaque ranking feed"
+  ],
   "urls": {
     "docs": "docs/START_HERE.md",
     "contributing": "CONTRIBUTING.md",

@@ -73,3 +73,7 @@ See [`{{url_security}}`]({{url_security}}). Enable Dependabot alerts and follow 
 ## Acknowledgments
 
 Scaffolded with [agent-project-bootstrap](https://github.com/edwardlthompson/agent-project-bootstrap). Brand assets: [`{{url_branding}}`]({{url_branding}}). Design system: [`{{url_design}}`]({{url_design}}).
+
+## What this is not
+
+{{what_this_is_not}}
