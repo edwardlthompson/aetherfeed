@@ -2,8 +2,8 @@
   "mode": "product",
   "name": "AetherFeed",
   "short_name": "AetherFeed",
-  "tagline": "Local-first encrypted news, podcast, and booru client",
-  "pitch": "AetherFeed is a quiet, local-first reader. Subscribe to RSS, Atom, and JSON feeds, listen to podcasts, and browse public media boards. Everything stays on your device in an encrypted vault. Optional zero-knowledge sync uploads only opaque blobs — never plaintext stars, tags, or settings.",
+  "tagline": "Local-first feeds, podcasts, and image boards",
+  "pitch": "One local-first client for feeds, podcasts, and image boards: subscribe, listen, and browse with stars and playback position that survive radio-off.",
   "features": [
     "News reader with offline articles, reader mode, stars, tags, and OPML import/export",
     "Podcast client with queue, downloads, speed, chapters, and lockscreen controls",
