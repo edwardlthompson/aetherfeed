@@ -5,20 +5,21 @@ human’s original prompt **verbatim**. Bootstrap stamps `AGENTS.md` only and wi
 not overwrite this file. Later sessions: read this before any BUILD_PLAN sprint row.
 
 <!-- agent-brief:one-liner -->
-Photoreal Cycles icons from a locked seed, camera, and lighting.
+One local-first client for feeds, podcasts, and image boards with offline stars and playback.
 <!-- /agent-brief:one-liner -->
 
 <!-- agent-brief:keywords -->
-camera, messages, tame, neon
+rss, podcasts, booru, local-first, privacy, offline, vault
 <!-- /agent-brief:keywords -->
 
 ## Rules
 
-- Generate store/PWA icons from a JSON manifest (seed, camera, lighting).
-- Machine QA only — do not ask a human to review thousands of frames.
-- Cycles OptiX is local GPU; CI stays CPU/headless or skip if Blender is missing.
-- Do not overwrite live `branding/assets/*.svg` (Sacred vector SoT).
+- Keep the vault local-first; no account required.
+- Stars and playback position must survive radio-off.
+- Optional sync is ciphertext-only; never upload plaintext library state.
+- No analytics, crash reporters, ads, or tracking libraries.
+- Do not overwrite Sacred product paths (`docs/spec.md`, `AGENTS.md` project card) with template stubs.
 
 ## First milestone
 
-Seeded icon factory with QA JSON; sample manifest in CI; 4000+ run on This Computer.
+Offline read path end-to-end with cached items, stars, and playback persisted locally.

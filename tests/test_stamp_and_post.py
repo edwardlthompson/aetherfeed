@@ -15,7 +15,8 @@ from bootstrap_cli import run  # noqa: E402
 from bootstrap_engine import default_config, save_config  # noqa: E402
 from bootstrap_post import create_welcome_issue, ensure_git_repo, install_deps  # noqa: E402
 from build_sprint_model import is_template_repo  # noqa: E402
-from stamp_project import stamp_agents_md  # noqa: E402
+from project_card_index import check_repo  # noqa: E402
+from stamp_project import stamp_agents_md, stamp_template_index  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 
@@ -36,6 +37,22 @@ class StampTests(unittest.TestCase):
             self.assertIn("**Product:** Demo2", text)
             self.assertNotIn("**Product:** Demo\n", text)
             self.assertEqual(text.count("<!-- bootstrap-project-card -->"), 1)
+
+    def test_stamp_template_index_matches_agents_card(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "AGENTS.md").write_text("# Agent\n", encoding="utf-8")
+            (root / "TEMPLATE_INDEX.json").write_text(
+                '{"project": {"name": "Old", "purpose": "Old", "stack": "multi"}}\n',
+                encoding="utf-8",
+            )
+            (root / "bootstrap.config.json").write_text(
+                '{"project_name": "Demo", "purpose": "Notes", "stack": "web"}\n',
+                encoding="utf-8",
+            )
+            stamp_agents_md(root, name="Demo", purpose="Notes", stack="web")
+            stamp_template_index(root, name="Demo", purpose="Notes", stack="web")
+            self.assertEqual(check_repo(root), [])
 
     def test_template_purpose_is_portable(self) -> None:
         agents = (REPO / "AGENTS.md").read_text(encoding="utf-8")
@@ -79,6 +96,33 @@ class PostHookTests(unittest.TestCase):
                 with patch("bootstrap_post.subprocess.run", return_value=fake):
                     note = create_welcome_issue(Path(tmp))
             self.assertIn("https://example/1", note)
+
+    def test_post_stamps_template_index_project_card(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "AGENTS.md").write_text("# Agent\n", encoding="utf-8")
+            (root / "TEMPLATE_INDEX.json").write_text(
+                '{"project": {"name": "AetherFeed", "purpose": "old", "stack": "multi"}}\n',
+                encoding="utf-8",
+            )
+            self.assertEqual(
+                run(
+                    [
+                        "--root",
+                        str(root),
+                        "--post",
+                        "--skip-preflight",
+                        "--project-name",
+                        "Upgrade Sim",
+                        "--purpose",
+                        "Cherry-pick validation",
+                        "--stack",
+                        "web",
+                    ]
+                ),
+                0,
+            )
+            self.assertEqual(check_repo(root), [])
 
     def test_post_merges_welcome_hook(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
