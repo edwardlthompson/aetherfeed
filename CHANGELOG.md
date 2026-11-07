@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
 ## [1.13.0](https://github.com/edwardlthompson/aetherfeed/compare/v1.12.0...v1.13.0) (2026-11-07)
 
 
@@ -323,15 +325,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * restore DECISION_LOG seed line order after v0.14.1 archive ([22cada9](https://github.com/edwardlthompson/aetherfeed/commit/22cada93c8105712e2f9286c05424e642268f044))
 * rewrite template README as a first-run pitch ([01e21fc](https://github.com/edwardlthompson/aetherfeed/commit/01e21fc0f559a56e09b69172e0d06b763ed11d75))
 
-## [Unreleased]
-
-### Fixed
-
-* restore child crash-capture modules, F-Droid listing copy, BUILD_PLAN venue tags, and bootstrap CI tools after the 1.12.0 template upgrade
-* bind Android versionName to app-version.json, accept init --profile, and env-bind release/dependabot workflows for zizmor/actionlint
-* stamp TEMPLATE_INDEX + product brief on init and replace Golden Path AGENT.md.example with the AetherFeed brief
-* restore ANDROID_SIGNING.md env-only Gradle signing and keep rss in product About copy after web prune
-* add the required CI aggregate job so branch protection can see the CI check
 
 ## [0.22.0](https://github.com/edwardlthompson/aetherfeed/compare/v0.21.0...v0.22.0) (2026-11-06)
 
