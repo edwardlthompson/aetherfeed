@@ -615,3 +615,46 @@ jobs:
       - uses: actions/checkout@v7
       - name: Cross-stack sanitizer fixtures
         run: bash scripts/check-sanitize-fixtures.sh
+
+  ci-ok:
+    name: CI
+    runs-on: ubuntu-latest
+    if: ${{ always() && !cancelled() }}
+    needs:
+      - repo-hygiene
+      - feature-gate
+      - upgrade-simulation-windows
+      - validate-bootstrap
+      - sanitize-fixtures
+    steps:
+      - name: Require core CI jobs
+        env:
+          RH: ${{ needs.repo-hygiene.result }}
+          FG: ${{ needs.feature-gate.result }}
+          UW: ${{ needs.upgrade-simulation-windows.result }}
+          VB: ${{ needs.validate-bootstrap.result }}
+          SF: ${{ needs.sanitize-fixtures.result }}
+        run: |
+          set -euo pipefail
+          failed=()
+          [ "$RH" = "success" ] || failed+=("Repo Hygiene ($RH)")
+          [ "$FG" = "success" ] || failed+=("Feature Gate ($FG)")
+          [ "$UW" = "success" ] || failed+=("Template Upgrade Simulation (Windows) ($UW)")
+          [ "$VB" = "success" ] || failed+=("Validate Bootstrap ($VB)")
+          [ "$SF" = "success" ] || failed+=("Sanitizer fixture parity ($SF)")
+          {
+            echo "## CI aggregate"
+            if [ "${#failed[@]}" -eq 0 ]; then
+              echo "All required child jobs succeeded."
+            else
+              echo "Failing child jobs:"
+              for name in "${failed[@]}"; do
+                echo "- $name"
+              done
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "${#failed[@]}" -gt 0 ]; then
+            echo "ci-ok: failing child jobs: ${failed[*]}"
+            exit 1
+          fi
+          echo "ci-ok: all core child jobs succeeded"

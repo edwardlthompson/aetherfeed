@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * bind Android versionName to app-version.json, accept init --profile, and env-bind release/dependabot workflows for zizmor/actionlint
 * stamp TEMPLATE_INDEX + product brief on init and replace Golden Path AGENT.md.example with the AetherFeed brief
 * restore ANDROID_SIGNING.md env-only Gradle signing and keep rss in product About copy after web prune
+* add the required CI aggregate job so branch protection can see the CI check
 
 ## [0.22.0](https://github.com/edwardlthompson/aetherfeed/compare/v0.21.0...v0.22.0) (2026-11-06)
 
