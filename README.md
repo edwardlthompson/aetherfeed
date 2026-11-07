@@ -29,7 +29,7 @@
 
 ## Pitch
 
-One local-first client for feeds, podcasts, and image boards: subscribe, listen, and browse with stars and playback position that survive radio-off.
+One local-first client for RSS feeds, podcasts, and image boards: subscribe, listen, and browse with stars and playback position that survive radio-off.
 
 ## Demo
 
@@ -41,7 +41,7 @@ One local-first client for feeds, podcasts, and image boards: subscribe, listen,
 
 ## Features
 
-- News reader with offline articles, reader mode, stars, tags, and OPML import/export
+- News reader with offline RSS/Atom/JSON articles, reader mode, stars, tags, and OPML import/export
 - Podcast client with queue, downloads, speed, chapters, and lockscreen controls
 - Booru tag search with local favorites, saved queries, and blacklists
 - SQLCipher vault plus OS keystore for credentials and sync key material
