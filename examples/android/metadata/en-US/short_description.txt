@@ -1,1 +1,1 @@
-FOSS Android skeleton for agent-project-bootstrap
+Local-first feeds, podcasts, and image boards

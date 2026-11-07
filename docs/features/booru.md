@@ -17,3 +17,22 @@
 1. _Given_ a configured public source
 2. _When_ the user searches a tag
 3. _Then_ posts render in a quiet grid and can be favorited locally
+
+
+## Container map
+
+- Feature container: stack paths under `examples/*/` for `booru`
+- Spec: `docs/features/booru.md`
+
+
+## Tests
+
+- Automated: yes — unit tests beside the feature container.
+- Run via `feature-gate.sh --stack multi`.
+
+
+## Fallback validation
+
+```bash
+python3 scripts/agent-run.py feature-gate --stack multi
+```

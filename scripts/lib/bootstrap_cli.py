@@ -16,7 +16,8 @@ from bootstrap_engine import (
 )
 from bootstrap_post import create_welcome_issue, ensure_git_repo, install_deps, run_stack_tests
 from project_checklist import write_checklist
-from stamp_project import stamp_agents_md, stamp_first_30_days
+from stamp_product_brief import stamp_root as stamp_product_brief
+from stamp_project import stamp_agents_md, stamp_first_30_days, stamp_template_index
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
@@ -92,7 +93,17 @@ def run(argv: list[str] | None = None) -> int:
         )
         if days:
             print(f"Stamped {days}")
+        index = stamp_template_index(
+            root, name=cfg["project_name"], purpose=cfg["purpose"], stack=stack
+        )
+        if index:
+            print(f"Stamped {index}")
         print(f"Wrote {root / 'bootstrap.config.json'}")
+        # Do not call install_child_build_plan here: this child's BUILD_PLAN.md still
+        # contains a historical "Template Maintainer" heading, and that helper would
+        # replace the live Android/web board with BUILD_PLAN_TEMPLATE.md.
+        for brief_path in stamp_product_brief(root):
+            print(f"Stamped product brief {brief_path}")
         hooks = cfg.get("hooks") if isinstance(cfg.get("hooks"), dict) else {}
         try:
             if args.git_init or hooks.get("post_git_init"):

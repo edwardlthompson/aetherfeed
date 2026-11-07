@@ -32,3 +32,14 @@ See `docs/FEATURE_MODULES.md` per-feature checklist and BUILD_PLAN Sprint 2+ fea
 
 - Reference exemplar: About screen (`examples/web/src/about/`, `examples/android/.../about/`)
 - After each AGENT step: `bash scripts/watch-agent-gates.sh --once --autofix`
+
+
+## Tests
+
+- Automated: yes — co-located unit tests for the feature container.
+
+## Fallback validation
+
+```bash
+python3 scripts/agent-run.py feature-gate --stack multi
+```

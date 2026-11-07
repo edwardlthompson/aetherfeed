@@ -17,7 +17,10 @@ param(
     [switch]$NoPrune,
     [switch]$NonInteractive,
     [switch]$KeepOptional = $true,
-    [switch]$PruneOptional
+    [switch]$PruneOptional,
+    [switch]$DryRun,
+    [ValidateSet("core", "full")]
+    [string]$Profile = "full"
 )
 
 $Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
@@ -259,6 +262,29 @@ bash scripts/bootstrap-lifecycle.sh --post `
   --distribution-tier $DistributionTier
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 Write-Host "Wrote .cursor/stack-selection.json (tier=$DistributionTier) and synced AGENT_MEMORY active modules."
+
+$scriptLib = Join-Path $Root "scripts/lib"
+$sep = [IO.Path]::PathSeparator
+$env:PYTHONPATH = if ($env:PYTHONPATH) { "$scriptLib$sep$($env:PYTHONPATH)" } else { $scriptLib }
+@'
+import sys
+from pathlib import Path
+from init_profile import apply_core_profile, normalize_profile, stamp_profile
+root = Path(sys.argv[1])
+profile = normalize_profile(sys.argv[2])
+dry = sys.argv[3].lower() == "true"
+if not dry:
+    stamp_profile(root, profile)
+print(f"profile: {profile}")
+if profile == "full":
+    from init_profile import relocate_memory_logs
+    for line in relocate_memory_logs(root):
+        print(line)
+elif profile == "core":
+    for line in apply_core_profile(root, dry_run=dry):
+        print(line)
+'@ | python3 - $Root $Profile ($DryRun.IsPresent.ToString().ToLower())
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 Write-Host ""
 Write-Host "=== Workflow validation ===" -ForegroundColor Cyan

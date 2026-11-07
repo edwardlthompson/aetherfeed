@@ -33,6 +33,8 @@ Static PWAs and CLIs may skip HTTP endpoints; document stack-specific checks ins
 2. Confirm health checks pass
 3. Log incident in `DECISION_LOG.md` if user-impacting
 
+Android upload-key signing, mapping.txt, and store rollback: [`ANDROID_SIGNING.md`](ANDROID_SIGNING.md).
+
 ## Common Failures
 
 | Symptom | Check | Fix |

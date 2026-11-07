@@ -32,3 +32,15 @@ class TemplateIndexTests(unittest.TestCase):
             self.assertEqual(collect_missing(root, data), ["gone.md"])
             errors = check(root)
             self.assertTrue(any("gone.md" in e for e in errors))
+
+    def test_repo_index_omits_gitignored_cursor_runtime_files(self) -> None:
+        root = Path(__file__).resolve().parent.parent
+        data = json.loads((root / "TEMPLATE_INDEX.json").read_text(encoding="utf-8"))
+        indexed = {item["path"] for item in data.get("files", [])}
+        forbidden = {
+            ".cursor/agent-progress.json",
+            ".cursor/last-feature-gate.json",
+            ".cursor/mcp-audit.log",
+            ".cursor/parallel-scope-lock.json",
+        }
+        self.assertFalse(indexed & forbidden)

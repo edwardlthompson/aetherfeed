@@ -10,3 +10,5 @@ Walk a first-time human (or any coding agent) through the repo. Do not dump whol
 If the user’s tool has no slash commands, the same walk is `docs/help/TOUR.md`.
 
 Begin now.
+
+Glossary: [**Sacred**](../../docs/help/GLOSSARY.md#sacred), [**Canon**](../../docs/help/GLOSSARY.md#canon), [**AGENT**](../../docs/help/GLOSSARY.md#agent), [**HUMAN**](../../docs/help/GLOSSARY.md#human), [**ADB**](../../docs/help/GLOSSARY.md#adb), [**AUTO**](../../docs/help/GLOSSARY.md#auto).

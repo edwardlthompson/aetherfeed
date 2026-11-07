@@ -12,7 +12,9 @@ surfaces and across optional E2E sync.
 
 ## Decision
 
-**Selected pattern:** Clean Architecture with MVI on Android.
+**Selected pattern:** 🔲 MVVM · 🔲 Clean Architecture · 🔲 Hexagonal
+
+**Adopted for AetherFeed:** Clean Architecture with MVI on Android.
 
 - **Entities:** `Feed`, `Article`, `PodcastShow`, `Episode`, `BooruPost`, `Tag`, `Star`, `Like`, `ReadState`, `PlaybackPosition`, `NotificationChannelPref`, `SyncEnvelope`
 - **Use cases / repositories:** shared unread/star/tag/sync primitives

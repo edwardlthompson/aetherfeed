@@ -34,3 +34,16 @@
 
 - Reuse `ThemePreferences` patterns from `examples/android/.../ui/theme/` where applicable
 - Gate after each AGENT BUILD_PLAN step: `bash scripts/watch-agent-gates.sh --once --autofix --step <scaffold|tests|wire>`
+
+## Tests
+
+- Automated: yes — unit tests beside the feature container.
+
+- Unit/domain tests live beside the feature container.
+- Run stack tests via `feature-gate.sh --stack multi`.
+
+## Fallback validation
+
+```bash
+python3 scripts/agent-run.py feature-gate --stack multi
+```

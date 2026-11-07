@@ -10,11 +10,17 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-2ea043?style=flat-square" alt="MIT" />
+  <img src="https://img.shields.io/badge/template-1.12.0-0969da?style=flat-square" alt="template" />
   <img src="https://img.shields.io/badge/FOSS-no_tracking-656d76?style=flat-square" alt="FOSS" />
   <img src="https://img.shields.io/badge/status-active-3D5A6C?style=flat-square" alt="status" />
-  <img src="https://img.shields.io/github/actions/workflow/status/edwardlthompson/aetherfeed/ci.yml?style=flat-square&label=CI" alt="CI" />
+  <a href="https://github.com/edwardlthompson/aetherfeed/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/edwardlthompson/aetherfeed/ci.yml?style=flat-square&label=CI" alt="CI" /></a>
+  <a href="https://edwardlthompson.github.io/aetherfeed/"><img src="https://img.shields.io/badge/Pages-demo-0969da?style=flat-square" alt="GitHub Pages demo" /></a>
   <img src="https://api.securityscorecards.dev/projects/github.com/edwardlthompson/aetherfeed/badge" alt="OpenSSF Scorecard" />
   <a href="https://codespaces.new/edwardlthompson/aetherfeed"><img src="https://img.shields.io/badge/Codespaces-Open-181717?style=flat-square&logo=github" alt="Open in GitHub Codespaces" /></a>
+  <img src="https://img.shields.io/badge/AGENT-2ea043?style=flat-square" alt="AGENT" />
+  <img src="https://img.shields.io/badge/HUMAN-0969da?style=flat-square" alt="HUMAN" />
+  <img src="https://img.shields.io/badge/ADB-bf8700?style=flat-square" alt="ADB" />
+  <img src="https://img.shields.io/badge/AUTO-656d76?style=flat-square" alt="AUTO" />
 
   <img src="https://img.shields.io/badge/android-stack-3D5A6C?style=flat-square" alt="android" />
   <img src="https://img.shields.io/badge/desktop-stack-5C6B5A?style=flat-square" alt="desktop" />
@@ -23,7 +29,7 @@
 
 ## Pitch
 
-One local-first client for feeds, podcasts, and image boards: subscribe, listen, and browse with stars and playback position that survive radio-off.
+One local-first client for RSS feeds, podcasts, and image boards: subscribe, listen, and browse with stars and playback position that survive radio-off.
 
 ## Demo
 
@@ -35,12 +41,13 @@ One local-first client for feeds, podcasts, and image boards: subscribe, listen,
 
 ## Features
 
-- News reader with offline articles, reader mode, stars, tags, and OPML import/export
+- News reader with offline RSS/Atom/JSON articles, reader mode, stars, tags, and OPML import/export
 - Podcast client with queue, downloads, speed, chapters, and lockscreen controls
 - Booru tag search with local favorites, saved queries, and blacklists
 - SQLCipher vault plus OS keystore for credentials and sync key material
 - Optional E2E sync over Google Drive AppData or WebDAV — passphrase never leaves the device
 - No analytics, crash reporters, ads, or tracking libraries
+- Privacy-first: no analytics, crash reporters, ads, or tracking
 
 ## Quick start
 
@@ -55,6 +62,14 @@ Start with this README, then [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/BES
 ## For agents
 
 Read [`docs/START_HERE.md`](docs/START_HERE.md) and [`AGENTS.md`](AGENTS.md). In Cursor type `/tour` or `/bootstrap`. Any other IDE: ask the agent to read [`docs/help/TOUR.md`](docs/help/TOUR.md). `/coach` is the next recommended action.
+
+```mermaid
+flowchart TD
+  Readme[README] --> Humans[CONTRIBUTING]
+  Readme --> Agents[START_HERE]
+  Agents --> Tour["/tour or TOUR.md"]
+  Tour --> Coach["/coach"]
+```
 
 ## Install
 
@@ -83,9 +98,3 @@ See [`SECURITY.md`](SECURITY.md). Enable Dependabot alerts and follow [`docs/SEC
 ## Acknowledgments
 
 Scaffolded with [agent-project-bootstrap](https://github.com/edwardlthompson/agent-project-bootstrap). Brand assets: [`branding/BRANDING.md`](branding/BRANDING.md). Design system: [`docs/DESIGN_GUIDE.md`](docs/DESIGN_GUIDE.md).
-
-## What this is not
-
-- No account — you never sign up or log in to use the reader
-- No cloud sync required — the vault works fully offline; any sync is optional ciphertext-only
-- No recommendation engine — feeds and boards you choose, not an opaque ranking feed

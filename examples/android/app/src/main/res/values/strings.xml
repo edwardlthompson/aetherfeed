@@ -47,4 +47,7 @@
     <string name="pane_booru_body">Add public media-board sources. Tag search and local lists land in Sprint 4.</string>
     <string name="unread_total">Unread: %1$d</string>
     <string name="local_only_hint">The vault works without an account. Sync is optional.</string>
+    <string name="nav_back">Back</string>
+    <string name="about_donations_heading">Donations</string>
+    <string name="app_privacy">Privacy</string>
 </resources>

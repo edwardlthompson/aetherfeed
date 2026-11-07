@@ -61,6 +61,10 @@ Before running instrumented tests or manual QA:
 - `SOURCE_DATE_EPOCH` for reproducible builds
 - Pinned Gradle wrapper SHA-256 in `gradle/wrapper/gradle-wrapper.properties`
 
+## Signed release
+
+Upload keystores stay outside git. Env-only Gradle signing, F-Droid vs Play, and rollback: [`docs/ANDROID_SIGNING.md`](../../docs/ANDROID_SIGNING.md).
+
 ## F-Droid notes
 
 Document dependency hashes and reproducible build verification steps in your project's `AGENT_MEMORY.md` when activating module A.
