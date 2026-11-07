@@ -1,1 +1,1 @@
-Initial Golden Path Android stub for agent-project-bootstrap template.
+Initial AetherFeed stub for agent-project-bootstrap template.

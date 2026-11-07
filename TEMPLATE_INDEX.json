@@ -2386,34 +2386,6 @@
       "owner": "maintainer"
     },
     {
-      "path": ".cursor/agent-progress.json",
-      "purpose": "Parent catch-up import: .cursor/agent-progress.json",
-      "read_when": "milestone_boundary",
-      "update_when": "milestone_boundary",
-      "owner": "maintainer"
-    },
-    {
-      "path": ".cursor/last-feature-gate.json",
-      "purpose": "Parent catch-up import: .cursor/last-feature-gate.json",
-      "read_when": "milestone_boundary",
-      "update_when": "milestone_boundary",
-      "owner": "maintainer"
-    },
-    {
-      "path": ".cursor/mcp-audit.log",
-      "purpose": "Parent catch-up import: .cursor/mcp-audit.log",
-      "read_when": "milestone_boundary",
-      "update_when": "milestone_boundary",
-      "owner": "maintainer"
-    },
-    {
-      "path": ".cursor/parallel-scope-lock.json",
-      "purpose": "Parent catch-up import: .cursor/parallel-scope-lock.json",
-      "read_when": "milestone_boundary",
-      "update_when": "milestone_boundary",
-      "owner": "maintainer"
-    },
-    {
       "path": ".bestpractices.json",
       "purpose": "Proposed OpenSSF Best Practices answers for project 14564",
       "read_when": "validation",

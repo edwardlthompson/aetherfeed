@@ -21,9 +21,6 @@
   <img src="https://img.shields.io/badge/HUMAN-0969da?style=flat-square" alt="HUMAN" />
   <img src="https://img.shields.io/badge/ADB-bf8700?style=flat-square" alt="ADB" />
   <img src="https://img.shields.io/badge/AUTO-656d76?style=flat-square" alt="AUTO" />
-  <img src="https://img.shields.io/badge/web-stack-646cff?style=flat-square" alt="web" />
-  <img src="https://img.shields.io/badge/python-stack-3776AB?style=flat-square" alt="python" />
-  <img src="https://img.shields.io/badge/android-stack-3DDC84?style=flat-square" alt="android" />
 {{stack_badges}}
 </p>
 

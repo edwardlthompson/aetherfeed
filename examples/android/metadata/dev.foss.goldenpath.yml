@@ -30,7 +30,7 @@ Builds:
       - examples/node
       - examples/python
 
-AutoName: Golden Path
+AutoName: AetherFeed
 AutoUpdateMode: None
 UpdateCheckMode: Tags
 CurrentVersion: 0.1.0

@@ -1,6 +1,7 @@
 """Fail when README hero/stack/owner badges drift from repo truth."""
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 OWNER_COLORS = {
@@ -14,6 +15,15 @@ STACK_COLORS = {
     "python": "3776AB",
     "android": "3DDC84",
 }
+
+
+def product_stacks(root: Path) -> list[str]:
+    path = root / "branding" / "product.json"
+    if not path.is_file():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    stacks = data.get("stacks") or []
+    return [str(stack) for stack in stacks]
 
 
 def check_repo(root: Path) -> list[str]:
@@ -34,9 +44,17 @@ def check_repo(root: Path) -> list[str]:
             errors.append(f"owner badge {label} / {color} missing")
         elif f"{label}-" not in readme or color.lower() not in readme.lower():
             errors.append(f"owner badge {label} color {color} missing")
-    for stack, color in STACK_COLORS.items():
-        if f"badge/{stack}-stack-{color}" not in readme:
-            errors.append(f"stack badge {stack} must use {color}")
+    stacks = product_stacks(root)
+    if stacks:
+        for stack in stacks:
+            if f"badge/{stack}-stack-" not in readme:
+                errors.append(f"stack badge {stack} missing")
+        if "python" not in stacks and "badge/python-stack-" in readme:
+            errors.append("python stack badge must not appear when product.json omits python")
+    else:
+        for stack, color in STACK_COLORS.items():
+            if f"badge/{stack}-stack-{color}" not in readme:
+                errors.append(f"stack badge {stack} must use {color}")
     return errors
 
 
