@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 * restore child crash-capture modules, F-Droid listing copy, BUILD_PLAN venue tags, and bootstrap CI tools after the 1.12.0 template upgrade
+* bind Android versionName to app-version.json, accept init --profile, and env-bind release/dependabot workflows for zizmor/actionlint
 
 ## [0.22.0](https://github.com/edwardlthompson/aetherfeed/compare/v0.21.0...v0.22.0) (2026-11-06)
 

@@ -9,6 +9,15 @@ kotlin {
     }
 }
 
+fun readGoldenPathAppVersion(): String {
+    val file = rootProject.file("../../schemas/golden-path/app-version.json")
+    check(file.isFile) { "Missing Golden Path app version SoT: ${file.invariantSeparatorsPath}" }
+    val match = Regex(""""version"\s*:\s*"([^"]+)"""").find(file.readText())
+    val version = match?.groupValues?.get(1)?.trim().orEmpty()
+    check(version.isNotEmpty()) { "schemas/golden-path/app-version.json missing version" }
+    return version
+}
+
 android {
     namespace = "org.aetherfeed.app"
     compileSdk = 37
@@ -18,7 +27,7 @@ android {
         minSdk = 26
         targetSdk = 37
         versionCode = 1
-        versionName = "0.1.0"
+        versionName = readGoldenPathAppVersion()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

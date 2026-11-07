@@ -7,7 +7,7 @@
 #   --release-repo OWNER/REPO  --donation-url URL  --codeowner USER
 #   --prune  --no-prune  --non-interactive  --keep-optional  --prune-optional
 #   --license MIT|Apache-2.0  --skip-preflight  --strict-preflight
-#   --topics a,b,c
+#   --topics a,b,c  --dry-run  --profile core|full
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -38,6 +38,8 @@ Usage: scripts/init-project.sh [options]
   --skip-preflight       Skip git/Python/tool checks
   --strict-preflight     Fail if stack tools (node, uv, java) are missing
   --topics LIST          Comma-separated GitHub topics (3-5 recommended)
+  --dry-run              Print profile actions without writing
+  --profile core|full    core=slim surface; full=keep template tree (child default: full)
   -h, --help
 EOF
 }
@@ -57,6 +59,8 @@ LICENSE="MIT"
 SKIP_PREFLIGHT=false
 STRICT_PREFLIGHT=false
 TOPICS=""
+DRY_RUN=false
+PROFILE="full"
 while [ $# -gt 0 ]; do
   case "$1" in
     --stack) STACK="${2:-}"; shift 2 ;;
@@ -76,10 +80,19 @@ while [ $# -gt 0 ]; do
     --non-interactive) NONINTERACTIVE=true; shift ;;
     --keep-optional) KEEP_OPTIONAL=true; shift ;;
     --prune-optional) KEEP_OPTIONAL=false; shift ;;
+    --dry-run) DRY_RUN=true; shift ;;
+    --profile) PROFILE="${2:-full}"; shift 2 ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 1 ;;
   esac
 done
+case "$PROFILE" in
+  core|full) ;;
+  *)
+    echo "Invalid profile '$PROFILE'; defaulting to full."
+    PROFILE="full"
+    ;;
+esac
 
 case "$DISTRIBUTION_TIER" in
   foss|commercial) ;;
@@ -357,6 +370,28 @@ bash scripts/bootstrap-lifecycle.sh --post \
   --license "$LICENSE" \
   --distribution-tier "$DISTRIBUTION_TIER"
 echo "Wrote .cursor/stack-selection.json (tier=$DISTRIBUTION_TIER) and synced AGENT_MEMORY active modules."
+
+# Profile: stamp + optional core slim (after post hooks so full tooling can run first)
+export PYTHONPATH="$ROOT/scripts/lib${PYTHONPATH:+:$PYTHONPATH}"
+python3 - "$ROOT" "$PROFILE" "$DRY_RUN" <<'PY'
+import sys
+from pathlib import Path
+from init_profile import apply_core_profile, normalize_profile, stamp_profile
+
+root = Path(sys.argv[1])
+profile = normalize_profile(sys.argv[2])
+dry = sys.argv[3].lower() == "true"
+if not dry:
+    stamp_profile(root, profile)
+print(f"profile: {profile}")
+if profile == "full":
+    from init_profile import relocate_memory_logs
+    for line in relocate_memory_logs(root):
+        print(line)
+elif profile == "core":
+    for line in apply_core_profile(root, dry_run=dry):
+        print(line)
+PY
 
 echo ""
 echo "=== Workflow validation ==="

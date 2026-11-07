@@ -16,8 +16,6 @@ updates:
       web-dependencies:
         patterns: ["*"]
 
-
-
   - package-ecosystem: cargo
     directory: /examples/rust
     schedule:
