@@ -24,6 +24,7 @@ python3 <<'PY'
 import json
 import os
 import re
+import sys
 from pathlib import Path
 
 version = os.environ["SYNC_TEMPLATE_VERSION"]
@@ -32,19 +33,24 @@ data = json.loads(idx.read_text(encoding="utf-8"))
 data["template_version"] = version
 idx.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-readme = Path("README.md")
-text = readme.read_text(encoding="utf-8")
-text = re.sub(
-    r"!\[Template\]\(https://img\.shields\.io/badge/template-[\d.]+",
-    f"![Template](https://img.shields.io/badge/template-{version}",
-    text,
+sys.path.insert(0, "scripts/lib")
+from readme_badges import rewrite_template_badge
+
+readme_paths = (
+    Path("README.md"),
+    Path("branding/generated/README.preview.md"),
+    Path("branding/templates/README.product.md"),
 )
-text = re.sub(
-    r"Current template version: \*\*[\d.]+\*\*",
-    f"Current template version: **{version}**",
-    text,
-)
-readme.write_text(text, encoding="utf-8")
+for readme in readme_paths:
+    if not readme.is_file():
+        continue
+    text = rewrite_template_badge(readme.read_text(encoding="utf-8"), version)
+    text = re.sub(
+        r"Current template version: \*\*[\d.]+\*\*",
+        f"Current template version: **{version}**",
+        text,
+    )
+    readme.write_text(text, encoding="utf-8")
 
 mem = Path(".agent/AGENT_MEMORY.md")
 if not mem.is_file():

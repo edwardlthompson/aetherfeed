@@ -2,7 +2,16 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
+
+TEMPLATE_BADGE_RE = re.compile(r"(badge/template-)[\d.]+")
+
+
+def rewrite_template_badge(text: str, version: str) -> str:
+    """Update markdown or HTML template version badges to ``version``."""
+    return TEMPLATE_BADGE_RE.sub(lambda match: f"{match.group(1)}{version}", text)
+
 
 OWNER_COLORS = {
     "AGENT": "2ea043",

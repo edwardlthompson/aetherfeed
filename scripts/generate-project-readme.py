@@ -109,6 +109,7 @@ def _rel_url(path: str, *, from_preview: bool) -> str:
 def render_readme(root: Path, product: dict, *, for_preview: bool = False) -> str:
     template_path = root / "branding" / "templates" / "README.product.md"
     template = template_path.read_text(encoding="utf-8")
+    template_version = (root / ".template-version").read_text(encoding="utf-8").strip()
     urls = product["urls"]
     badge = product["badge"]
     if for_preview:
@@ -164,6 +165,7 @@ def render_readme(root: Path, product: dict, *, for_preview: bool = False) -> st
         "{{url_tour}}": _rel_url("docs/help/TOUR.md", from_preview=for_preview),
         "{{ci_repo}}": str(urls.get("github_repo") or "OWNER/REPO"),
         "{{license_name}}": "MIT License",
+        "{{template_version}}": template_version,
     }
     out = template
     for key, value in replacements.items():

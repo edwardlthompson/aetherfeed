@@ -52,4 +52,12 @@ if [ -z "$CFF_DATE" ]; then
   exit 1
 fi
 
+for badge_file in README.md branding/generated/README.preview.md; do
+  if [ -f "$badge_file" ] && ! grep -q "badge/template-${VERSION}" "$badge_file"; then
+    echo "FAIL: ${badge_file} template badge != ${VERSION}"
+    echo "Fix: bash scripts/sync-template-version.sh"
+    exit 1
+  fi
+done
+
 echo "Template version sync OK ($VERSION)"
