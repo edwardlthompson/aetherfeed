@@ -10,7 +10,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-{{badge_license}}?style=flat-square" alt="MIT" />
-  <img src="https://img.shields.io/badge/template-1.12.0-0969da?style=flat-square" alt="template" />
+  <img src="https://img.shields.io/badge/template-{{template_version}}-0969da?style=flat-square" alt="template" />
   <img src="https://img.shields.io/badge/FOSS-no_tracking-{{badge_foss}}?style=flat-square" alt="FOSS" />
   <img src="https://img.shields.io/badge/status-active-{{badge_primary}}?style=flat-square" alt="status" />
   <a href="https://github.com/{{ci_repo}}/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/{{ci_repo}}/ci.yml?style=flat-square&label=CI" alt="CI" /></a>

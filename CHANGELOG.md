@@ -56,6 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+* rewrite HTML template version badges when Release Please syncs files
 * add gradle.properties with android.useAndroidX for assembleDebug ([ea87f7d](https://github.com/edwardlthompson/aetherfeed/commit/ea87f7dfd40500a7550759fb4466418de5ed2aae))
 * add required CI aggregate job for branch protection ([38481d8](https://github.com/edwardlthompson/aetherfeed/commit/38481d850e19e482b94454cb07dca97da9789f1b))
 * **agents:** execute Sprint M11 post-M10 hardening ([daa9d85](https://github.com/edwardlthompson/aetherfeed/commit/daa9d858afe0eed78e95913107af704e652fb964))
