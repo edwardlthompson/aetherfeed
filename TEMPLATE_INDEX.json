@@ -4559,6 +4559,31 @@
       "owner": "maintainer",
       "path": "scripts/install-android-cmdline-tools.sh",
       "purpose": "Pin Android cmdline-tools zip; never auto-accept SDK licenses"
+    },
+    {
+      "path": ".github/workflows/argus-remote-stub.yml",
+      "purpose": "CI remote status no-op when disabled",
+      "status": "not_started"
+    },
+    {
+      "path": ".github/workflows/argus-rules-manifest.yml",
+      "purpose": "Publish rules.manifest.json on main",
+      "status": "not_started"
+    },
+    {
+      "path": "argus.contract.json",
+      "purpose": "Argus contract markers",
+      "status": "not_started"
+    },
+    {
+      "path": "argus.remote.json",
+      "purpose": "Argus remote off switch",
+      "status": "not_started"
+    },
+    {
+      "path": "rules.manifest.json",
+      "purpose": "Rules manifest",
+      "status": "not_started"
     }
   ],
   "modules": {
