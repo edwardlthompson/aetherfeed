@@ -123,10 +123,9 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 #### Sequential
 
-1. ✅ [AGENT][LOCAL] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)
-1b. ✅ [AGENT][LOCAL] Fill `branding/product.json` (`mode: product`), replace logos, prune unused stacks
-2. ✅ [AGENT][LOCAL] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
-3. 🔲 [AUTO] Sprint 0 sign-off (all green on `main`):
+> Executed seed AGENT/HUMAN rows archived in `COMPLETED_TASKS.md` @ `a9f4a42`.
+
+1. 🔲 [AUTO] Sprint 0 sign-off (all green on `main`):
   - `validate-bootstrap.sh --quick`
   - `feature-gate.sh --stack multi`
   - `check-github-ci.sh --wait 300` (required: **CI**, **Security Scan**, **CodeQL**; **CI** must include **Template Upgrade Simulation (Windows)**, **Repo Hygiene**, **Feature Gate**)
@@ -144,19 +143,15 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 #### Human & device (after automation)
 
-1. ✅ [HUMAN] Create the GitHub repo and point `origin` at it (do not push to the template)
-1a. ✅ [HUMAN] Distribution tier is FOSS (MIT, no proprietary SDKs)
-2. ✅ [HUMAN] Platform/purpose filled: Android + Windows desktop; local-first encrypted reader
-2a. ✅ [HUMAN] Agent mode for approved seed execution
-2b. ✅ [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md`
+*None open — seed HUMAN rows archived in `COMPLETED_TASKS.md`.*
 
 ### Sprint 1 — Encrypted vault and shared models
 
 #### Sequential
 
-1. ✅ [AGENT][LOCAL] Lock shared models and `SyncProvider` (`shared/typescript/`, Android `domain/`)
-2. 🔲 [AGENT][LOCAL] Wire Room + SQLCipher + Hilt on Android using the locked types — scope: examples/android/
-3. ✅ [HUMAN] Approve ADR-0001, ADR-0002, and ADR-0003
+> Executed model-lock + ADR HUMAN rows archived in `COMPLETED_TASKS.md` @ `a9f4a42`.
+
+1. 🔲 [AGENT][LOCAL] Wire Room + SQLCipher + Hilt on Android using the locked types — scope: examples/android/
 
 #### Parallel (safe after Sequential step 1)
 
@@ -168,8 +163,7 @@ When **Sprint 0** ends: stop re-reading `docs/INITIALIZATION_PROMPT.md` as the d
 
 #### Human & device (after automation)
 
-1. ✅ [HUMAN] Fill `release_repo` in `.app-update.json` and donation links
-2. ✅ [HUMAN] Approve Sprint 1 vault/Hilt approach
+*None open — release_repo + vault/Hilt HUMAN rows archived in `COMPLETED_TASKS.md`.*
 
 ### Sprint 2 — News / RSS reader
 
@@ -278,6 +272,8 @@ Do not put standing weekly/Monday chores back on this board as open checklist ro
 
 | Sprint                                                            | Status   | Archive                          |
 | ----------------------------------------------------------------- | -------- | -------------------------------- |
+| Child Sprint 0 — AetherFeed seed (executed; AUTO sign-off open)   | Partial  | `COMPLETED_TASKS.md` @ `a9f4a42` |
+| Child Sprint 1 — Encrypted vault (executed; Room/Hilt open)       | Partial  | `COMPLETED_TASKS.md` @ `a9f4a42` |
 | M39 /ideas Windows PATH + ship hygiene                            | Complete | `COMPLETED_TASKS.md`             |
 | v0.21.0 Windows PATH + Unreleased fold                            | Complete | `COMPLETED_TASKS.md` @ `1525cd6` |
 | M38 /ideas ship-hardening                                         | Complete | `COMPLETED_TASKS.md`             |

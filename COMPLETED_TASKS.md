@@ -2,6 +2,24 @@
 
 > Archive of finished BUILD_PLAN items.
 
+## Child Sprint 0 — AetherFeed seed (executed) (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)
+- ✅ [AGENT][LOCAL] Fill `branding/product.json` (`mode: product`), replace logos, prune unused stacks
+- ✅ [AGENT][LOCAL] Run `scripts/setup-github-repo.sh` — blocked until a child GitHub repo exists
+- ✅ [HUMAN] Create the GitHub repo and point `origin` at it (do not push to the template)
+- ✅ [HUMAN] Distribution tier is FOSS (MIT, no proprietary SDKs)
+- ✅ [HUMAN] Platform/purpose filled: Android + Windows desktop; local-first encrypted reader
+- ✅ [HUMAN] Agent mode for approved seed execution
+- ✅ [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md`
+
+## Child Sprint 1 — Encrypted vault (executed) (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Lock shared models and `SyncProvider` (`shared/typescript/`, Android `domain/`)
+- ✅ [HUMAN] Approve ADR-0001, ADR-0002, and ADR-0003
+- ✅ [HUMAN] Fill `release_repo` in `.app-update.json` and donation links
+- ✅ [HUMAN] Approve Sprint 1 vault/Hilt approach
+
 ## Sprint M39 — /ideas Windows PATH + ship hygiene (2026-08-18)
 
 - ✅ [AGENT] Shared resolver prepends `gh` / Git to Git Bash PATH
