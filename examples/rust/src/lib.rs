@@ -5,7 +5,7 @@
 use argon2::{Algorithm, Argon2, Params, Version};
 use chacha20poly1305::aead::{Aead, KeyInit};
 use chacha20poly1305::{Key, XChaCha20Poly1305, XNonce};
-use rand::RngCore;
+use rand::Rng;
 
 const SALT_LEN: usize = 16;
 const NONCE_LEN: usize = 24;
@@ -13,7 +13,7 @@ const KEY_LEN: usize = 32;
 
 pub fn random_salt() -> [u8; SALT_LEN] {
     let mut salt = [0u8; SALT_LEN];
-    rand::thread_rng().fill_bytes(&mut salt);
+    rand::rng().fill_bytes(&mut salt);
     salt
 }
 
@@ -31,11 +31,13 @@ pub fn derive_key(passphrase: &[u8], salt: &[u8]) -> Result<[u8; KEY_LEN], Strin
 }
 
 pub fn seal(key: &[u8; KEY_LEN], plaintext: &[u8]) -> Result<Vec<u8>, String> {
-    let cipher = XChaCha20Poly1305::new(Key::from_slice(key));
+    let key = Key::try_from(key.as_slice()).map_err(|_| "bad key".to_string())?;
+    let cipher = XChaCha20Poly1305::new(&key);
     let mut nonce = [0u8; NONCE_LEN];
-    rand::thread_rng().fill_bytes(&mut nonce);
+    rand::rng().fill_bytes(&mut nonce);
+    let nonce_arr = XNonce::try_from(nonce.as_slice()).map_err(|_| "bad nonce".to_string())?;
     let ciphertext = cipher
-        .encrypt(XNonce::from_slice(&nonce), plaintext)
+        .encrypt(&nonce_arr, plaintext)
         .map_err(|_| "encrypt failed".to_string())?;
     let mut out = Vec::with_capacity(NONCE_LEN + ciphertext.len());
     out.extend_from_slice(&nonce);
@@ -48,9 +50,11 @@ pub fn open(key: &[u8; KEY_LEN], blob: &[u8]) -> Result<Vec<u8>, String> {
         return Err("blob too short".into());
     }
     let (nonce, ciphertext) = blob.split_at(NONCE_LEN);
-    let cipher = XChaCha20Poly1305::new(Key::from_slice(key));
+    let key = Key::try_from(key.as_slice()).map_err(|_| "bad key".to_string())?;
+    let cipher = XChaCha20Poly1305::new(&key);
+    let nonce_arr = XNonce::try_from(nonce).map_err(|_| "bad nonce".to_string())?;
     cipher
-        .decrypt(XNonce::from_slice(nonce), ciphertext)
+        .decrypt(&nonce_arr, ciphertext)
         .map_err(|_| "decrypt failed".to_string())
 }
 
