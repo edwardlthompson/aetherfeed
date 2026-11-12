@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.1](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.0...v1.13.1) (2026-11-12)
+
+
+### Changed
+
+* **argus:** upgrade parent rules to 1.13.0 ([0ee3b8d](https://github.com/edwardlthompson/aetherfeed/commit/0ee3b8dcef7f3d2515ea6406a02f912069f43b62))
+* **deps-dev:** Bump brace-expansion from 5.0.9 to 5.0.12 in /examples/web ([7bf835b](https://github.com/edwardlthompson/aetherfeed/commit/7bf835bc54daafcf177dc857214a8e278cf821bc))
+* **deps-dev:** Bump the web-dependencies group across 1 directory with 8 updates ([#42](https://github.com/edwardlthompson/aetherfeed/issues/42)) ([5a23dab](https://github.com/edwardlthompson/aetherfeed/commit/5a23dabe927d542a596962301b3c89f27e1f75f7))
+* **deps:** Bump the android-dependencies group across 1 directory with 6 updates ([#23](https://github.com/edwardlthompson/aetherfeed/issues/23)) ([a3344eb](https://github.com/edwardlthompson/aetherfeed/commit/a3344eb49a6f03469729731fcfd94c050209187d))
+* **deps:** Bump the github-actions group across 1 directory with 8 updates ([#47](https://github.com/edwardlthompson/aetherfeed/issues/47)) ([4597c68](https://github.com/edwardlthompson/aetherfeed/commit/4597c68611ee9c42e227c5852290bfc6f418e86e))
+* **deps:** Bump the rust-dependencies group across 1 directory with 3 updates ([#6](https://github.com/edwardlthompson/aetherfeed/issues/6)) ([11bb52b](https://github.com/edwardlthompson/aetherfeed/commit/11bb52ba57c14165a00d1261ecb1a17655edf9d1))
+
 ## [Unreleased]
 
 ## [1.13.0](https://github.com/edwardlthompson/aetherfeed/compare/v1.12.0...v1.13.0) (2026-11-07)
