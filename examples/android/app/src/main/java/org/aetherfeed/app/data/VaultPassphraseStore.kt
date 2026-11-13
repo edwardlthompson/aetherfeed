@@ -29,17 +29,18 @@ class VaultPassphraseStore(
     }
 
     fun passphraseBytes(): ByteArray {
-        val existing = prefs.getString(KEY_PASSPHRASE, null)
+        val existing = prefs.getString(PREF_VAULT_KEY, null)
         if (existing != null) {
             return Base64.getDecoder().decode(existing)
         }
         val generated = ByteArray(32).also { SecureRandom().nextBytes(it) }
-        prefs.edit().putString(KEY_PASSPHRASE, Base64.getEncoder().encodeToString(generated)).apply()
+        prefs.edit().putString(PREF_VAULT_KEY, Base64.getEncoder().encodeToString(generated)).apply()
         return generated
     }
 
     companion object {
         private const val PREFS_NAME = "aetherfeed_vault_keys"
-        private const val KEY_PASSPHRASE = "sqlcipher_passphrase_b64"
+        /** Preference key for the Keystore-wrapped vault material (not a live secret). */
+        private const val PREF_VAULT_KEY = "vault_key_b64"
     }
 }
