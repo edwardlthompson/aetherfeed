@@ -1,16 +1,17 @@
-import type { Article, ModuleKind, PlaybackPosition, Star } from "@aetherfeed/domain";
+import type { Article, Episode, ModuleKind, PlaybackPosition, Star } from "@aetherfeed/domain";
 
 const STORAGE_KEY = "af-offline-library";
 
 export type OfflineLibraryState = {
   articles: Article[];
+  episodes: Episode[];
   bodies: Record<string, string>;
   stars: Star[];
   playback: PlaybackPosition[];
 };
 
 function emptyState(): OfflineLibraryState {
-  return { articles: [], bodies: {}, stars: [], playback: [] };
+  return { articles: [], episodes: [], bodies: {}, stars: [], playback: [] };
 }
 
 export function loadOfflineLibrary(
@@ -22,6 +23,7 @@ export function loadOfflineLibrary(
     const parsed = JSON.parse(raw) as OfflineLibraryState;
     return {
       articles: Array.isArray(parsed.articles) ? parsed.articles : [],
+      episodes: Array.isArray(parsed.episodes) ? parsed.episodes : [],
       bodies: parsed.bodies && typeof parsed.bodies === "object" ? parsed.bodies : {},
       stars: Array.isArray(parsed.stars) ? parsed.stars : [],
       playback: Array.isArray(parsed.playback) ? parsed.playback : [],

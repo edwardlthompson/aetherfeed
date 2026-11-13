@@ -17,6 +17,7 @@ fun AetherFeedScaffold(
     modifier: Modifier = Modifier,
     topBar: @Composable () -> Unit,
     bottomBar: @Composable () -> Unit = {},
+    floatingActionButton: @Composable () -> Unit = {},
     content: @Composable (PaddingValues) -> Unit,
 ) {
     Scaffold(
@@ -30,6 +31,7 @@ fun AetherFeedScaffold(
         },
         topBar = topBar,
         bottomBar = bottomBar,
+        floatingActionButton = floatingActionButton,
         content = content,
     )
 }

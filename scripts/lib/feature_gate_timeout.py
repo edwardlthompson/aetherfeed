@@ -30,6 +30,9 @@ STAGE_PREFIXES = (
 
 
 def stack_for_stage(stage: str) -> str:
+    # About add/remove runs two full web feature-gate passes.
+    if stage == "about-feature-gate" or stage.startswith("about-"):
+        return "web"
     for prefix in STAGE_PREFIXES:
         if stage == prefix or stage.startswith(f"{prefix}-"):
             return prefix

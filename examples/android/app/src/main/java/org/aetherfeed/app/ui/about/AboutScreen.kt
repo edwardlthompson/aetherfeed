@@ -12,7 +12,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import org.aetherfeed.app.BuildConfig
 import org.aetherfeed.app.R
 import org.aetherfeed.app.about.DonationsConfig
 import org.aetherfeed.app.ui.insets.LocalNavigationMode
@@ -38,7 +40,8 @@ fun AboutScreen(
     Column(
         modifier = modifier
             .verticalScroll(rememberScrollState())
-            .padding(SpacingMd),
+            .padding(SpacingMd)
+            .testTag("about-panel"),
         verticalArrangement = Arrangement.spacedBy(SpacingMd),
     ) {
         Text(
@@ -48,21 +51,31 @@ fun AboutScreen(
         Text(text = stringResource(R.string.about_version, version))
         Text(text = stringResource(R.string.about_format, installedFormat))
         Text(text = updateStatus)
-        Text(
-            text = stringResource(
-                R.string.about_debug_navigation_mode,
-                stringResource(navigationModeLabelRes(navMode)),
-                insetDp,
-            ),
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
+        if (BuildConfig.DEBUG) {
+            Text(
+                text = stringResource(
+                    R.string.about_debug_navigation_mode,
+                    stringResource(navigationModeLabelRes(navMode)),
+                    insetDp,
+                ),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
         if (canApplyUpdate) {
             Button(onClick = onApplyUpdate) {
                 Text(stringResource(R.string.about_update_apply))
             }
         }
+        Text(
+            text = stringResource(R.string.about_export_hint),
+            style = MaterialTheme.typography.bodyMedium,
+        )
         if (donations.enabled && donations.links.isNotEmpty()) {
+            Text(
+                text = stringResource(R.string.about_donations_heading),
+                style = MaterialTheme.typography.titleMedium,
+            )
             Text(text = donations.message)
             donations.links.forEach { link ->
                 Text(

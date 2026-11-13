@@ -25,8 +25,12 @@ import androidx.compose.material3.SnackbarHostState
 import org.aetherfeed.app.ui.insets.NavigationModeProvider
 import org.aetherfeed.app.ui.theme.ThemeMode
 import org.aetherfeed.app.ui.theme.ThemePreferences
-import org.aetherfeed.app.ui.theme.next
 import kotlinx.coroutines.CoroutineScope
+import org.aetherfeed.app.domain.LibraryRepository
+import org.aetherfeed.app.sync.ReadReceiptSync
+import org.aetherfeed.app.news.ArticleTarget
+import org.aetherfeed.app.news.ImagePolicy
+import org.aetherfeed.app.news.ReaderSettings
 import org.aetherfeed.app.ui.theme.AetherFeedTheme
 import kotlinx.coroutines.launch
 
@@ -37,6 +41,20 @@ fun AetherFeedApp(
     themePreferences: ThemePreferences,
     appUpdatePreferences: AppUpdatePreferences,
     networkStatusMonitor: NetworkStatusMonitor,
+    hermesPoolStatus: String = "",
+    lanPoolStatus: String = "",
+    lanHubUrl: String = "",
+    lanPassphrase: String = "",
+    onLanSave: (String, String) -> Unit = { _, _ -> },
+    onLanSync: () -> Unit = {},
+    readerSettings: ReaderSettings = ReaderSettings(),
+    onReaderTarget: (ArticleTarget) -> Unit = {},
+    onReaderScale: (Float) -> Unit = {},
+    onReaderImages: (ImagePolicy) -> Unit = {},
+    libraryRepository: LibraryRepository? = null,
+    readReceiptSync: ReadReceiptSync? = null,
+    subscriptionPoolSync: org.aetherfeed.app.sync.SubscriptionPoolSync? = null,
+    lanPoolSync: org.aetherfeed.app.sync.LanPoolSync? = null,
 ) {
     val themeMode by themePreferences.themeMode.collectAsStateWithLifecycle(initialValue = ThemeMode.System)
     val isOnline by networkStatusMonitor.isOnline.collectAsStateWithLifecycle(initialValue = true)
@@ -106,11 +124,25 @@ fun AetherFeedApp(
                 updateStatus = updateStatus,
                 donations = donations,
                 canApplyUpdate = canApplyUpdate,
-                onThemeToggle = { scope.launch { themePreferences.setThemeMode(themeMode.next()) } },
+                hermesPoolStatus = hermesPoolStatus,
+                lanPoolStatus = lanPoolStatus,
+                lanHubUrl = lanHubUrl,
+                lanPassphrase = lanPassphrase,
+                onLanSave = onLanSave,
+                onLanSync = onLanSync,
+                readerSettings = readerSettings,
+                onReaderTarget = onReaderTarget,
+                onReaderScale = onReaderScale,
+                onReaderImages = onReaderImages,
+                libraryRepository = libraryRepository,
+                readReceiptSync = readReceiptSync,
+                subscriptionPoolSync = subscriptionPoolSync,
+                lanPoolSync = lanPoolSync,
+                scope = scope,
                 onThemeModeSelect = { mode -> scope.launch { themePreferences.setThemeMode(mode) } },
-                onAboutOpen = { showAbout = !showAbout; if (showAbout) showSettings = false },
+                onAboutOpen = { showAbout = true; showSettings = false },
                 onAboutClose = { showAbout = false },
-                onSettingsOpen = { showSettings = !showSettings; if (showSettings) showAbout = false },
+                onSettingsOpen = { showSettings = true; showAbout = false },
                 onSettingsClose = { showSettings = false },
                 onUpdateCheckChange = { enabled ->
                     scope.launch {

@@ -4,6 +4,8 @@ import { applyPwaUpdate } from "./about/applyUpdate";
 import { loadDonations } from "./about/donations";
 import { assetUrl } from "./assetUrl";
 import { t } from "./i18n";
+import { loadActiveModule, saveActiveModule } from "./settings/browsePrefs";
+import { syncLanPoolOnStartup } from "./sync/startupSync";
 import { initTheme, subscribeThemeChange } from "./theme";
 
 function isUpdateAvailableStatus(status: string): boolean {
@@ -16,6 +18,7 @@ export function bootstrapApp(appRoot: HTMLDivElement): void {
     showSettings: false,
     updateStatus: t("about.update.current"),
     donations: { enabled: false, message: "", links: [] },
+    activeModule: loadActiveModule(),
   };
 
   async function handleApplyUpdate(): Promise<void> {
@@ -32,6 +35,7 @@ export function bootstrapApp(appRoot: HTMLDivElement): void {
   function render(): void {
     createAppShell(appRoot, state, {
       onState: (patch) => {
+        if (patch.activeModule) saveActiveModule(patch.activeModule);
         state = { ...state, ...patch };
         render();
       },
@@ -53,6 +57,11 @@ export function bootstrapApp(appRoot: HTMLDivElement): void {
   initTheme();
   subscribeThemeChange(() => render());
   render();
+  void syncLanPoolOnStartup()
+    .then((did) => {
+      if (did) render();
+    })
+    .catch(() => {});
   void loadDonations().then((d) => {
     state = { ...state, donations: d };
     render();

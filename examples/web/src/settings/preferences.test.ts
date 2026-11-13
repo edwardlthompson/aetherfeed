@@ -24,6 +24,12 @@ describe("settings preferences", () => {
     expect(isUpdateCheckEnabled()).toBe(true);
   });
 
+  it("enabling update check keeps a non-off interval", () => {
+    localStorage.setItem("af-app-update-interval", "daily");
+    setUpdateCheckEnabled(true);
+    expect(localStorage.getItem("af-app-update-interval")).toBe("daily");
+  });
+
   it("disabling update check sets off interval", () => {
     localStorage.setItem("af-app-update-interval", "daily");
     setUpdateCheckEnabled(false);

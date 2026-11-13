@@ -1,0 +1,15 @@
+# AetherFeed desktop — fill SHA-256 and InstallerUrl after the first GitHub Release build.
+PackageIdentifier: Foss.AetherFeed
+PackageVersion: 0.1.0
+PackageLocale: en-US
+Publisher: AetherFeed contributors
+PackageName: AetherFeed
+License: MIT
+ShortDescription: Local-first encrypted news, podcast, and booru client for Windows
+Installers:
+  - Architecture: x64
+    InstallerType: zip
+    InstallerUrl: https://github.com/REPLACE_ORG/AetherFeed/releases/download/v0.1.0/AetherFeed_0.1.0_x64_en-US.zip
+    InstallerSha256: 0000000000000000000000000000000000000000000000000000000000000000
+ManifestType: singleton
+ManifestVersion: 1.6.0

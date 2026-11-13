@@ -3,10 +3,18 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="org.hermeslauncher.app.permission.SUBSCRIPTION_POOL" />
+
+    <queries>
+        <package android:name="org.hermeslauncher.app" />
+        <provider android:authorities="org.hermeslauncher.app.subscription_pool" />
+    </queries>
 
     <application
-        android:allowBackup="true"
+        android:name=".AetherFeedApplication"
+        android:allowBackup="false"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/Theme.AetherFeed">
         <activity
@@ -26,6 +34,17 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+        <receiver
+            android:name=".notify.UnreadWidgetProvider"
+            android:exported="true"
+            android:label="@string/widget_unread_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/unread_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

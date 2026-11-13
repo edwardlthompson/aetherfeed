@@ -44,6 +44,8 @@ class InMemoryLibrary : LibraryRepository {
 
     override suspend fun readState(targetId: String): ReadState? = reads[targetId]
 
+    override suspend fun readStates(): List<ReadState> = reads.values.toList()
+
     override suspend fun upsertReadState(state: ReadState) {
         reads[state.targetId] = state
     }
@@ -64,6 +66,8 @@ class InMemoryLibrary : LibraryRepository {
 
     override suspend fun playback(episodeId: String): PlaybackPosition? = positions[episodeId]
 
+    override suspend fun playbackAll(): List<PlaybackPosition> = positions.values.toList()
+
     override suspend fun upsertPlayback(position: PlaybackPosition) {
         positions[position.episodeId] = position
     }
@@ -73,5 +77,6 @@ fun defaultUnread(targetId: String, now: Long) = ReadState(
     targetId = targetId,
     module = org.aetherfeed.app.domain.ModuleKind.News,
     status = ReadStatus.Unread,
-    updatedAt = now,
+    // Keep initial unread at epoch so peer read receipts (Hermes) win on LWW merge.
+    updatedAt = 0L,
 )

@@ -15,11 +15,16 @@ crate-type = ["lib", "cdylib", "staticlib"]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-tauri = { version = "2", features = ["tray-icon"] }
-tauri-plugin-notification = "2"
-tauri-plugin-updater = "2"
+aetherfeed-crypto = { path = "../../rust" }
+base64 = "0.22"
+local-ip-address = "0.6"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+tauri = { version = "2", features = ["tray-icon", "devtools"] }
+tauri-plugin-notification = "2"
+tauri-plugin-updater = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "net", "io-util", "macros", "sync", "time"] }
+reqwest = { version = "0.13", default-features = false, features = ["native-tls", "gzip", "deflate"] }
 
 [profile.release]
 lto = true

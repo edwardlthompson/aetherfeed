@@ -14,6 +14,8 @@ export default defineConfig({
         "src/about/aboutSession.ts",
         "src/about/donations.ts",
         "src/settings/preferences.ts",
+        "src/settings/browsePrefs.ts",
+        "src/settings/readerPrefs.ts",
         "src/appBootstrap.ts",
         "src/greet.ts",
         "src/domain/unread.ts",

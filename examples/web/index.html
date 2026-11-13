@@ -12,7 +12,23 @@
     <title>AetherFeed</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <p data-boot-fallback style="padding:1rem;font-family:system-ui">Loading AetherFeed…</p>
+    </div>
+    <script>
+      window.addEventListener("error", function (ev) {
+        var el = document.querySelector("[data-boot-fallback]");
+        if (el) el.textContent = "Boot error: " + (ev.message || "unknown");
+      });
+      window.addEventListener("unhandledrejection", function (ev) {
+        var el = document.querySelector("[data-boot-fallback]");
+        if (el) el.textContent = "Boot rejection: " + String(ev.reason || "unknown");
+      });
+    </script>
     <script type="module" src="/src/main.ts"></script>
+    <script nomodule>
+      var el = document.querySelector("[data-boot-fallback]");
+      if (el) el.textContent = "This WebView cannot run ES modules.";
+    </script>
   </body>
 </html>

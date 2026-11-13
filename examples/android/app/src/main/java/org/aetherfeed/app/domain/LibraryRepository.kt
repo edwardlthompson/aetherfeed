@@ -11,6 +11,7 @@ interface LibraryRepository {
     suspend fun cacheArticleBody(id: String, body: String)
 
     suspend fun readState(targetId: String): ReadState?
+    suspend fun readStates(): List<ReadState>
     suspend fun upsertReadState(state: ReadState)
     suspend fun stars(): List<Star>
     suspend fun upsertStar(star: Star)
@@ -19,6 +20,7 @@ interface LibraryRepository {
     suspend fun unreadCount(): Int
 
     suspend fun playback(episodeId: String): PlaybackPosition?
+    suspend fun playbackAll(): List<PlaybackPosition>
     suspend fun upsertPlayback(position: PlaybackPosition)
 }
 

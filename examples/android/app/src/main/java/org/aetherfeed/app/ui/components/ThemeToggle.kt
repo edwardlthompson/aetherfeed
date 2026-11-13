@@ -1,9 +1,9 @@
 package org.aetherfeed.app.ui.components
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Brightness4
-import androidx.compose.material.icons.outlined.Brightness6
-import androidx.compose.material.icons.outlined.BrightnessAuto
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
@@ -19,9 +19,9 @@ fun ThemeToggle(
     modifier: Modifier = Modifier,
 ) {
     val icon = when (themeMode) {
-        ThemeMode.System -> Icons.Outlined.BrightnessAuto
-        ThemeMode.Light -> Icons.Outlined.Brightness6
-        ThemeMode.Dark -> Icons.Outlined.Brightness4
+        ThemeMode.System -> Icons.Outlined.Settings
+        ThemeMode.Light -> Icons.Outlined.Info
+        ThemeMode.Dark -> Icons.Filled.Star
     }
     val description = when (themeMode) {
         ThemeMode.System -> stringResource(R.string.theme_mode_system)

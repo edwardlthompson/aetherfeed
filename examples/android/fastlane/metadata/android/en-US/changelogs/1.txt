@@ -1,0 +1,1 @@
+Initial FOSS release: encrypted vault, news/podcast/booru stubs, optional Drive App Data and WebDAV sync providers, local export helpers.

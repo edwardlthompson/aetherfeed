@@ -12,13 +12,14 @@ export type Feed = {
 };
 
 export type Article = {
-  id: string;
-  feedId: string;
-  title: string;
-  url: string;
-  publishedAt?: number;
-  summary?: string;
-  localPath?: string;
+    id: string;
+    feedId: string;
+    title: string;
+    url: string;
+    publishedAt?: number;
+    summary?: string;
+    imageUrl?: string;
+    localPath?: string;
 };
 
 export type PodcastShow = {

@@ -2,6 +2,61 @@
 
 > Archive of finished BUILD_PLAN items.
 
+## Sprint 6 — E2E sync (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Drive AppData provider — scope: examples/android/app/src/main/java/org/aetherfeed/app/sync/
+- ✅ [AGENT][LOCAL] WebDAV provider + desktop pull/push — scope: examples/desktop/src-tauri/src/, examples/web/src/sync/
+
+## Sprint 7 — Import/export and polish (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Android export + About/Fastlane copy — scope: examples/android/fastlane/, examples/android/metadata/
+- ✅ [AGENT][LOCAL] Desktop packaging + Winget stub — scope: packaging/winget/, examples/desktop/
+
+## Sprint 3 — Podcasts (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Media3 player + downloads — scope: examples/android/app/src/main/java/org/aetherfeed/app/podcasts/
+- ✅ [AGENT][LOCAL] Desktop playback commands — scope: examples/desktop/src-tauri/src/
+- ✅ [AGENT][LOCAL] Podcast feature spec polish — scope: docs/features/podcasts.md
+
+## Sprint 4 — Booru browser (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Source adapters + tag search + Android grid/detail — scope: examples/android/app/src/main/java/org/aetherfeed/app/booru/, examples/android/app/src/main/java/org/aetherfeed/app/ui/booru/
+- ✅ [AGENT][LOCAL] Web grid/detail + i18n — scope: examples/web/src/booru/
+- ✅ [AGENT][LOCAL] Booru feature spec polish — scope: docs/features/booru.md
+
+## Sprint 5 — Notifications and unread chrome (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Android channels + unread widget — scope: examples/android/app/src/main/java/org/aetherfeed/app/notify/
+- ✅ [AGENT][LOCAL] Desktop tray badge/tooltip — scope: examples/desktop/src-tauri/src/
+
+## Sprint 2 — News / RSS reader (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Feed parse + unread/star/tag + Android reader UI — scope: examples/android/app/src/main/java/org/aetherfeed/app/news/, examples/android/app/src/main/java/org/aetherfeed/app/ui/news/
+- ✅ [AGENT][LOCAL] Web reader chrome + i18n — scope: examples/web/src/news/
+- ✅ [AGENT][LOCAL] News feature spec polish — scope: docs/features/news.md
+
+## Sprint 1 — Shell polish (2026-11-12)
+
+- ✅ [AGENT][LOCAL] Android About + four-destination nav polish — scope: examples/android/app/src/main/java/org/aetherfeed/app/ui/
+- ✅ [AGENT][LOCAL] Desktop tray unread command — scope: examples/desktop/src-tauri/
+- ✅ [AGENT][LOCAL] Shared unread tests — scope: shared/typescript/, examples/web/src/domain/
+
+## Board simplify (/cleanup) (2026-11-12)
+
+- ✅ Collapsed BUILD_PLAN: Sequential 0–7 off the board; Parallel scopes only under Child Playbook; archive table trimmed to child + template pointer
+
+## Child Sprint 0–7 sequential locks (/build) (2026-11-12)
+
+- ✅ [AUTO] Sprint 0 sign-off (all green on `main`)
+- ✅ [AGENT][LOCAL] Wire Room + SQLCipher + Hilt on Android using the locked types — scope: examples/android/
+- ✅ [AGENT][LOCAL] Lock RSS/Atom/JSON Feed + OPML public API (`docs/features/news.md`) — scope: docs/features/news.md
+- ✅ [AGENT][LOCAL] Scaffold news repository boundary only — scope: examples/android/app/src/main/java/org/aetherfeed/app/news/
+- ✅ [AGENT][LOCAL] Lock episode/queue/position API (`docs/features/podcasts.md`) — scope: docs/features/podcasts.md
+- ✅ [AGENT][LOCAL] Lock source/search/favorite/blacklist API (`docs/features/booru.md`) — scope: docs/features/booru.md
+- ✅ [AGENT][LOCAL] Lock unread-total API used by widget and tray — scope: examples/android/app/src/main/java/org/aetherfeed/app/notify/
+- ✅ [AGENT][LOCAL] Lock envelope format and provider interface (`docs/features/sync.md`) — scope: docs/features/sync.md
+- ✅ [AGENT][LOCAL] Lock OPML + JSON export API — scope: examples/android/metadata/
+
 ## Child Sprint 0 — AetherFeed seed (executed) (2026-11-12)
 
 - ✅ [AGENT][LOCAL] Run `scripts/init-project.ps1` (`--stack multi`; AetherFeed name + purpose)

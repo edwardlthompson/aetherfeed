@@ -8,6 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+* LAN encrypted pool sync (hub + Android/desktop clients) with reads, stars, and podcast playback
+* Hermes-style news reader with star, park-unread, browser, and mode icons + tooltips
+* Browse folder tree by feed host with unread counts, Unread filter, and Newest/Oldest sort
+* Persist browse filters, active tab, and reader mode across sessions
+* Desktop Tauri LAN hub and Settings sync controls
+
+### Fixed
+
+* Podcast feeds syncing into the desktop library
+* Mark-read on open and drop from Unread list
+* Design-token cohesion, About add/remove gate timeout, and source-map-js Dependabot high
+
 ## [1.13.1](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.0...v1.13.1) (2026-11-12)
 
 

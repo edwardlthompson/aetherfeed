@@ -5,7 +5,15 @@ import { createSettingsPanel } from "./components/SettingsPanel";
 import { createThemeToggle } from "./components/ThemeToggle";
 import { isOnline } from "./greet";
 import { t } from "./i18n";
+import {
+  type AppModuleTab,
+  moduleHomeMarkup,
+  moduleNavMarkup,
+  mountActiveModule,
+} from "./moduleHome";
 import { bindPanelDialog } from "./panelDialog";
+
+export type { AppModuleTab };
 
 let dialogCleanup: (() => void) | undefined;
 
@@ -14,6 +22,7 @@ export type AppShellState = {
   showSettings: boolean;
   updateStatus: string;
   donations: DonationConfig;
+  activeModule: AppModuleTab;
 };
 
 export type AppShellCallbacks = {
@@ -28,28 +37,32 @@ export function createAppShell(
   state: AppShellState,
   callbacks: AppShellCallbacks,
 ): void {
-  const online = isOnline();
-  const statusKey = online ? "app.status.online" : "app.status.offline";
   const currentUpdateLabel = t("about.update.current");
   const showHomeUpdate = state.updateStatus !== currentUpdateLabel;
+  const showHome = !state.showAbout && !state.showSettings;
+  const homeModules = showHome ? moduleHomeMarkup(state.activeModule) : "";
+  void isOnline;
 
   root.innerHTML = `
     <main>
-      <div class="af-header">
-        <h1 class="af-title">${t("app.title")}</h1>
-        <div class="af-header-actions">
-          <button type="button" class="af-settings-btn" data-settings-open aria-label="${t("settings.open")}">⚙</button>
-          <button type="button" class="af-about-btn" data-about-open aria-label="${t("about.open")}">i</button>
+      <div class="af-shell-top">
+        <div class="af-header af-header-compact">
+          ${showHome ? moduleNavMarkup(state.activeModule) : `<span class="af-header-panel-title">${state.showSettings ? t("settings.title") : t("about.title")}</span>`}
+          <div class="af-header-actions">
+            <button type="button" class="af-settings-btn" data-settings-open aria-label="${t("settings.open")}">⚙</button>
+            <button type="button" class="af-about-btn" data-about-open aria-label="${t("about.open")}">i</button>
+          </div>
         </div>
+        ${
+          showHomeUpdate
+            ? `<p class="af-update-banner" data-testid="home-update-status" aria-live="polite">${state.updateStatus}</p>`
+            : ""
+        }
       </div>
-      <p class="af-headline">${t("app.greeting")}</p>
-      <p class="af-body" data-testid="status">${t(statusKey)}</p>
-      ${
-        showHomeUpdate
-          ? `<p class="af-update-banner" data-testid="home-update-status" aria-live="polite">${state.updateStatus}</p>`
-          : ""
-      }
-      <div data-panel-mount></div>
+      <div class="af-shell-body">
+        ${homeModules}
+        <div data-panel-mount></div>
+      </div>
     </main>
   `;
 
@@ -65,6 +78,12 @@ export function createAppShell(
   root.querySelector("[data-settings-open]")?.addEventListener("click", () => {
     callbacks.onState({ showSettings: !state.showSettings, showAbout: false });
   });
+
+  if (!state.showAbout && !state.showSettings) {
+    mountActiveModule(root, state.activeModule, (next) =>
+      callbacks.onState({ activeModule: next }),
+    );
+  }
 
   const mount = root.querySelector("[data-panel-mount]");
   if (!mount) return;

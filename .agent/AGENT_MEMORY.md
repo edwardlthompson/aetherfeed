@@ -10,7 +10,7 @@
 | Android | Kotlin, Compose, Material 3, MVI | 0.1.0 | `org.aetherfeed.app` |
 | Desktop | Tauri 2.0 + shared web UI | 0.1.0 | Executable `AetherFeed` |
 | Vault | SQLCipher contract; Room/Hilt next | seed | App-private storage |
-| Sync | Argon2id + XChaCha20-Poly1305 | seed | Drive appdata + WebDAV |
+| Sync | Argon2id + XChaCha20-Poly1305 | LAN hub + Drive/WebDAV | Pool v2 LWW; desktop Tauri hub |
 | License | MIT | - | No AGPL vendored |
 | Distribution | GitHub Releases, F-Droid later | - | No telemetry |
 ## Active Modules
@@ -50,6 +50,7 @@ AetherFeed: local-first encrypted news, podcast, and booru client for Android an
 
 | Date | Milestone | What worked | What to improve |
 |------|-----------|-------------|-----------------|
+| 2026-11-12 | LAN pool + Hermes reader /ship | Pre-release gate green; folder tree + park/star/tooltips; About gate timeout mapped to web 300s | Do not `git checkout` untracked AppShell.test during About-without; ImgTag names trip pages analytics `gtag(` needle |
 | 2026-08-18 | AetherFeed seed | Official init + prune + rename; shared models; Tauri shell; validate-bootstrap --quick green | Room/Hilt still open; child GitHub repo not created; Playwright snapshots need a refresh after token change |
 | 2026-08-18 | v0.21.0 /ship | CI + Windows upgrade-sim green on feat and fix; RP #69 admin-merge; fold comments leftover notes | Fold is local-only — commit empty Unreleased before push or RP leaves leftovers under the version heading |
 | 2026-08-17 | M39 /ideas Windows PATH + ship hygiene | Shared PATH resolver; agent-run drops PYTHONPATH; fold Unreleased onto RP; Q&A GraphQL + HUMAN line | Do not attach Environments to required-check workflows; keep Unreleased empty only after fold+comment |

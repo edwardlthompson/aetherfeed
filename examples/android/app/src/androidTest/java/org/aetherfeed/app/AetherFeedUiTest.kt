@@ -18,15 +18,31 @@ class AetherFeedUiTest {
         composeTestRule.onNodeWithContentDescription("Settings").performClick()
         composeTestRule.onNodeWithTag("settings-heading").assertIsDisplayed()
         composeTestRule.onNodeWithText("Theme").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Preferred opener").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Article images").assertIsDisplayed()
         composeTestRule.onNodeWithText("Check for updates").assertIsDisplayed()
         composeTestRule.onNodeWithText("Dark theme").performClick()
         composeTestRule.onNodeWithText("Close settings").performClick()
     }
 
     @Test
-    fun opensAboutPanelWithVersion() {
-        composeTestRule.onNodeWithContentDescription("About").performClick()
+    fun opensAboutFromSettings() {
+        composeTestRule.onNodeWithContentDescription("Settings").performClick()
+        composeTestRule.onNodeWithTag("settings-about").performClick()
+        composeTestRule.onNodeWithTag("about-panel").assertIsDisplayed()
         composeTestRule.onNodeWithText("About").assertIsDisplayed()
         composeTestRule.onNodeWithText("Installed format: apk").assertIsDisplayed()
+    }
+
+    @Test
+    fun switchesFourDestinationTabs() {
+        composeTestRule.onNodeWithContentDescription("News tab").performClick()
+        composeTestRule.onNodeWithText("News").assertIsDisplayed()
+        composeTestRule.onNodeWithContentDescription("Podcasts tab").performClick()
+        composeTestRule.onNodeWithText("Podcasts").assertIsDisplayed()
+        composeTestRule.onNodeWithContentDescription("Booru tab").performClick()
+        composeTestRule.onNodeWithText("Booru").assertIsDisplayed()
+        composeTestRule.onNodeWithContentDescription("Settings tab").performClick()
+        composeTestRule.onNodeWithTag("settings-heading").assertIsDisplayed()
     }
 }

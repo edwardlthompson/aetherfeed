@@ -1,0 +1,5 @@
+AetherFeed is a local-first encrypted news, podcast, and booru client.
+
+Subscribe, listen, and browse with stars and playback position that survive airplane mode. The vault works fully offline; optional sync uploads ciphertext-only `.enc` blobs—never your passphrase or plaintext library.
+
+Export OPML and JSON backups stay on your device until you copy them elsewhere. No analytics, crash reporters, ads, or tracking libraries.

@@ -19,6 +19,7 @@ ABOUT_TRACKED=(
   examples/web/src/appBootstrap.ts
   examples/web/src/appBootstrap.test.ts
   examples/web/src/AppShell.ts
+  examples/web/src/AppShell.test.ts
   examples/web/src/components/AboutPanel.ts
   examples/web/src/settings/preferences.ts
   examples/web/e2e/app.spec.ts
@@ -29,7 +30,7 @@ restore() {
   if [ -d "$BACKUP/about" ]; then
     rm -rf "$WEB_SRC/about"
     cp -a "$BACKUP/about" "$WEB_SRC/about"
-    for rel in main.ts appBootstrap.ts appBootstrap.test.ts AppShell.ts; do
+    for rel in main.ts appBootstrap.ts appBootstrap.test.ts AppShell.ts AppShell.test.ts; do
       if [ -f "$BACKUP/$rel" ]; then
         cp -a "$BACKUP/$rel" "$WEB_SRC/$rel"
       fi
@@ -48,7 +49,8 @@ restore() {
     fi
   else
     echo "WARN: About backup missing; restoring tracked slice from HEAD"
-    git checkout HEAD -- "${ABOUT_TRACKED[@]}" || true
+    # AppShell.test.ts may be untracked in child repos — ignore missing paths.
+    git checkout HEAD -- "${ABOUT_TRACKED[@]}" 2>/dev/null || true
   fi
   rm -rf "$BACKUP"
 }
@@ -69,6 +71,9 @@ cp -a "$WEB_SRC/main.ts" "$BACKUP/main.ts"
 cp -a "$WEB_SRC/appBootstrap.ts" "$BACKUP/appBootstrap.ts"
 cp -a "$WEB_SRC/appBootstrap.test.ts" "$BACKUP/appBootstrap.test.ts"
 cp -a "$WEB_SRC/AppShell.ts" "$BACKUP/AppShell.ts"
+if [ -f "$WEB_SRC/AppShell.test.ts" ]; then
+  cp -a "$WEB_SRC/AppShell.test.ts" "$BACKUP/AppShell.test.ts"
+fi
 cp -a "$WEB_SRC/components/AboutPanel.ts" "$BACKUP/components/AboutPanel.ts"
 cp -a "$WEB_SRC/settings/preferences.ts" "$BACKUP/settings/preferences.ts"
 cp -a "$WEB_E2E/app.spec.ts" "$BACKUP/app.spec.ts"
@@ -128,13 +133,19 @@ write_lf(
     """import { getThemeMode, setThemeMode, type ThemeMode } from "../theme";
 
 const INTERVAL_KEY = "af-app-update-interval";
+const DEFAULT_INTERVAL = "weekly";
 
 export function isUpdateCheckEnabled(): boolean {
   return localStorage.getItem(INTERVAL_KEY) !== "off";
 }
 
 export function setUpdateCheckEnabled(enabled: boolean): void {
-  localStorage.setItem(INTERVAL_KEY, enabled ? "weekly" : "off");
+  if (!enabled) {
+    localStorage.setItem(INTERVAL_KEY, "off");
+    return;
+  }
+  const current = localStorage.getItem(INTERVAL_KEY);
+  localStorage.setItem(INTERVAL_KEY, current === "off" || !current ? DEFAULT_INTERVAL : current);
 }
 
 export function getSettingsThemeMode(): ThemeMode {
@@ -152,6 +163,7 @@ for path in (
     web / "appBootstrap.ts",
     web / "appBootstrap.test.ts",
     web / "AppShell.ts",
+    web / "AppShell.test.ts",
     web / "components" / "AboutPanel.ts",
 ):
     if path.is_dir():

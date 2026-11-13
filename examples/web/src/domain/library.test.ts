@@ -32,6 +32,8 @@ describe("offline library", () => {
     expect(readCachedBody(state, "a1", false)).toBe("body offline");
     expect(readCachedBody(state, "missing", false)).toBeNull();
     expect(readCachedBody(state, "missing", true, "from net")).toBe("from net");
+    expect(readCachedBody(state, "missing", true)).toBeNull();
+    expect(readCachedBody(state, "missing", true, null)).toBeNull();
 
     const reloaded = loadOfflineLibrary();
     expect(readCachedBody(reloaded, "a1", false)).toBe("body offline");
@@ -50,6 +52,7 @@ describe("offline library", () => {
     );
     const partial = loadOfflineLibrary();
     expect(partial.articles).toEqual([]);
+    expect(partial.episodes).toEqual([]);
     expect(partial.bodies).toEqual({});
     expect(partial.stars).toEqual([]);
     expect(partial.playback).toEqual([]);

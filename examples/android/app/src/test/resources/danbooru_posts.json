@@ -1,0 +1,13 @@
+[
+  {
+    "id": 42,
+    "tag_string": "1girl solo safe scenery",
+    "file_url": "https://example.test/files/42.jpg",
+    "preview_file_url": "https://example.test/previews/42.jpg"
+  },
+  {
+    "id": 43,
+    "tags": "abstract art",
+    "large_file_url": "https://example.test/files/43.png"
+  }
+]

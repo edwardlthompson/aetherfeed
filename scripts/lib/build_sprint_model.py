@@ -7,11 +7,12 @@ from dataclasses import dataclass
 from pathlib import Path
 
 OPEN = r"(?:🔲|⬜|\[ \])"
+OWNER = r"\[(?P<owner>AGENT|AUTO|HUMAN|ADB)\](?:\[(?P<venue>LOCAL|CLOUD)\])?"
 ROW_NUMBERED = re.compile(
-    rf"^(?P<num>\d+[a-z]?)\.\s+{OPEN}\s+\[(?P<owner>AGENT|AUTO|HUMAN|ADB)\]\s+(?P<task>.+)$"
+    rf"^(?P<num>\d+[a-z]?)\.\s+{OPEN}\s+{OWNER}\s+(?P<task>.+)$"
 )
 ROW_BULLET = re.compile(
-    rf"^- {OPEN} \[(?P<owner>AGENT|AUTO|HUMAN|ADB)\]\s+(?P<task>.+)$"
+    rf"^- {OPEN} {OWNER}\s+(?P<task>.+)$"
 )
 SPRINT_HEADER = re.compile(r"^###\s+Sprint\s+", re.I)
 PARALLEL_HEADER = re.compile(r"^#{3,4}\s+.*Parallel", re.I)
@@ -122,7 +123,8 @@ def count_parallel_agents(lines: list[str]) -> int:
         match = TABLE_ROW.match(line)
         if not match or match.group(1).strip().lower() in ("task", "---"):
             continue
-        if match.group(2).strip().upper() == "AGENT":
+        owner = match.group(2).strip().upper()
+        if owner == "AGENT" or owner.startswith("AGENT "):
             scope = match.group(3).strip()
             if scope and "—" not in scope and "none" not in scope.lower():
                 count += 1

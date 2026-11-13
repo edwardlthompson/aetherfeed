@@ -17,6 +17,13 @@
 
 ## Entries
 
+### 2026-11-12 — Ship LAN pool + Hermes-style reader
+- **Status:** Accepted
+- **Context:** Product needed multi-device continuity on home Wi-Fi and Feedly-like browse/reader chrome without proprietary SDKs.
+- **Decision:** Ship pool v2 LWW over desktop Tauri LAN hub; Hermes-style reader with icon toolbar (star/park/browser/modes) + persisted browse prefs; dismiss Dependabot source-map-js after override to 1.2.2.
+- **Alternatives considered:** Cloud-only sync first (rejected: local-first LAN is the milestone); text labels on reader chrome (rejected: icon+tooltip for locale-neutral UI).
+- **Consequences:** ADR-0011 + feature specs for sync/hermes pool; About-without must delete AppShell.test; about-feature-gate timeout uses web 300s.
+
 ### 2026-08-18 — Automate remaining HUMAN seed steps
 - **Status:** Accepted
 - **Context:** Seed left GitHub repo creation, security defaults, ADR sign-off, and release/donation config as HUMAN rows.
@@ -284,3 +291,17 @@ _Seed template ADR: `docs/adr/0000-template-baseline.md`. Child repos use `docs/
 - **Decision:** Ship all three with Golden Path stubs, MODULE.md guides, and path-gated CI jobs (`lightroom`, `rust`, `go`) that skip when child repos remove the directories
 - **Alternatives considered:** Lightroom-only (rejected: Rust/Go stubs are low-cost and popular); defer all optional modules (rejected: COMPLETED_TASKS M3 work already landed)
 - **Consequences:** Template CI runs more jobs on `main`; child repos can delete unused `examples/` folders to skip jobs via `hashFiles` guards
+
+### 2026-11-12 — Hermes↔AetherFeed news/podcast subscription pool
+- **Status:** Accepted
+- **Context:** Need automatic same-device share of RSS/podcast subscriptions without sharing SqlCipher vault or booru
+- **Decision:** Hermes hosts signature-gated ContentProvider pool (org.hermeslauncher.app.subscription_pool); both apps merge by normalized URL (LWW); booru stays AetherFeed-local; mirrored codecs (no submodule)
+- **Alternatives considered:** Shared vault DB (rejected: ADR-0001 / privacy); OPML-only manual export (rejected: not automatic); cloud sync for pool (deferred)
+- **Consequences:** Both apps must share signing key; Settings show sync status; article/read/playback state remain per-app
+
+### 2026-11-12 — Home-LAN encrypted shared pool (1B+2B)
+- **Status:** Accepted
+- **Context:** Same-device ContentProvider is insufficient for couch phone → desktop continue; need encrypted home-WiFi sync across Hermes, AetherFeed Android, and AetherFeed desktop for subscriptions, reads, stars, and podcast playback.
+- **Decision:** Desktop hosts LAN-only HTTP hub with SyncEnvelope ciphertext (Argon2id + XChaCha20-Poly1305), HMAC PUT bearer, private-IP filter; pool document v2 LWW; ContentProvider remains local fast path. ADR-0011.
+- **Alternatives considered:** Peer mesh without hub (rejected for v1); TLS-first without payload AEAD (rejected); Drive/WebDAV-only (rejected for home latency/UX).
+- **Consequences:** Hub port 8787 + firewall note; phones configure hub URL + shared passphrase; booru stays in pool but Hermes UI still hides it.
