@@ -146,8 +146,9 @@
 |-------|--------|
 | **Symptom** | `pages.yml` Build succeeds; Deploy fails `HttpError: Not Found`; `gh api …/pages` returns 404 |
 | **Cause** | Repository Pages source is not enabled (GitHub Actions) |
-| **Fix** | `[HUMAN]` enable Pages: Settings → Pages → Source = GitHub Actions |
+| **Fix** | `[HUMAN]` enable Pages: Settings → Pages → Source = GitHub Actions, then `gh workflow run pages.yml` |
 | **Prevention** | Treat Pages as optional until enabled; do not block `/ship` required checks on `pages.yml` |
+| **Resolved** | 2026-11-13 — Pages enabled; demo live at https://edwardlthompson.github.io/aetherfeed/ (workflow run succeeded; shell + JS smoke OK, no analytics needles) |
 ### KB-011 — Vitest jsdom `localStorage` broken on Node 25+
 
 | Field | Detail |
