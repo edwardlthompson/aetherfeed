@@ -50,6 +50,7 @@ AetherFeed: local-first encrypted news, podcast, and booru client for Android an
 
 | Date | Milestone | What worked | What to improve |
 |------|-----------|-------------|-----------------|
+| 2026-11-13 | v1.13.2 /ship | Gitleaks vault allowlist; logic splits ≤150; a11y select/nav; RP #48 → v1.13.2 + SBOM; restore Unreleased after RP | Enable GitHub Pages (deploy 404); keep Unreleased first + `sync-template-version` right after RP merge |
 | 2026-11-12 | LAN pool + Hermes reader /ship | Pre-release gate green; folder tree + park/star/tooltips; About gate timeout mapped to web 300s | Do not `git checkout` untracked AppShell.test during About-without; ImgTag names trip pages analytics `gtag(` needle |
 | 2026-08-18 | AetherFeed seed | Official init + prune + rename; shared models; Tauri shell; validate-bootstrap --quick green | Room/Hilt still open; child GitHub repo not created; Playwright snapshots need a refresh after token change |
 | 2026-08-18 | v0.21.0 /ship | CI + Windows upgrade-sim green on feat and fix; RP #69 admin-merge; fold comments leftover notes | Fold is local-only — commit empty Unreleased before push or RP leaves leftovers under the version heading |

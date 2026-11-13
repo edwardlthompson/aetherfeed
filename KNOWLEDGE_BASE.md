@@ -135,10 +135,19 @@
 
 | Field | Detail |
 |-------|--------|
-| **Symptom** | After `/ship` merges Release Please, `CHANGELOG.md` still has leftover `[Unreleased]` bullets under or after the new version heading |
-| **Cause** | `changelog_unreleased.py --fold` writes the working tree and comments the PR; it does not commit. Release Please copies Unreleased from the last pushed commit |
-| **Fix** | Empty `[Unreleased]` (and keep it first) in a `docs(release)` archive commit after merge, or empty it in the prepare commit before push |
-| **Prevention** | Do not mark `/ship` done until Unreleased is first and empty on `origin/main` |
+| **Symptom** | After `/ship` merges Release Please, `CHANGELOG.md` still has leftover `[Unreleased]` bullets under or after the new version heading; CI fails `check-changelog-unreleased` / `check-template-version-sync` |
+| **Cause** | Release Please puts the new version heading first and may leave Unreleased below it; branding `README.preview.md` badge lags `.template-version` |
+| **Fix** | Immediately after RP merge: move `## [Unreleased]` to the top, run `bash scripts/sync-template-version.sh`, commit, push |
+| **Prevention** | Do not mark `/ship` done until Unreleased is first on `origin/main` and template version sync is green |
+
+### KB-018 — GitHub Pages deploy 404 when site unset
+
+| Field | Detail |
+|-------|--------|
+| **Symptom** | `pages.yml` Build succeeds; Deploy fails `HttpError: Not Found`; `gh api …/pages` returns 404 |
+| **Cause** | Repository Pages source is not enabled (GitHub Actions) |
+| **Fix** | `[HUMAN]` enable Pages: Settings → Pages → Source = GitHub Actions |
+| **Prevention** | Treat Pages as optional until enabled; do not block `/ship` required checks on `pages.yml` |
 ### KB-011 — Vitest jsdom `localStorage` broken on Node 25+
 
 | Field | Detail |
