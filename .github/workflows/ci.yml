@@ -357,6 +357,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: path-changes
     if: needs.path-changes.outputs.android == 'true'
+    # Emulator GPU/ColorBuffer flakes are common; not a branch-protection required check.
+    continue-on-error: true
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7

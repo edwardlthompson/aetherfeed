@@ -50,7 +50,6 @@ function appendNodes(
     if (node.children?.length) {
       const group = document.createElement("div");
       group.className = "af-tree-children";
-      group.setAttribute("role", "group");
       appendNodes(group, node.children, selectedId, onSelect);
       parent.append(group);
     }
@@ -64,7 +63,7 @@ export function createBrowseNav(opts: BrowseNavOptions): {
   const tree = document.createElement("div");
   tree.className = "af-folder-tree";
   tree.dataset.testid = "folder-tree";
-  tree.setAttribute("role", "tree");
+  tree.setAttribute("role", "navigation");
   tree.setAttribute("aria-label", t("filter.tree"));
   appendNodes(tree, opts.nodes, opts.selectedId, opts.onSelect);
 

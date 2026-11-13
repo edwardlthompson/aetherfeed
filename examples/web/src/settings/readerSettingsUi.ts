@@ -14,7 +14,7 @@ export function appendReaderSettings(panel: HTMLElement): void {
   wrap.innerHTML = `
     <strong>${t("feed.opener.title")}</strong>
     <p class="af-settings-hint">${t("feed.opener.body")}</p>
-    <select data-reader-target>
+    <select data-reader-target aria-label="${t("feed.opener.title")}">
       <option value="LAUNCHER">${t("feed.opener.launcher")}</option>
       <option value="BROWSER">${t("feed.opener.browser")}</option>
       <option value="CUSTOM_TAB">${t("feed.opener.custom_tab")}</option>
@@ -25,7 +25,7 @@ export function appendReaderSettings(panel: HTMLElement): void {
     </label>
     <strong>${t("feed.images.title")}</strong>
     <p class="af-settings-hint">${t("feed.images.body")}</p>
-    <select data-reader-images>
+    <select data-reader-images aria-label="${t("feed.images.title")}">
       <option value="ALWAYS">${t("feed.images.always")}</option>
       <option value="WIFI">${t("feed.images.wifi")}</option>
       <option value="NEVER">${t("feed.images.never")}</option>

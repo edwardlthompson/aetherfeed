@@ -35,14 +35,14 @@ class AetherFeedUiTest {
     }
 
     @Test
-    fun switchesFourDestinationTabs() {
+    fun switchesModuleTabs() {
         composeTestRule.onNodeWithContentDescription("News tab").performClick()
         composeTestRule.onNodeWithText("News").assertIsDisplayed()
         composeTestRule.onNodeWithContentDescription("Podcasts tab").performClick()
         composeTestRule.onNodeWithText("Podcasts").assertIsDisplayed()
         composeTestRule.onNodeWithContentDescription("Booru tab").performClick()
         composeTestRule.onNodeWithText("Booru").assertIsDisplayed()
-        composeTestRule.onNodeWithContentDescription("Settings tab").performClick()
+        composeTestRule.onNodeWithContentDescription("Settings").performClick()
         composeTestRule.onNodeWithTag("settings-heading").assertIsDisplayed()
     }
 }
