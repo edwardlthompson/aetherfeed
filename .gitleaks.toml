@@ -33,5 +33,11 @@ paths = [
   '''^schemas/golden-path/sanitize-fixtures\.json$''',
   '''^examples/web/src/privacy-report/sanitize-fixtures\.json$''',
   '''^examples/android/app/src/test/resources/sanitize-fixtures\.json$''',
+  '''^examples/android/app/src/main/java/org/aetherfeed/app/data/VaultPassphraseStore\.kt$''',
+]
+regexes = [
+  '''af_vault_material''',
+  '''vault_key_b64''',
+  '''sqlcipher_passphrase_b64''',
 ]
 # Do not add home SDK/JDK/env paths or signing material to paths above.
