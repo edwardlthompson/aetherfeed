@@ -14,7 +14,6 @@
   <img src="https://img.shields.io/badge/FOSS-no_tracking-{{badge_foss}}?style=flat-square" alt="FOSS" />
   <img src="https://img.shields.io/badge/status-active-{{badge_primary}}?style=flat-square" alt="status" />
   <a href="https://github.com/{{ci_repo}}/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/{{ci_repo}}/ci.yml?style=flat-square&label=CI" alt="CI" /></a>
-  <a href="https://edwardlthompson.github.io/aetherfeed/"><img src="https://img.shields.io/badge/Pages-demo-0969da?style=flat-square" alt="GitHub Pages demo" /></a>
   <img src="https://api.securityscorecards.dev/projects/github.com/{{ci_repo}}/badge" alt="OpenSSF Scorecard" />
   <a href="https://codespaces.new/{{ci_repo}}"><img src="https://img.shields.io/badge/Codespaces-Open-181717?style=flat-square&logo=github" alt="Open in GitHub Codespaces" /></a>
   <img src="https://img.shields.io/badge/AGENT-2ea043?style=flat-square" alt="AGENT" />

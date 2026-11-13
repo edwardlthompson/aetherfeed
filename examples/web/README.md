@@ -18,11 +18,11 @@ examples/web/
     theme.ts            # theme preference (system/light/dark)
     components/         # ThemeToggle, etc. — labels via t()
   public/               # manifest, service worker, static assets
-  dist/                 # npm run build output → GitHub Pages (do not edit or commit)
+  dist/                 # npm run build output for local desktop packaging (do not commit)
 
 ```
 
-**`docs/` is agent documentation, not this app.** The live site is built from `examples/web/dist/` via `.github/workflows/pages.yml`. See [`docs/WEB_PROJECT_LAYOUT.md`](../../docs/WEB_PROJECT_LAYOUT.md).
+**`docs/` is agent documentation, not this app.** This tree is the shared UI for the **local** desktop (Tauri) client — AetherFeed does **not** publish a public Pages/PWA demo. See [`docs/WEB_PROJECT_LAYOUT.md`](../../docs/WEB_PROJECT_LAYOUT.md).
 
 ## Commands
 
@@ -40,12 +40,12 @@ Optional task runner (not required for CI): install [just](https://github.com/ca
 
 ## Why these tools?
 
-Vite + TypeScript keep the PWA small and typed. Vitest covers units, Playwright covers the browser, and Lighthouse CI enforces a real performance budget so “it builds” is not the only bar.
+Vite + TypeScript keep the desktop webview UI small and typed. Vitest covers units, Playwright covers the browser, and Lighthouse CI enforces a real performance budget so “it builds” is not the only bar.
 
-## PWA features
+## Offline shell (local desktop only)
 
-- `manifest.webmanifest` with required fields
-- Offline-first service worker (`public/sw.js`)
+- `manifest.webmanifest` for the Tauri/webview shell
+- Offline-first service worker (`public/sw.js`) for local caching — not a public installable PWA host
 - Responsive layout with theme-color meta
 
 ## Localization
@@ -59,4 +59,4 @@ See [`docs/DESIGN_GUIDE.md`](../../docs/DESIGN_GUIDE.md) for shared key naming w
 
 ## CI integration
 
-Runs in the root `.github/workflows/ci.yml` web matrix job. GitHub Pages deploy: `.github/workflows/pages.yml` on push to `main`.
+Runs in the root `.github/workflows/ci.yml` web matrix job. Public Pages deploy is disabled for AetherFeed (`pages_demo: false`).

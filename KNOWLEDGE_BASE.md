@@ -140,15 +140,14 @@
 | **Fix** | Immediately after RP merge: move `## [Unreleased]` to the top, run `bash scripts/sync-template-version.sh`, commit, push |
 | **Prevention** | Do not mark `/ship` done until Unreleased is first on `origin/main` and template version sync is green |
 
-### KB-018 — GitHub Pages deploy 404 when site unset
+### KB-018 — AetherFeed must not host a public Pages/PWA demo
 
 | Field | Detail |
 |-------|--------|
-| **Symptom** | `pages.yml` Build succeeds; Deploy fails `HttpError: Not Found`; `gh api …/pages` returns 404 |
-| **Cause** | Repository Pages source is not enabled (GitHub Actions) |
-| **Fix** | `[HUMAN]` enable Pages: Settings → Pages → Source = GitHub Actions, then `gh workflow run pages.yml` |
-| **Prevention** | Treat Pages as optional until enabled; do not block `/ship` required checks on `pages.yml` |
-| **Resolved** | 2026-11-13 — Pages enabled; demo live at https://edwardlthompson.github.io/aetherfeed/ (workflow run succeeded; shell + JS smoke OK, no analytics needles) |
+| **Symptom** | Public `*.github.io/aetherfeed/` UI contradicts local-only / encrypted vault product |
+| **Cause** | Template ships `pages.yml` + README Pages badge; enabling Pages publishes the web shell |
+| **Fix** | `pages_demo: false` in `branding/product.json`; delete Pages site (`gh api -X DELETE …/pages`); disable `GitHub Pages` workflow; remove Pages badge; gate `pages.yml` jobs with `if: false` |
+| **Prevention** | Never re-enable GitHub Pages for AetherFeed; `check-pages-demo-link` must pass with opt-out |
 ### KB-011 — Vitest jsdom `localStorage` broken on Node 25+
 
 | Field | Detail |

@@ -23,8 +23,10 @@
   "what_this_is_not": [
     "No account — you never sign up or log in to use the reader",
     "No cloud sync required — the vault works fully offline; any sync is optional ciphertext-only",
-    "No recommendation engine — feeds and boards you choose, not an opaque ranking feed"
+    "No recommendation engine — feeds and boards you choose, not an opaque ranking feed",
+    "No public web demo or hosted PWA — the UI runs only in the local Android/desktop apps; library state stays on-device"
   ],
+  "pages_demo": false,
   "urls": {
     "docs": "docs/START_HERE.md",
     "contributing": "CONTRIBUTING.md",

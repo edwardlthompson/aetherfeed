@@ -1,7 +1,9 @@
 # Privacy Policy
 
 AetherFeed is local-first. No account is required. There is no analytics,
-crash reporting, advertising, or other phone-home telemetry.
+crash reporting, advertising, or other phone-home telemetry. There is no
+public web demo or hosted PWA — the product UI runs only in the local
+Android and desktop apps; feed library and vault data stay on-device.
 
 ## Data stored on the device
 

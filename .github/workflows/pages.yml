@@ -1,11 +1,8 @@
 name: GitHub Pages
 
+# AetherFeed is local-only (no public hosted PWA). Keep this workflow disabled
+# in repo Actions settings; jobs are also gated off so a mistaken enable is a no-op.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "examples/web/**"
-      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions: read-all
@@ -17,6 +14,7 @@ concurrency:
 jobs:
   build:
     name: Build web demo
+    if: ${{ false }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -41,6 +39,7 @@ jobs:
 
   deploy:
     name: Deploy to GitHub Pages
+    if: ${{ false }}
     needs: build
     runs-on: ubuntu-latest
     permissions:

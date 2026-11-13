@@ -1,8 +1,7 @@
-"""Check README Pages demo badge/link points at the expected GitHub Pages URL."""
+"""Check README Pages demo badge/link — or confirm local-only products opted out."""
 from __future__ import annotations
 
 import json
-import re
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -10,15 +9,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def expected_pages_url(root: Path | None = None) -> str | None:
+def load_product(root: Path | None = None) -> dict:
     base = root or ROOT
     product = base / "branding" / "product.json"
     if not product.is_file():
-        return None
+        return {}
     try:
         data = json.loads(product.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
-        return None
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def expected_pages_url(root: Path | None = None) -> str | None:
+    data = load_product(root)
     repo = (data.get("urls") or {}).get("github_repo") or ""
     if "/" not in repo:
         return None
@@ -26,13 +30,25 @@ def expected_pages_url(root: Path | None = None) -> str | None:
     return f"https://{owner}.github.io/{name}/"
 
 
+def pages_demo_enabled(root: Path | None = None) -> bool:
+    data = load_product(root)
+    # Default true for template children that still host a demo; AetherFeed sets false.
+    return data.get("pages_demo", True) is not False
+
+
 def check_readme(root: Path | None = None) -> list[str]:
     base = root or ROOT
     url = expected_pages_url(base)
-    if not url:
-        return ["missing branding/product.json urls.github_repo"]
     readme = (base / "README.md").read_text(encoding="utf-8")
     errors: list[str] = []
+    if not pages_demo_enabled(base):
+        if url and (url.rstrip("/") in readme or url in readme):
+            errors.append(f"pages_demo is false but README still links {url}")
+        if "pages-demo" in readme.lower():
+            errors.append("pages_demo is false but README still has a Pages-demo badge")
+        return errors
+    if not url:
+        return ["missing branding/product.json urls.github_repo"]
     if url.rstrip("/") not in readme and url not in readme:
         errors.append(f"README.md must link the Pages demo URL ({url})")
     if "pages-demo" not in readme.lower() and "GitHub Pages" not in readme:
@@ -52,20 +68,20 @@ def probe(url: str, timeout: float = 8.0) -> str:
 
 
 def main() -> int:
-    import sys
-
     errors = check_readme()
-    url = expected_pages_url()
     if errors:
         print("Pages demo link health failed:")
         for item in errors:
             print(f"  {item}")
         return 1
+    if not pages_demo_enabled():
+        print("Pages demo disabled (pages_demo=false) — local-only product; no public hosted UI")
+        return 0
+    url = expected_pages_url()
     assert url is not None
     status = probe(url)
     print(f"Pages demo URL in README: {url}")
     print(f"Probe: {status}")
-    # Soft: do not fail the gate on network; link presence is the hard check.
     if status.startswith("HTTP 4") or status.startswith("HTTP 5"):
         print("NOTE: Pages returned an error status — confirm workflow pages.yml has run on main")
     return 0
