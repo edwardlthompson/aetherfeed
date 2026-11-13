@@ -3,7 +3,7 @@ import type { DonationConfig } from "./about/types";
 import { createAboutPanel } from "./components/AboutPanel";
 import { createSettingsPanel } from "./components/SettingsPanel";
 import { createThemeToggle } from "./components/ThemeToggle";
-import { isOnline } from "./greet";
+import { homeBrandMarkup } from "./homeBrandMarkup";
 import { t } from "./i18n";
 import {
   type AppModuleTab,
@@ -41,11 +41,11 @@ export function createAppShell(
   const showHomeUpdate = state.updateStatus !== currentUpdateLabel;
   const showHome = !state.showAbout && !state.showSettings;
   const homeModules = showHome ? moduleHomeMarkup(state.activeModule) : "";
-  void isOnline;
 
   root.innerHTML = `
     <main>
       <div class="af-shell-top">
+        ${showHome ? homeBrandMarkup() : ""}
         <div class="af-header af-header-compact">
           ${showHome ? moduleNavMarkup(state.activeModule) : `<span class="af-header-panel-title">${state.showSettings ? t("settings.title") : t("about.title")}</span>`}
           <div class="af-header-actions">
