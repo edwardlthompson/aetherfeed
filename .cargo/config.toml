@@ -1,0 +1,4 @@
+# Dependency cooldown (Cargo 1.100+): ignore crates.io versions newer than this age
+# unless already present in Cargo.lock. Older toolchains warn and ignore.
+[registry]
+global-min-publish-age = "7 days"

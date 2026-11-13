@@ -17,6 +17,13 @@
 
 ## Entries
 
+### 2026-11-13 — Reject Jazz/Subduction for LAN pool (ADR-0012)
+- **Status:** Accepted
+- **Context:** NEWS_INBOX flagged Jazz 2.0 and Subduction as sync-engine ideas for offline stars/playback.
+- **Decision:** Keep ADR-0011 LAN ciphertext pool + LWW; do not adopt Jazz/Subduction now (see `docs/adr/0012-reject-jazz-subduction-for-lan-pool.md`).
+- **Alternatives considered:** Port Jazz/Subduction or hybrid CRDT merge (rejected: no product gap; complexity).
+- **Consequences:** Inbox review task closed; future sync changes need a superseding ADR.
+
 ### 2026-11-13 — Soft-fail Android emulator CI; Gitleaks vault prefs allowlist
 - **Status:** Accepted
 - **Context:** `/ship` blocked on Gitleaks `generic-api-key` for SharedPreferences key names and on flaky `connectedDebugAndroidTest` (Settings tab removed; emulator ColorBuffer errors).
