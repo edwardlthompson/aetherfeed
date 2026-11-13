@@ -6,22 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.13.2](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.1...v1.13.2) (2026-11-13)
-
-
-### Fixed
-
-* a11y selects/nav tree; drop Settings-tab UI test; soft-fail emulator job ([ac5af29](https://github.com/edwardlthompson/aetherfeed/commit/ac5af29a7751de424c4c5724a728fdfd6bff0d84))
-* **android:** rename vault pref key to clear Gitleaks false positive ([6a66e96](https://github.com/edwardlthompson/aetherfeed/commit/6a66e9679e07e31c8a19e40ab4c3fec3a14275cc))
-* **security:** allowlist vault prefs key names for Gitleaks ([e3a76a1](https://github.com/edwardlthompson/aetherfeed/commit/e3a76a100bb9fdcfe3663cc63d217fac7f20905f))
-* split oversized logic files under 150-line budget ([093445d](https://github.com/edwardlthompson/aetherfeed/commit/093445df6f4b974d9392285086595a63f45a01e5))
-
-
-### Changed
-
-* **release:** prepare next AetherFeed release ([634543b](https://github.com/edwardlthompson/aetherfeed/commit/634543b754f8734472a80aa59f4fcb60acd268d2))
-* restore Unreleased heading and sync template 1.13.1 after Sprint 0 cleanup ([3952bb6](https://github.com/edwardlthompson/aetherfeed/commit/3952bb64c62893c4936a1044158da1e5f66d876d))
-
 ## [Unreleased]
 
 ### Added
@@ -38,8 +22,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Mark-read on open and drop from Unread list
 * Design-token cohesion, About add/remove gate timeout, and source-map-js Dependabot high
 
-## [1.13.1](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.0...v1.13.1) (2026-11-12)
+## [1.13.2](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.1...v1.13.2) (2026-11-13)
 
+### Fixed
+
+* a11y selects/nav tree; drop Settings-tab UI test; soft-fail emulator job ([ac5af29](https://github.com/edwardlthompson/aetherfeed/commit/ac5af29a7751de424c4c5724a728fdfd6bff0d84))
+* **android:** rename vault pref key to clear Gitleaks false positive ([6a66e96](https://github.com/edwardlthompson/aetherfeed/commit/6a66e9679e07e31c8a19e40ab4c3fec3a14275cc))
+* **security:** allowlist vault prefs key names for Gitleaks ([e3a76a1](https://github.com/edwardlthompson/aetherfeed/commit/e3a76a100bb9fdcfe3663cc63d217fac7f20905f))
+* split oversized logic files under 150-line budget ([093445d](https://github.com/edwardlthompson/aetherfeed/commit/093445df6f4b974d9392285086595a63f45a01e5))
+
+### Changed
+
+* **release:** prepare next AetherFeed release ([634543b](https://github.com/edwardlthompson/aetherfeed/commit/634543b754f8734472a80aa59f4fcb60acd268d2))
+* restore Unreleased heading and sync template 1.13.1 after Sprint 0 cleanup ([3952bb6](https://github.com/edwardlthompson/aetherfeed/commit/3952bb64c62893c4936a1044158da1e5f66d876d))
+
+## [1.13.1](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.0...v1.13.1) (2026-11-12)
 
 ### Changed
 
@@ -51,7 +48,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **deps:** Bump the rust-dependencies group across 1 directory with 3 updates ([#6](https://github.com/edwardlthompson/aetherfeed/issues/6)) ([11bb52b](https://github.com/edwardlthompson/aetherfeed/commit/11bb52ba57c14165a00d1261ecb1a17655edf9d1))
 
 ## [1.13.0](https://github.com/edwardlthompson/aetherfeed/compare/v1.12.0...v1.13.0) (2026-11-07)
-
 
 ### Added
 
@@ -94,7 +90,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **release:** auto-merge Release Please PRs via workflow and script ([0e817c3](https://github.com/edwardlthompson/aetherfeed/commit/0e817c370bc44a01320815ee9cd266573b99b507))
 * seed AetherFeed as a local-first Android and Windows client ([fe5b85a](https://github.com/edwardlthompson/aetherfeed/commit/fe5b85a25b954adfcc3ef6aa5d5e4690f5020715))
 * template v0.2.0 with UTF-8 gates, lockfiles, and build verification ([2317440](https://github.com/edwardlthompson/aetherfeed/commit/2317440eeecec0ef961bb9cf54ea3830c183d8cf))
-
 
 ### Fixed
 
@@ -185,7 +180,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **web:** override js-yaml to patch Dependabot alert [#9](https://github.com/edwardlthompson/aetherfeed/issues/9) ([609165c](https://github.com/edwardlthompson/aetherfeed/commit/609165c6321cb2498c39541b5315ff19a533f7fb))
 * **web:** resolve CI lint and file-size budget failures ([1759a8f](https://github.com/edwardlthompson/aetherfeed/commit/1759a8f54b80f54564318e4174f56388d20047ef))
 * **web:** use hasAttribute for disabled check in panelDialog ([f4d082e](https://github.com/edwardlthompson/aetherfeed/commit/f4d082ea1331446f45baeabd77f55818ec5a8cdf))
-
 
 ### Changed
 
@@ -319,7 +313,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **template:** upgrade child Canon/Mixed surface to parent 1.12.0 ([e574c04](https://github.com/edwardlthompson/aetherfeed/commit/e574c0470464c7af9e79ee7f83cecbc04326c29e))
 * **template:** upgrade child to parent 1.12.0 ([835efe5](https://github.com/edwardlthompson/aetherfeed/commit/835efe5082294276815aaf41c4b69253763698d7))
 
-
 ### Documentation
 
 * **about:** tighten description, topics, and licence metadata ([a2afae7](https://github.com/edwardlthompson/aetherfeed/commit/a2afae7f844681495dd38b241305149f3521181a))
@@ -368,9 +361,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * restore DECISION_LOG seed line order after v0.14.1 archive ([22cada9](https://github.com/edwardlthompson/aetherfeed/commit/22cada93c8105712e2f9286c05424e642268f044))
 * rewrite template README as a first-run pitch ([01e21fc](https://github.com/edwardlthompson/aetherfeed/commit/01e21fc0f559a56e09b69172e0d06b763ed11d75))
 
-
 ## [0.22.0](https://github.com/edwardlthompson/aetherfeed/compare/v0.21.0...v0.22.0) (2026-11-06)
-
 
 ### Added
 
@@ -413,7 +404,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **release:** auto-merge Release Please PRs via workflow and script ([0e817c3](https://github.com/edwardlthompson/aetherfeed/commit/0e817c370bc44a01320815ee9cd266573b99b507))
 * seed AetherFeed as a local-first Android and Windows client ([fe5b85a](https://github.com/edwardlthompson/aetherfeed/commit/fe5b85a25b954adfcc3ef6aa5d5e4690f5020715))
 * template v0.2.0 with UTF-8 gates, lockfiles, and build verification ([2317440](https://github.com/edwardlthompson/aetherfeed/commit/2317440eeecec0ef961bb9cf54ea3830c183d8cf))
-
 
 ### Fixed
 
@@ -496,7 +486,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **web:** override js-yaml to patch Dependabot alert [#9](https://github.com/edwardlthompson/aetherfeed/issues/9) ([609165c](https://github.com/edwardlthompson/aetherfeed/commit/609165c6321cb2498c39541b5315ff19a533f7fb))
 * **web:** resolve CI lint and file-size budget failures ([1759a8f](https://github.com/edwardlthompson/aetherfeed/commit/1759a8f54b80f54564318e4174f56388d20047ef))
 * **web:** use hasAttribute for disabled check in panelDialog ([f4d082e](https://github.com/edwardlthompson/aetherfeed/commit/f4d082ea1331446f45baeabd77f55818ec5a8cdf))
-
 
 ### Changed
 
@@ -624,7 +613,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * sync template version to 0.7.1 and fix CHANGELOG encoding ([e7ebf2d](https://github.com/edwardlthompson/aetherfeed/commit/e7ebf2dadc367ceec14f701bd927a20b7c4dcde0))
 * sync v0.7.0 and complete BUILD_PLAN automation pass ([369e17e](https://github.com/edwardlthompson/aetherfeed/commit/369e17ea198e671a4e0cec5943282e6f5e1f2786))
 
-
 ### Documentation
 
 * **about:** tighten description, topics, and licence metadata ([a2afae7](https://github.com/edwardlthompson/aetherfeed/commit/a2afae7f844681495dd38b241305149f3521181a))
@@ -675,16 +663,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.21.0](https://github.com/edwardlthompson/agent-project-bootstrap/compare/v0.20.0...v0.21.0) (2026-08-18)
 
-
 ### Added
 
 * harden Windows PATH, Unreleased fold, and ship gates ([8eab392](https://github.com/edwardlthompson/agent-project-bootstrap/commit/8eab392edff967bbc0cfabb89aff0902a6b8ac0e))
 
-
 ### Fixed
 
 * import rp_merge_status from cwd-relative scripts/lib ([df322af](https://github.com/edwardlthompson/agent-project-bootstrap/commit/df322af79d3302457f6dad26fac0d2e424544a15))
-
 
 ### Documentation
 
