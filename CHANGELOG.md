@@ -6,6 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.3](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.2...v1.13.3) (2026-11-13)
+
+
+### Fixed
+
+* **android:** bump Media3 to 1.11.1; add Cargo publish-age cooldown ([8ad4921](https://github.com/edwardlthompson/aetherfeed/commit/8ad49216faec7f3ac7c8a7a7289a00ea6a4bcbee))
+* **privacy:** disable public Pages demo — AetherFeed is local-only ([ce79f65](https://github.com/edwardlthompson/aetherfeed/commit/ce79f650b975dcf5f77813d83a62518920213806))
+
+
+### Changed
+
+* **release:** restore Unreleased heading and sync template 1.13.2 ([126d898](https://github.com/edwardlthompson/aetherfeed/commit/126d898164d8d9beeb1b8830c2dabbc6357b826d))
+
+
+### Documentation
+
+* **news:** inbox 2026-11-13 [skip ci] ([9be3ecf](https://github.com/edwardlthompson/aetherfeed/commit/9be3ecfa036ed34797a47ae7d04dd144f6732e46))
+* note GitHub Pages demo live after Actions source enable ([b2d1fd1](https://github.com/edwardlthompson/aetherfeed/commit/b2d1fd1585121158e9ec838880a9e5b2294c7f75))
+* record v1.13.2 ship retrospectives and Pages/Unreleased KB ([ea34361](https://github.com/edwardlthompson/aetherfeed/commit/ea34361110573e88b55406c43935dc297edab779))
+
 ## [Unreleased]
 
 ### Added
