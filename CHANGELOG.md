@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.2](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.1...v1.13.2) (2026-11-13)
+
+
+### Fixed
+
+* a11y selects/nav tree; drop Settings-tab UI test; soft-fail emulator job ([ac5af29](https://github.com/edwardlthompson/aetherfeed/commit/ac5af29a7751de424c4c5724a728fdfd6bff0d84))
+* **android:** rename vault pref key to clear Gitleaks false positive ([6a66e96](https://github.com/edwardlthompson/aetherfeed/commit/6a66e9679e07e31c8a19e40ab4c3fec3a14275cc))
+* **security:** allowlist vault prefs key names for Gitleaks ([e3a76a1](https://github.com/edwardlthompson/aetherfeed/commit/e3a76a100bb9fdcfe3663cc63d217fac7f20905f))
+* split oversized logic files under 150-line budget ([093445d](https://github.com/edwardlthompson/aetherfeed/commit/093445df6f4b974d9392285086595a63f45a01e5))
+
+
+### Changed
+
+* **release:** prepare next AetherFeed release ([634543b](https://github.com/edwardlthompson/aetherfeed/commit/634543b754f8734472a80aa59f4fcb60acd268d2))
+* restore Unreleased heading and sync template 1.13.1 after Sprint 0 cleanup ([3952bb6](https://github.com/edwardlthompson/aetherfeed/commit/3952bb64c62893c4936a1044158da1e5f66d876d))
+
 ## [Unreleased]
 
 ### Added
