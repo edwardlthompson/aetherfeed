@@ -1,8 +1,10 @@
 # ADR-0001: Core Application Architecture
 
-- **Status:** Accepted
+- **Status:** Superseded by [ADR-0013](0013-compose-multiplatform.md)
 - **Date:** 2026-08-18
 - **Deciders:** AetherFeed seed; HUMAN approved 2026-08-18 (requested automation)
+
+> Kept as history. Do not delete. The 🔲 pattern-pick row below stays for the template architecture-pick gate. Product runtime is ADR-0013 (Compose Multiplatform / KMP).
 
 ## Context
 

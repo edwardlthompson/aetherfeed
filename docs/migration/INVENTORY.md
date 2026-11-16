@@ -2,7 +2,7 @@
 
 > Snapshot of **what ships in the tree today** versus **where the brief, specs, and ADRs point**. This is Phase 0 of a multiplatform migration (Android, iOS, Windows, macOS, Linux; feature and design parity; prefer shared logic/UI; leave pure-PWA parts as web unless a native shell adds device-level value).
 >
-> **Not in this document:** a design brief, a tech decision, or any app-code change.
+> Binding follow-ons: [`DESIGN_BRIEF.md`](DESIGN_BRIEF.md), [`TECH_DECISION.md`](TECH_DECISION.md), [ADR-0013](../adr/0013-compose-multiplatform.md). No app-code change in this phase.
 >
 > **Honesty rule:** marketing copy, `COMPLETED_TASKS.md` sprint titles, and some feature-spec tables overclaim. Status below is from the source tree, not from those titles.
 
@@ -468,7 +468,7 @@ Feature specs (`docs/features/*.md`) are the acceptance SoT; several “implemen
 
 **Shipped and intended to keep:** Settings exemplar, donations/updates ethical flow, Hermes pool, LAN pool, FOSS constraint (no Play Services / Firebase).
 
-**Explicitly rejected / disabled:** public GitHub Pages PWA (KB-018); Electron unless Tauri is blocked (`DECISION_LOG` / desktop MODULE); extra cloud providers without `[HUMAN]` (ADR-0003); KMP shared runtime at seed because it conflicted with Tauri (ADR-0001) — **this Phase 0 target set re-opens that**.
+**Explicitly rejected / disabled:** public GitHub Pages PWA (KB-018); Electron; extra cloud providers in v1 (ADR-0003 later); Jazz/Subduction (ADR-0012). **KMP is now chosen** (ADR-0013 supersedes ADR-0001).
 
 **Doc drift (do not treat as current plan):** [`docs/plan.md`](../plan.md) still 🔲 Room+SQLCipher; `PROJECT_CHECKLIST.md` still mostly 🔲; AGENT_MEMORY vault line still says “Room/Hilt next.”
 
@@ -494,46 +494,49 @@ Prefer shared logic/UI. Treat the Vite web layer as the **desktop UI** (already 
 
 **iOS-specific (not in tree, implied by this migration):** Keychain, background audio / Now Playing, widgets, APNs-or-UnifiedPush-class delivery, Files/share sheet — all native-shell justifications if those features stay in the brief.
 
-**macOS/Linux (not packaged today):** same Tauri shell could grow `bundle.targets` (dmg/appimage) without a new UI toolkit; still need OS keychain, tray, hub bind, and updater signing.
+**macOS/Linux:** in scope for this migration (Compose for Desktop packages, not Tauri `bundle.targets`). Still need OS keychain, tray, hub bind, and updater.
 
 ### 2.4 Architecture already chosen (constraints on later phases)
 
 | ADR | Decision that Phase 1+ must not silently drop |
 |-----|-----------------------------------------------|
-| 0001 | Clean + MVI on Android; TS models as contract; **KMP rejected at seed vs Tauri** |
+| 0001 | Historical seed: Clean + MVI; TS contract; KMP rejected vs Tauri — **superseded by ADR-0013** |
+| 0013 | Compose Multiplatform + KMP domain; one shared UI; Tauri not the shipping desktop shell |
 | 0002 | SQLCipher + keystore; forgotten E2E passphrase is unrecoverable |
 | 0003 | Drive appdata + WebDAV + local-only; opaque `.enc`; LWW first |
 | 0011 | Desktop LAN hub, pool v2, HMAC PUT, ContentProvider retained |
 | 0012 | Keep LAN pool; no Jazz/Subduction unless a proven gap |
 
-Current dual UI: **Jetpack Compose (Android)** and **Vite TypeScript (desktop)**. That is the main obstacle to “feature and design parity” without either (a) keeping two UIs in lockstep or (b) reversing ADR-0001’s KMP rejection / adopting another shared toolkit.
+Seed dual UI (Compose Android + Vite desktop) is **retired as a product strategy** by the 2026-11-16 decisions: one Compose Multiplatform UI (ADR-0013).
 
 ### 2.5 Distribution trajectory
 
-- Primary: GitHub Releases (Android debug/release APK, Windows NSIS/MSI).
-- Intended later: F-Droid (`examples/android/fastlane/`, metadata still goldenpath-named), Winget stub.
-- Homepage listed as `https://aetherfeed.org` on the GitHub repo; **Pages demo must stay off**.
-- HermesLauncher is a sibling app (`org.hermeslauncher.app`) for the subscription pool — not a store listing of AetherFeed, but a same-device dependency for Sprint 8.
+- Primary: GitHub Releases (Android APK; desktop Windows/macOS/Linux installers after this migration).
+- Intended later: F-Droid (`examples/android/fastlane/`, metadata still goldenpath-named — rebrand is a later packaging task), Winget stub.
+- Homepage listed as `https://aetherfeed.org` on the GitHub repo; **marketing/docs only — never a hosted reader** (KB-018).
+- HermesLauncher (`org.hermeslauncher.app`) is an **optional** Android extra for the subscription pool, not a required companion.
 
 ---
 
-## Open Questions for Edward
+## Decisions (Edward, 2026-11-16)
 
-1. **iOS toolkit:** native SwiftUI, Compose Multiplatform / KMP (reversing ADR-0001), or a Tauri/WebView shell around `examples/web`?
-2. **Desktop scope:** ship macOS and Linux Tauri bundles in this migration, or keep Windows-first (`nsis`/`msi` only) until a later phase?
-3. **One UI or two:** keep Compose + web in lockstep, or converge on a single shared UI for parity?
-4. **Hosted PWA:** confirm KB-018 stays (no public PWA) even if every native shell is a WebView around the same web app.
-5. **Cloud sync in v1:** enable Drive AppData and/or WebDAV in production DI, or treat LAN + Hermes as the only shipped sync until a later HUMAN decision?
-6. **Hermes:** required companion, optional extra, or replaced by an AetherFeed-only subscribe/sync UI on every OS?
-7. **Podcast lockscreen / background audio:** must-have for the first native/iOS shells (the strongest device-level justification), or still a non-goal as in the current feature lock?
-8. **Booru in v1:** live Danbooru (and Gelbooru), demo-only, or drop from the first multiplatform cut? Any adult-content / source-allowlist policy?
-9. **Vault on desktop/web:** SQLCipher (or equivalent) + OS keychain on every native shell, or is Android-only encryption acceptable?
-10. **Notifications:** implement posting + UnifiedPush (and iOS analogue), or keep channels/widget/tray as the unread chrome?
-11. **Widgets:** Android unread widget parity on iOS (and macOS?) or Android-only?
-12. **Biometric vault lock:** in the migration brief, or leave as Android-later?
-13. **Subscribe UX on web/desktop:** add an Add-feed flow, or keep “subscribe on Android / Hermes, sync over LAN”?
-14. **Versioning:** keep app `0.1.0` / `versionCode` 1 through the migration, or split product version from template `1.13.x`?
-15. **F-Droid id:** rebrand `metadata/dev.foss.goldenpath.yml` and `GOLDENPATH_*` signing env as part of this work, or a later packaging task?
-16. **aetherfeed.org:** marketing site only (no app UI), or a future docs-only site — still never a hosted reader?
-17. **Feature freeze vs catch-up:** implement the 🔲 acceptance rows (search, OPML UI, real downloads, Gelbooru, etc.) **before** new shells, or wrap today’s Android/news-first slice first with parity of *existing* behavior only?
-18. **Background refresh:** WorkManager / OS scheduler required on each native OS, or resume-only sync (today’s Android behavior) is enough for v1?
+Edward answered the 18 open questions with “go with your picks.” These are locked for Phases 1–2 (brief + stack). Phase 3 (BUILD_PLAN + code) waits on review of [`DESIGN_BRIEF.md`](DESIGN_BRIEF.md) and [`TECH_DECISION.md`](TECH_DECISION.md).
+
+1. **iOS / shared toolkit:** Compose Multiplatform / KMP. Supersedes ADR-0001 (record kept; new [ADR-0013](../adr/0013-compose-multiplatform.md)).
+2. **Desktop:** ship Windows, macOS, and Linux in this migration.
+3. **UI:** converge on one shared UI (no lockstep Compose + web product UI).
+4. **PWA:** keep KB-018 — no public hosted PWA.
+5. **Sync v1:** LAN + Hermes only; Drive AppData / WebDAV later.
+6. **Hermes:** optional extra. AetherFeed has its own subscribe UI on every OS.
+7. **Podcast lockscreen / background audio:** must-have for native shells, including iOS.
+8. **Booru:** demo-only in the first cut. Content / source policy later, by Edward.
+9. **Vault:** encrypted DB + OS keychain on every native platform.
+10. **Notifications:** real posting on each platform, plus UnifiedPush on Android.
+11. **Widgets:** unread widget on iOS too; macOS if it is straightforward.
+12. **Biometric vault lock:** later; out of migration scope.
+13. **Subscribe:** Add-feed flow on desktop using the shared UI.
+14. **Versioning:** keep `0.1.0` / `versionCode` 1 for now.
+15. **F-Droid id / signing rebrand:** later packaging task.
+16. **aetherfeed.org:** marketing / docs only; never a hosted reader.
+17. **Scope:** parity of **existing** behavior first. Unbuilt acceptance rows (search, OPML UI, downloads, Gelbooru, etc.) come after the shells.
+18. **Background refresh:** OS scheduler where it is reliable; otherwise refresh on resume.

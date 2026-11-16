@@ -17,6 +17,13 @@
 
 ## Entries
 
+### 2026-11-16 — Compose Multiplatform / KMP (ADR-0013)
+- **Status:** Accepted (supersedes ADR-0001)
+- **Context:** Phase 0 inventory; Edward chose the agent picks for 18 migration questions (one UI, iOS+three desktops, encrypted vault everywhere).
+- **Decision:** Shared Compose Multiplatform UI + KMP domain; replace Tauri as the shipping desktop shell; KB-018 stays. See `docs/adr/0013-compose-multiplatform.md`, `docs/migration/DESIGN_BRIEF.md`, `docs/migration/TECH_DECISION.md`.
+- **Alternatives considered:** Keep Tauri+web; SwiftUI iOS + Compose Android; Flutter.
+- **Consequences:** Phase 3 code move waits on Edward’s review of those docs. ADR-0001 retained as history.
+
 ### 2026-11-13 — Reject Jazz/Subduction for LAN pool (ADR-0012)
 - **Status:** Accepted
 - **Context:** NEWS_INBOX flagged Jazz 2.0 and Subduction as sync-engine ideas for offline stars/playback.
