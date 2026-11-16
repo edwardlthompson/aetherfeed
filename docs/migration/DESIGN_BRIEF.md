@@ -23,7 +23,7 @@ Do not “iOS-ify” the tab bar into a top `TabView`. Do not replace FilterChip
 | Surface | Product UI | Allowed native chrome |
 |---------|------------|------------------------|
 | Android | Shared Compose | System bars, IME, home widget, notification shade, UnifiedPush, Hermes (optional) |
-| iOS | Shared Compose | Edge swipe back, status/home indicator, WidgetKit, Now Playing, local notifications |
+| iOS | Shared Compose | Edge swipe back, status/home indicator, WidgetKit, Now Playing, **local** notifications (no APNs). Unsigned sideload `.ipa`; CI is simulator-only |
 | Windows / macOS / Linux | Shared Compose in a desktop window | Title bar, app menu, tray unread tooltip, window close/minimize, desktop notifications |
 
 Window default (from today’s Tauri config, keep the size): 1100×760, resizable, title `AetherFeed`.
@@ -175,7 +175,7 @@ These are OS chrome, not product redesigns.
 | Platform | Allowed |
 |----------|---------|
 | iOS | Interactive pop / edge-swipe for reader and overlays; safe-area insets; no Android 3-button debug line on About (debug-only today — keep Android-debug only) |
-| iOS | `POST_NOTIFICATIONS` analogue: system permission prompt on first post |
+| iOS | System permission prompt on first **local** notification. No APNs / remote push in this migration |
 | iOS / macOS | WidgetKit presentation (home screen / Notification Center / desktop widgets) using the **same count copy** |
 | Desktop | Native window controls; optional menu: Settings, About, Quit — items open the **same overlays** |
 | Desktop | Tray tooltip `AetherFeed — {n} unread` (already the Android/desktop contract) |

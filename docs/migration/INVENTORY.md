@@ -492,7 +492,7 @@ Prefer shared logic/UI. Treat the Vite web layer as the **desktop UI** (already 
 | Biometric vault lock | Platform note | Web biometrics ≠ vault integration |
 | Offline enclosure/file cache in app-private storage | ADR-0002 | SW cache size/semantics |
 
-**iOS-specific (not in tree, implied by this migration):** Keychain, background audio / Now Playing, widgets, APNs-or-UnifiedPush-class delivery, Files/share sheet — all native-shell justifications if those features stay in the brief.
+**iOS-specific:** Keychain, background audio / Now Playing, WidgetKit unread count, local notifications, Files/share sheet. **Not** APNs (paid Developer account; deferred). On-device checks need a tester; CI is simulator-only.
 
 **macOS/Linux:** in scope for this migration (Compose for Desktop packages, not Tauri `bundle.targets`). Still need OS keychain, tray, hub bind, and updater.
 
@@ -511,7 +511,7 @@ Seed dual UI (Compose Android + Vite desktop) is **retired as a product strategy
 
 ### 2.5 Distribution trajectory
 
-- Primary: GitHub Releases (Android APK; desktop Windows/macOS/Linux installers after this migration).
+- Primary: GitHub Releases (Android APK; **unsigned iOS `.ipa`** for AltStore/SideStore sideload; desktop Windows/macOS/Linux installers after this migration). TestFlight/App Store wait on a later `[HUMAN]` Apple Developer account.
 - Intended later: F-Droid (`examples/android/fastlane/`, metadata still goldenpath-named — rebrand is a later packaging task), Winget stub.
 - Homepage listed as `https://aetherfeed.org` on the GitHub repo; **marketing/docs only — never a hosted reader** (KB-018).
 - HermesLauncher (`org.hermeslauncher.app`) is an **optional** Android extra for the subscription pool, not a required companion.
@@ -531,7 +531,7 @@ Edward answered the 18 open questions with “go with your picks.” These are l
 7. **Podcast lockscreen / background audio:** must-have for native shells, including iOS.
 8. **Booru:** demo-only in the first cut. Content / source policy later, by Edward.
 9. **Vault:** encrypted DB + OS keychain on every native platform.
-10. **Notifications:** real posting on each platform, plus UnifiedPush on Android.
+10. **Notifications:** real posting on each platform, plus UnifiedPush on Android. iOS is **local notifications only** (APNs deferred — decision 19).
 11. **Widgets:** unread widget on iOS too; macOS if it is straightforward.
 12. **Biometric vault lock:** later; out of migration scope.
 13. **Subscribe:** Add-feed flow on desktop using the shared UI.
@@ -540,3 +540,4 @@ Edward answered the 18 open questions with “go with your picks.” These are l
 16. **aetherfeed.org:** marketing / docs only; never a hosted reader.
 17. **Scope:** parity of **existing** behavior first. Unbuilt acceptance rows (search, OPML UI, downloads, Gelbooru, etc.) come after the shells.
 18. **Background refresh:** OS scheduler where it is reliable; otherwise refresh on resume.
+19. **iOS distribution:** unsigned/sideload GitHub Releases (unsigned `.ipa`; users sideload with AltStore/SideStore). No Apple Developer account yet. TestFlight/App Store deferred to a later `[HUMAN]` step. Edward has never owned an Apple device — on-device verification needs a tester or a later device. iOS CI is **simulator builds/tests only**. WidgetKit and background audio work for sideloaded apps. **APNs push is deferred** (paid account); iOS uses local notifications + background refresh instead.

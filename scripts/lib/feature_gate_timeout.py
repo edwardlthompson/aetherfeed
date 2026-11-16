@@ -7,7 +7,7 @@ import sys
 DEFAULTS = {
     "web": 300,
     "python": 240,
-    "android": 600,
+    "android": 900,
     "node": 240,
     "rust": 300,
     "go": 180,

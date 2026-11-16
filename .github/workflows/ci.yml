@@ -132,6 +132,10 @@ jobs:
   feature-gate:
     name: Feature Gate
     runs-on: ubuntu-latest
+    env:
+      # Cold Gradle on ubuntu-latest can exceed the old 600s android-test budget
+      # (docs-only PRs still run ./gradlew test). Match the 900s stack default.
+      FEATURE_GATE_TIMEOUT_ANDROID: "900"
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -142,6 +146,12 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
+          cache: gradle
+      - uses: android-actions/setup-android@v4
+        if: hashFiles('examples/android/gradlew') != ''
+      - name: Accept Android SDK licenses
+        if: hashFiles('examples/android/gradlew') != ''
+        run: yes | sdkmanager --licenses
       - name: Install web dependencies
         if: hashFiles('examples/web/package-lock.json') != ''
         working-directory: examples/web

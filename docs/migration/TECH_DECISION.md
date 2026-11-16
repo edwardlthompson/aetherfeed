@@ -20,7 +20,7 @@
 | LAN hub | Ktor server in **desktop** process (replaces Tauri `lan_hub.rs`) |
 | Crypto | Shared Kotlin (today’s Android Argon2id + XChaCha20/Tink path). Rust `aetherfeed-crypto` stays a test oracle, not the shipping desktop runtime |
 | Android extras | Hilt at app edge, Media3 + `MediaSessionService`, UnifiedPush, Hermes ContentProvider, AppWidget |
-| iOS extras | AVFoundation + Now Playing, WidgetKit + App Group (count only), `UserNotifications`, Keychain |
+| iOS extras | AVFoundation + Now Playing, WidgetKit + App Group (count only), **local** `UserNotifications` (no APNs), Keychain |
 | Desktop extras | Compose for Desktop window, tray, notifications, jpackage/Gradle native bundles |
 | Not shipping | Public PWA, Tauri WebView UI, Drive/WebDAV v1, Electron |
 
@@ -111,13 +111,27 @@ Web/localStorage is not a vault. There is no shipping web vault.
 | Vault | SQLCipher + Keychain | Decision 9 |
 | Background audio / lockscreen | `AVAudioSession` playback category, `MPNowPlayingInfoCenter`, remote commands | Decision 7 — **must-have**. Map `PlaybackCommand` |
 | Unread widget | WidgetKit + App Group | Write **integer count only** (same as Android widget). Do not decrypt the vault inside the extension if that is fragile — the app process updates a count file in the group |
-| Notifications | `UserNotifications` local posts | No APNs account required for local unread. UnifiedPush is Android-only |
-| Refresh | `BGAppRefresh` when the system allows; **always** refresh on foreground (decision 18) | iOS will not guarantee periodic fetch |
+| Notifications | **Local** `UserNotifications` only | **APNs deferred** (paid Apple Developer account). UnifiedPush is Android-only |
+| Refresh | `BGAppRefresh` when the system allows; **always** refresh on foreground (decision 18) | iOS will not guarantee periodic fetch; no remote push wake |
 | Subscribe | Shared Add-feed dialog | Decision 6/13 |
 | Hermes | Not applicable | Hide Settings block |
 | Biometrics | Skip | Decision 12 |
+| CI | Simulator build + tests only | Edward has never owned an Apple device; on-device verification needs a tester or a later device |
+| Distribute | Unsigned `.ipa` on GitHub Releases | Sideload via AltStore/SideStore. TestFlight/App Store = later `[HUMAN]` once an account exists |
 
-iOS distribution (sideload / TestFlight / App Store) is **not** chosen here; it does not change the UI stack. Signing stays `[HUMAN]`.
+### 5.1 Sideload vs paid-account capabilities
+
+| Capability | Sideload (no paid account) | Plan |
+|------------|----------------------------|------|
+| Shared Compose UI, vault, LAN client, Add-feed | Yes | Ship |
+| Background audio / Now Playing | Yes for sideloaded apps | Ship (decision 7) |
+| WidgetKit unread count | Yes for sideloaded apps | Ship (decision 11); verify on a tester device when available |
+| Local notifications | Yes | Ship |
+| APNs / remote push | **No** — needs paid Developer account | **Deferred.** Do not design v1 around remote iOS push |
+| TestFlight / App Store | **No** | Later `[HUMAN]` |
+| Simulator CI | Yes | Required path for this migration |
+
+Do not take a dependency on paid-account-only APIs without calling out this table.
 
 ---
 
@@ -156,10 +170,10 @@ Do not invent mDNS/QR in this migration (ADR-0011 already deferred).
 | OS | Post | Wake / schedule |
 |----|------|-----------------|
 | Android | `NotificationCompat` on existing channels | UnifiedPush distributor if the user has one; WorkManager when reliable; resume otherwise |
-| iOS | Local `UNNotification` | BGAppRefresh best-effort; resume always |
+| iOS | Local `UNNotification` only (no APNs) | BGAppRefresh best-effort; resume always. Remote push deferred until a paid Apple Developer account |
 | Desktop | OS notify API | In-process timer while running; resume always |
 
-Do not add FCM, Play Services, or APNs as a required account. Do not post booru notifications in the demo-only cut.
+Do not add FCM, Play Services, or APNs. iOS push via APNs waits on a paid Apple Developer account. Do not post booru notifications in the demo-only cut.
 
 ---
 
@@ -189,6 +203,7 @@ Do not add FCM, Play Services, or APNs as a required account. Do not post booru 
 | Deleting `examples/web` | Do not, until template gates are rehomed |
 | Dual desktop (Tauri + CMP) | Do not ship both |
 | Jazz/Subduction, Drive UI, biometrics, Gelbooru, OPML button | Out of this migration |
+| APNs / TestFlight / App Store | Deferred until `[HUMAN]` has an Apple Developer account; CI stays simulator-only |
 
 ### Critique
 

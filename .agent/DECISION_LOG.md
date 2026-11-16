@@ -17,6 +17,13 @@
 
 ## Entries
 
+### 2026-11-16 — iOS unsigned sideload; APNs deferred
+- **Status:** Accepted
+- **Context:** Edward answered the remaining iOS distribution question; no Apple Developer account; never owned an Apple device.
+- **Decision:** Ship unsigned `.ipa` via GitHub Releases for AltStore/SideStore sideload. TestFlight/App Store later `[HUMAN]`. iOS CI = simulator only. WidgetKit + background audio stay (work sideloaded). APNs remote push deferred; local notifications + BGAppRefresh only.
+- **Alternatives considered:** Paid account + TestFlight now (blocked: no account/device).
+- **Consequences:** Phase 3 must not require APNs or on-device CI. On-device verification needs a tester.
+
 ### 2026-11-16 — Compose Multiplatform / KMP (ADR-0013)
 - **Status:** Accepted (supersedes ADR-0001)
 - **Context:** Phase 0 inventory; Edward chose the agent picks for 18 migration questions (one UI, iOS+three desktops, encrypted vault everywhere).
