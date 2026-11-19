@@ -17,6 +17,20 @@
 
 ## Entries
 
+### 2026-11-16 — iOS unsigned sideload; APNs deferred
+- **Status:** Accepted
+- **Context:** Edward answered the remaining iOS distribution question; no Apple Developer account; never owned an Apple device.
+- **Decision:** Ship unsigned `.ipa` via GitHub Releases for AltStore/SideStore sideload. TestFlight/App Store later `[HUMAN]`. iOS CI = simulator only. WidgetKit + background audio stay (work sideloaded). APNs remote push deferred; local notifications + BGAppRefresh only.
+- **Alternatives considered:** Paid account + TestFlight now (blocked: no account/device).
+- **Consequences:** Phase 3 must not require APNs or on-device CI. On-device verification needs a tester.
+
+### 2026-11-16 — Compose Multiplatform / KMP (ADR-0013)
+- **Status:** Accepted (supersedes ADR-0001)
+- **Context:** Phase 0 inventory; Edward chose the agent picks for 18 migration questions (one UI, iOS+three desktops, encrypted vault everywhere).
+- **Decision:** Shared Compose Multiplatform UI + KMP domain; replace Tauri as the shipping desktop shell; KB-018 stays. See `docs/adr/0013-compose-multiplatform.md`, `docs/migration/DESIGN_BRIEF.md`, `docs/migration/TECH_DECISION.md`.
+- **Alternatives considered:** Keep Tauri+web; SwiftUI iOS + Compose Android; Flutter.
+- **Consequences:** Phase 3 code move waits on Edward’s review of those docs. ADR-0001 retained as history.
+
 ### 2026-11-13 — Reject Jazz/Subduction for LAN pool (ADR-0012)
 - **Status:** Accepted
 - **Context:** NEWS_INBOX flagged Jazz 2.0 and Subduction as sync-engine ideas for offline stars/playback.
