@@ -100,7 +100,10 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.60.1")
     ksp("com.google.dagger:hilt-compiler:2.60.1")
 
-    implementation("org.unifiedpush.android:connector:3.0.4")
+    implementation("org.unifiedpush.android:connector:3.0.4") {
+        // Connector pulls JVM tink; app already uses tink-android — exclude to avoid duplicate classes.
+        exclude(group = "com.google.crypto.tink", module = "tink")
+    }
 
     testImplementation("androidx.test:core:1.7.0")
     testImplementation("junit:junit:4.13.2")
