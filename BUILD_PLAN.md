@@ -130,3 +130,22 @@ If Monday cron is red: Cursor Automation `weekly-maintain`, then Grok Bot 4–5.
 ## Archive
 
 Older sprints: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md).
+
+<!-- argus-portfolio-chores:start -->
+## Argus portfolio chores
+
+Synced from argus-runner (2026-11-18). Prefer YOLO maintain on the runner; keep these until cleared.
+
+| Status | Venue | Task |
+|--------|-------|------|
+| 🔲 | `[AUTO][CLOUD]` | Clear open Dependabot alerts |
+| 🔲 | `[HUMAN][PC]` | Publish Android release asset (APK or AAB) |
+
+```text
+Repo: edwardlthompson/aetherfeed
+1) Merge green Dependabot PRs (--squash); no security force-merge.
+2) Build signed APK/AAB for the current (or new) release tag; attach to the GitHub Release.
+3) Optional: Play/F-Droid separately — Argus does not publish stores.
+Gate: alerts 0; gh release view shows .apk or .aab.
+```
+<!-- argus-portfolio-chores:end -->
