@@ -23,7 +23,7 @@ name = "aetherfeed"
 version = "0.1.0"
 dependencies = [
  "aetherfeed-crypto",
- "base64 0.22.1",
+ "base64 0.23.1",
  "local-ip-address",
  "reqwest",
  "serde",
