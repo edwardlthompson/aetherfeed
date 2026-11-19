@@ -1,17 +1,22 @@
-# AetherFeed desktop (Windows)
+# AetherFeed desktop (Windows / macOS / Linux)
 
-Tauri 2.0 wrapper around the shared web UI. The desktop binary stays small
-and sandboxed. Downloads and the encrypted vault live in the OS app-data
-directory, never a world-readable dump.
+## Shipping shell: Compose Desktop
 
-## Why Tauri
+**Product path:** [`compose/`](compose/) — JVM Compose Desktop (1100×760, tray unread tooltip).
 
-Electron would ship a full Chromium. Tauri uses the OS webview so the FOSS
-binary stays closer to the "quiet, lightweight" product brief. If a required
-feature is blocked, log the fallback in `DECISION_LOG.md` before adopting
-Electron.
+```bash
+cd examples/desktop/compose
+./gradlew :composeApp:run
 
-## Commands
+```
+
+Shared JVM modules: `shared/domain`, `shared/vault`. Packaging notes: `compose/PACKAGING.md` (jpackage row 2). Full release matrix: [`docs/RELEASE_ARTIFACTS.md`](../../docs/RELEASE_ARTIFACTS.md).
+
+## Frozen reference: Tauri + web UI
+
+The Tauri 2.0 wrapper under `src-tauri/` and the Vite frontend in `examples/web` are **frozen** — no new product features. Keep them for LAN hub (`lan_hub.rs`), tray contract, and migration parity notes until Compose Desktop reaches parity (Sprint 59 gate).
+
+Historical dev commands (reference only):
 
 ```bash
 npm install
@@ -20,22 +25,8 @@ npm run tauri build
 
 ```
 
-The frontend is `examples/web`. Tray tooltip and badge should show the same
-total unread count as the Android widget.
+Tray tooltip pattern: `AetherFeed — {n} unread` (same as Android widget contract).
 
 ## Auto-update
 
-GitHub Releases via `tauri-plugin-updater`. `[HUMAN]` fills the updater
-public key before the first Windows release.
-
-## Packaging (Windows)
-
-Release builds land under `examples/desktop/src-tauri/target/release/bundle/`.
-After the first signed GitHub Release asset exists:
-
-1. Replace `REPLACE_ORG` and SHA-256 in `packaging/winget/aetherfeed/manifest.stub.yaml`
-2. Validate: `bash scripts/validate-winget-stub.sh packaging/winget/aetherfeed/manifest.stub.yaml`
-3. `[HUMAN]` opens the/winget-pkgs PR (see `packaging/winget/README.md`)
-
-Tauri exposes `sync_pull` / `sync_push` for WebDAV ciphertext blobs. Tests use
-`memory://` endpoints; production HTTP WebDAV wiring ships in a follow-up row.
+GitHub Releases for the Compose build ships in a follow-up row. Tauri `tauri-plugin-updater` remains reference only.

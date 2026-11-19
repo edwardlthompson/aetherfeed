@@ -14,13 +14,12 @@ import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import org.aetherfeed.app.BuildConfig
 import org.aetherfeed.app.about.AppUpdatePreferences
 import org.aetherfeed.app.domain.LibraryRepository
 import org.aetherfeed.app.network.NetworkStatusMonitor
-import org.aetherfeed.app.news.NewsFeedRefresh
 import org.aetherfeed.app.news.ReaderPrefs
 import org.aetherfeed.app.news.ReaderSettings
+import org.aetherfeed.app.notify.ArticleNotificationPoster
 import org.aetherfeed.app.sync.FeedChangeNotifier
 import org.aetherfeed.app.sync.LanPoolConfig
 import org.aetherfeed.app.sync.LanPoolPrefs
@@ -36,26 +35,15 @@ class MainActivity : ComponentActivity() {
         const val EXTRA_LAN_HUB = "lan_hub"
         const val EXTRA_LAN_PASS = "lan_pass"
     }
-    @Inject
-    lateinit var libraryRepository: LibraryRepository
 
-    @Inject
-    lateinit var subscriptionPoolSync: SubscriptionPoolSync
-
-    @Inject
-    lateinit var lanPoolSync: LanPoolSync
-
-    @Inject
-    lateinit var lanPoolPrefs: LanPoolPrefs
-
-    @Inject
-    lateinit var readerPrefs: ReaderPrefs
-
-    @Inject
-    lateinit var readReceiptSync: ReadReceiptSync
-
-    @Inject
-    lateinit var feedChangeNotifier: FeedChangeNotifier
+    @Inject lateinit var libraryRepository: LibraryRepository
+    @Inject lateinit var subscriptionPoolSync: SubscriptionPoolSync
+    @Inject lateinit var lanPoolSync: LanPoolSync
+    @Inject lateinit var lanPoolPrefs: LanPoolPrefs
+    @Inject lateinit var readerPrefs: ReaderPrefs
+    @Inject lateinit var readReceiptSync: ReadReceiptSync
+    @Inject lateinit var feedChangeNotifier: FeedChangeNotifier
+    @Inject lateinit var articleNotificationPoster: ArticleNotificationPoster
 
     private var networkStatusMonitor: NetworkStatusMonitor? = null
 
@@ -78,12 +66,13 @@ class MainActivity : ComponentActivity() {
                     lanPoolPrefs.save(LanPoolConfig(hubUrl = hub, passphrase = pass))
                 }
             }
-            subscriptionPoolSync.pullAndMerge()
-            lanPoolSync.syncNow()
-            NewsFeedRefresh.refresh(libraryRepository)
-            // After ingest: apply Hermes read receipts (initial unread stamps are epoch).
-            readReceiptSync.pullAndApply()
-            lanPoolSync.syncNow()
+            runLibrarySyncPass(
+                libraryRepository,
+                subscriptionPoolSync,
+                lanPoolSync,
+                readReceiptSync,
+                articleNotificationPoster,
+            )
         }
 
         setContent {
@@ -93,9 +82,7 @@ class MainActivity : ComponentActivity() {
                 initialValue = ReaderSettings(),
             )
             var lanConfig by remember { mutableStateOf(LanPoolConfig()) }
-            LaunchedEffect(Unit) {
-                lanConfig = lanPoolPrefs.load()
-            }
+            LaunchedEffect(Unit) { lanConfig = lanPoolPrefs.load() }
             AetherFeedApp(
                 context = this,
                 scope = lifecycleScope,
@@ -130,11 +117,13 @@ class MainActivity : ComponentActivity() {
     override fun onResume() {
         super.onResume()
         lifecycleScope.launch {
-            subscriptionPoolSync.pullAndMerge()
-            lanPoolSync.syncNow()
-            NewsFeedRefresh.refresh(libraryRepository)
-            readReceiptSync.pullAndApply()
-            lanPoolSync.syncNow()
+            runLibrarySyncPass(
+                libraryRepository,
+                subscriptionPoolSync,
+                lanPoolSync,
+                readReceiptSync,
+                articleNotificationPoster,
+            )
         }
     }
 

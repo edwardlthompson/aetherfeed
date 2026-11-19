@@ -2,6 +2,76 @@
 
 > Archive of finished BUILD_PLAN items.
 
+## Multiplatform Migration Phase 3–4 AGENT/AUTO (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Seed Multiplatform Migration board + `docs/migration/PARITY_CHECKLIST.md` from INVENTORY
+- ✅ Sprint 56–63 AGENT/AUTO rows — see dated sections below
+
+## Sprint 8 — Hermes subscription pool (2026-11-19 cleanup)
+
+- ✅ [AGENT][LOCAL] Client + codec + wire news/podcast pool (exclude booru) — scope: `examples/android/.../sync/`, `docs/features/hermes-subscription-pool.md`
+
+## Sprint 9 — Home LAN encrypted pool (2026-11-19 cleanup)
+
+- ✅ [AGENT][LOCAL] Pool document v2 + LWW (subs/reads/stars/playback) — AetherFeed + Hermes codecs
+- ✅ [AGENT][LOCAL] SyncEnvelope crypto (Rust + Android/Hermes) + desktop LAN hub + Settings
+- ✅ [AGENT][LOCAL] AetherFeed + Hermes LAN clients; ContentProvider retained — ADR-0011, `docs/features/sync.md`
+
+## Sprint 63 — Final parity sprint (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Walk PARITY_CHECKLIST — no bare Pending on must-haves
+- ✅ [AGENT][LOCAL] Parity gate Sprint 63 — Parity/Partial/N/A/Pending [HUMAN] only
+
+## Sprint 62 — Release packaging (five platforms) (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Release artifact matrix doc + check script; no new schedule workflows
+- ✅ [AUTO] release.yml workflow_dispatch dry-run matrix step; local `--dry-run` passed
+- ✅ [AGENT][LOCAL] Parity gate Sprint 62 — packaging rows honest
+
+## Sprint 61 — Notifications, UnifiedPush, LAN/Hermes (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Real notification posting Android/iOS/desktop; UnifiedPush Android; iOS local-only; no booru channel
+- ✅ [AGENT][LOCAL] LAN sync parity stubs; Hermes Settings hidden off-Android; Drive/WebDAV out of DI
+- ✅ [AGENT][LOCAL] Parity gate Sprint 61 — Partial where OS/distributor E2E pending
+
+## Sprint 60 — iOS app, widget, audio, local notifications (2026-11-19)
+
+- ✅ [AGENT][LOCAL] iOS CMP JVM stub + Keychain interface + Add-feed/refresh notes (`examples/ios/`)
+- ✅ [AGENT][LOCAL] WidgetKit/AVFoundation/UserNotifications contracts + shared unread snapshot
+- ✅ [AGENT][LOCAL] Unsigned `.ipa` AltStore/SideStore packaging notes
+- ✅ [AGENT][LOCAL] Parity gate Sprint 60 — iOS Partial / Pending `[HUMAN]`; APNs N/A
+
+## Sprint 59 — Desktop shells (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Compose Desktop app (1100×760) under `examples/desktop/compose/` + tray unread helper + stubs
+- ✅ [AGENT][LOCAL] Desktop packaging: Win MSI/exe via jpackage; formats declared for macOS/Linux; Tauri frozen
+- ✅ [AGENT][LOCAL] Parity gate Sprint 59 — Windows shell/packaging Parity; macOS/Linux Partial
+
+## Sprint 58 — Android switches to shared modules (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Thin Android app on shared modules (domain typealiases; theme/chrome/Add-feed/Settings/About → shared/ui); Hilt/Hermes/Media3/widget stay app
+- ✅ [AGENT][LOCAL] Parity gate Sprint 58 — Android (KMP) matches shipped UX; vault SQLDelight still Partial
+
+## Sprint 57 — Shared Compose UI (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Port theme/chrome/shell/Add-feed/News/reader/Podcasts/Booru/Settings/About into `shared/ui`
+- ✅ [AGENT][LOCAL] Compact podcast player bar in shared UI
+- ✅ [AGENT][LOCAL] Parity gate Sprint 57 — chrome/Settings/About Parity on Android (KMP); list/reader Partial pending app cutover
+
+## Sprint 56 — KMP shared core (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Scaffold `shared/domain` + `shared/vault` (SQLDelight ≈ Room tables; Ktor news refresh; LAN client + SyncEnvelope; keychain expect/actual stubs) — scope: `shared/`, `examples/android/`
+- ✅ [AUTO] Shared JVM/Android unit tests — `:shared-domain:test` `:shared-vault:test`
+- ✅ [AGENT][LOCAL] Parity gate Sprint 56 — Partial on Android (KMP) scaffold
+
+## Sprint News — News Bot follow-ups (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Audit the repo for wfx-loot IOCs — clean
+
+## Sprint 55 — Ship Android GitHub Release (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Cut/update GitHub Release with signed Android APK/AAB — tag `v1.13.4` assets `app-release.apk` `app-release.aab`
+
 ## Sprint 6 — E2E sync (2026-11-12)
 
 - ✅ [AGENT][LOCAL] Drive AppData provider — scope: examples/android/app/src/main/java/org/aetherfeed/app/sync/

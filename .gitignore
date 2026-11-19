@@ -96,3 +96,10 @@ scratchpad.md
 .cursor/handoff-*.md
 upgrade-verify*.out
 .cursor-session-state.json
+
+# Shared / desktop / iOS local Gradle caches
+shared/**/.gradle/
+examples/desktop/compose/.gradle/
+examples/ios/compose/.gradle/
+examples/desktop/compose/.kotlin/
+examples/ios/compose/.kotlin/

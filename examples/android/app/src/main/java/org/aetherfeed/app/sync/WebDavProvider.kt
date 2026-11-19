@@ -4,6 +4,7 @@ import org.aetherfeed.app.domain.SyncProvider
 import java.util.Base64
 
 /** Self-hosted WebDAV fallback. Uploads opaque `.enc` blobs only. */
+/** v1 production DI excludes Drive/WebDAV (TECH_DECISION §7 decision 5) — tests/offline dev only. */
 class WebDavProvider(
     private val http: SyncHttpClient,
     private val endpoint: String,

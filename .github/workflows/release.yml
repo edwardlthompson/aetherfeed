@@ -99,6 +99,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: bash scripts/check-github-ci.sh HEAD --wait 3600
 
+      - name: Release artifact matrix (dry-run)
+        if: github.event_name == 'workflow_dispatch' && inputs.tag == ''
+        run: bash scripts/check-release-artifact-matrix.sh --dry-run
+
       - name: Pre-release gate (workflow_dispatch dry-run)
         if: github.event_name == 'workflow_dispatch' && inputs.tag == ''
         run: bash scripts/pre-release-gate.sh

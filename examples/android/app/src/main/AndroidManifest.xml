@@ -4,6 +4,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="org.hermeslauncher.app.permission.SUBSCRIPTION_POOL" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <queries>
         <package android:name="org.hermeslauncher.app" />
@@ -34,6 +35,9 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+        <receiver
+            android:name=".notify.UnifiedPushMessageReceiver"
+            android:exported="false" />
         <receiver
             android:name=".notify.UnreadWidgetProvider"
             android:exported="true"

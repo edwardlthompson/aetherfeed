@@ -54,6 +54,10 @@ Before running instrumented tests or manual QA:
 - 🔲 Set `SOURCE_DATE_EPOCH` for reproducible release builds (template default: `1700000000`)
 - 🔲 Accept licenses: `sdkmanager --licenses`
 
+## Release artifacts
+
+Product version in About is **`0.1.0`** (`schemas/golden-path/app-version.json`). GitHub Release APK/AAB naming and signing: [`docs/RELEASE_ARTIFACTS.md`](../../docs/RELEASE_ARTIFACTS.md), [`docs/ANDROID_SIGNING.md`](../../docs/ANDROID_SIGNING.md).
+
 ## FOSS compliance
 
 - No `com.google.android.gms` dependencies
