@@ -1,7 +1,7 @@
 # Build Plan
 
 <!-- remaining-tally -->
-**Remaining:** AGENT 0 · LOCAL 0 · CLOUD 0 · AUTO 0 · HUMAN 5 · ADB 2 · **7 open**
+**Remaining:** AGENT 1 · LOCAL 1 · CLOUD 0 · AUTO 0 · HUMAN 5 · ADB 2 · **8 open**
 <!-- /remaining-tally -->
 
 Live board. Finished work: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md) · Backlog: [`HUMAN_BACKLOG.md`](HUMAN_BACKLOG.md).
@@ -87,6 +87,14 @@ _No cloud agent items._
 [`INVENTORY`](docs/migration/INVENTORY.md) · [`DESIGN_BRIEF`](docs/migration/DESIGN_BRIEF.md) · [`TECH_DECISION`](docs/migration/TECH_DECISION.md) · [ADR-0013](docs/adr/0013-compose-multiplatform.md) · [`PARITY_CHECKLIST`](docs/migration/PARITY_CHECKLIST.md) · [`RELEASE_ARTIFACTS`](docs/RELEASE_ARTIFACTS.md)
 
 Shipping shells: Android `examples/android/` · Desktop `examples/desktop/compose/` · iOS stub `examples/ios/`. Tauri frozen.
+
+## Child Repo Playbook
+
+### Sprint News — News Bot follow-ups
+
+<!-- parallel_exception: independent news follow-ups; run sequentially -->
+
+1. 🔲 [AGENT][LOCAL] Bump Compose BOM 2026.09.00 → 2026.11.01 (Compose 1.13 / Material3 1.5.0; needs Kotlin 2.2+ and compileSdk 37.1, check AGP) and fix Slider/RangeSlider call sites (`onValueChange` now required); fix 1 Slider/RangeSlider file(s) — scope: examples/android/,shared/ui/ (news P2, 2026-11-19) https://developer.android.com/blog/posts/jetpack-compose-november-2026-release
 
 ## Ongoing Maintenance
 
