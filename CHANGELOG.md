@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.5](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.4...v1.13.5) (2026-11-19)
+
+### Added
+
+* KMP `shared/domain` + `shared/vault` and Compose `shared/ui` (theme, chrome, screens, player bar)
+* Android thin-wires shared modules; UnifiedPush connector + article notification posting
+* Compose Desktop shipping shell (`examples/desktop/compose/`) with Win MSI/exe packaging; Tauri frozen
+* iOS CMP JVM stub, WidgetKit/Now Playing/local-notify contracts, unsigned `.ipa` notes
+* Release artifact matrix (`docs/RELEASE_ARTIFACTS.md`) + parity checklist through Sprint 63
+
 ## [1.13.4](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.3...v1.13.4) (2026-11-19)
 
 
@@ -26,11 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-* KMP `shared/domain` + `shared/vault` and Compose `shared/ui` (theme, chrome, screens, player bar)
-* Android thin-wires shared modules; UnifiedPush connector + article notification posting
-* Compose Desktop shipping shell (`examples/desktop/compose/`) with Win MSI/exe packaging; Tauri frozen
-* iOS CMP JVM stub, WidgetKit/Now Playing/local-notify contracts, unsigned `.ipa` notes
-* Release artifact matrix (`docs/RELEASE_ARTIFACTS.md`) + parity checklist through Sprint 63
 * LAN encrypted pool sync (hub + Android/desktop clients) with reads, stars, and podcast playback
 * Hermes-style news reader with star, park-unread, browser, and mode icons + tooltips
 * Browse folder tree by feed host with unread counts, Unread filter, and Newest/Oldest sort
