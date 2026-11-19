@@ -107,6 +107,7 @@ Standing queue for This Computer. Rows: `🔲 [AGENT][LOCAL] … — scope: path
 
 <!-- local-agent-lane:begin -->
 - 🔲 [AGENT][LOCAL] Audit the repo for wfx-loot IOCs — scope: .github/ (news P1, 2026-11-14) https://blog.gitguardian.com/wfx-loot-a-ci-secret-stealer-pushed-with-stolen-github-credentials/
+- 🔲 [AGENT][LOCAL] Cut/update GitHub Release with signed Android APK/AAB — scope: examples/android/
 <!-- local-agent-lane:end -->
 
 ### Cloud agent (Cursor Cloud)
@@ -130,3 +131,45 @@ If Monday cron is red: Cursor Automation `weekly-maintain`, then Grok Bot 4–5.
 ## Archive
 
 Older sprints: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md).
+
+<!-- argus-portfolio-chores:start -->
+## Argus portfolio chores — Android release
+
+Synced from argus-runner. **Agent must ship binaries**, not only docs.
+
+| Status | Venue | Task |
+|--------|-------|------|
+| 🔲 | `[AGENT][LOCAL]` — scope: `examples/android/` | **Cut/update GitHub Release with signed Android APK/AAB** |
+
+### Agent instructions (paste / follow)
+
+```text
+Repo: edwardlthompson/aetherfeed
+Goal: Latest GitHub Release must include a real Android binary (.apk and/or .aab).
+
+Why: Latest GitHub Release has SBOMs but no APK/AAB — that is the gap.
+
+Steps:
+1) Read AGENT.md + docs for the Android ship path. Prefer gradle under `examples/android/`.
+2) Ensure signing is available (local keystore / CI secrets already used by this repo). Do not invent a new Play upload.
+3) From `examples/android` (or repo root if that is the documented path):
+     ./gradlew assembleRelease
+     # and if the project ships bundles:
+     ./gradlew bundleRelease
+4) Locate outputs under app/build/outputs/apk/ and app/build/outputs/bundle/.
+5) Create a new tag/release OR update the latest release:
+     gh release list -R edwardlthompson/aetherfeed --limit 3
+     # Prefer the repo's normal /ship or Release Please flow if documented; otherwise:
+     gh release create <TAG> --generate-notes -R edwardlthompson/aetherfeed
+     gh release upload <TAG> <path-to.apk> [<path-to.aab>] -R edwardlthompson/aetherfeed --clobber
+6) Expected artifact names: *-release.apk / *.aab
+7) Verify:
+     gh release view <TAG> -R edwardlthompson/aetherfeed --json assets --jq ".assets[].name"
+   Gate: at least one asset ends with .apk or .aab.
+8) Mark this BUILD_PLAN row ✅ and note the tag + asset names in the commit/PR body.
+
+Do not force-push main. Do not delete the repo. Prefer PR + release assets over committing binaries to git.
+```
+
+Releases page: https://github.com/edwardlthompson/aetherfeed/releases
+<!-- argus-portfolio-chores:end -->
