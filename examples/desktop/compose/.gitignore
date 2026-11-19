@@ -1,0 +1,8 @@
+.gradle/
+build/
+composeApp/build/
+*.exe
+*.msi
+*.dmg
+*.deb
+*.AppImage

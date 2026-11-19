@@ -1,27 +1,15 @@
 package org.aetherfeed.app.ui.about
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalUriHandler
-import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import org.aetherfeed.app.BuildConfig
 import org.aetherfeed.app.R
 import org.aetherfeed.app.about.DonationsConfig
-import org.aetherfeed.app.ui.insets.LocalNavigationMode
-import org.aetherfeed.app.ui.insets.bottomInsetPadding
-import org.aetherfeed.app.ui.insets.navigationBarInsetBottomDp
-import org.aetherfeed.app.ui.insets.navigationModeLabelRes
-import org.aetherfeed.app.ui.theme.SpacingMd
+import org.aetherfeed.shared.domain.DonationLink as SharedLink
+import org.aetherfeed.shared.domain.DonationsConfig as SharedDonations
+import org.aetherfeed.shared.ui.about.AboutLabels
+import org.aetherfeed.shared.ui.about.AboutScreen as SharedAboutScreen
 
 @Composable
 fun AboutScreen(
@@ -34,62 +22,30 @@ fun AboutScreen(
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val uriHandler = LocalUriHandler.current
-    val navMode = LocalNavigationMode.current
-    val insetDp = navigationBarInsetBottomDp()
-    Column(
-        modifier = modifier
-            .verticalScroll(rememberScrollState())
-            .padding(SpacingMd)
-            .testTag("about-panel"),
-        verticalArrangement = Arrangement.spacedBy(SpacingMd),
-    ) {
-        Text(
-            text = stringResource(R.string.about_title),
-            style = MaterialTheme.typography.headlineSmall,
-        )
-        Text(text = stringResource(R.string.about_version, version))
-        Text(text = stringResource(R.string.about_format, installedFormat))
-        Text(text = updateStatus)
-        if (BuildConfig.DEBUG) {
-            Text(
-                text = stringResource(
-                    R.string.about_debug_navigation_mode,
-                    stringResource(navigationModeLabelRes(navMode)),
-                    insetDp,
-                ),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-        if (canApplyUpdate) {
-            Button(onClick = onApplyUpdate) {
-                Text(stringResource(R.string.about_update_apply))
-            }
-        }
-        Text(
-            text = stringResource(R.string.about_export_hint),
-            style = MaterialTheme.typography.bodyMedium,
-        )
-        if (donations.enabled && donations.links.isNotEmpty()) {
-            Text(
-                text = stringResource(R.string.about_donations_heading),
-                style = MaterialTheme.typography.titleMedium,
-            )
-            Text(text = donations.message)
-            donations.links.forEach { link ->
-                Text(
-                    text = link.label,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.clickable { uriHandler.openUri(link.url) },
-                )
-            }
-        }
-        Button(
-            onClick = onBack,
-            modifier = Modifier.bottomInsetPadding(),
-        ) {
-            Text(stringResource(R.string.about_close))
-        }
-    }
+    val context = LocalContext.current
+    SharedAboutScreen(
+        labels =
+            AboutLabels(
+                title = stringResource(R.string.about_title),
+                version = { v -> context.getString(R.string.about_version, v) },
+                format = { f -> context.getString(R.string.about_format, f) },
+                exportHint = stringResource(R.string.about_export_hint),
+                donationsHeading = stringResource(R.string.about_donations_heading),
+                updateApply = stringResource(R.string.about_update_apply),
+                close = stringResource(R.string.about_close),
+            ),
+        version = version,
+        installedFormat = installedFormat,
+        updateStatus = updateStatus,
+        donations =
+            SharedDonations(
+                enabled = donations.enabled,
+                message = donations.message,
+                links = donations.links.map { SharedLink(it.label, it.url) },
+            ),
+        canApplyUpdate = canApplyUpdate,
+        onApplyUpdate = onApplyUpdate,
+        onBack = onBack,
+        modifier = modifier,
+    )
 }

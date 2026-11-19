@@ -1,19 +1,10 @@
-# Shared domain
+# Shared KMP / JVM modules (Sprint 56+)
 
-Canonical models for AetherFeed. Android mirrors these types in Kotlin.
-The Windows desktop UI imports the TypeScript module via the web example.
+Layout from [`docs/migration/TECH_DECISION.md`](../docs/migration/TECH_DECISION.md):
 
-## Why a schema lock
-
-Unread, stars, tags, and playback position must mean the same thing on every
-device before sync envelopes exist. Platforms implement repositories; they do
-not invent parallel field names.
-
-## Layout
-
-| Path | Role |
-|------|------|
-| `typescript/` | Shared TypeScript models and sync primitives |
-| `schema/` | JSON Schema used as the cross-language contract |
-
-Do not add network or UI code here.
+| Module | Role |
+|--------|------|
+| `domain/` | Models, news HTTP contract, SyncEnvelope scaffold |
+| `vault/` | Table-name SoT + keychain interface (SQLDelight next) |
+| `ui/` | Shared Compose theme (Sprint 57+); Android library first, CMP multi-target next |
+Wired into `examples/android` via `settings.gradle.kts` project dirs. Full `android`/`ios`/`desktop` KMP targets land as cutover progresses; JVM libraries unblock shared tests now.

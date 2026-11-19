@@ -5,10 +5,12 @@ import org.aetherfeed.app.R
 import org.aetherfeed.app.domain.ModuleKind
 import org.aetherfeed.app.domain.NotificationChannelPref
 
+import org.aetherfeed.shared.domain.notify.NotifyChannelIds as SharedNotifyChannelIds
+
 /** Stable notification channel ids — keep aligned with [NotificationChannelPref.id]. */
 object NotifyChannelIds {
-    const val NEWS = "aetherfeed_news"
-    const val PODCAST = "aetherfeed_podcast"
+    const val NEWS = SharedNotifyChannelIds.NEWS
+    const val PODCAST = SharedNotifyChannelIds.PODCAST
 }
 
 fun defaultNotificationChannels(context: Context): List<NotificationChannelPref> =
@@ -31,7 +33,4 @@ fun defaultNotificationChannels(context: Context): List<NotificationChannelPref>
 fun enabledChannelIds(prefs: List<NotificationChannelPref>): List<String> =
     prefs.filter { it.enabled }.map { it.id }
 
-/**
- * Desktop tray tooltip contract — keep identical to `examples/desktop/src-tauri/src/lib.rs`.
- */
-fun formatUnreadTrayLabel(count: Int): String = "AetherFeed — $count unread"
+fun formatUnreadTrayLabel(count: Int): String = org.aetherfeed.shared.domain.notify.formatUnreadTrayLabel(count)

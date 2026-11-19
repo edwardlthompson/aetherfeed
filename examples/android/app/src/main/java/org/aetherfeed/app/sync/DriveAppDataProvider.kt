@@ -5,6 +5,7 @@ import org.json.JSONObject
 
 /**
  * Google Drive App Data folder only (`drive.appdata` scope). Never writes to My Drive root.
+ * v1 production DI excludes Drive/WebDAV (TECH_DECISION §7 decision 5) — tests/offline dev only.
  */
 class DriveAppDataProvider(
     private val http: SyncHttpClient,

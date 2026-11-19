@@ -11,6 +11,13 @@ VERSION=""
 
 echo "=== Pre-release gate ==="
 
+if ! bash scripts/check-release-artifact-matrix.sh --dry-run; then
+  echo "FAIL: check-release-artifact-matrix.sh"
+  ERRORS=$((ERRORS + 1))
+else
+  echo "OK   check-release-artifact-matrix.sh passed"
+fi
+
 if ! bash scripts/feature-gate.sh --stack multi --strict --json; then
   echo "FAIL: feature-gate.sh"
   ERRORS=$((ERRORS + 1))

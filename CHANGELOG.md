@@ -26,6 +26,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+* KMP `shared/domain` + `shared/vault` and Compose `shared/ui` (theme, chrome, screens, player bar)
+* Android thin-wires shared modules; UnifiedPush connector + article notification posting
+* Compose Desktop shipping shell (`examples/desktop/compose/`) with Win MSI/exe packaging; Tauri frozen
+* iOS CMP JVM stub, WidgetKit/Now Playing/local-notify contracts, unsigned `.ipa` notes
+* Release artifact matrix (`docs/RELEASE_ARTIFACTS.md`) + parity checklist through Sprint 63
 * LAN encrypted pool sync (hub + Android/desktop clients) with reads, stars, and podcast playback
 * Hermes-style news reader with star, park-unread, browser, and mode icons + tooltips
 * Browse folder tree by feed host with unread counts, Unread filter, and Newest/Oldest sort

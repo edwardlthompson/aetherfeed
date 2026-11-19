@@ -1,9 +1,9 @@
 package org.aetherfeed.app.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import org.aetherfeed.app.ui.insets.ApplySystemBarStyle
+import org.aetherfeed.shared.ui.theme.AetherFeedTheme as SharedAetherFeedTheme
 
 @Composable
 fun AetherFeedTheme(
@@ -11,18 +11,12 @@ fun AetherFeedTheme(
     content: @Composable () -> Unit,
 ) {
     val systemDark = isSystemInDarkTheme()
-    val darkTheme = when (themeMode) {
-        ThemeMode.System -> systemDark
-        ThemeMode.Light -> false
-        ThemeMode.Dark -> true
-    }
-    val colorScheme = if (darkTheme) DarkAetherFeedColors else LightAetherFeedColors
-
+    val darkTheme =
+        when (themeMode) {
+            ThemeMode.System -> systemDark
+            ThemeMode.Light -> false
+            ThemeMode.Dark -> true
+        }
     ApplySystemBarStyle(darkTheme)
-
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = AetherFeedTypography,
-        content = content,
-    )
+    SharedAetherFeedTheme(themeMode = themeMode, content = content)
 }
