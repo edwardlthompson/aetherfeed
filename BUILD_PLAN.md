@@ -106,7 +106,7 @@ _No UX inventory items._
 Standing queue for This Computer. Rows: `🔲 [AGENT][LOCAL] … — scope: path`. `/build` claims these only.
 
 <!-- local-agent-lane:begin -->
-- 🔲 [AGENT][LOCAL] Audit the repo for wfx-loot IOCs — scope: .github/ (news P1, 2026-11-14) https://blog.gitguardian.com/wfx-loot-a-ci-secret-stealer-pushed-with-stolen-github-credentials/
+_No local agent items._
 <!-- local-agent-lane:end -->
 
 ### Cloud agent (Cursor Cloud)
@@ -156,6 +156,13 @@ No force-push to main. No committing binaries into git.
 
 Releases: https://github.com/edwardlthompson/aetherfeed/releases
 <!-- argus-android-release-sprint:end -->
+
+### Sprint News — News Bot follow-ups
+
+<!-- parallel_exception: independent news follow-ups; run sequentially -->
+
+1. 🔲 [AGENT][LOCAL] Audit the repo for wfx-loot IOCs — scope: .github/ (news P1, 2026-11-14) https://blog.gitguardian.com/wfx-loot-a-ci-secret-stealer-pushed-with-stolen-github-credentials/
+
 
 ## Ongoing Maintenance
 
