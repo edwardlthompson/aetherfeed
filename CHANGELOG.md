@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.4](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.3...v1.13.4) (2026-11-19)
+
+
+### Changed
+
+* **argus:** Add or improve a "What this is not" section ([e73c988](https://github.com/edwardlthompson/aetherfeed/commit/e73c98884301c2290991b33409b79447d2479429))
+* **argus:** AGENT Android release chore on BUILD_PLAN ([#60](https://github.com/edwardlthompson/aetherfeed/issues/60)) ([c0ef236](https://github.com/edwardlthompson/aetherfeed/commit/c0ef236822ac17994c1d8b272913a23f14d9ee44))
+* **argus:** move Android release into Product Sprint 55 for /build ([#61](https://github.com/edwardlthompson/aetherfeed/issues/61)) ([636eb19](https://github.com/edwardlthompson/aetherfeed/commit/636eb19c2a85cb6b276eb4add9849525b7666ea2))
+* **release:** restore Unreleased heading and sync template 1.13.3 ([0309606](https://github.com/edwardlthompson/aetherfeed/commit/03096069baebc9ecbfa50a89b15ebbf4094a8af3))
+
+
+### Documentation
+
+* **news:** inbox + build plan 2026-11-15 [skip ci] ([bc36d4b](https://github.com/edwardlthompson/aetherfeed/commit/bc36d4b12d05f7bda466a84e9aed788e53f3db8b))
+* **news:** inbox 2026-11-14 [skip ci] ([440f3fa](https://github.com/edwardlthompson/aetherfeed/commit/440f3fa97c5ee4328b7364c646fadb685c934a91))
+
 ## [Unreleased]
 
 ### Added
