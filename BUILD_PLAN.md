@@ -106,7 +106,7 @@ _No UX inventory items._
 Standing queue for This Computer. Rows: `🔲 [AGENT][LOCAL] … — scope: path`. `/build` claims these only.
 
 <!-- local-agent-lane:begin -->
-- 🔲 [AGENT][LOCAL] Audit the repo for wfx-loot IOCs — scope: .github/ (news P1, 2026-11-14) https://blog.gitguardian.com/wfx-loot-a-ci-secret-stealer-pushed-with-stolen-github-credentials/
+_No local agent items._
 <!-- local-agent-lane:end -->
 
 ### Cloud agent (Cursor Cloud)
@@ -119,6 +119,51 @@ _No cloud agent items._
 
 ---
 
+<!-- argus-android-release-sprint:begin -->
+### Sprint 55 — Ship Android GitHub Release
+
+Numbered rows so child `/build` (parse_board_queue) picks them up. **Not** under Archive lanes.
+
+1. 🔲 [AGENT][LOCAL] Cut/update GitHub Release with signed Android APK/AAB — scope: examples/android/
+
+#### Agent instructions (release row)
+
+```text
+Repo: edwardlthompson/aetherfeed
+Goal: Latest GitHub Release must include a real Android binary (.apk and/or .aab).
+
+Why: Latest GitHub Release has SBOMs but no APK/AAB.
+
+Steps:
+1) Read AGENT.md + Android docs. Prefer gradle under `examples/android/`.
+2) Use existing signing (local keystore / repo CI secrets). Do not invent Play Store upload.
+3) From `examples/android` (or documented root):
+     ./gradlew assembleRelease
+     ./gradlew bundleRelease
+4) Outputs: app/build/outputs/apk/ and app/build/outputs/bundle/.
+5) Prefer this repo's /ship or Release Please flow if documented; else:
+     gh release list -R edwardlthompson/aetherfeed --limit 3
+     gh release create <TAG> --generate-notes -R edwardlthompson/aetherfeed
+     gh release upload <TAG> <apk> [<aab>] -R edwardlthompson/aetherfeed --clobber
+6) Expected names: *-release.apk / *.aab
+7) Gate:
+     gh release view <TAG> -R edwardlthompson/aetherfeed --json assets --jq ".assets[].name"
+   At least one asset must end with .apk or .aab.
+8) Mark the BUILD_PLAN release row ✅; note tag + asset names.
+
+No force-push to main. No committing binaries into git.
+```
+
+Releases: https://github.com/edwardlthompson/aetherfeed/releases
+<!-- argus-android-release-sprint:end -->
+
+### Sprint News — News Bot follow-ups
+
+<!-- parallel_exception: independent news follow-ups; run sequentially -->
+
+1. 🔲 [AGENT][LOCAL] Audit the repo for wfx-loot IOCs — scope: .github/ (news P1, 2026-11-14) https://blog.gitguardian.com/wfx-loot-a-ci-secret-stealer-pushed-with-stolen-github-credentials/
+
+
 ## Ongoing Maintenance
 
 Not a checklist. GitHub Monday cron (`.github/workflows/weekly-health-check.yml`) already runs CI wait, security triage, parent template-gap BUILD_PLAN sync, radar, `update-deps` dry-run, Dependabot leftover list, open-PR BUILD_PLAN sync, and latest-release SBOM. `/ship` owns pre-release and the release tag.
@@ -130,3 +175,5 @@ If Monday cron is red: Cursor Automation `weekly-maintain`, then Grok Bot 4–5.
 ## Archive
 
 Older sprints: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md).
+
+
