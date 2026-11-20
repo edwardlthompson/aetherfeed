@@ -1,7 +1,7 @@
 # Build Plan
 
 <!-- remaining-tally -->
-**Remaining:** AGENT 1 · LOCAL 1 · CLOUD 0 · AUTO 0 · HUMAN 5 · ADB 2 · **8 open**
+**Remaining:** AGENT 2 · LOCAL 2 · CLOUD 0 · AUTO 0 · HUMAN 5 · ADB 2 · **9 open**
 <!-- /remaining-tally -->
 
 Live board. Finished work: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md) · Backlog: [`HUMAN_BACKLOG.md`](HUMAN_BACKLOG.md).
@@ -95,6 +95,7 @@ Shipping shells: Android `examples/android/` · Desktop `examples/desktop/compos
 <!-- parallel_exception: independent news follow-ups; run sequentially -->
 
 1. 🔲 [AGENT][LOCAL] Bump Compose BOM 2026.09.00 → 2026.11.01 (Compose 1.13 / Material3 1.5.0; needs Kotlin 2.2+ and compileSdk 37.1, check AGP) and fix Slider/RangeSlider call sites (`onValueChange` now required); fix 1 Slider/RangeSlider file(s) — scope: examples/android/,shared/ui/ (news P2, 2026-11-19) https://developer.android.com/blog/posts/jetpack-compose-november-2026-release
+2. 🔲 [AGENT][LOCAL] Bump the Gradle wrapper 9.9.1 (android, desktop, ios) → 9.9.2 and commit the regenerated wrapper jar and distributionSha256Sum (4 High security fixes: SFTP host keys, snapshot dependency verification, TestKit temp dir, daemon registry) — scope: examples/android/gradle/wrapper/,examples/desktop/compose/gradle/wrapper/,examples/ios/compose/gradle/wrapper/ (news P2, 2026-11-20) https://docs.gradle.org/9.9.2/release-notes.html
 
 ## Ongoing Maintenance
 
