@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.6](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.5...v1.13.6) (2026-11-22)
+
+
+### Fixed
+
+* **deps:** cargo update -p glib in examples/desktop/src-tauri ([#66](https://github.com/edwardlthompson/aetherfeed/issues/66)) ([62fb9e7](https://github.com/edwardlthompson/aetherfeed/commit/62fb9e77a89fbf0014d315d9c11cc94cc2857dba))
+
+
+### Changed
+
+* **argus:** move agent memory/log files into .agent/ ([#65](https://github.com/edwardlthompson/aetherfeed/issues/65)) ([219723a](https://github.com/edwardlthompson/aetherfeed/commit/219723a580e2ce4a99ea726f3a2bdcb18ca55ef5))
+
+
+### Documentation
+
+* **news:** inbox + build plan 2026-11-19 [skip ci] ([f280e30](https://github.com/edwardlthompson/aetherfeed/commit/f280e3022938a86cf936f26b5df50f45e73de7c9))
+* **news:** inbox + build plan 2026-11-20 [skip ci] ([193440f](https://github.com/edwardlthompson/aetherfeed/commit/193440ffa3043d177112d918dab25e3e0bd636df))
+
 ## [1.13.5](https://github.com/edwardlthompson/aetherfeed/compare/v1.13.4...v1.13.5) (2026-11-19)
 
 ### Added
