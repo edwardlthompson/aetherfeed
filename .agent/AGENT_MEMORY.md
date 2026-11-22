@@ -86,3 +86,11 @@ AetherFeed: local-first encrypted news, podcast, and booru client for Android an
 - **Source template:** `edwardlthompson/agent-project-bootstrap` (self-maintained)
 - **Template version:** `1.13.5` (see `.template-version`)
 - **Last update check:** See `.template-update.json`
+
+---
+
+<!-- Preserved from root AGENT_MEMORY.md -->
+
+# Agent memory
+
+Canonical living memory: [`.agent/AGENT_MEMORY.md`](.agent/AGENT_MEMORY.md).
