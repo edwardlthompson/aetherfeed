@@ -43,3 +43,13 @@ A Cursor planning agent should review these items and fold the useful ones into 
 
 - [x] Bump the Gradle wrapper 9.9.1 (android, desktop, ios) to 9.9.2 and commit the regenerated wrapper jar and distributionSha256Sum — the patch fixes four High build-tool vulnerabilities (SFTP host keys, snapshot dependency verification, TestKit temp dir, daemon registry). Run ./gradlew wrapper --gradle-version=<ver> in each wrapper (examples/android/gradle/wrapper/, examples/desktop/compose/gradle/wrapper/, examples/ios/compose/gradle/wrapper/). Label: `[AGENT][LOCAL]` · Priority: P2 · https://docs.gradle.org/9.9.2/release-notes.html (synced to BUILD_PLAN)
 - [ ] Decide whether to verify your identity and register this app with Google before January 2027 — if yes, create an Android Developer Console account and register the package name(s) with the SHA-256 of the GitHub Releases signing key (plus F-Droid's key if F-Droid re-signs it); if no, add an "advanced flow" install note to the README. The app is sideloaded (GitHub Releases/Obtainium/F-Droid), exactly the installs the rollout gates, and this is a personal identity/policy call. Label: `[HUMAN]` · Priority: P2 · https://developer.android.com/blog/posts/android-developer-verification-2027 (inbox only: no /build-parsed human group on this board)
+
+## 2026-11-26
+
+**News and updates**
+
+- Kotlin 2.5.0-RC2 (Nov 25) fixes Compose issues: a Kotlin/Native crash where a lambda SAM-converted to a `@Composable` fun interface got no restart group (KT-91414), a cross-module `@JvmField` composable-lambda NoSuchFieldError (KT-91591), and a `Float.fromBits` slowdown (KT-91549). Stable is still 2.4.21 and 2.5.0 final looks close, so this is a heads-up to test on a branch, not to ship. [2.5.0-RC2](https://github.com/JetBrains/kotlin/releases/tag/v2.5.0-RC2) aetherfeed is on Kotlin 2.3.21, and .updrc.toml deliberately blocks Kotlin >= 2.3.30 in the updater.
+
+**Tasks for the planning agent**
+
+- [ ] Plan the Kotlin 2.3.21 → 2.4.21 bump (revisit the >= 2.3.30 updater block) and smoke-test 2.5.0-RC2 on a branch — aetherfeed is two minors behind stable while 2.5.0 is at RC2. Label: `[AGENT][LOCAL]` · Priority: P3 · https://github.com/JetBrains/kotlin/releases/tag/v2.5.0-RC2
