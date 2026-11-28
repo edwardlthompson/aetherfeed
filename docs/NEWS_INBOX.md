@@ -53,3 +53,13 @@ A Cursor planning agent should review these items and fold the useful ones into 
 **Tasks for the planning agent**
 
 - [ ] Plan the Kotlin 2.3.21 → 2.4.21 bump (revisit the >= 2.3.30 updater block) and smoke-test 2.5.0-RC2 on a branch — aetherfeed is two minors behind stable while 2.5.0 is at RC2. Label: `[AGENT][LOCAL]` · Priority: P3 · https://github.com/JetBrains/kotlin/releases/tag/v2.5.0-RC2
+
+## 2026-11-28
+
+**News and updates**
+
+- Gradle [9.9.3](https://github.com/gradle/gradle/releases/tag/v9.9.3) (Nov 27) is a regression-only patch: 9.9.2 failed to start on Windows when GRADLE_USER_HOME sits on an ImDisk RAM disk ([gradle#39909](https://github.com/gradle/gradle/issues/39909)). No new security fixes; 9.9.2's four High fixes are still why the open wrapper-bump row is P2, and Gradle now recommends 9.9.3, so landing on it avoids a second bump. The board row is unchanged. [Release notes](https://docs.gradle.org/9.9.3/release-notes.html)
+
+**Tasks for the planning agent**
+
+- [ ] Use Gradle 9.9.3 rather than 9.9.2 when doing the open wrapper bump — 9.9.3 has the same security fixes plus a Windows startup regression fix, so one bump covers both. Label: `[AGENT][LOCAL]` · Priority: P3 · https://github.com/gradle/gradle/releases/tag/v9.9.3 (BUILD_PLAN row left unchanged)
